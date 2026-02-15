@@ -1,0 +1,22 @@
+{
+  "current_issue": null,
+  "next_target": null,
+  "active_branch": null,
+  "last_commit": null,
+  "in_progress": false,
+  "last_nudge_at": null,
+  "expires_at": null,
+  "running": false,
+  "run_window_expires_at": null,
+  "maintenance_mode": false,
+  "maintenance_expires_at": null,
+  "notify_milestones": true,
+  "blocked_policy": {
+    "auto_pause": true,
+    "labels": ["blocked", "needs-info", "on-hold", "waiting"],
+    "project_statuses": ["Blocked", "Paused"],
+    "resume_on_unblocked": true,
+    "idle_pause_after_no_delta": 2,
+    "idle_pause_after_hours": 6
+  }
+}
