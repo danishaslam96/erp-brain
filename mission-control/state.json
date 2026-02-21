@@ -2,7 +2,7 @@
   "current_issue": null,
   "next_target": null,
   "active_branch": null,
-  "last_commit": "fa14077",
+  "last_commit": "f30b13e",
   "in_progress": false,
   "last_nudge_at": null,
   "expires_at": null,
@@ -14,13 +14,21 @@
   "no_delta_count": 0,
   "blocked_policy": {
     "auto_pause": true,
-    "labels": ["blocked", "needs-info", "on-hold", "waiting"],
-    "project_statuses": ["Blocked", "Paused"],
+    "labels": [
+      "blocked",
+      "needs-info",
+      "on-hold",
+      "waiting"
+    ],
+    "project_statuses": [
+      "Blocked",
+      "Paused"
+    ],
     "resume_on_unblocked": true,
     "idle_pause_after_no_delta": 2,
     "idle_pause_after_hours": 6
   },
-  "last_repo_diff": "2026-02-21T12:41:00.000000+00:00",
-  "last_check": 1771557780,
-  "last_hygiene_at": "2026-02-21T12:41:00Z"
+  "last_repo_diff": "2026-02-21T12:55:00.000000+00:00",
+  "last_check": 1771558560,
+  "last_hygiene_at": "2026-02-21T12:55:00Z"
 }
