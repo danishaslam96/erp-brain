@@ -1,0 +1,10 @@
+{
+  "name": "DEV_TABLE_OPER2",
+  "type": "PACKAGE BODY",
+  "line_count": 87,
+  "tables_referenced": [
+    "USER_CONSTRAINTS",
+    "USER_CONS_COLUMNS"
+  ],
+  "body_snippet": "package body DEV_TABLE_OPER2 is\n   FUNCTION IS_REF_COLUMNS2 (TBL_NAME VARCHAR2,COL_VALUE VARCHAR2 ,LST out TABLE_LIST)\n    RETURN VARCHAR2\n    IS\n--   TEMP TEMP_VARRAY2;\n     rec rec2;\n     List table_list;\n     test number :=null;\n    CURSOR C_ IS\n    select c_c.constraint_name ,c_c.table_name T_NAME,c_c.column_name C_NAME\n\t\t\t\t\t\tfrom \n\t\t\t\t\t\tuser_cons_columns C_C,\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\tselect u1.constraint_name cons_name,\n\t\t\t\t\t\t\t\t\tu1.constraint_type type_,\n\t\t\t\t\t\t\t\t\tu1.table_name pk_table_name,\n\t\t\t\t\t\t\t\t\tu2.constraint_name r_cons_name,\n\t\t\t\t\t\t\t\t\tu1.table_name table_name \n\t\t\t\t\t\t\t\tfrom\n\t\t\t\t\t\t\t\t\tuser_constraints u1,\n\t\t\t\t\t\t\t\t\tuser_constraints u2\n\t\t\t\t\t\t\t\t\twhere u1.constraint_name = u2.r_constraint_name\n\t\t\t\t\t\t\t\t\tand u1.constraint_type like 'P'\n\t\t\t\t\t\t\t)u\n\t\t\t\t\t\t\n\t\t\t\t\t\twhere \n\t\t\t\t\t\t\tc_c.constraint_name = u.r_cons_name\n\t\t\t\t\t\tand\n\t\t\t\t\t\t\tu.pk_table_name lIke upper(TBL_NAME);\n\n    R_TEMP REC2; \n    I_COUNTER NUMBER :=1;\n    BEGIN\n    list :=lst;\n\t\t\tFOR POINTER IN C_ LOOP\n\t\t\t\tIF IS_EXIST2(POINTER.T_NAME,POINTER.C_NAME,COL_VALUE)= TRUE THEN\n            rec.tbl_name := POINTER.T_NAME;\n            rec.col_name := POINTER.c_name;\n            LiST(LiST.count+1):=rec;\n            test:=list.Count;\n\t\t\t\tEND IF;\n\t\t\tEND LOOP;\t\n      test:=list.Count;\n      lst := list;\n      if list.Count = 0 then\n         return null;\n      end if;\n      rec := lst(1);\n\t\t\tRETURN rec.tbl_name; \n    END;    \n    -----\n\n  FUNCTION IS_EXIST2(TBL_NAME VARCHAR2,COL_NAME VARCHAR2,VAL VARCHAR2)\n  RETURN BOOLEAN\n\tIS\n--\tcursorID EXEC"
+}

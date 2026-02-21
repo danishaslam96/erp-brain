@@ -1,0 +1,12 @@
+{
+  "name": "FUN_ITEM_DESC_IN_LOV",
+  "type": "FUNCTION",
+  "line_count": 48,
+  "tables_referenced": [
+    "DEMAND_DETAIL",
+    "PURCHASE_ORDER_DET",
+    "MATCH",
+    "SALES_ORDER_DET"
+  ],
+  "body_snippet": "function FUN_ITEM_DESC_IN_LOV(parm_master_id NUMBER,\n                                                parm_table_name VARCHAR2\n                                                ) return varchar2 is\n     --THIS FUNCTION RETURNS SHORT DESCRIPTION OF ALL ITEMS IN DETAIL TABLE--------\n     --AND IS CALLED FROM MATCH WITH LOV OF TRANSACTIONAL FORMS--------------------\n     --CREATED BY GULISTAN ON 16-OCT-2003------------------------------------------\n     lvch_item_short_desc VARCHAR2(4000);\nbegin\n     lvch_item_short_desc := NULL;\n     IF UPPER(parm_table_name) = 'SO' THEN\n        FOR ITEM_CUR IN (SELECT IMT.ITEM_SHORT_DESC\n      \t\t\t\t\t\t\t\t\t FROM SALES_ORDER_DET SODET,\n           \t\t\t\t\t\t\t ITEMS_MT IMT\n      \t\t\t\t\t\t\t\t\t WHERE SODET.ITEM_ID = IMT.ITEM_ID\n      \t\t\t\t\t\t\t\t\t AND   SODET.SALES_ORDER_ID = parm_master_id)LOOP\n            IF lvch_item_short_desc IS NULL THEN\n               lvch_item_short_desc := lvch_item_short_desc ||ITEM_CUR.ITEM_SHORT_DESC;\n            ELSE\n               lvch_item_short_desc := lvch_item_short_desc ||','||ITEM_CUR.ITEM_SHORT_DESC;\n            END IF;\n        END LOOP;\n     ELSIF UPPER(parm_table_name) = 'PO' THEN\n        FOR ITEM_CUR IN (SELECT IMT.ITEM_SHORT_DESC\n      \t\t\t\t\t\t\t\t\t FROM PURCHASE_ORDER_DET PODET,\n           \t\t\t\t\t\t\t ITEMS_MT IMT\n      \t\t\t\t\t\t\t\t\t WHERE PODET.ITEM_ID = IMT.ITEM_ID\n      \t\t\t\t\t\t\t\t\t AND   PODET.ORDER_ID = parm_master_id)LOOP\n            IF lvch_item_short_desc IS NULL THEN\n               lvch_item_short_desc := lvch_item_short_desc ||IT"
+}

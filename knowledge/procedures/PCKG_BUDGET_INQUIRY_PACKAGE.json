@@ -1,0 +1,10 @@
+{
+  "name": "PCKG_BUDGET_INQUIRY",
+  "type": "PACKAGE",
+  "line_count": 24,
+  "tables_referenced": [
+    "THIS",
+    "PCKG_ACCOUNT_INQUIRY"
+  ],
+  "body_snippet": "package PCKG_BUDGET_INQUIRY is\n\n  -- Author  : AZHAR HUSSAIN\n  -- Created : 9/28/2005 2:23:51 PM\nPROCEDURE PRO_POP_TEMP_ESTIMATE_BDGT(PARM_BOOK_ID NUMBER,PARM_FOR_MONTH DATE , PARM_ITEM_FORM VARCHAR2,PARM_ITEM_TO VARCHAR2);\n--Functional Overview \n /*\n  Get Record From \n        1. MNO_INV_BUDGET_FG_DET MIBFD [ MIBFD.NO_OF_BAGS*100](at given date) to get ESTIMATED QTY\n        2. PRODUCTION_DETAIL[ SUM(PD.QTY_PRODUCED)] to get actual production for this ACT_THIS_MONTH\n        3. MNO_INV_BUDGET_FG_DET[MIBFD.RATE_PER_LBS] to get estimated rate for this month\n        4. Invoice_Detail [SUM(id.amount+id.stax_amount) / SUM(id.primary_qty) ] to get actual rate for this month\n  and populate temporary table TEMP_ESTIMATE_BDGT  */\nPROCEDURE PRO_POP_GOUP_SALES (PARM_BOOK_ID NUMBER,PARM_FOR_MONTH DATE /*, PARM_ITEM_FORM VARCHAR2,PARM_ITEM_TO VARCHAR2*/);\n--Functional Overview\n/*  \n Get Record From\n     1. MNO_BDGT_GRP_CONFIG_ACC_RANGES[ACCNT_RANGE_ID ,BDGT_GRP_CONFIG_ID,ACC_CODE_FROM,ACC_CODE_TO] to get all accopunt ranges\n        populate code_combination criteria and get sum actual_balanace(From pckg_account_inquiry.get_balance) from this code combinmation criteria\n     2. MNO_EXPNS_BUDGT_ENTRY_DET DT [SUM(DT.BDGT_AMNT_IN_THOUSANDS)] to get budget balance \n  populate temp table TEMP_BDG_GROUP_BAL \"Group wise estimated Balnace Amount\" and \"Group wise actual Balnace Amount\"\n  */ \n\nend PCKG_BUDGET_INQUIRY;\n"
+}

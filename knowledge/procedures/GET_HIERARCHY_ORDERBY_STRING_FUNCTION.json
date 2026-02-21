@@ -1,0 +1,9 @@
+{
+  "name": "GET_HIERARCHY_ORDERBY_STRING",
+  "type": "FUNCTION",
+  "line_count": 23,
+  "tables_referenced": [
+    "RESULT"
+  ],
+  "body_snippet": "function get_hierarchy_orderby_string(parm_tab_name VARCHAR2,parm_pk1_col_name VARCHAR2,parm_fk1_col_name VARCHAR2,parm_orderby_col_name VARCHAR2,parm_pk1_col_value number,parm_pk2_col_name VARCHAR2 DEFAULT NULL,parm_fk2_col_name VARCHAR2 DEFAULT NULL,parm_pk2_col_value NUMBER DEFAULT NULL) return varchar2 is\n\n  Result      VARCHAR2(2000);\n  lnum_fk1_id NUMBER  (20);   \n  lnum_fk2_id NUMBER  (20);  \n  \nbegin\n\n     \n    IF parm_pk2_col_name IS NULL THEN \n        EXECUTE IMMEDIATE 'select '||parm_orderby_col_name||','||parm_fk1_col_name||' from '||parm_tab_name||' where '||parm_pk1_col_name||' = '||parm_pk1_col_value INTO result,lnum_fk1_id;\n    ELSE\n        EXECUTE IMMEDIATE 'select '||parm_orderby_col_name||','||parm_fk1_col_name||','||parm_fk2_col_name||' from '||parm_tab_name||' where '||parm_pk1_col_name||' = '||parm_pk1_col_value||' and '||parm_pk2_col_name||' = '||parm_pk2_col_value INTO result,lnum_fk1_id,lnum_fk2_id;    \n    END IF;\n    \n         \n    IF lnum_fk1_id IS NOT NULL THEN\n       RESULT := get_hierarchy_orderby_string(parm_tab_name ,parm_pk1_col_name,parm_fk1_col_name,parm_orderby_col_name,lnum_fk1_id,parm_pk2_col_name,parm_fk2_col_name,parm_pk2_col_value)||RESULT;\n    END IF;\n                  \n    return(Result);\n\nend get_hierarchy_orderby_string;\n"
+}

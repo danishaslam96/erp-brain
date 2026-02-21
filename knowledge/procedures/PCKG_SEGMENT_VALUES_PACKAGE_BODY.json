@@ -1,0 +1,16 @@
+{
+  "name": "PCKG_SEGMENT_VALUES",
+  "type": "PACKAGE BODY",
+  "line_count": 510,
+  "tables_referenced": [
+    "WIZ_SEGMENT_VAL_RELATIONS_IDS",
+    "TEMP_SEGMENT_VALUE_RELATIONS",
+    "LNUM_SEG_VAL_REL_ID",
+    "TEMP_REPORT_ERRORS",
+    "LNUM_PAR_SEGMENT_ID",
+    "WIZ_SEGMENT_VALUE_RELATIONS_DT",
+    "WIZ_SEGMENT",
+    "WIZ_SEGMENT_VALUE_RELATIONS_MT"
+  ],
+  "body_snippet": "package body PCKG_SEGMENT_VALUES is\n\n  PROCEDURE PRO_ADD_DUMMY_VALUES(PARM_STRUC_ID NUMBER,PARM_SEG_NO VARCHAR2,PARM_DEP_ON_KEY_ID NUMBER,PARM_SEGMENT_VALUE VARCHAR2,PARM_HAVE_DEP_VAL_YN NUMBER) ;\n\n  PROCEDURE apply_segment_value_relations IS\n      lnum_seg_val_rel_id NUMBER(14);\n      lnum_seg_val_rel_det_id NUMBER(14);\n\n      lnum_replicate_yn NUMBER(1):=0;\n\n      lnum_seg_id NUMBER(14);\n\n      lnum_bind_pk NUMBER(14);\n\n      TYPE rec_table_bind IS RECORD(structure_id NUMBER(14),segment_no NUMBER(2),dep_on_key_id NUMBER(14),segment_id NUMBER(14));\n\n      TYPE tab_bind IS TABLE OF rec_table_bind INDEX by binary_integer;\n\n      ltab_bind_pk tab_bind;\n\n      lnum_cnt NUMBER(14):=0;\n\n      lnum_par_structure_id NUMBER(14);\n      lnum_par_segment_id   NUMBER(14);\n\n  BEGIN\n      IF gnum_seg_val_rel_in_process  = 0 THEN\n         gnum_seg_val_rel_in_process := 1;\n      ELSE\n         RETURN;\n      END IF;\n\n      FOR cur IN (SELECT * FROM temp_segment_value_relations /*WHERE applied_yn = 0*/)\n      LOOP\n\n          ltab_bind_pk.DELETE;\n          lnum_cnt := 1;\n\n          ltab_bind_pk(lnum_cnt).structure_id  := cur.structure_id;\n          ltab_bind_pk(lnum_cnt).segment_no    := cur.segment_no;\n          ltab_bind_pk(lnum_cnt).dep_on_key_id := cur.dep_on_key_id;\n          ltab_bind_pk(lnum_cnt).segment_id    := cur.segment_id;\n\n\n\n          BEGIN\n              SELECT m.seg_val_rel_id,\n                     d.seg_val_rel_det_id\n                     INTO\n                     lnum_seg_val_re"
+}

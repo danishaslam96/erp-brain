@@ -1,0 +1,13 @@
+{
+  "name": "FUN_SGD_PROC_WASTE_DZN",
+  "type": "FUNCTION",
+  "line_count": 53,
+  "tables_referenced": [
+    "SGD_PROC_MC_ALLOC_WASTE_MT",
+    "RESULT",
+    "SGD_PROCS_REWORK_DET",
+    "SGD_LAB_BATCH_INSPT_DT",
+    "LNUM_INSP_RW_PCS"
+  ],
+  "body_snippet": "function FUN_SGD_PROC_WASTE_DZN(PARM_BATCH_ID NUMBER,PARM_DOC_DATE DATE) return number is\n  result number;\nresult_1 number;\nlnum_waste_pcs number;\nlnum_insp_rw_pcs number;\nlnum_pcs_to_dzn number;\n\nbegin\n  select \n-- alloc_mt.doc_date\nsum(wast_mt.waste_dzn)     waste_dzn \n,sum(wast_mt.waste_pcs)     waste_pcs\n\ninto result,lnum_waste_pcs \nfrom \n sgd_proc_mc_alloc_waste_mt   wast_mt\n,sgd_process_mc_allocation_dt alloc_det\n,sgd_process_mc_allocation_mt alloc_mt\n\nwhere wast_mt.proces_mc_alloc_det_id    =   alloc_det.proces_mc_alloc_det_id\nand alloc_det.proces_mc_allocation_id   =   alloc_mt.proces_mc_allocation_id\nand alloc_mt.doc_date  = parm_doc_date\nand alloc_det.batch_id = parm_batch_id;\n\n------------------\nselect \n\nsum(nvl(t.faulted_pcs,0) + nvl(rw.rework_pcs,0))  into lnum_insp_rw_pcs\n\n  from sgd_lab_batch_inspt_dt t,\n   sgd_lab_batch_inspt_mt      mt,\n       sgd_batch_making_mt       bmt,\n       sgd_batch_making_det      bmd\n      ,(select d.batch_inspect_det_id\n        ,sum(nvl(d.rework_dzn,0)*24 + nvl(d.rework_pcs,0)) rework_pcs\n         from sgd_procs_rework_det d\n         where d.batch_inspect_det_id is not null\n         group by d.batch_inspect_det_id\n      )rw\n where t.batch_det_id = bmd.batch_det_id\n   and bmd.batch_id = bmt.batch_id\n   and t.lab_batch_inspect_id = mt.lab_batch_inspect_id\n   and t.lab_batch_inspect_dt_id = rw.batch_inspect_det_id(+)\n   and nvl(bmd.batch_qty, 0) > 0\n   and mt.toe_close_date = parm_doc_date\n   and mt.batch_id = parm_batch_id;\n   \n \n ln"
+}

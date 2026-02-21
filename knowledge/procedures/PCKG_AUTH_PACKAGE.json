@@ -1,0 +1,9 @@
+{
+  "name": "PCKG_AUTH",
+  "type": "PACKAGE",
+  "line_count": 47,
+  "tables_referenced": [
+    "ALL"
+  ],
+  "body_snippet": "PACKAGE PCKG_AUTH IS\n  -- Author  : Tariq Sarwar\n  -- Created : 1/1/2005 10:44:03 AM\n  -- Purpose : Handle Authorization Related Procedures and processes\n\n  -- Public type declarations\n\n  REPORT_PASSWORD VARCHAR2(255) := 'It Is A Report';\n\n  FUNCTION GET_REPORT_PASSWORD RETURN VARCHAR2;\n\n  -- this procedure is called from all authorization's transactional triggers\n  PROCEDURE GET_INITIAL_AUTHORIZATION(PARM_FOR            VARCHAR2,\n                                      PARM_INV_BOOK_ID    IN NUMBER,\n                                      PARM_AUTH_STATUS_ID OUT NUMBER,\n                                      PARM_AUTH_YN        OUT NUMBER);\n\n  PROCEDURE HANDLE_AUTHORIZATION_UPDATE(PARM_DOC_TYPE_ID        NUMBER,\n                                        PARM_OLD_AUTHORIZED_YN  IN NUMBER,\n                                        PARM_NEW_AUTHORIZED_YN  IN OUT NUMBER,\n                                        PARM_OLD_SEND_FOR_AUTH  IN NUMBER,\n                                        PARM_NEW_SEND_FOR_AUTH  IN OUT NUMBER,\n                                        PARM_OLD_AUTH_ID        IN NUMBER,\n                                        PARM_NEW_AUTH_ID        IN OUT NUMBER,\n                                        PARM_OLD_AUTH_STATUS_ID IN NUMBER,\n                                        PARM_NEW_AUTH_STATUS_ID IN OUT NUMBER,\n\n                                        PARM_NEW_POST_TO_GL NUMBER, -- ONLY FOR POSTING FORMS\n\n                                        PARM_INV_BOOK_ID       NUMBER,"
+}

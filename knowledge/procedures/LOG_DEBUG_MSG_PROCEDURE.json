@@ -1,0 +1,9 @@
+{
+  "name": "LOG_DEBUG_MSG",
+  "type": "PROCEDURE",
+  "line_count": 14,
+  "tables_referenced": [
+    "TEMP_REPORT_ERRORS"
+  ],
+  "body_snippet": "procedure log_debug_msg(parm_process_name varchar2,parm_error_desc varchar2) is\n  PRAGMA AUTONOMOUS_TRANSACTION;\n\nbegin\n\n  if pckg_fsg.gnum_debug_log_en = 1 then\n      insert into temp_report_errors(report_name,error_string,fsg_submit_id)\n      values (parm_process_name , parm_error_desc,PCKG_FSG.gnum_fsg_submit_id);\n      COMMIT;\n  end if;\n\nend ;\n\n\n"
+}

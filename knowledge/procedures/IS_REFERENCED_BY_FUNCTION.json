@@ -1,0 +1,12 @@
+{
+  "name": "IS_REFERENCED_BY",
+  "type": "FUNCTION",
+  "line_count": 128,
+  "tables_referenced": [
+    "USER_CONSTRAINTS",
+    "ITS",
+    "USER_CONS_COLUMNS",
+    "PART"
+  ],
+  "body_snippet": "function IS_REFERENCED_BY(PARM_PRIMARY_KEY_TO_CHECK VARCHAR2,PARM_TAB_NAME VARCHAR2,PARM_EXCEPTION VARCHAR2 DEFAULT NULL) return varchar2 is\n  ---------------------------\n  -- WRITER : TARIQ SARWAR\n  ---------------------------\n  \n  -- THIS FUNCTION CHECK WETHER THE GIVEN ID AND TABLE_NAME IS REFERENCED BY ANY OTHER TABLE\n  -- IN THE CURRENT SCHEMA AND RETURN THE CONSTRAINT NAME WHICH WILL INVALIDATED IF THIS ID \n  -- WILL BE DELETED FROM ITS TABLE\n  \n  -----------\n  --PARAMETER DETAIL:\n  -----------\n       --   PRIMARY_KEY_TO_CHECK   : THE PRIMARY KEY (MAY BE COMMA SEPARATED STRING IN CASE \n       --                            OF COMPOSITE PRIMARY KEY)\n       \n       --   PARM_TAB_NAME          : TABLE NAME   \n  \t\t --   parm_exception\t\t\t\t : It will contain a varchar2 string separated by \",\" , which will tell the procedure not to include thses tables in check\n       --   RETURN                 :IT WILL RETURN A VARCHAR STRING CONTAINING A MESSAGE AND \n       --                           CONSTRAINT NAME WHICH IS INVALIDATED  \n       --                           /  \n       --                           OTHERWISE IT WILL BE NULL,SHOWING THAT THIS KEY MAY BE DELETED \n       --                           AND NO CONSTRAINT WILL BE INVALIDATED\n  \n  Result VARCHAR2(500);\n---------------------------------------\n  SELEC  VARCHAR2(100)     := 'SELECT 1 ';  -- SELECT PART OF DYNAMIC QUERY\n  FRM    VARCHAR2(1000);                   -- FROM   PART OF DYNAMIC QUERY\n  WHER   VARCHAR2(5000);   "
+}

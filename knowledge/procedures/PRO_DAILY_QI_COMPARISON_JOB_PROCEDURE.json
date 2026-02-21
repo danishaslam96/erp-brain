@@ -1,0 +1,13 @@
+{
+  "name": "PRO_DAILY_QI_COMPARISON_JOB",
+  "type": "PROCEDURE",
+  "line_count": 215,
+  "tables_referenced": [
+    "LNUM_TC_QI",
+    "LNUM_KNIT_QI",
+    "SGD_TOE_BATCH_INSPECT_DET",
+    "SGD_KNITTING_MT",
+    "TEMP_DATES"
+  ],
+  "body_snippet": "procedure PRO_DAILY_QI_COMPARISON_JOB is\n\nlast_doc_date date;\nlast_doc_date_smry date;\nlnum_job_id            Number;\nlvch_machine_name      Varchar2(100);\nldate_start_date_time        Date;\nldate_End_date_time          Date;\nldate_job_date               date;\n\n\n LNUM_KNIT_QI NUMBER;\nLNUM_TC_QI NUMBER;\nLNUM_FINISH_INLINE_QI NUMBER;\nLNUM_FINISH_FINAL_QI NUMBER;\n  \n\nbegin\n  ldate_start_date_time := to_date(to_char(Sysdate,'DD-MON-YY HH24 MI SS'),'DD-MON-YY HH24 MI SS');\nlvch_machine_name := Pckg_Utility.get_application_machine;\nldate_job_date := to_date(sysdate)-1;\n\n\n\nExecute immediate('truncate table temp_dates');\npro_pop_dates(TO_DATE(SYSDATE)-1,TO_DATE(SYSDATE)-1);\n\nFOR CUR IN (SELECT DAILY_DATE FROM TEMP_DATES) LOOP\n  \n    ---------------------TC QI\nselect\n\nround(q1.TC_defect_pcs_today/q2.tc_insp_pcs_today*100,2) TC_QI_TODAY\n\ninto lnum_tc_qi\n\nfrom\n\n\n(select sum(nvl(t.faulted_pcs,0)) TC_defect_pcs_today\n\n  from SGD_TOE_BATCH_INSPECT_DET t,\n   sgd_toe_batch_inspect_mt      mt,\n       sgd_batch_making_mt       bmt,\n       sgd_batch_making_det      bmd,\n       sgd_stm_planning_det      plan_det,\n       imk_so_mt                 somt\n where t.batch_inspect_id = mt.batch_inspect_mt\n  and t.batch_det_id     = bmd.batch_det_id\n   and bmd.batch_id       = bmt.batch_id\n   and bmd.stm_plan_det_id  =    plan_det.stm_plan_det_id\n   and bmt.imk_so_id      =  somt.so_id\n   and t.batch_inspect_id = mt.batch_inspect_mt\n   and mt.inspection_type = 0    \n   and nvl(bmd.batch_qty, 0) > 0\n   an"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "FUN_APPLY_FORMAT_ON_CODE",
+  "type": "FUNCTION",
+  "line_count": 24,
+  "tables_referenced": [
+    "WIZ_SEGMENT_DEFINITION"
+  ],
+  "body_snippet": "function FUN_APPLY_FORMAT_ON_CODE(parm_code VARCHAR2,\n                                                    parm_structure_id NUMBER\n                                                    ) return varchar2 is\n  lvch_accouting_code VARCHAR2(500);\n  lnum_last_loc NUMBER := 1;\nbegin\n  IF INSTR(parm_code,'-') <> 0 THEN\n     return(parm_code);\n  ELSE\n     FOR DET_CUR IN (SELECT WSD.SEGMENT_NO,WSD.SEGMENT_WIDTH\n                     FROM WIZ_SEGMENT_DEFINITION WSD\n                     WHERE WSD.STRUCTURE_ID = parm_structure_id\n                     ORDER BY WSD.SEGMENT_NO)\n     LOOP\n         lvch_accouting_code := lvch_accouting_code || SUBSTR(parm_code,lnum_last_loc,DET_CUR.SEGMENT_WIDTH)||'-';\n         lnum_last_loc := lnum_last_loc + DET_CUR.SEGMENT_WIDTH;\n     END LOOP;\n     IF lnum_last_loc = LENGTH(parm_code) +1 THEN\n        RETURN(SUBSTR(lvch_accouting_code,1,LENGTH(lvch_accouting_code) - 1));\n     ELSE\n        RETURN(parm_code);\n     END IF;\n  END IF;\nend FUN_APPLY_FORMAT_ON_CODE;\n"
+}

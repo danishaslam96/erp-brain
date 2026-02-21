@@ -1,0 +1,12 @@
+{
+  "name": "FUN_SGD_GET_CTN_PS_WEIGHT_KG",
+  "type": "FUNCTION",
+  "line_count": 38,
+  "tables_referenced": [
+    "SGD_SOD_BS_CODE_DETAIL",
+    "LNM_QTY_IN_DOZEN",
+    "IMK_SO_DET",
+    "BS_WEIGHT_KG"
+  ],
+  "body_snippet": "function fun_sgd_get_CTN_ps_weight_kg(parm_so_id number, parm_stm_plan_id number,parm_so_det_id number) return number is\nbs_weight_kg number(18,2);\nlnm_QTY_IN_DOZEN number(18,2);\nbegin\n\nselect  sum(((round(pair_code.FS_WEIGHT_FIN_WEIGHT_ARCHVD,2) * round(nvl(b.qty_in_dozen,0),2) * 12)/1000))\n\nINTO bs_weight_kg\n  from SGD_SOD_BS_CODE_DETAIL     b,\n       SGD_PS_CODE_GENERATION_DET pd,\n       sgd_sample_request_det     rd,\n       items_mt                   i,\n       items_category             icc,\n       code_combination_values    ccv,\n       sgd_stm_planning_det       pair_code,\n       imk_so_det sod\n where b.ps_code_gen_det_id = pd.ps_code_gen_det_id\n   and pd.sample_request_det_id = rd.sample_request_det_id\n   and rd.generated_item_id = i.item_id\n   and i.item_id = icc.item_id\n   and icc.structure_id = ccv.structure_id\n   and icc.code_combination_id = ccv.code_combination_id\n   and rd.sample_request_det_id = pair_code.sample_request_det_id\n   and b.so_det_id =sod.so_det_id\n   and sod.so_id = nvl(parm_so_id,-1)\n   and pair_code.stm_planning_id =nvl(parm_stm_plan_id,-1)\n   and b.so_det_id = nvl(parm_so_det_id,-1)\n group by  b.so_det_id;\n\n select  round(QTY_IN_DOZEN,2)\n into lnm_QTY_IN_DOZEN\n from imk_so_det sod where sod.so_det_id = nvl(parm_so_det_id,-1);\n\n\n   return ((bs_weight_kg/nvl(lnm_QTY_IN_DOZEN,1)));\nexception when others then\n  return -1;\nend fun_sgd_get_CTN_ps_weight_kg;\n"
+}

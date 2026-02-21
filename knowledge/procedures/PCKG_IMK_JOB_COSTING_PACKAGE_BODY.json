@@ -1,0 +1,12 @@
+{
+  "name": "PCKG_IMK_JOB_COSTING",
+  "type": "PACKAGE BODY",
+  "line_count": 1287,
+  "tables_referenced": [
+    "DEPT_PRODUCTION_VALUES",
+    "JOB_PRODUCTION_VALUES",
+    "JOB_MATERIAL_COST",
+    "DEPT_MATERIAL_COST"
+  ],
+  "body_snippet": "package body PCKG_IMK_JOB_COSTING is\n\n-----------Private Procedures/Functions\nProcedure PRO_POP_DEPT_MATERIAL_COST(PARM_FROM_DATE Date,PARM_TO_DATE Date) is\n\n lnum_Dept_mat_cost_id Number;\nbegin\n Delete From Dept_Material_Cost t\n Where t.Month = to_char(to_date(PARM_FROM_DATE),'Mon-RR');\n-- Commit;\n    lnum_Dept_mat_cost_id := get_single_primary_key('DEPT_MATERIAL_COST','DEPT_MAT_COST_ID');\n For CUR In (Select\n              JMC.Month          Month\n             ,JMC.DEPT_ID        DEPT_ID\n             ,JMC.ITEM_ID        ITEM_ID\n             ,Sum(JMC.QTY)       QTY\n             ,Sum(JMC.AMOUNT)    AMOUNT\n\n            From job_material_cost JMC\n            Group By\n             JMC.MONTH,\n             JMC.DEPT_ID,\n             JMC.ITEM_ID\n\n             )\n Loop\n\nlnum_Dept_mat_cost_id := lnum_Dept_mat_cost_id +1;\n  Insert Into DEPT_MATERIAL_COST(DEPT_MAT_COST_ID,MONTH,DEPT_ID,ITEM_ID,QTY,AMOUNT)\n  Values(lnum_dept_mat_cost_id,CUR.MONTH,CUR.DEPT_ID,CUR.ITEM_ID,CUR.QTY,CUR.AMOUNT);\n--COMMIT;\n End Loop;\n\n--  Commit;\nend PRO_POP_DEPT_MATERIAL_COST;\n-------------------------------------------------------------------------------\nprocedure PRO_POP_DEPT_PROD_VALUES(\n                                                PARM_FROM_DATE Date,\n                                                PARM_TO_DATE Date) is\n\n lnum_Dept_Prd_Val_id Number;\nbegin\n Delete From Dept_Production_Values t\n Where t.Month = to_char(to_date(PARM_FROM_DATE),'Mon-RR');\n-- Commit;\n    lnum_dept_Prd_Val_id := get_single_pr"
+}

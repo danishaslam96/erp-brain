@@ -1,0 +1,7 @@
+{
+  "name": "GET_USER_INFO",
+  "type": "PROCEDURE",
+  "line_count": 5,
+  "tables_referenced": [],
+  "body_snippet": "procedure GET_USER_INFO(username out varchar,password out varchar) is\nbegin\n    username:='ZESHAN';\n    password:='PAKISTAN';\nend GET_USER_INFO;\n"
+}

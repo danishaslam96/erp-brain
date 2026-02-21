@@ -1,0 +1,12 @@
+{
+  "name": "PCKG_DB_SECURITY",
+  "type": "PACKAGE BODY",
+  "line_count": 2004,
+  "tables_referenced": [
+    "WIZ_TEMP_MENU",
+    "LNUM_IS_PARENT",
+    "LVCH_PRNT_NAME",
+    "LNUM_TEMP"
+  ],
+  "body_snippet": "package body PCKG_DB_SECURITY is\n------------------------------------------------\n--   FOLLOWING PROCEDURE WILL POPULATE\n--   TEMPORARY TABLE FOR MAIN MENU     \n------------------------------------------------\n     FUNCTION IS_PARENT_NODE_YN(\n                                parm_node_id    NUMBER,\n                                parm_for_menu   VARCHAR2\n                                ) RETURN VARCHAR2 IS\n         lnum_is_parent  NUMBER;\n         lvch_main_query VARCHAR2(1000);\n     BEGIN\n          lvch_main_query := '\n                              SELECT\n                                  COUNT(1)\n                              FROM\n                                  '||parm_for_menu||' MAIN_MENU\n                              WHERE\n                                  MAIN_MENU.NODE_PARENT = '||parm_node_id;\n          \n          EXECUTE IMMEDIATE lvch_main_query INTO lnum_is_parent;\n          IF (lnum_is_parent > 0) THEN\n             RETURN('Y');\n          ELSE\n             RETURN('N');\n          END IF;\n     END;\n     /************************************************************/\n     FUNCTION  GET_PARENT_NAME(\n                               parm_parent_node_id NUMBER,\n                               parm_for_menu VARCHAR2\n                              ) RETURN VARCHAR2 IS\n       lvch_prnt_name  VARCHAR2(100);\n       lvch_main_query VARCHAR2(10000);\n     BEGIN\n       lvch_main_query := '\n                           SELECT\n                               MAIN_MENU.NODE_NAME\n         "
+}

@@ -1,0 +1,7 @@
+{
+  "name": "EVEN",
+  "type": "FUNCTION",
+  "line_count": 6,
+  "tables_referenced": [],
+  "body_snippet": "function Even(Value in integer) return boolean is\n  Result boolean;\nbegin\n  Result := (Value mod 2 = 0);\n  return(Result);\nend Even;\n"
+}

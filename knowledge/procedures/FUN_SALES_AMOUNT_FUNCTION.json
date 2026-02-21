@@ -1,0 +1,10 @@
+{
+  "name": "FUN_SALES_AMOUNT",
+  "type": "FUNCTION",
+  "line_count": 46,
+  "tables_referenced": [
+    "LNUM_SALES_AMOUNT",
+    "ITEMS_MT"
+  ],
+  "body_snippet": "FUNCTION FUN_SALES_AMOUNT (parm_last_years_id  NUMBER,\n                                             parm_start_date     DATE,\n                                             parm_sub_inv        NUMBER,\n                                             parm_date           DATE,\n                                             parm_currency_id    NUMBER) RETURN NUMBER\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t         \nIS\n\t\t lnum_sales_amount\t\t\t\tNUMBER  := 0;\t\nBEGIN\n     BEGIN\n         SELECT  SUM (nvl(qty,0)*nvl(sales_rate,0)) amount \n         INTO  lnum_sales_amount \n    \t\t FROM\n             (SELECT pckg_inv.get_balance_qty( parm_last_years_id,\n                                               parm_start_date,\n                                               null,\n                                               parm_sub_inv,\n                                               NULL,\n                                               itm.item_id,\n                                               parm_date) qty,\n                        pckg_inv.get_item_price('C',\n                                                 parm_date,\n                                                 itm.item_id,\n                                                 null,\n                                                 parm_currency_id,\n                                                 'CA') sales_rate\n       \n           FROM\n                   ITEMS_MT ITM,\n                   inv_cat_set_definition catdef,\n                   items_category icat, \n                   VI"
+}

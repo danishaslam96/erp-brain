@@ -1,0 +1,10 @@
+{
+  "name": "PCKG_HIERARCHY_TRIAL",
+  "type": "PACKAGE BODY",
+  "line_count": 1373,
+  "tables_referenced": [
+    "COL_CALCULATION",
+    "COLSET_DETAIL"
+  ],
+  "body_snippet": "package body pckg_hierarchy_trial is\n       \n       lpck_num_code_id_pk number(15);\n       \n    type typ_ins_hrc_rec is record(code_value        varchar2(250),\n                                   code_desc         varchar2(250),\n                                   parent_segment_id NUMBER(15),\n                                   hierarchy_yn      NUMBER(1),\n                                   segment_no        NUMBER(2)\n    );\n    \n    type typ_ins_hrc_tab is table of typ_ins_hrc_rec index by binary_integer; \n\n    tab_ins_hrc typ_ins_hrc_tab;\n    \n    TYPE REC_BAL IS RECORD (PBAL NUMBER(15,2));\n       \n    TYPE TAB_BAL IS TABLE OF REC_BAL INDEX BY BINARY_INTEGER;\n       \n    LTAB_BAL TAB_BAL;\n\n       \n       LCUR_RECURSIVE_SQL NUMBER;\n       \n       LGVCHAR_RECURSIVE_UPDATE_QRY VARCHAR2(15000);\n       \n      function INSERT_INTO_HIERARCHY_TRIAL(PARM_STRUCTURE_ID number,tab_ins_hrc IN OUT typ_ins_hrc_tab,Seq_NO NUMBER,parm_level NUMBER,parm_op number,parm_fpdr number,parm_fpcr number,parm_cl number) RETURN NUMBER ;\n      function INSERT_INTO_HIERARCHY_TRIAL_P(PARM_STRUCTURE_ID number,tab_ins_hrc IN OUT typ_ins_hrc_tab,Seq_NO NUMBER,parm_level NUMBER, parm_bal_tab tab_bal) RETURN NUMBER ;\n\n\n  --------\n  -- BEGIN FUNCTION APPLY_FUNCTION\n  --------\n      FUNCTION APPLY_FUNCTION(OPER1 NUMBER,OPERAND VARCHAR2,OPER2 NUMBER) RETURN NUMBER IS\n      BEGIN\n      \n           IF OPERAND = '+' THEN\n              RETURN(OPER1+OPER2);\n           ELSIF OPERAND ='-' THEN\n              RETURN(OPER1"
+}

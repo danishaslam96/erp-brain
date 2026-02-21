@@ -1,0 +1,12 @@
+{
+  "name": "PRO_GEN_REBATCH",
+  "type": "PROCEDURE",
+  "line_count": 573,
+  "tables_referenced": [
+    "SGD_BATCH_MAKING_DET",
+    "LNM_STM_PLAN_DT_ID",
+    "SGD_KNITTING_MT",
+    "SGD_KNITTING_DET"
+  ],
+  "body_snippet": "procedure pro_gen_rebatch(parm_batch_id number,parm_dnz number, parm_pcs number, parm_rebatch_id number,\n                                            parm_out_stnd_batch_id out number) is\n  lnm_knitting_id     number;\n  lnm_knitting_det_id number;\n  lnm_stm_plan_Dt_id  number;\n  lnm_knit_prod_id  number;\n  lnm_knit_prod_det_id number;\n  lnm_batch_qty number(16,2);\n  lnm_knit_cont_prd_dt_id number;\n -- lnm_stitched_yn number;\n  lnm_toe_close_id number;\n  lnm_toe_close_det_id number;\n  lnm_batch_det_id number;\n  lnm_imk_so_id number;\n  lnm_batch_id number;\n -- lnm_batch_Det_id number;\n  --------------- REBATCHING COLUMNS\nLNM_batch_year  SGD_REBATCHING_MT.BATCH_YEAR%TYPE; \nLNM_batch_net  SGD_REBATCHING_MT.BATCH_NET%TYPE; \nLNM_batch_greige_weight  SGD_REBATCHING_MT.BATCH_GREIGE_WEIGHT%TYPE; \nLNM_batch_weight  SGD_REBATCHING_MT.BATCH_WEIGHT%TYPE; \nLNM_batch_trolleys  SGD_REBATCHING_MT.BATCH_TROLLEYS%TYPE; \nLNM_shift SGD_REBATCHING_MT.SHIFT%TYPE; \nLNM_receipe_id  SGD_REBATCHING_MT.RECEIPE_ID%TYPE;\nLNM_knit_rev_no  SGD_REBATCHING_MT.KNIT_REV_NO%TYPE; \nLNM_mc_opertaor_det_id   SGD_REBATCHING_MT.MC_OPERTAOR_DET_ID%TYPE; \nLNM_batch_no   SGD_REBATCHING_MT.Batch_No%TYPE; \n     ------------\n     lnm_batch_inspect_mt number(14); \n     lnm_batch_inspect_det_id number(14);\n     lnm_mat_issue_id number(14);  \n     lnm_REBATCH_ROUTINE_ID number(14);  \n     \tlnm_val number(14);\n\tlnm_cnx_val number(14);\n  TXT_BATCH_NO varchar2(50);\n  txt_batch_year varchar2(5);\n  lnm_mat_issue_det_id number(14);\n"
+}

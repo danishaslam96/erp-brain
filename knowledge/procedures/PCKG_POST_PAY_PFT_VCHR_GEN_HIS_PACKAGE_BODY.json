@@ -1,0 +1,12 @@
+{
+  "name": "PCKG_POST_PAY_PFT_VCHR_GEN_HIS",
+  "type": "PACKAGE BODY",
+  "line_count": 415,
+  "tables_referenced": [
+    "GNRTD_JRN_ID",
+    "PAY_TEMP_PFT_VCHR",
+    "JOURNAL_DETAIL",
+    "JOURNAL_MT"
+  ],
+  "body_snippet": "package body PCKG_POST_PAY_PFT_VCHR_GEN_HIS is\n\n--Function MAIN(lvn_pay_org_id number,lv_period_id number,entered_by number,posted_by number,posted_yn  number,posted_date_time date,gnrtd_jrn_id  number) return number\nFunction  MAIN(lvn_pay_org_id number,lv_period_id number ,posted_yn  number,gnrtd_jrn_id NUMBER) return number\nis\n   lvn_temp number;\n   lvn_journal_id number:=null;\n   lvc_status_flag boolean:=false;\n   LVEXP_NO_EMP_EXCEPTION EXCEPTION;\n   lvt_amount_db_cr TYPE_AMOUNT;\n--   PTR_TYPE_AMOUNT_CR TYPE_AMOUNT;\n   lvc_emp_code varchar2(100);\n   lvr_rec_code REC_CODES;\n   LVN_SR_NO NUMBER:=1;\nBEGIN\n  If posted_yn = 1 then\n     Pro_Set_RequiredFields(lvn_pay_org_id,lv_period_id);\n     Pro_SET_SEQUENCE_ID;\n     lvn_journal_id := get_single_primary_key( 'Journal_Mt','journal_id');\n     insert into journal_mt(\n               journal_id ,set_of_book_id ,journal_type_id ,period_id ,\n               voucher_no , batch_id,jrn_category_id, currency_id ,\n               conversion_rate, conversion_date, conversion_type_id ,jrn_date ,jrn_source_id ,\n               encumbrance_type_id ,jrn_mt_description ,\n               balance_type ,deleted_yn, approved_yn,sent_for_approval_yn,posted_yn,entered_by )\n\n     values(   lvn_journal_id , lvn_sob_id, lvn_jrnl_type_id, lv_period_id,\n               lvn_doc_seq_id,lvn_bach_id,lvn_JRN_CAT_ID,lvn_currency_id,\n               1.00000,lvd_to_Date,1,lvd_to_Date,5,\n               1,'Pft Voucher For The Month of - '||to_char(lvd_to_date,'mon')||'an"
+}

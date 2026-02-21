@@ -1,0 +1,10 @@
+{
+  "name": "PCKG_SGD_SOCKS",
+  "type": "PACKAGE BODY",
+  "line_count": 6545,
+  "tables_referenced": [
+    "SGD_PS_CODE_GENERATION_DET",
+    "PURCHASE_INVOICE_MT"
+  ],
+  "body_snippet": "package body pckg_sgd_socks is\n\n  procedure os_fire_purch_trg_off is\n  begin\n    lnm_notfire_trg_bu_purchase_mt := 1;\n  end;\n\n  procedure os_fire_purch_trg_on is\n  begin\n    lnm_notfire_trg_bu_purchase_mt := 0;\n  end;\n\n  function do_not_fire_purch_mt_trg return number is\n  begin\n    return lnm_notfire_trg_bu_purchase_mt;\n  end;\n\n  procedure os_retn_updt_purch_stax_inv_no(parm_purch_inv_id number,\n                                           parm_stax_inv_no  varchar2) is\n  begin\n    os_fire_purch_trg_off;\n  \n    update PURCHASE_INVOICE_mt i\n       set i.stax_inv_no = parm_stax_inv_no\n     where i.purch_invoice_id = parm_purch_inv_id;\n  \n    os_fire_purch_trg_on;\n    commit;\n  exception\n    when others then\n      os_fire_purch_trg_on;\n      Raise_application_error(-20001, sqlerrm);\n  end;\n\n  function fun_get_PS_info(parm_sample_det_id number) return varchar2 is\n    lvch_ps_detail varchar2(4000);\n  begin\n    for cur in (select ii.item_code\n                  from SGD_PS_CODE_GENERATION_DET D,\n                       sgd_ps_code_generation_mt  m,\n                       items_mt                   ii\n                 where d.ps_code_gen_id = m.ps_code_gen_id\n                   and m.gnrtd_ps_item_id = ii.item_id\n                   and d.sample_request_det_id = nvl(parm_sample_det_id, -1)) loop\n    \n      if lvch_ps_detail is null then\n        lvch_ps_detail := cur.item_code;\n      else\n        lvch_ps_detail := lvch_ps_detail || ' , ' || cur.item_code;\n      end if;\n    \n    end loop;"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "FUN_REPAIR_SHN",
+  "type": "FUNCTION",
+  "line_count": 34,
+  "tables_referenced": [
+    "LNUM_AMOUNT",
+    "JOURNAL_MT"
+  ],
+  "body_snippet": "Function Fun_Repair_Shn(v_Code_Value In Varchar2,Parm_From_Date In Date,Parm_To_Date In Date)\nReturn Number\nAs\nLnum_Amount Varchar(100);\n\n  begin\n\n            SELECT SUM(NVL(DET.FC_AMOUNT_DR,0)-NVL(DET.FC_AMOUNT_CR,0)) REPAIR\n            INTO LNUM_AMOUNT\n            From\n              JOURNAL_MT MT ,JOURNAL_DETAIL  DET,VIEW_CODE_COMBINATIONS VCC\n            WHERE\n              MT.JOURNAL_ID = DET.JOURNAL_ID\n              AND\n              VCC.CODE_COMBINATION_ID = DET.Code_Combination_Id\n              And\n              VCC.CODE_VALUE =                                       -- Get_Value_At (v_Code_Value,1,'-')\n              SUBSTR(v_Code_Value,1,INSTR(v_Code_Value,'-537',-1)+3)||'3'||\n              SUBSTR(v_Code_Value,INSTR(v_Code_Value,'-537',1)+5,2)||\n              SUBSTR(v_Code_Value, INSTR(v_Code_Value,'-',-1)+1,LENGTH(v_Code_Value))\n\n              AND\n              MT.JRN_DATE  >= PARM_FROM_DATE\n              AND\n              MT.JRN_DATE <= PARM_TO_DATE\n              GROUP BY VCC.CODE_VALUE ;\n              \n              Return(LNUM_AMOUNT);\n           EXCEPTION\n              WHEN NO_DATA_FOUND  THEN\n              RETURN(0);\n              WHEN OTHERS THEN\n              RETURN(LNUM_AMOUNT);\nEND;\n"
+}

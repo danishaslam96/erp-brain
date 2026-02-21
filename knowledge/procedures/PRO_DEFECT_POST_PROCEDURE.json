@@ -1,0 +1,14 @@
+{
+  "name": "PRO_DEFECT_POST",
+  "type": "PROCEDURE",
+  "line_count": 125,
+  "tables_referenced": [
+    "LNUM_RECORD_EXIST",
+    "SGD_KNIT_INSP_DEFECT_NEW_MD",
+    "SALES_ORDER_MT",
+    "LNUM_SALES_ORDER_NO",
+    "SGD_KNIT_INSP_DEFECT_NEW_DT",
+    "LNUM_SALES_ORDER_ID_NEW"
+  ],
+  "body_snippet": "PROCEDURE PRO_DEFECT_POST\n\n(\n \n parm_knit_det_id        IN NUMBER,\n parm_knit_defect_id     IN NUMBER,\n parm_knit_sub_defect_id IN NUMBER,\n \n parm_unique_id IN VARCHAR2,\n parm_pcs IN NUMBER\n \n ) IS\n\n  lnum_sales_order_id     NUMBER(14);\n  lnum_record_exist       NUMBER(14);\n  lnum_SALES_ORDER_DET_ID NUMBER(14);\n  lnum_sales_order_id_new NUMBER(14);\n  --lnum_doc_seq_id    NUMBER(14);\n\n  --parm_date          DATE := TO_DATE(TO_CHAR(TO_date(parm_date_time, 'YYYY-MM-DD HH24:MI:SS'),'MM-DD-YYYY'),'MM-DD-YYYY');\n  --parm_date          DATE := TO_DATE(parm_date_time,'YYYY-MM-DD HH12:MI:SS AM'); --cust_po_date ;\n\nBEGIN\n\n  /*SELECT MAX(sales_order_no) AS \" max_order_no\"\n  into lnum_sales_order_no\n  FROM sales_order_mt;*/\n\n  SELECT COUNT(*)\n    into lnum_record_exist\n    FROM Sgd_Knit_Insp_Defect_New_Md mt\n   WHERE mt.unique_id = parm_unique_id;\n\n  --RAISE_APPLICATION_ERROR(-20001,'test'||lnum_sales_order_no);\n  IF lnum_record_exist < 1\n  \n   THEN\n  \n    -- lnum_sales_order_no := lnum_sales_order_no + 1;\n    lnum_sales_order_id := GET_SINGLE_PRIMARY_KEY('Sgd_Knit_Insp_Defect_New_Md',\n                                                  \n                                                  'knit_inspect_defect_id');\n    INSERT INTO Sgd_Knit_Insp_Defect_New_Md\n    \n      (\n       \n       KNIT_INSPECT_DEFECT_ID,\n       KNIT_INSPECT_DET_ID,\n       KNIT_DEFECT_ID,\n       ENTRY_TYPE,\n       UNIQUE_ID\n       \n       )\n    \n    VALUES\n    \n      (lnum_sales_order_id,\n       parm_knit_det_id,\n       "
+}

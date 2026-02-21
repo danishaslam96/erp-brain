@@ -1,0 +1,11 @@
+{
+  "name": "FUN_KNIT_SHIFT_WS_EFF",
+  "type": "FUNCTION",
+  "line_count": 129,
+  "tables_referenced": [
+    "RESULT",
+    "SGD_KNITTING_PROD_MT",
+    "SGD_KNITTING_MT"
+  ],
+  "body_snippet": "function FUN_KNIT_SHIFT_WS_EFF(PARM_LINE_NO NUMBER,\n                                                 PARM_SHIFT VARCHAR2,\n                                                 PARM_PROD_DATE_FROM DATE,\n                                                 PARM_PROD_DATE_TO DATE,\n                                                 PARM_KNIT_UNIT VARCHAR2\n                                                )\n return number is\n  Result NUMber;\nbegin\n\nSELECT\nsum(q1.Efficiency)/count(q1.machine_NO)\ninto result\nFROM \n(select \n--REPLACE(CCV.CODE_VALUE,'-',NULL) COST_CODE,\n--km.prod_date,\n      -- km.line_no,\n     --  km.shift\n      -- m.machine_no,\n       count(so.so_ref_no) MACHINE_NO,\n/*       s.shift_desc,\n       m.machine_no,\n       so.so_ref_no,\n       pd.pair_code,\n       base_colr.segment_value_desc base_colr,\n       art.segment_value_desc article,\n       ms.machine_size_desc,\n       desgn_no.segment_value_desc Program#,\n       kd.cycle_total,\n       pd.cycle_time,\n       pd.est_prod_shift,\n       pd.est_prod_day,\n       pd.bi_greige_weight,\n       nvl(kd.cycle_total,0) * 12 * (nvl(pd.bi_greige_weight,0)/1000) Prod_kgs,*/\n       sum(q1.Efficiency) Efficiency\n       /*,\n       kd.waste_cycle_total/1000 waste_cycle_total, \n       (nvl(kd.cycle_total,0) * 12 * (nvl(pd.bi_greige_weight,0)/1000)) + (kd.waste_cycle_total/1000) Total_weight,\n       (kd.waste_cycle_total/1000)/(decode(kd.cycle_total,0,1,null,1,kd.cycle_total) * 12 * nvl(pd.bi_greige_weight,0)/1000 + kd.waste_cycle_total/1000) \"%age\"\n"
+}

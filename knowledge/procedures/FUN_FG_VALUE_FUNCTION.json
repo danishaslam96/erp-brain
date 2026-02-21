@@ -1,0 +1,12 @@
+{
+  "name": "FUN_FG_VALUE",
+  "type": "FUNCTION",
+  "line_count": 114,
+  "tables_referenced": [
+    "PRODUCTION_DETAIL",
+    "ISSUE_DETAIL",
+    "UBC_JOB_CARD_MT",
+    "ITEMS_MT"
+  ],
+  "body_snippet": "FUNCTION FUN_FG_VALUE (parm_last_years_id  NUMBER,\n                                         parm_start_date     DATE,\n                                         parm_sub_inv        NUMBER,\n                                         parm_date           DATE) RETURN NUMBER\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t         \nIS\n\t\t lnum_wip_qty\t\t\t\tNUMBER  := 0;\t\nBEGIN\n     FOR cur_fg in (SELECT pckg_inv.get_balance_qty( parm_last_years_id,\n                                                     parm_start_date,\n                                                     null,\n                                                     parm_sub_inv,\n                                                     jcmt.fg_locator_comb_id,\n                                                     so.item_id,\n                                                     parm_date) loc_qty,\n                           amount,\n                           nvl(prod_qty.qty ,0)qty_prod,\n                           nvl(wip_qty.qty,0)qty,\n                           JCMT.job_card_id\n                    FROM\n                       ubc_job_card_mt jcmt,\n                       ubc_so_mt so,\n                       inv_cat_set_definition catdef,\n\t\t\t\t\t             items_category icat, \n\t\t\t\t\t             view_code_combinations  itm_cat ,\n\t\t\t\t\t             temp_code_combination_criteria temp_code,\n\t\t\t\t\t             ITEMS_MT ITM,\n                       (SELECT \n                             IDET.CC_CODE_COMB_ID CC,\n                      \n                             SUM(decode"
+}

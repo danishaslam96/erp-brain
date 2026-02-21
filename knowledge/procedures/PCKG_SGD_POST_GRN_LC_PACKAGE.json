@@ -1,0 +1,9 @@
+{
+  "name": "PCKG_SGD_POST_GRN_LC",
+  "type": "PACKAGE",
+  "line_count": 11,
+  "tables_referenced": [
+    "SGD"
+  ],
+  "body_snippet": "package PCKG_SGD_POST_GRN_LC is\n\n  -- Author  : DAUD\n  -- Created : 11/15/2019 10:32:12 AM\n  -- Purpose : This package is used to post Auto GRN from SGD Loading Challan form - Inward Gate Pass Button\n\n  Procedure pro_post_auto_grn(parm_lc_id number, parm_inward_gp_id number);\n  Procedure pro_UNpost_auto_grn(parm_inward_gp_id number);\n  function Fun_inv_exist(parm_inward_gp_id number) return number;\n    function Fun_grn_exist(parm_inward_gp_id number) return number;\nend PCKG_SGD_POST_GRN_LC;\n"
+}

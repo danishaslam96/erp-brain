@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_TEMPORARY",
+  "type": "PACKAGE",
+  "line_count": 21,
+  "tables_referenced": [],
+  "body_snippet": "package pckg_temporary is\n\n  -- Author  : TARIQ SARWAR\n  -- Created : 21-05-2003 5:15:05 PM\n  -- Purpose : Contains global temporary variables..... etc, \n  --           which control the mutation in different triggers\n  \n  \n \n    gnum_fire_code_comb_val_trgr  NUMBER(1) := 1;\n    gnum_fire_detail_update_trgr  NUMBER(1) := 0;\n    gnum_fire_comp_grn_trgr       NUMBER(1) := 0;--FIRE COMPOSITE GRN TRIGGERS\n    gnum_fire_comp_dc_trgr        NUMBER(1) := 0;--FIRE COMPOSITE DC TRIGGERS\n    gnum_fire_comp_rma_out_trgr   NUMBER(1) := 0;--FIRE COMPOSITE RMA_OUT TRIGGERS\n    gnum_fire_comp_rma_in_trgr    NUMBER(1) := 0;--FIRE COMPOSITE RMA_IN TRIGGERS\n    \n    gnum_fire_auth_det_row_trgr_yn NUMBER(1) := 1;\n    gnum_fire_auth_det_sta_trgr_yn NUMBER(1) := 1;\n    gnum_so_det_trgr_fire_yn       NUMBER(1) := 1;\n               \nend pckg_temporary;\n"
+}

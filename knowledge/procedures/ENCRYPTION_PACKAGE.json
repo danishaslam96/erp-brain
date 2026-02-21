@@ -1,0 +1,7 @@
+{
+  "name": "ENCRYPTION",
+  "type": "PACKAGE",
+  "line_count": 6,
+  "tables_referenced": [],
+  "body_snippet": "package Encryption IS\n\n    PROCEDURE encryptPassword(username VARCHAR2,password VARCHAR2,ReturnVal OUT VARCHAR2);\n    PROCEDURE validatePassword(username VARCHAR2,password VARCHAR2,result OUT NUMBER);\n    \nEND;\n"
+}

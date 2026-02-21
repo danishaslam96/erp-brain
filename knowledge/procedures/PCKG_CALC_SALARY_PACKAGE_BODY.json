@@ -1,0 +1,13 @@
+{
+  "name": "PCKG_CALC_SALARY",
+  "type": "PACKAGE BODY",
+  "line_count": 3387,
+  "tables_referenced": [
+    "THAT",
+    "PAY_SAL_GRP_ALLOWANCES",
+    "PAY_TEMP_SAL_GRP_TMPLT",
+    "PAY_SAL_GRP_DEDUCTIONS",
+    "DATE"
+  ],
+  "body_snippet": "package body PCKG_CALC_SALARY is\n/*****************************************************************************************\nSalary computation is now handling the change of DATE during the Salary Period.\ne.g if the period is from 01-Feb-2004 to 29-Feb-2004 then the SAALRY_GROUP with \nGRADE can be chaged between these dates.\n\n** EOBI(Employer), EOBI(Employee), PFT and Income Tax etc, there are not \nseperate Fields for these values in the table, These values are also \nstored in the same Fashion as are the other values. e.g like in COL_1, COL_2.\nWhen Report on some of these values would be required in future, User would \nalso input the Salary Template and from that Salary Template we would \nguess the No of Column which is has stored the PFT or EOBI etc.\n\nFlow of This Procedure is as Follows\n\na) <PRO_POP_TMPLT_CNSTNTS>\n\n  1->First of all the PAY_TEMP_SAL_GRP_TMPLT_MT table is populated for \n     master Template Constants e.g Emp Code, Emp Name Total Days Worked etc.\n  \n  2->After this PAY_TEMP_SAL_GRP_TMPLT_DET table is populated for Detail\n     records e.g the No of Records in this table would be equal to No of \n     records in PAY_EMP_TRANSFER_MT + 1 with FROM_DATE and TO_DATE of \n     Employee on Each Designation\n     \n  3->Each Entry in PAY_TEMP_SAL_GRP_TMPLT_DET table may have the BADLI in it,\n     The BADLI days are populated with the LINE_ID <PK> of \n     PAY_TEMP_SAL_GRP_TMPLT_DET table in \n     PAY_TEMP_SAL_GRP_TMPLT_BADLI\n     \nNow The Above mentioned steps have populat"
+}

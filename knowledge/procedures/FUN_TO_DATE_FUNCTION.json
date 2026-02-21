@@ -1,0 +1,7 @@
+{
+  "name": "FUN_TO_DATE",
+  "type": "FUNCTION",
+  "line_count": 8,
+  "tables_referenced": [],
+  "body_snippet": "function FUN_TO_DATE(parm_vc_date VARCHAR2,parm_format_mask VARCHAR2) return date is\n  Result DATE;\nbegin\n  \n  Result := TO_DATE(parm_vc_date,parm_format_mask);\n  \n  return(Result);\nend FUN_TO_DATE;\n"
+}

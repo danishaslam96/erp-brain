@@ -1,0 +1,10 @@
+{
+  "name": "CONVERT_FK_TO_12",
+  "type": "PROCEDURE",
+  "line_count": 21,
+  "tables_referenced": [
+    "USER_CONSTRAINTS",
+    "USER_CONS_COLUMNS"
+  ],
+  "body_snippet": "procedure CONVERT_FK_TO_12(parm_table_name IN VARCHAR2) is\nbegin\n  \n  RAISE_APPLICATION_ERROR(-20000,' Warning ! , It will Damage existing database state (i.e., table structure will be changed), PLEASE USE IT CAREFULLY (Tariq Sarwar)');\n  \n  FOR CUR IN (SELECT C.TABLE_NAME, C.COLUMN_NAME FROM USER_CONS_COLUMNS C,(SELECT AC.CONSTRAINT_NAME\n          FROM USER_CONSTRAINTS AC,(SELECT CONSTRAINT_NAME \n                                    FROM USER_CONSTRAINTS\n                                    WHERE UPPER(TABLE_NAME)     =  UPPER(parm_table_name) AND\n                                          CONSTRAINT_TYPE = 'P'     ) CC\n          WHERE AC.CONSTRAINT_TYPE = 'R' AND\n                AC.STATUS = 'ENABLED'    AND\n                AC.R_CONSTRAINT_NAME = CC.CONSTRAINT_NAME)D\nWHERE C.CONSTRAINT_NAME = D.CONSTRAINT_NAME)LOOP\n\n\n--EXECUTE IMMEDIATE ('alter table '||CUR.TABLE_NAME||' modify '|| CUR.COLUMN_NAME ||' NUMBER(12)');\nDBMS_OUTPUT.PUT_LINE('alter table '||CUR.TABLE_NAME||' modify '|| CUR.COLUMN_NAME ||' NUMBER(12)');\n  END LOOP;\n  \nend CONVERT_FK_TO_12;\n"
+}

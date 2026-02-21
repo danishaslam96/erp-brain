@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_SHD_GEN_ITEM",
+  "type": "PACKAGE",
+  "line_count": 22,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_SHD_gen_item is\n\n  PROCEDURE Gen_Item(PARM_Sample_request_id NUMBER);\n\n  FUNCTION GET_SEGMENT_VALUE(parm_segment_no     NUMBER,\n                             parm_structure_id   NUMBER,\n                             parm_dept_on_key_id NUMBER DEFAULT NULL)\n    RETURN VARCHAR2;\n  FUNCTION INSERT_INTO_ACCT_CC_Strucure(parm_structure_id       number,\n                                        parm_segment_no         number,\n                                        parm_segment_value      varchar2,\n                                        parm_segment_value_desc varchar2,\n                                        parm_seg_val_nature_id  number,\n                                        parm_parent_yn          number,\n                                        have_dep_val_yn         number,\n                                        parm_dep_on_key_id      number default null)\n    return NUMBER;\n  PROCEDURE Gen_ps_Item(PARM_ps_code_id NUMBER);\n  PROCEDURE pro_Gen_ps_Item_updated(PARM_ps_code_id NUMBER);\n\n  PROCEDURE pro_copy_bs_To_PSSyle;\nend PCKG_SHD_gen_item;\n"
+}

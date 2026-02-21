@@ -1,0 +1,7 @@
+{
+  "name": "LOV_SEGMENT_VALUE",
+  "type": "FUNCTION",
+  "line_count": 36,
+  "tables_referenced": [],
+  "body_snippet": "FUNCTION LOV_SEGMENT_VALUE(STR VARCHAR2,DEP VARCHAR2,SEG NUMBER) RETURN VARCHAR2 IS\n\n-------------------------------------------------------------------------------------------------------\n--- THIS FUNCTION IS TYPICALLY CALLED IN SQL OF LOV USED IN CODE ENTRY AND CODE_RANGE_ENTRY FORMS \n--- THIS WILL RETURN THE PARENT SEGMENT VALUES OF CURRENT SEGMENT\n\n--- PARAMETER DETAILS:-\n---\t\t\t\tSTR --> A FULL DEPENDENCY STRING CONTAINING THE PARENT SEGMENT VALUES CONCATENATED WITH '-'\n---\t\t\t\tDEP -->   A FULL DEPENDENCY STRING CONTAINING THE PARENT SEGMENT NUMBERs SEPARATED BY \",\"\n---\t\t\t\t\n---\t\t\t\tSEG --> THE SEGMENT NUMBER FOR WHICH THE VALUE WILL BE RETURNED\n---\n-----------------------------------------------------------------------------------------------\nLOC NUMBER;\nST NUMBER(5);\nEN NUMBER(5);\nHM NUMBER(5);\nCH VARCHAR2(500);\nRET VARCHAR2(500);\nBEGIN\n\t\n\tLOC := FUN_INSTR(DEP,SEG,1,0);\n\t\n\tIF LOC <> 0 THEN\n\t\tST := 1;\n\t\tEN := LOC-1;\n\t\tCH:=SUBSTR(DEP,ST,EN);\n\t\tHM := HOW_MANY_CHARS(CH,',',0)+1;\n\t\t\n\t\tRET :=GET_VALUE_AT(STR,HM,'-',0);\n\t\tRETURN(RET);\t\t\t\n\tELSE\n\t\tRETURN(NULL);\n\tEND IF;\n  \nEND;\n"
+}

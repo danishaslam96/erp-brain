@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_ADMIN_UTIL",
+  "type": "PACKAGE",
+  "line_count": 23,
+  "tables_referenced": [],
+  "body_snippet": "package pckg_admin_util is\n\n  -- Author  : ADMINISTRATOR\n  -- Created : 8/15/2005 1:23:35 PM\n  -- Purpose :\n\n  -- Public type declarations\n  procedure PRO_CHANGE_SALES_CUSTOMER(DOC_TYPE VARCHAR2,FROM_CUSTOMER in NUMBER,\n                            TO_CUSTOMER IN NUMBER,order_no number,ref_no varchar2,\n                            inv_book number,order_date date,broker_id number);\n\n\n  procedure PRO_CHANGE_SALES_ITEM_CODE_MNO(SALEs_ORD_id in NUMBER,SALE_TYPE IN VARCHAR2,\n                            FROM_ITEM IN NUMBER,TO_ITEM IN NUMBER,DET_LINE_NO IN NUMBER);\n\n  procedure  PRO_CHANGE_RECEIPT_CUSTOMER(DOC_TYPE VARCHAR2,FROM_CUSTOMER in NUMBER,\n                            TO_CUSTOMER IN NUMBER);\n                            \n                            \n  PROCEDURE PRO_CHANGE_PURCHASE_SUPPLIER(PURCH_ORD_ID IN NUMBER,FROM_SUPPLIER in NUMBER,\n                            TO_SUPPLIER IN NUMBER);\n\nend pckg_admin_util;\n"
+}

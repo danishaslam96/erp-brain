@@ -1,0 +1,13 @@
+{
+  "name": "POPULATE_TEMP_FSG_TABLE",
+  "type": "PROCEDURE",
+  "line_count": 110,
+  "tables_referenced": [
+    "VIEW_CODE_COMBINATIONS",
+    "FROM_ACCOUNT",
+    "ROW_ACCT_ASSIGNMENT",
+    "COL_DEFINITION",
+    "COLSET_DETAIL"
+  ],
+  "body_snippet": "procedure POPULATE_temp_fsg_table(rowset_DET number,colset_DET number) is\n       --it will be called for each of rowset(account assignment)\n       --after this porc the populate fsg should be called to get the required \n       --output and insert it into the final table\n       \n    CURSOR ROWSET IS  SELECT FROM_ACCT,TO_ACCT,SET_OF_BOOK_ID,ACTIVITY_TYPE\n                      FROM ROW_ACCT_ASSIGNMENT\n                      WHERE ROWDET_LINE_ID=ROWSET_DET;\n    \n    CURSOR COLSET IS SELECT AMOUNT_TYPE,PERIOD_TYPE,CURRENCY_TYPE\n                     FROM COLSET_DETAIL\n                     WHERE COLSET_ID = Colset_Det;\n    \n    from_account     VARCHAR2(500);\n    to_account       VARCHAR2(500);\n    set_of_book      NUMBER(15);\n    activity_type    VARCHAR2(10);\n    \n    amount_type      VARCHAR2(20);\n    period_type      VARCHAR2(10);\n    currency_type    VARCHAR2(20);\n    generate_date    DATE:='10-JUL-2002';\n    \n    output           VARCHAR2(4000);\n    DBMS_CUR         NUMBER;--  DBMS_SQL.CURSTYPE;\n    DBMS_ROWS        NUMBER;\n    \n    TEMP_V VARCHAR2(100);\n    TEMP_N NUMBER;\n    \n    COL_LOOP_COUNTER NUMBER;\n---------------------------------------------------------------------------------    \n    TYPE CSET IS RECORD(COLNUM NUMBER,A_TYPE VARCHAR2(200),P_TYPE VARCHAR2(200),C_TYPE VARCHAR2(200));\n    \n    TYPE CTAB IS TABLE OF CSET INDEX BY BINARY_INTEGER;\n    \n    COL_DEFINITION CTAB;\n----------------------------------------------------------------------------------    \n    CURSOR "
+}

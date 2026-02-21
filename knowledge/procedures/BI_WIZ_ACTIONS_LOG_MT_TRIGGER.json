@@ -1,0 +1,9 @@
+{
+  "name": "BI_WIZ_ACTIONS_LOG_MT",
+  "type": "TRIGGER",
+  "line_count": 31,
+  "tables_referenced": [
+    "ANOTHER"
+  ],
+  "body_snippet": "TRIGGER \"SGDGROUP\".BI_WIZ_ACTIONS_LOG_MT\n  before insert on wiz_actions_log_mt\n  for each row\n\n\n\n\n\n\n\n\n\n\n\ndeclare\n  -- local variables here\n  lnum_action_log_id     NUMBER(15);\nbegin\n  -- this code is added by tariq\n  -- the trigger must not fire when the data\n  -- is replicated from another site\n  if pckg_replication.get_trigger_status = 0 then\n     return;\n  end if;\n  ------------------------------------------\n\n   :new.action_log_id  := get_single_primary_key('WIZ_ACTIONS_LOG_MT','ACTION_LOG_ID',:new.action_log_id);\n\nend BI_WIZ_ACTIONS_LOG_MT;\n\n\n"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "FUN_INSTR",
+  "type": "FUNCTION",
+  "line_count": 41,
+  "tables_referenced": [],
+  "body_snippet": "FUNCTION FUN_INSTR(STR VARCHAR2,CHR VARCHAR2,N NUMBER,SENSITIVE NUMBER DEFAULT 0) RETURN NUMBER IS\n\n--- THIS FUNCTION IS INCLUDED FOR BACKWARD COMPATIBILITY\n--- ONE SHOULD USE INSTRING function WITH THE SAME PARAMETERS \n\n--- This Function will return the offset of given CHAR in a given STRING\n--- the parameter detail is given bellow\n\n--- STR  \t\t\t--> The String in which SEARCHING IS required\n--- CHR  \t\t\t--> The character or series of Characters to search\n--- N    \t\t\t--> The instance number of required CHAR\n--- SENSITIVE --> Whether the search will be case sensitive or not.\n\n\nRET NUMBER:=0;\nST VARCHAR2(3000);\n\nBEGIN\n\t\n\tIF N=0 OR STR IS NULL THEN RETURN(0); END IF;\n\t\n\t\tFOR CNT IN 1..LENGTH(STR)-(LENGTH(CHR)-1) LOOP\n\t\t\n\t\tIF SENSITIVE=1 THEN\n\t\t\tIF SUBSTR(STR,CNT,LENGTH(chr))=CHR THEN \n\t\t\t\tRET:=RET+1; \n\t\t\tEND IF;\n\t\tELSE\n\t\t\tIF UPPER(SUBSTR(STR,CNT,LENGTH(chr)))=UPPER(CHR) THEN \n\t\t\t\tRET:=RET+1; \n\t\t\tEND IF;\n\t\t -- MESSAGE('RET '||RET||' CNT '||CNT||' VALUE '||UPPER(SUBSTR(STR,CNT,LENGTH(chr))));\n\t\tEND IF;\n\t\t\n\t\tIF RET=N THEN \n\t\t\tRETURN(CNT); \n\t\tEND IF;\n\tEND LOOP;\n\n\tRETURN(0);\nEND;\n"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "FUN_BATCH_EXIST_OSR",
+  "type": "FUNCTION",
+  "line_count": 21,
+  "tables_referenced": [
+    "TEMP_SGD_DUP_RECORD",
+    "SGD_OS_PROCESS_RETURN_DET",
+    "LNM_EXIST"
+  ],
+  "body_snippet": "function fun_batch_exist_OSR(parm_batch_id number)return number is\n     lnm_exist number;\n     begin\n             select count(1) Into lnm_exist\n             from  temp_sgd_dup_record\n             where column_1 = nvl(parm_batch_id,-1)\n             and nvl(column_2,0) = 1;\n\n       if nvl(lnm_exist,0) = 0 then\n\n         select count(1) Into lnm_exist\n          from  SGD_OS_PROCESS_RETURN_det\n           where OS_PROCESS_DET_ID = nvl(parm_batch_id,-1)\n          and nvl(FINAL_RECEIPT_YN,0) = 1\n          and OS_PROCESS_RETURN_ID <> nvl(parm_batch_id,-1);\n\n       end if;\n\n\n       return lnm_exist;\n     end;\n"
+}

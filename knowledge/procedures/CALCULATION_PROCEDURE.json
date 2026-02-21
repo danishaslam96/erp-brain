@@ -1,0 +1,11 @@
+{
+  "name": "CALCULATION",
+  "type": "PROCEDURE",
+  "line_count": 120,
+  "tables_referenced": [
+    "IMPORT_JOURNAL_MT",
+    "LNUM_CURR_ID",
+    "IMPORT_DOC_MT"
+  ],
+  "body_snippet": "PROCEDURE CALCULATION(pnum_imp_doc_Id NUMBER,pnum_book_curr_Id NUMBER,PNUM_TOTAL OUT NUMBER,PNUM_TOTAL1 OUT NUMBER,PNUM_TOTAL2 OUT NUMBER,PNUM_TOTAL3 OUT NUMBER,PNUM_TOTAL4 OUT NUMBER) is\n       lnum_det_id          NUMBER(15);\n       lnum_curr_id         NUMBER(15);\n       lnum_curr_rate       NUMBER(14,5);\n       lnum_sum_debit       NUMBER(14,3):=0;\n       lnum_sum_debit2      NUMBER(14,3):=0;\n       lnum_sum_debit3      NUMBER(14,3):=0;\n       lnum_sum_debit4      NUMBER(14,3):=0;       \n       lnum_sum_debit5      NUMBER(14,3):=0;       \nBEGIN\n\n        FOR Calrec IN (SELECT a.imprt_jrn_id,a.imp_doc_id ,NVL(SUM(DEBIT_AMOUNT),0)-NVL(SUM(CREDIT_AMOUNT),0) cal1\n            FROM import_journal_mt a,import_doc_mt b,import_journal_detail c\n            WHERE a.imp_doc_id=b.imp_doc_id\n            AND c.imprt_jrn_id=a.imprt_jrn_id\n            AND c.imp_doc_det_id IS NULL\n            AND a.imp_doc_id=pnum_imp_doc_Id\n            AND c.imprt_trans_type_id=1\n            AND c.code_combination_id=(SELECT ACC_CODE_COMB_ID FROM import_doc_mt \n            WHERE  import_doc_mt.imp_doc_id=pnum_imp_doc_Id)\n            GROUP BY a.imprt_jrn_id,a.imp_doc_id) LOOP\n            \n            SELECT IMPORT_JOURNAL_MT.CURRENCY_ID,IMPORT_JOURNAL_MT.CURR_CONV_RATE\n            INTO lnum_curr_id ,lnum_curr_rate\n            FROM import_journal_mt\n            WHERE import_journal_mt.imprt_jrn_id=calrec.imprt_jrn_id;\n            IF lnum_curr_id<>pnum_book_curr_Id THEN\n               lnum_sum_debit:=lnum_sum"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "GET_COL_VAL_QRY",
+  "type": "FUNCTION",
+  "line_count": 68,
+  "tables_referenced": [
+    "USER_CONSTRAINTS",
+    "USER_TAB_COLUMNS",
+    "LVCH_TAB_NAME",
+    "LVCH_PK_COL_NAME",
+    "WIZ_AUDIT_TAB_COL_NAME_PICK",
+    "USER_CONS_COLUMNS",
+    "LVCH_COL_NAME"
+  ],
+  "body_snippet": "function GET_COL_VAL_QRY(PARM_TAB_NAME VARCHAR2 ,PARM_COL_NAME VARCHAR2,PARM_COL_VAL VARCHAR2, PARM_RET_VAR_NAME VARCHAR2) return varchar2 is\n    LVCH_Result VARCHAR2(5000);\n    LVCH_TAB_NAME VARCHAR2(100);\n    LVCH_COL_NAME VARCHAR2(100);\n    LVCH_PK_COL_NAME VARCHAR2(100);\n\nBEGIN\n    BEGIN\n        SELECT TABLE_NAME\n               INTO\n               LVCH_TAB_NAME\n        FROM USER_CONSTRAINTS C\n        WHERE C.owner = USER AND\n              C.constraint_type ='P' AND\n              C.constraint_name = (\n          SELECT UC.r_constraint_name\n          FROM USER_CONS_COLUMNS C,USER_CONSTRAINTS UC\n          WHERE C.constraint_name = UC.constraint_name AND\n                C.owner = USER AND\n                UC.owner = USER AND\n                UC.table_name = UPPER(PARM_TAB_NAME) AND\n                C.table_name =  UPPER(PARM_TAB_NAME) AND\n                C.column_name = UPPER(PARM_COL_NAME) AND\n                UC.constraint_type = 'R' );\n        \n        IF LENGTH('CODE_COMBINATIONS') = LENGTH(LVCH_TAB_NAME) THEN\n           LVCH_TAB_NAME := REPLACE(LVCH_TAB_NAME,'CODE_COMBINATIONS',UPPER('code_combination_values'));\n        END IF;   \n                \n        SELECT CC.column_name\n               INTO\n               LVCH_PK_COL_NAME\n        FROM USER_CONSTRAINTS C,USER_CONS_COLUMNS CC\n        WHERE C.constraint_type = 'P' AND\n              C.table_name = UPPER(LVCH_TAB_NAME) AND\n              C.constraint_name = CC.constraint_name;\n\n        BEGIN\n            SELECT ATC.COLUMN_NAME"
+}

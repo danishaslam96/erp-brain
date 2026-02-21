@@ -1,0 +1,12 @@
+{
+  "name": "PRO_DOC_NO",
+  "type": "PROCEDURE",
+  "line_count": 44,
+  "tables_referenced": [
+    "LNUM_DOC_SEQ_ID",
+    "INV_SEQUENCE_ASSIGNMENT",
+    "DOC_SEQUENCE_DETAIL",
+    "LNUM_LAST_NO"
+  ],
+  "body_snippet": "procedure \n                  PRO_DOC_NO(parm_inv_book_id        NUMBER,\n                             parm_date               DATE, \n                             parm_last_no            OUT NUMBER, \n                             parm_doc_seq_det_id     OUT number) is\n\n  lnum_doc_seq_id            NUMBER;\n  lnum_last_no               NUMBER;\n  lnum_pri_key               NUMBER;\nBEGIN\n\n\tIF parm_inv_book_id IS NULL OR parm_date IS NULL THEN\n\t\tRETURN;\n\tEND IF;\t\n\t\t\n  SELECT DOC_SEQ_ID \n  INTO   lnum_doc_seq_id  \n  FROM   INV_SEQUENCE_ASSIGNMENT \n  WHERE  inv_book_id = parm_inv_book_id ;\n  \n  SELECT LAST_NO +1, DOC_DET_SEQ_ID INTO   lnum_last_no,lnum_pri_key ---INTO lnum_last_no\n  FROM   DOC_SEQUENCE_DETAIL\n  WHERE  DOC_DET_SEQ_ID = (SELECT DOC_DET_SEQ_ID \n  \t\t\t\t\t\t\t\t\t\t\t\t FROM   DOC_SEQUENCE_DETAIL\n  \t\t\t\t\t\t\t\t\t\t\t\t WHERE  DOC_SEQ_ID = lnum_doc_seq_id  \n  \t\t\t\t\t\t\t\t\t\t\t\t\tAND   (parm_date >= from_date \n  \t\t\t\t\t\t\t\t\t\t\t\t\tand   parm_date <= to_date)\n  \t\t\t\t\t\t\t\t\t\t\t\t\tAND   LAST_NO=(SELECT MAX(LAST_NO)\n  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   FROM   DOC_SEQUENCE_DETAIL\n  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   WHERE  DOC_SEQ_ID = lnum_doc_seq_id  \n  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   AND    (parm_date >= from_date \n  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   and    parm_date <= to_date)));\n  \t\t\t\t\n  parm_last_no         := lnum_last_no;\n  parm_doc_seq_det_id  := lnum_pri_key;\n\n\nEXCEPTION WHEN OTHERS THEN \n\t--message('exception is '||dbms_error_text);\n\t--MESSAGE('Error while generating Document #, No Sequence is defined for the given book & date');\n  --RAISE FORM_TRIGG"
+}

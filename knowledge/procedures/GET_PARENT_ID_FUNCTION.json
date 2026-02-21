@@ -1,0 +1,10 @@
+{
+  "name": "GET_PARENT_ID",
+  "type": "FUNCTION",
+  "line_count": 9,
+  "tables_referenced": [
+    "RESULT",
+    "WIZMENU_DET"
+  ],
+  "body_snippet": "function get_parent_id(child_id FLOAT) return FLOAT IS\n \n  Result FLOAT;\nbegin\n SELECT t.node_parent INTO result\n FROM wizmenu_det t\n WHERE t.node_id = child_id;\n  return(Result);\nend get_parent_id;\n"
+}

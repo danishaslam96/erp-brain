@@ -1,0 +1,17 @@
+{
+  "name": "PRO_CHANGE_SALES_CUSTOMER",
+  "type": "PROCEDURE",
+  "line_count": 396,
+  "tables_referenced": [
+    "DC_DETAIL",
+    "DISPATCH",
+    "JOURNAL_MT",
+    "SLAES",
+    "SALES_ORDER_MT",
+    "SALES",
+    "DC_MT",
+    "DILEVERY",
+    "DISPATCH_ADVICE_DET"
+  ],
+  "body_snippet": "procedure PRO_CHANGE_SALES_CUSTOMER(DOC_TYPE VARCHAR2,FROM_CUSTOMER in NUMBER,\n                            TO_CUSTOMER IN NUMBER,order_no number,ref_no varchar2,\n                            inv_book number,order_date date,broker_id number) is\n\nLNUM_SODET_ID   NUMBER(15);\nLNUM_ASDET_ID   NUMBER(15);\nbegin\n--  BEGIN\n---------------------------------------------------------------------------\n----This Procedure is for Sales Module Update in Customer-----------------\n----It will change the customer though out the sales module from slaes ---\n----order to sales invoice and GL----------------------------------------\n----SO for sales order ---------------------------------------------------\n----AS for Advance Sales-------------------------------------------------\n-------------------------------------------------------------------------\n\nIF DOC_TYPE = 'SO'  THEN\n\n    PCKG_REPLICATION.SET_TRIGGERS_OFF;\n\n\n\n\n    ---------------------------------------\n    ----Update Sales Order ---------------\n    ---------------------------------------\n\n\n    update sales_order_mt smt\n    set smt.customer_id = TO_customer\n    where smt.customer_id = FROM_customer\n    and smt.match_with = 'N'\n    and smt.inv_book_id = inv_book\n    and smt.order_date = ordER_date\n    and smt.so_reference_no = ref_no\n    and smt.seller_id = broker_id;\n\n    FOR I IN (\n    SELECT Sdet.Sales_Order_Det_Id\n    FROM sales_order_mt smt,SALES_ORDER_DET SDET\n    WHERE SMT.SALES_ORDER_ID = SDET.SALES_ORDER_ID\n    and smt.customer_id ="
+}

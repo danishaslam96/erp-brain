@@ -1,0 +1,10 @@
+{
+  "name": "IS_VALID_CODE_FOR_RANGE",
+  "type": "FUNCTION",
+  "line_count": 117,
+  "tables_referenced": [
+    "WIZ_SEGMENT_DEFINITION",
+    "LVNUM_TMP"
+  ],
+  "body_snippet": "FUNCTION IS_VALID_CODE_FOR_RANGE(STRCT NUMBER,CODE VARCHAR2)\nRETURN VARCHAR2 IS\n-------------------------------------------------------------------------------------------\n-------------------------------------------------------------------------------------------\n--=====================\n-- parameter details\n--=====================\n-- STRUC    --> Structure for which the check is required\n-- CODE     --> Instance code\n\n-- It will RETURN \n--VARCHAR2 TYPE     STRING\t->\tON SUCCESS\n-------\t\t\t\t\t\t\t\t\t-1\t->\tIF ANY SEGMENT IS NOT DEFINED\n-------\t\t\t\t\t\t\t\t\t-2 ->  IF SEGMENT VALUE IS NOT VALID\n-------\t\t\t\t\t\t\t\t\t-3 ->  IF ANY OF THE SEGMENT IS PARENT\n\n-------\t\t\t\t\t\t\t\t\t-4 ->  IF ANY OF THE SEGMENT voilates cross validation rules\n\n-------                 \n------------------------------------------------------------------------------------------\n\t\t\tST NUMBER:=0;\n\t\t\tEN NUMBER:=0;\n\t\t\tCH VARCHAR2(500);\n\t\t\tTOT_SEG NUMBER:=0;\n\t\t\tTMP VARCHAR2(500);\n\t\t\tSEGMENT_VALUE_STRING VARCHAR2(500):='';\n\t\t\tLVNUM_TMP NUMBER;\n\t\t\tRNG  BOOLEAN;\n\nBEGIN\n\n \tTOT_SEG:=HOW_MANY_CHARS(CODE,'-')+1;\n \t\n \tSELECT COUNT(1) INTO LVNUM_TMP\n \tFROM WIZ_SEGMENT_DEFINITION\n \tWHERE STRUCTURE_ID=STRCT;\n\t\n\tIF TOT_SEG <> LVNUM_TMP THEN\n\t\t\tRETURN('-1');\t\t\t\t\t\t\t-- WRONG NUMBER OF SEGMENTS \n\tEND IF;\n\t\n  FOR  SEG IN 1..TOT_SEG LOOP\n \t\n\t \t\t\t\t ST := INSTRING(CODE,'-',SEG-1,0)+1;\n \t \t\t\t\tEN := INSTRING(CODE,'-',SEG,0);\n \t \t\t\t\t\n \t \t\t\t\tIF EN=0 THEN EN:=LENGTH(CODE)+1; END IF;\n \t \t\t\t\t\n \t \t\t\t  CH := SUBSTR(CODE,ST,EN-ST);\n--\t\t\t\t\t\t\tDBMS_OUTPUT.PUT_LINE(S"
+}

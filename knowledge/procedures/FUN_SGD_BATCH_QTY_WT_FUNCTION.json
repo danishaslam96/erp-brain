@@ -1,0 +1,11 @@
+{
+  "name": "FUN_SGD_BATCH_QTY_WT",
+  "type": "FUNCTION",
+  "line_count": 82,
+  "tables_referenced": [
+    "SGD_SAMPLE_RAW_MATERIALS_DET",
+    "PARM_WEIGHT_WT_CLIP",
+    "SGD_SAMPLE_RAW_MATERIALS_MT"
+  ],
+  "body_snippet": "function FUN_SGD_BATCH_QTY_WT\n(PARM_QTY NUMBER,\n PARM_BATCH_ID NUMBER,\n PARM_WEIGHT_WT_CLIP OUT NUMBER ,\n PARM_TT_GREIGE_QTY_WT_CLIP OUT NUMBER,\n PARM_TT_GREIGE_QTY_WO_CLIP OUT NUMBER ,\n PARM_CLIP_QTY OUT NUMBER)\n return number is\n  Result NUmber;\nbegin\n\n\nselect\n sum((q1.GREIGE_QUANTITY_with_clip)* PARM_QTY*12)/1000  weight_with_clip\n,sum(q1.greige_qty_wo_clip)* PARM_QTY*12/1000  weight_wo_clip\n,sum(q1.GREIGE_QUANTITY_with_clip)  greige_qty_with_clip\n,sum(q1.greige_qty_wo_clip)         greige_qty_wo_clip\n,sum(decode(q1.clip_yn,1,q1.total_consuption,0)) clip_qty\n\nINTO\nPARM_WEIGHT_WT_CLIP,\nRESULT,\nPARM_TT_GREIGE_QTY_WT_CLIP,\nPARM_TT_GREIGE_QTY_WO_CLIP,\nPARM_CLIP_QTY\n\n\n\n\nfrom\n\n(\nselect mtm.sample_request_det_id,\n       plan_det.bi_greige_weight,\n       --amt.MATERIAL_DESC Area,\n       --decode(mtm.pd_yn, 1, items.ITEM_DESC) ITEM_DESC,\n       decode(mtm.pd_yn,\n              1,\n              (nvl(mtm.greige_quantity, 0) + nvl(mtm.greige_waste, 0))) total_consuption,\n       --det.yarn_ply,\n       mtm.GREIGE_QUANTITY GREIGE_QUANTITY_with_clip ,\n       decode(rm.clip_yn, 1, 0, mtm.greige_quantity) greige_qty_wo_clip,\n       mtm.GREIGE_WASTE,\n       MTM.MATERIAL_ID,\n       RM.CLIP_YN\n--   ,det.material_id\n--  ,det.raw_material_id\n  from sgd_sample_raw_materials_mt mtm,\n       sgd_sample_request_det req_det,\n       sgd_stm_planning_det   plan_det,\n       sgd_batch_making_det   ba_det,\n       sgd_batch_making_mt    ba_mt,\n       ITEMS_MT items,\n       (select det.material_id,\n          "
+}

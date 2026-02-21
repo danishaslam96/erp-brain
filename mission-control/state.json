@@ -1,8 +1,8 @@
 {
-  "current_issue": null,
+  "current_issue": 9,
   "next_target": null,
   "active_branch": null,
-  "last_commit": "f9fafab",
+  "last_commit": "5875a15",
   "in_progress": false,
   "last_nudge_at": null,
   "expires_at": null,
@@ -21,6 +21,6 @@
     "idle_pause_after_hours": 6
   },
   "last_repo_diff": "2026-02-21T12:41:00.000000+00:00",
-  "last_check": 1771557120,
+  "last_check": 1771557780,
   "last_hygiene_at": "2026-02-21T12:41:00Z"
 }

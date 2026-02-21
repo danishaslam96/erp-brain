@@ -1,0 +1,12 @@
+{
+  "name": "FUN_REPORT_NAME",
+  "type": "FUNCTION",
+  "line_count": 30,
+  "tables_referenced": [
+    "LNUM_CLIENT_ID",
+    "WIZ_ALL_REPORTS_MT",
+    "WIZ_LICENCED_TO",
+    "LVCH_REP_NAME"
+  ],
+  "body_snippet": "function FUN_REPORT_NAME(parm_rep_main_type_id NUMBER, parm_rpt_sub_type_id NUMBER)\nreturn varchar2 is\n\n  lnum_client_id      NUMBER(15);\n  lvch_rep_name       VARCHAR2(128);\n\nbegin\n     begin\n          SELECT WIZ_ALL_CLIENTS_ID INTO lnum_client_id FROM WIZ_LICENCED_TO;\n     exception\n          when no_data_found then\n               raise_application_error(-20050, 'Client ID is not given in WIZ_LICENSED_TO');\n          when too_many_rows then\n               raise_application_error(-20051, 'More than One Lines exist in WIZ_LICENSED_TO');               \n     end;\n\n     begin\n          SELECT ARMT.REP_FILE_NAME\n          INTO   lvch_rep_name\n          FROM   WIZ_ALL_REPORTS_MT ARMT, WIZ_CLIENT_REP_ASSIGNMENT CRAS\n          WHERE  ARMT.WIZ_ALL_REPS_ID      = CRAS.WIZ_ALL_REPS_ID\n          AND    ARMT.WIZ_REP_MAIN_TYPE_ID = parm_rep_main_type_id \n          AND    ARMT.WIZ_RPT_SUB_TYPE_ID  = parm_rpt_sub_type_id \n          AND    CRAS.WIZ_ALL_CLIENTS_ID   = lnum_client_id;\n     exception\n          when no_data_found then\n               raise_application_error(-20052, 'Report is not defined in WIZ_ALL_REPORTS');                \n     end;\n  return lvch_rep_name;\nend FUN_REPORT_NAME;\n"
+}

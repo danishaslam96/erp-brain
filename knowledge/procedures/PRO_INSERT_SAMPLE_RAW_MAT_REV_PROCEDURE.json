@@ -1,0 +1,10 @@
+{
+  "name": "PRO_INSERT_SAMPLE_RAW_MAT_REV",
+  "type": "PROCEDURE",
+  "line_count": 61,
+  "tables_referenced": [
+    "SGD_SAMPLE_RAW_MATERIALS_DET",
+    "SGD_SAMPLE_RAW_MATERIALS_MT"
+  ],
+  "body_snippet": "procedure PRO_INSERT_SAMPLE_RAW_MAT_REV(PARM_NEW_SAMPLE_REQ_DET_ID NUMBER ,PARM_OLD_SAMPLE_REQ_DET_ID NUMBER) is\nlnum_cnt number;\nlnum_mat_id number;\nlnum_raw_mat_det_id number;\nbegin\n\n\n for cur_main in (select\n                 mt.material_id\n                ,mt.sample_request_det_id\n                ,mt.item_id\n                ,mt.greige_quantity\n                ,mt.greige_waste\n                ,mt.waste_perc\n                ,mt.pd_yn\n                ,mt.prd_waste_perc\n\n                from sgd_sample_raw_materials_mt mt\n                where mt.sample_request_det_id = PARM_OLD_SAMPLE_REQ_DET_ID\n   )loop\n\n     lnum_mat_id                := get_single_primary_key('sgd_sample_raw_materials_mt','material_id');\n\n\n     insert into sgd_sample_raw_materials_mt\n     values(lnum_mat_id,\n            PARM_NEW_SAMPLE_REQ_DET_ID,\n            cur_main.item_id,\n            cur_main.greige_quantity,\n            cur_main.greige_waste,\n            cur_main.waste_perc,\n            cur_main.pd_yn,\n            cur_main.prd_waste_perc);\n\n\n            for cur_det in (select\n                             d.raw_material_det_id\n                            ,d.raw_material_id\n                            ,d.material_id\n                            ,d.yarn_ply\n                            from sgd_sample_raw_materials_det d\n                            where d.material_id = cur_main.material_id\n             )loop\n\n               lnum_raw_mat_det_id    :=  get_single_primary_key('sgd_sample_raw_materials_det',"
+}

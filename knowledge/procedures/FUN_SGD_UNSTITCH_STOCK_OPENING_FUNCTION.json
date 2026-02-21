@@ -1,0 +1,12 @@
+{
+  "name": "FUN_SGD_UNSTITCH_STOCK_OPENING",
+  "type": "FUNCTION",
+  "line_count": 769,
+  "tables_referenced": [
+    "SGD_BATCH_MAKING_MT",
+    "RESULT",
+    "SGD_TOE_CLOSING_DET",
+    "LNUM_UNSTITCH_BATCH"
+  ],
+  "body_snippet": "function FUN_SGD_UNSTITCH_STOCK_OPENING(PARM_AS_ON_DATE DATE,PARM_INCL_THIS_DATE NUMBER) return number is\n  Result number;\n  lnum_unstitch_batch number;\n  lnum_start_date date := to_date('01-jan-2022');  ----i fix this start date till 31-dec-2021 there is not unstitch batches according to user  (imran toe close dept)\nbegin\n  ------------------This function query taken from un stitched production stock report on dated 22-dec-2021\n\nIF PARM_INCL_THIS_DATE = 0 THEN\n-----------------unstitch_batches\nselect sum(dt.batch_qty) batch_qty--,dt.batch_det_id,tc.batch_det_id\nINTO lnum_unstitch_batch\n\n  from sgd_batch_making_mt mt, sgd_batch_making_det dt\n  ,(select tc.batch_det_id,sum(tc.stitch_qty_dzn+nvl(tc.stitch_qty_pcs,0)/24) stitch_qty_dzn\n    from sgd_toe_closing_det tc,sgd_toe_closing_mt tcmt\n    where tc.toe_close_id = tcmt.toe_close_id\n    and tcmt.toe_close_date between TRUNC(TO_DATE(lnum_start_date),'MONTH') AND  PARM_AS_ON_DATE-1\n    group by tc.batch_det_id\n    )tc\n\n where mt.batch_id = dt.batch_id\n and dt.batch_det_id = tc.batch_det_id(+)\n   and dt.batch_qty > 0\n   and mt.batch_date between  TRUNC(TO_DATE(lnum_start_date),'MONTH') AND  PARM_AS_ON_DATE-1\n   and tc.batch_det_id is null;\n\n -----------------------\n\nselect sum(unstitch_stock) into result\n  from\n\n(select\n q4.so_id\n--,q4.so_ref_no\n--,to_number(null) batch_id\n--,null            batch_no\n--,q4.pair_code\n--,q4.article\n--,q4.base_color\n--,q4.cust_size\n,sum(q4.stock_in_hand) unstitch_stock\n\nfrom\n\n\n(\nselect\nq1.so_ref_no"
+}

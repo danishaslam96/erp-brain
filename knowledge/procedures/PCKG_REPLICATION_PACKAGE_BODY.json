@@ -1,0 +1,16 @@
+{
+  "name": "PCKG_REPLICATION",
+  "type": "PACKAGE BODY",
+  "line_count": 846,
+  "tables_referenced": [
+    "LNUM_CLIENT_ID",
+    "WIZ_ITEM_TYPE_MT",
+    "WIZ_REPLICATION_REC_HISTORY_MT",
+    "WIZ_THIS_SITE_MT",
+    "LNUM_POSSIBLE_ID",
+    "WIZ_LICENCED_TO",
+    "LNUM_THIS_SITE_ID",
+    "LNUM_CATSET_ID"
+  ],
+  "body_snippet": "package body PCKG_REPLICATION is\n\n     -- THESE FLAGS ARE USED TO CONTROL THE REPLICATION\n     -- CHANGE THEM CAREFULLY\n     -- CHANGING THSES VARIABLES MAY GREATLY EFFECT THE DATABASE TRANSACTIONS\n     gnum_fire_triggers_yn number(1) ;\n     gnum_create_log_yn    number(1) ;\n\n     gnum_mno_online_ho_repl_yn number(1):=0;\n     ------------------------------------------\n\n     gnum_sql_cursor           number:=dbms_sql.open_cursor;\n     gnum_sql_result           number;\n\n\n     procedure set_triggers_on is\n     begin\n          gnum_fire_triggers_yn := 1;\n     end ;\n\n     procedure set_triggers_off is\n     begin\n          gnum_fire_triggers_yn := 0;\n     end ;\n\n     procedure set_log_on is\n     begin\n          gnum_create_log_yn    := 1;\n     end ;\n\n     procedure set_log_off is\n     begin\n          gnum_create_log_yn    := 0;\n     end ;\n\n     function get_trigger_status return number is\n     begin\n        return(gnum_fire_triggers_yn);\n     end ;\n\n     function get_log_status return number is\n     begin\n        return(gnum_create_log_yn);\n     end ;\n\n     procedure validate_file(parm_received_from_site number,parm_hist_id number) is\n     lnum_possible_id number(15);\n     begin\n          select nvl(max(m.history_id),0)+1\n                 into\n                 lnum_possible_id\n          from wiz_replication_rec_history_mt m\n          where m.from_site_id = parm_received_from_site;\n\n          if parm_hist_id <> lnum_possible_id  then\n             gnum_file_is_validated_yn := 0;\n    "
+}

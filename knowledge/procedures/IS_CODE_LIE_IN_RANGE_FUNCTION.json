@@ -1,0 +1,7 @@
+{
+  "name": "IS_CODE_LIE_IN_RANGE",
+  "type": "FUNCTION",
+  "line_count": 25,
+  "tables_referenced": [],
+  "body_snippet": "function is_code_lie_in_range(parm_code_to_check VARCHAR2, \n                                              parm_from_code VARCHAR2, \n                                              parm_to_code VARCHAR2) return NUMBER is\n  lvch_frm_seg VARCHAR2(100);\n  lvch_to_seg  VARCHAR2(100);\n  lvch_code    VARCHAR2(100);\n    \nbegin\n\n  \n  FOR cnt IN 1..how_many_chars(parm_code_to_check,'-')+1 LOOP\n  \n      lvch_frm_seg := get_value_at(parm_from_code,cnt,'-');\n      lvch_to_seg  := get_value_at(parm_to_code  ,cnt,'-');    \n      lvch_code    := get_value_at(parm_code_to_check  ,cnt,'-');\n        \n      IF NOT lvch_code BETWEEN lvch_frm_seg AND lvch_to_seg THEN \n         RETURN(0);\n      END IF;\n      \n  END LOOP;\n  \n  return(1);\n  \nEND ;\n"
+}

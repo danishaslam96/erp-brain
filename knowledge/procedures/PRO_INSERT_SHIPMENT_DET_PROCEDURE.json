@@ -1,0 +1,12 @@
+{
+  "name": "PRO_INSERT_SHIPMENT_DET",
+  "type": "PROCEDURE",
+  "line_count": 98,
+  "tables_referenced": [
+    "IMP_LC_DET",
+    "IMP_LC_SHPMNT_DET",
+    "IMP_LC_SHPMNT_MT",
+    "LNUM_CNT"
+  ],
+  "body_snippet": "PROCEDURE PRO_INSERT_SHIPMENT_DET(PARM_LC_ID NUMBER) IS\n\nLNUM_LC_SHIPMENT_ID NUMBER;\nLNUM_LC_SHIPMENT_DET_ID NUMBER;\nlnum_cnt number;\n---------------master insertion\n  BEGIN\n\n--message(:lc_id_pk);\n--message(:lc_id_pk);\n\n  select count(1) into lnum_cnt\n  from imp_lc_shpmnt_mt mt\n  where mt.lc_id = PARM_LC_ID;--:lc_id_PK;\n\n  IF nvl(LNUM_CNT,0) = 0 THEN\n\n\n  --  IF INSERTING or updating    THEN\n      LNUM_LC_SHIPMENT_ID := get_single_primary_key('IMP_LC_SHPMNT_MT','LC_SHIPMENT_ID');\n\n      INSERT INTO IMP_LC_SHPMNT_MT(LC_SHIPMENT_ID,LC_ID,LC_SHIPMENT_NO,SHIPMENT_MARKS)\n      VALUES(LNUM_LC_SHIPMENT_ID,PARM_LC_ID,1,'NA');\n\n  --commit;\n\n  ------------etail insertion\n  for cur_det in (select\n t.serial_no\n,t.lc_items_id\n,t.primary_qty\n,t.secondary_qty\n,1 no_of_containers\n,3 container_size_id\n,3 container_load_id\n,lcmt.expiry_date\n\n\n\n from IMP_LC_DET t\n     ,imp_lc_mt  lcmt\n     ,imp_contract_mt cont_mt\n     ,imp_contract_items cntitm\n where\n t.lc_id = lcmt.lc_id\n and t.contract_items_id = cntitm.contract_items_id\n and cntitm.contract_id = cont_mt.contract_id\n and t.lc_id = PARM_LC_ID\n and t.lc_items_id not in (select lc_items_id from imp_lc_shpmnt_det)\n   order by t.lc_id desc\n)loop\n\nLNUM_LC_SHIPMENT_DET_ID := get_single_primary_key('imp_lc_shpmnt_det','LC_SHIPMENT_DET_ID');\n\ninsert into imp_lc_shpmnt_det(\nlc_shipment_det_id,\nlc_shipment_id,\nserial_no,\nlc_items_id,\nprimary_qty,\nsecondary_qty,\nno_of_containers,\ncontainer_size_id,\ncontainer_load_id,\nshipment_date,\ntarget_mfg_date,\ntarg"
+}

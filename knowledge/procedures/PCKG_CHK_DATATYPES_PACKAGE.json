@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_CHK_DATATYPES",
+  "type": "PACKAGE",
+  "line_count": 12,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_CHK_DATATYPES is\n\n  -- Author  : ZESHAN AHMAD\n  -- Created : 6/10/2005 10:04:00 AM\n  -- Purpose : \n \n  -- Public function and procedure declarations\n FUNCTION FUN_ISCHAR(str VARCHAR2) RETURN BOOLEAN;\n FUNCTION FUN_ISALPHANUMERIC(str VARCHAR2) RETURN BOOLEAN;\n FUNCTION FUN_ISNUMERIC(str VARCHAR2) RETURN BOOLEAN;\n\nend PCKG_CHK_DATATYPES;\n"
+}

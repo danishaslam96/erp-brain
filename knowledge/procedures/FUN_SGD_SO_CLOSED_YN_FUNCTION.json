@@ -1,0 +1,10 @@
+{
+  "name": "FUN_SGD_SO_CLOSED_YN",
+  "type": "FUNCTION",
+  "line_count": 10,
+  "tables_referenced": [
+    "SGD_SO_CLOSING_MT",
+    "FUNCTIONRESULT"
+  ],
+  "body_snippet": "function fun_Sgd_so_closed_yn(parm_imk_so_id number) return number is\n  FunctionResult number;\nbegin\n\nselect count(1)\nINTO FunctionResult\n from SGD_SO_CLOSING_MT s where s.imk_so_id = nvl(parm_imk_so_id,-1);\n\n  return(nvl(FunctionResult,0));\nend fun_Sgd_so_closed_yn;\n"
+}

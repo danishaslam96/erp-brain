@@ -1,0 +1,10 @@
+{
+  "name": "PCKG_UDEF_ALRTS",
+  "type": "PACKAGE BODY",
+  "line_count": 362,
+  "tables_referenced": [
+    "LVCH_QRY",
+    "UDEF_ALRT_DEFINITIONS"
+  ],
+  "body_snippet": "package body PCKG_UDEF_ALRTS is\n\n  -- Private type declarations\n--  type <TypeName> is <Datatype>;\n  \n  -- Private constant declarations\n--  <ConstantName> constant <Datatype> := <Value>;\n\n  -- Private variable declarations\n  --<VariableName> <Datatype>;\n\n  -- Function and procedure implementations\n\n\nFUNCTION fire_alert (parm_alrt_id NUMBER, parm_prev_msg_ascii_total NUMBER) RETURN NUMBER IS\n     lnum_cursor                  NUMBER;\n     lnum_cur_result              VARCHAR2(4000);\n     lvch_qry                     VARCHAR2(4000);\n     CNT                          NUMBER(15) := 0;\n     lvch_cols_list               VARCHAR2(4000);\n     lvch_first_col               VARCHAR2(100);\n     lnum_comma_position          NUMBER(5) := 1;\n     \n     lnum_sql_result              number;\n     lvch_temp                    varchar2(4000);\n     lvch_email_message           varchar2(4000);\n     lvch_email_top_section       varchar2(4000);\n     lvch_email_btm_section       varchar2(4000);\n     lnum_temp                    NUMBER;\n          \n     lnum_send_e_mail_yn          NUMBER(1);\n     lnum_send_sms_yn             NUMBER(1);\n     lnum_send_sys_msg_yn         NUMBER(1);\n     lvch_mail_format             VARCHAR2(1);\n     lvch_mail_from_name          UDEF_ALRT_DEFINITIONS.E_MAIL_FROM_NAME%TYPE;\n     lvch_mail_from_address       UDEF_ALRT_DEFINITIONS.E_MAIL_FROM_ADDRESS%TYPE;\n     lvch_mail_subject            UDEF_ALRT_DEFINITIONS.E_MAIL_SUBJECT%TYPE;\n     lnum_curr_msg_ascii_total    NUMBER;\n"
+}

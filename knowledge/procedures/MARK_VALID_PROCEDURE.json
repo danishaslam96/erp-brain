@@ -1,0 +1,10 @@
+{
+  "name": "MARK_VALID",
+  "type": "PROCEDURE",
+  "line_count": 42,
+  "tables_referenced": [
+    "ROW_ID2",
+    "TEMP"
+  ],
+  "body_snippet": "PROCEDURE MARK_VALID(r_id1 number) IS\n\n\ti1 number;\n\ti2 number;\n\ti3 number;\n\tp  number;\n  B  NUMBER;\n\tP_YN NUMBER;\n\trow_id2 number;\n\t\nBEGIN\n\t\n\tSELECT ID1,id2,ID3,PARENT_ID,BALANCE into i1,i2,i3,p,B\n \t\t\t FROM TEMP\n\t\t\t WHERE r_id=r_id1;\n\t\n\tupdate temp\n\tset valid_yn=1\n\twhere r_id=r_id1;\n\t\n\tif p is null then\n\t\t null;\n\telse\n\t\tbegin\n  \t\t select r_id into row_id2 \n  \t\t from temp\n  \t\t where id1=i1 and id2=p and id3=i3;\n\n  --     IF P_YN=1 THEN \n          UPDATE TEMP\n          SET BALANCE=BALANCE+B\n          WHERE R_ID=ROW_ID2;\n   --     END IF;       \n\t\t DBMS_OUTPUT.PUT_LINE('BALANCE IS '||B);\n\t\t mark_valid(rOW_ID2);\n--\t\texception\n--\t\twhen no_data_found then\n--\t\t  null;\n\t\tend;\n\tend if;\n  \nEND;\n"
+}

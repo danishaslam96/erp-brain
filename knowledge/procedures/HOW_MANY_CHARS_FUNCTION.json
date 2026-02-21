@@ -1,0 +1,7 @@
+{
+  "name": "HOW_MANY_CHARS",
+  "type": "FUNCTION",
+  "line_count": 24,
+  "tables_referenced": [],
+  "body_snippet": "FUNCTION how_many_chars(STR VARCHAR2,CHR VARCHAR,SENSITIVE NUMBER DEFAULT 0) RETURN NUMBER IS\n\n----------------------------------------------------------------------------------------------\n-------------------------THIS FUNCTION RETURN THE NUMBER OF EXISTANCE OF SPECIFIC \n----------------------   CHARACTER IN A GIVEN STRING\n----------------------------------------------------------------------------------------\n\n\n\nRET NUMBER:=0;\nA NUMBER;\nBEGIN\n\tIF STR IS NULL THEN RETURN(0); END IF;\n\tFOR CNT IN 1..LENGTH(STR)-(LENGTH(CHR)-1) LOOP\n\t\t\n\t\tIF SENSITIVE=1 THEN\n\t\t\tIF SUBSTR(STR,CNT,LENGTH(chr))=CHR THEN RET:=RET+1; END IF;\n\t\tELSE\n\t\t\tIF UPPER(SUBSTR(STR,CNT,LENGTH(chr)))=UPPER(CHR) THEN RET:=RET+1; END IF;\n\t\tEND IF;\n\t\t\n\tEND LOOP;\n\tRETURN(RET);\nEND;\n"
+}

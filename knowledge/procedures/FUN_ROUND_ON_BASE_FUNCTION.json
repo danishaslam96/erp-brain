@@ -1,0 +1,9 @@
+{
+  "name": "FUN_ROUND_ON_BASE",
+  "type": "FUNCTION",
+  "line_count": 11,
+  "tables_referenced": [
+    "P_ROUND_VAL"
+  ],
+  "body_snippet": "function fun_round_on_base\n(\n       p_number number,\n       p_base number\n)\n       return number  is\n       p_round_val number;\nbegin\n       select decode((round((p_number/p_base),0)),trunc(p_number/p_base),trunc(p_number/p_base)*p_base,(round((p_number/p_base),0))*p_base) into p_round_val from dual; \n       return(p_round_val);\nend fun_round_on_base;\n"
+}

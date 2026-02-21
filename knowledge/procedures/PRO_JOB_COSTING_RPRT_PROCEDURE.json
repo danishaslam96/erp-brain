@@ -1,0 +1,13 @@
+{
+  "name": "PRO_JOB_COSTING_RPRT",
+  "type": "PROCEDURE",
+  "line_count": 328,
+  "tables_referenced": [
+    "ISSUE_MT",
+    "TEMP_JOB_COSTING",
+    "IMK_SO_MT",
+    "TEMP_CODE_COMBINATION_CRITERIA",
+    "SGD_CARTON_MT"
+  ],
+  "body_snippet": "procedure PRO_JOB_COSTING_RPRT(PARM_FROM_DATE DATE,\n                                                 PARM_TO_DATE   DATE,\n                                                 parm_cust_id_from number,\n                                                 parm_cust_id_to   number,\n                                                 parm_so_id_from  number,\n                                                 parm_so_id_to    number,\n                                                 Parm_order_type_id number,\n                                                 PARM_ORDER_NO VARCHAR2,\n                                                 PARM_ORDER_NO_TO VARCHAR2,\n                                                 parm_set_of_book_id NUMBER,\n                                                 parm_rowset_id NUMBER) is\nbegin\n  delete from temp_code_combination_criteria;\n  Commit;\n   pckg_fsg.populate_fsg_acct_useage_help(parm_set_of_book_id,parm_rowset_id);\n  pckg_account_inquiry.populate_account_criteria(5,'0-00-000-01~Z-ZZ-ZZZ-01');\n\n  DELETE FROM TEMP_JOB_COSTING;\n  Commit;\n\n\n\n  FOR i IN (\n\nselect so.so_ref_no, -- char(50)---\n       c.company_name customer_name, --char--\n       sum(d.Kgs) Kgs, --number--\n       sum(d.Dzn_pair) Dzn_pair, --number--\n       sum(d.weight) weight, --number--\n       a.issue_amount Knitting, --number--\n       round((sum(d.Kgs) * c.issue_amount_c) / tt.total_kgs, 2) Dyeing, --number--\n       d.issue_amount_d Packing_Accessories, --number--\n       ------------ total Material ------"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "CLOSE_CUSTOMER_ACCOUNT",
+  "type": "PROCEDURE",
+  "line_count": 218,
+  "tables_referenced": [
+    "CUSTOMER_MT",
+    "CUST_CL_BALANCES_MT",
+    "LNUM_CNT",
+    "RECEIPTS_MT",
+    "CUST_CL_BALANCES_DET",
+    "PAYMENTS_MT",
+    "LNUM_CUST_CL_BAL_ID",
+    "OTHER_PMNTS_RCPTS_MT"
+  ],
+  "body_snippet": "procedure CLOSE_CUSTOMER_ACCOUNT(PARM_SOB_ID NUMBER,PARM_FIN_YR_ID NUMBER) IS\n   LNUM_CNT NUMBER(15):=0    ;\n   YR_CLOSING_DATE DATE;\n   YR_OPENING_DATE DATE;\n   LNUM_CUST_CL_BAL_ID NUMBER(15);\n   PREV_YEAR_ID        NUMBER;\nbegin\n\n       YR_OPENING_DATE := PCKG_ACCOUNT_INQUIRY.GET_FIN_YEAR_FIRST_DATE (PARM_FIN_YR_ID);                \n       YR_CLOSING_DATE := PCKG_ACCOUNT_INQUIRY.GET_FIN_YEAR_LAST_DATE  (PARM_FIN_YR_ID);                \n\n--       BEGIN\n       PREV_YEAR_ID := PCKG_ACCOUNT_INQUIRY.GET_LAST_YEARS_ID(PARM_SOB_ID,YR_OPENING_DATE);                \n--       EXCEPTION\n--          WHEN OTHERS THEN NULL;\n--       END;\n\n       DELETE FROM cust_cl_balances_det T \n       WHERE T.CUST_CL_BAL_ID IN \n                              (SELECT M.CUST_CL_BAL_ID\n                               FROM CUST_CL_BALANCES_MT M\n                               WHERE M.FIN_YEAR_ID = PARM_FIN_YR_ID );\n                               \n       DELETE FROM cust_cl_balances_mt M\n       WHERE M.FIN_YEAR_ID = PARM_FIN_YR_ID ;\n       \n       SELECT NVL(MAX(D.CUST_CL_BAL_ID),0)+1\n              INTO\n              LNUM_CUST_CL_BAL_ID\n       FROM   cust_cl_balances_Mt  D ;\n   \n       SELECT NVL(MAX(D.CUST_CL_BAL_DET_ID),0)+1\n              INTO\n              LNUM_CNT\n       FROM   cust_cl_balances_det  D ;\n   \n\n            \n       INSERT INTO CUST_CL_BALANCES_MT(CUST_CL_BAL_ID,FIN_YEAR_ID)\n       VALUES(LNUM_CUST_CL_BAL_ID,PARM_FIN_YR_ID );\n\n       \n       FOR CUST_CLOS IN ( \nSELECT CMT.CUSTOMER_ID, CMT.CUST"
+}

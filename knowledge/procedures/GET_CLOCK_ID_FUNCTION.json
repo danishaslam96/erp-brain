@@ -1,0 +1,10 @@
+{
+  "name": "GET_CLOCK_ID",
+  "type": "FUNCTION",
+  "line_count": 14,
+  "tables_referenced": [
+    "RESULT",
+    "PAY_SHIFT_CLOCKS_MT"
+  ],
+  "body_snippet": "function GET_CLOCK_ID(PARM_DATE Date , PARM_SHIFT_ID  Number ,parm_en_next_poss_val Number Default 0) return number is\n  Result NUMber;\nbegin\n  Begin\n      Select CB.PAY_SHIFT_CLOCK_ID Into RESULT\n      From PAY_SHIFT_CLOCKS_MT CM , PAY_SHIFT_CLOCK_BINDING_MT CB\n      Where CM.CLOCK_ID= CB.PAY_SHIFT_CLOCK_ID\n      And     CB.PAY_SHIFT_ID = PARM_SHIFT_ID\n      And     PARM_DATE Between CB.DATE_FROM and cb.date_to;\n      Return RESULT;\n   End;\n  Exception When Others Then\n  Return Null;\nend GET_CLOCK_ID;\n"
+}

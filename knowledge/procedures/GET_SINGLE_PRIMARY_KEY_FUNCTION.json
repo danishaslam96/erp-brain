@@ -1,0 +1,10 @@
+{
+  "name": "GET_SINGLE_PRIMARY_KEY",
+  "type": "FUNCTION",
+  "line_count": 19,
+  "tables_referenced": [
+    "WIZ_LICENCED_TO",
+    "LDAT_U_T_DATE"
+  ],
+  "body_snippet": "function get_single_primary_key(parm_table_name varchar2,parm_column_name varchar2 default null,parm_primary_key number default null  , parm_parent_keys varchar2 default null) return number is\n  LDAT_U_T_DATE date;\nbegin\n  SELECT U_T_D\n         INTO\n         LDAT_U_T_DATE\n  FROM WIZ_LICENCED_TO; \n  \n  IF LDAT_U_T_DATE IS NULL OR Ldat_U_T_DATE < SYSDATE THEN\n     RAISE_APPLICATION_ERROR(-20000,'Invalid PK Generation Method !');\n  END IF;\n\n  -- checking if parm_table_name starts with   PPK~   then the Pk should be computed Physically\n  IF UPPER(substr(parm_table_name,1,4))='PPK~' THEN \n      return(get_physical_pk(SUBSTR(parm_table_name,5),parm_column_name ,parm_primary_key ,parm_parent_keys ));\n  ELSE\n      return(get_sequence_pk(parm_table_name,parm_column_name ,parm_primary_key ,parm_parent_keys ));\n  END IF;\nend get_single_primary_key;\n"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "PCKG_WORKING",
+  "type": "PACKAGE BODY",
+  "line_count": 173,
+  "tables_referenced": [
+    "FSG_WORKING_STATUS",
+    "LNUM_TOTAL_NUMBER"
+  ],
+  "body_snippet": "package body PCKG_WORKING is\n\n    lnum_total_number   NUMBER := 100; -- IT WILL CONTAIN THE TOTSL NUMBER OF HITS IN A SPECIFIC WORK            \n\n    lnum_current_number NUMBER := 0  ; -- IT WILL CONTAIN THE CURRENT NUMBER OF COMPLETED HITS\n\n    lnum_working_status NUMBER := 1  ; -- THIS FLAG WILL CONTAIN THE STATUS OF CURRECT TASK , IF THIS\n                                       -- FLAG IS 0 THEN THE PROCESSING ENVIRONMENT SHOULD BE TERMINATED\n                                       -- IMMIDIATELY AND CONTROL SHOULD BE TRANSFERED TO ITS CALLING PROGRAM.\n    lvch_custom_message VARCHAR2(1000);\n    lvch_form_title     VARCHAR2(50);\n    \n    lnum_auto_message_yn   number(1):=0;\n    LVCH_AUTO_MESSAGE            VARCHAR2(1000);\n    \n    lnum_aborted_yn NUMBER(1);\n                                       \n     PROCEDURE update_local_var(parm_submit_id NUMBER) ;\n     PROCEDURE update_working_table(parm_sumbit_id NUMBER) ;\n----------------------------\n----- GETTER & SETTER METHODS FOR THE ABOVE VAR\n---------------------------\n      FUNCTION get_current_number(parm_submit_id NUMBER) RETURN NUMBER IS\n      BEGIN\n           update_local_var(parm_submit_id);\n           RETURN(lnum_current_number);\n      END;                \n      \n      FUNCTION get_total_number(parm_submit_id NUMBER)   RETURN NUMBER IS\n      BEGIN\n           update_local_var(parm_submit_id);\n           RETURN(lnum_total_number);\n      END;\n      \n      PROCEDURE set_current_number (parm_submit_id NUMBER,parm_c_num NUMBER) "
+}

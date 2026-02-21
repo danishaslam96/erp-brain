@@ -1,0 +1,13 @@
+{
+  "name": "FUN_GET_CARTON_STOCK",
+  "type": "FUNCTION",
+  "line_count": 134,
+  "tables_referenced": [
+    "SGD_FGS_RECEIVING_MT",
+    "RESULT",
+    "SGD_SO_PS_FILLING_MT",
+    "IMK_SO_MT",
+    "SGD_CTN_RECEIVED_MT"
+  ],
+  "body_snippet": "function FUN_GET_CARTON_STOCK(PARM_FOR_THE_DATE DATE) return number is\n  Result NUmber;\nbegin\n  select\n --somt.so_id\n--,mtt.sgd_carton_mt_id\n--,sr.carton_sr_desc\n--,mtt.inner_qty_dzn\n--,sum(fill_1.filled_Carton - nvl(fgs.fgs_rcvd_ctn,0)+nvl(fgs_ret_rcvd.fgs_rcvd_ret_ctn,0))        Carton_stock\nsum((fill_1.filled_Carton - nvl(fgs.fgs_rcvd_ctn,0)+nvl(fgs_ret_rcvd.fgs_rcvd_ret_ctn,0))*mtt.inner_qty_dzn)   Carton_Stock_Dzn\ninto result\n\nfrom\n\n  imk_so_mt                   somt\n ,customer_mt                 cmt\n ,sgd_carton_sr_mt            sr\n ,sgd_carton_mt               mtt\n\n -------------------Filling\n ,(select\n m.imk_so_id\n ,d.carton_mt_id\n,sum(decode(d.transaction_type,'F',nvl(d.qty_produce, 0)*1,'E',nvl(d.qty_produce,0)*-1))       Filled_Carton\n\n  from\n  SGD_SO_PS_FILLING_MT         d\n ,sgd_so_ps_fill_xref_mt       m\n ,imk_so_mt                    somt\n ,customer_mt                  cmt\n\n where d.SO_PS_FILL_XREF_ID    = m.SO_PS_FILL_XREF_ID\n and m.imk_so_id               = somt.so_id\n and somt.customer_id          = cmt.customer_id\n /*and cmt.customer_code                >=          NVL(&PARM_CUST_CODE_FROM,cmt.customer_code)\n and cmt.customer_code                <=          NVL(&PARM_CUST_CODE_TO,cmt.customer_code)\n and somt.so_ref_no                   >=          NVL(&PARM_SO_REF_FROM,somt.so_ref_no)\n and somt.so_ref_no                   <=          NVL(&PARM_SO_REF_TO,somt.so_ref_no)\n and somt.loading_date                >=          NVL(&PARM_LOADING_DATE_FROM,somt.loadin"
+}

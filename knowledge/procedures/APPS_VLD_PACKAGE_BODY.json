@@ -1,0 +1,14 @@
+{
+  "name": "APPS_VLD",
+  "type": "PACKAGE BODY",
+  "line_count": 835,
+  "tables_referenced": [
+    "SSR_STYLE_NO_MT",
+    "ITM",
+    "SO_REF",
+    "IMK_SO_MT",
+    "ITEMS_MT",
+    "STYL"
+  ],
+  "body_snippet": "PACKAGE BODY          APPS_VLD\nIS\n   ------------------- TO GET ITEMS--------------\n   FUNCTION GET_ITM (ITEMID NUMBER)\n      RETURN CHAR\n   IS\n      ITM   VARCHAR2 (4000);\n   BEGIN\n      SELECT ITEM_DESC\n        INTO ITM\n        FROM ITEMS_MT\n       WHERE ITEM_ID = ITEMID;\n\n      RETURN (ITM);\n   EXCEPTION\n      WHEN NO_DATA_FOUND\n      THEN\n         RETURN NULL;\n   END GET_ITM;\n\n\n   ------------------ITEM CODE------------\n   FUNCTION GET_CODE (ITEMID NUMBER)\n      RETURN CHAR\n   IS\n      ITM   VARCHAR2 (4000);\n   BEGIN\n      SELECT ITEM_CODE\n        INTO ITM\n        FROM ITEMS_MT\n       WHERE ITEM_ID = ITEMID;\n\n      RETURN (ITM);\n   EXCEPTION\n      WHEN NO_DATA_FOUND\n      THEN\n         RETURN NULL;\n   END GET_CODE;\n\n   ------------ITEM ID-----------\n   FUNCTION ITEM_ID (ITEMCODE CHAR)\n      RETURN NUMBER\n   IS\n      ITM   NUMBER;\n   BEGIN\n      SELECT ITEM_ID\n        INTO ITM\n        FROM ITEMS_MT\n       WHERE ITEM_CODE = ITEMCODE;\n\n      RETURN (ITM);\n   EXCEPTION\n      WHEN NO_DATA_FOUND\n      THEN\n         RETURN NULL;\n   END ITEM_ID;\n\n   ----------- GET SO ORDER----------------------\n   FUNCTION GET_SOREF (SOID NUMBER)\n      RETURN CHAR\n   IS\n      SO_REF   VARCHAR2 (35);\n   BEGIN\n      SELECT SO_REF_NO\n        INTO SO_REF\n        FROM IMK_SO_MT\n       WHERE SO_ID = SOID;\n\n      RETURN (SO_REF);\n   EXCEPTION\n      WHEN NO_DATA_FOUND\n      THEN\n         RETURN NULL;\n   END GET_SOREF;\n\n   ------------ CUSTOMER STYLE -----------------\n   FUNCTION GET_STYLE (STYLID NUMBER"
+}

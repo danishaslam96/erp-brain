@@ -1,0 +1,14 @@
+{
+  "name": "PRO_INITIALIZE_SAMPLE_REQUEST",
+  "type": "PROCEDURE",
+  "line_count": 53,
+  "tables_referenced": [
+    "SGD_SAMPLE_RAW_MATERIALS_DET",
+    "SGD_SAMPLE_REQUEST_DET",
+    "SSR_SR_SOCKS_DET",
+    "SGD_PATTERN_FLOW_DET",
+    "SGD_SAMPLE_REQUEST_MT",
+    "SGD_SAMPLE_RAW_MATERIALS_MT"
+  ],
+  "body_snippet": "procedure Pro_initialize_sample_request(Parm_sample_request_id number DEFAULT  NULL,\n                                                          parm_del_all_rec_yn    number DEFAULT  0) is\nBEGIN\n\n  if parm_del_all_rec_yn = 0 then\n  \n    delete from sgd_sample_raw_materials_det dt\n     where dt.raw_material_id in\n           (select m.material_id\n              from sgd_sample_raw_materials_mt m\n             where m.sample_request_det_id IN\n                   (SELECT dd.sample_request_det_id\n                      FROM sgd_sample_request_det dd\n                     WHERE dd.sample_request_id = Parm_sample_request_id));\n  \n    DELETE from sgd_sample_raw_materials_mt m\n     where m.sample_request_det_id IN\n           (SELECT dd.sample_request_det_id\n              FROM sgd_sample_request_det dd\n             WHERE dd.sample_request_id = Parm_sample_request_id);\n  \n    DELETE from sgd_pattern_flow_det dd\n     where dd.sample_request_det_id in\n           (SELECT dd.sample_request_det_id\n              FROM sgd_sample_request_det dd\n             WHERE dd.sample_request_id = Parm_sample_request_id);\n  \n    DELETE from ssr_sr_socks_det m\n     where m.sample_request_id = Parm_sample_request_id;\n  \n    DELETE from sgd_sample_request_det dd\n     where dd.sample_request_id = Parm_sample_request_id;\n  \n    DELETE from sgd_sample_request_mt mt\n     where mt.sample_request_id = Parm_sample_request_id;\n  \n  ELSE\n  \n    DELETE from sgd_sample_raw_materials_det dt;\n  \n    DELETE from sgd_sample_raw_m"
+}

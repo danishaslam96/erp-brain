@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_WORKING",
+  "type": "PACKAGE",
+  "line_count": 31,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_WORKING is\n\n  -- Author  : Tariq Sarwar\n  -- Created : 30-09-2002 11:55:24 AM\n  -- Purpose : it contains global var which will be accessable at runtime \n  --           to a form to show the status of current task\n  \n      FUNCTION get_current_number(parm_submit_id NUMBER) RETURN NUMBER;                \n      FUNCTION get_total_number  (parm_submit_id NUMBER) RETURN NUMBER;\n      FUNCTION get_percent       (parm_submit_id NUMBER) RETURN NUMBER;\n      \n      PROCEDURE set_current_number(parm_submit_id NUMBER,parm_c_num NUMBER);                \n      PROCEDURE set_total_number  (parm_submit_id NUMBER,parm_t_num NUMBER);\n      \n      PROCEDURE set_working_status (parm_submit_id NUMBER,parm_working_stat NUMBER);\n      \n      PROCEDURE ONE_WORK_DONE(parm_submit_id NUMBER) ;\n     \n      FUNCTION CREATE_NEW_JOB RETURN NUMBER;\n\n      FUNCTION  get_working_status (parm_submit_id NUMBER) RETURN NUMBER ;\n      \n      PROCEDURE set_custom_message (parm_submit_id NUMBER,parm_custom_message VARCHAR2);\n      PROCEDURE set_form_title     (parm_submit_id NUMBER,parm_form_title     VARCHAR2);\n      FUNCTION get_custom_message (parm_submit_id NUMBER) return VARCHAR2 ;\n      FUNCTION get_form_title     (parm_submit_id NUMBER) return VARCHAR2 ;\n      \n      PROCEDURE enable_auto_message(parm_submit_id NUMBER) ;\n      PROCEDURE disable_auto_message(parm_submit_id NUMBER) ;\n      \nend PCKG_WORKING;\n"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "FUN_CHECK_PERMISSION_INV",
+  "type": "FUNCTION",
+  "line_count": 65,
+  "tables_referenced": [
+    "GROUP_PERMISSIONS_4_INV_BKS",
+    "MAIN",
+    "LNUM_BOOK_YN",
+    "LNUM_SET_OF_BOOK_ID",
+    "USER_ADDITIONAL_PERM_4_INV_BKS",
+    "SUB",
+    "INV_BOOKS_MT"
+  ],
+  "body_snippet": "FUNCTION \n                  FUN_CHECK_PERMISSION_INV(parm_form_name \t\t  VARCHAR2, -- FORM FILE NAME\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t         parm_sub_function \t  VARCHAR2, -- PASS NULL WHEN CHECKING FROM MAIN MENU\n          \t\t\t\t\t\t\t\t\t\t\t\t\t\t parm_action\t\t\t\t  VARCHAR2, -- PASS NULL WHEN CHECKING FROM MAIN MENU AND WHEN CHECKING OPENING OF FORM FROM SUB FUNCTION\n                                       parm_emp_id          NUMBER,\n                                       parm_inv_book_id     NUMBER) RETURN NUMBER \nIS\n     lnum_set_of_book_id NUMBER(14);\n     lnum_permission_yn NUMBER(1);\n     lnum_book_yn        NUMBER(1);\nBEGIN\n\n     IF (parm_emp_id = 1) or (parm_emp_id = 2 AND parm_inv_book_id IS NULL)THEN\n        RETURN(1);\n     END IF;\n\n     SELECT IO.SET_OF_BOOK_ID\n            INTO\n            lnum_set_of_book_id\n     FROM INV_BOOKS_MT IB,SUB_INVENTORY_MT SIMT,INV_ORGANIZATION_MT IO\n     WHERE IB.SUB_INV_ID = SIMT.SUB_INV_ID AND\n           SIMT.INV_ORG_ID = IO.INV_ORG_ID AND\n           ib.inv_book_id = parm_inv_book_id;\n           \n     lnum_permission_yn  := fun_check_permission(parm_form_name ,parm_sub_function ,parm_action ,parm_emp_id ,lnum_set_of_book_id );\n     \n     IF lnum_permission_yn = 1 THEN \n     BEGIN\n            SELECT 1\n                   INTO\n                   lnum_book_yn\n            FROM \n                (\n                (\n                SELECT DISTINCT ib.inv_book_id\n                FROM group_permissions_4_inv_bks ib,users_in_group u\n                WHERE ib.permission_on_"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "PRO_GEN_PLAN_RAW_MATERIALS",
+  "type": "PROCEDURE",
+  "line_count": 65,
+  "tables_referenced": [
+    "PLAN_RAW_EXIST",
+    "SGD_SAMPLE_RAW_MATERIALS_DET",
+    "SGD_PLAN_RAW_MATERIALS_MT",
+    "SGD_PLAN_RAW_MATERIALS_DET",
+    "SGD_SAMPLE_RAW_MATERIALS_MT"
+  ],
+  "body_snippet": "procedure pro_gen_plan_raw_materials(parm_sample_det_id number,\n                                                       parm_plan_det_id   number) is\n  lnm_MATERIAL_ID     number(14);\n  lnm_plan_raw_det_id number(14);\n  plan_raw_exist      number;\nbegin\n\n  select count(1)\n    into plan_raw_exist\n    from SGD_plan_RAW_MATERIALS_MT m\n   where m.plan_det_id = nvl(parm_plan_det_id,0);\n   \n\n   if plan_raw_exist  = 0 and  nvl(parm_plan_det_id,0) <>0 then\n  for cur in (select mt.material_id,\n                     mt.item_id,\n                     mt.greige_quantity,\n                     mt.greige_waste,\n                     mt.waste_perc,\n                     mt.pd_yn,\n                     mt.prd_waste_perc\n                from sgd_sample_raw_materials_mt mt\n               where mt.sample_request_det_id = parm_sample_det_id) loop\n  \n    lnm_MATERIAL_ID := get_single_primary_key('sgd_plan_raw_materials_mt',\n                                              'MATERIAL_ID');\n  \n    insert into SGD_plan_RAW_MATERIALS_MT\n      (material_id,\n       plan_det_id,\n       item_id,\n       greige_quantity,\n       greige_waste,\n       waste_perc,\n       pd_yn,\n       prd_waste_perc)\n    values\n      (lnm_MATERIAL_ID,\n       parm_plan_det_id,\n       cur.item_id,\n       cur.greige_quantity,\n       cur.greige_waste,\n       cur.waste_perc,\n       cur.pd_yn,\n       cur.prd_waste_perc);\n  \n    for cur_dt in (select dt.RAW_MATERIAL_ID, dt.yarn_ply\n                     from sgd_sample_raw_materials_det dt\n     "
+}

@@ -1,0 +1,12 @@
+{
+  "name": "FUN_SGD_STITCH_STOCK_OPENIG",
+  "type": "FUNCTION",
+  "line_count": 537,
+  "tables_referenced": [
+    "SGD_REWORK_DET",
+    "RESULT",
+    "SGD_TOE_BATCH_INSPECT_MT",
+    "SGD_TOE_CLOSING_MT"
+  ],
+  "body_snippet": "function FUN_SGD_STITCH_STOCK_OPENIG(PARM_AS_ON_DATE DATE,PARM_INCL_THIS_DATE NUMBER) return number is\n  Result NUmber;\n  lnum_start_date date := to_date('01-jan-2022');  ----i fix this start date till 31-dec-2021 there is not unstitch batches according to user  (imran toe close dept)\n\nbegin\n\nIF PARM_INCL_THIS_DATE = 0 THEN\n\nselect\n\n-- stitch.batch_id\n sum(nvl(stitch.stitch_qty_dzn,0))-sum(nvl(waste.waste_dzn,0)) stitch_qty_dzn\n into result\n-- sum(nvl(gbs_rec.rec_dzn_qty,0))\nfrom\n\n\n(select\n\n bdet.batch_id\n,sum(det.stitch_qty_dzn+ nvl(det.stitch_qty_pcs,0)/24)  stitch_qty_dzn\n--,sum(det.waste_qty_dzn)   stitch_waste_qty_dzn\n\nfrom\n sgd_toe_closing_mt   mt\n,sgd_toe_closing_det  det\n,sgd_batch_making_det bdet\n\n\nwhere mt.toe_close_id = det.toe_close_id\nand det.batch_det_id  = bdet.batch_det_id\nand nvl(bdet.batch_qty,0) > 0\nand mt.toe_close_date between TRUNC(TO_DATE(lnum_start_date),'MONTH') AND  PARM_AS_ON_DATE-1\ngroup by bdet.batch_id\n)stitch\n-----------------\n,(select\n waste.batch_id\n,sum(waste.faulted_dzn)  waste_dzn\nfrom \n\n(select\n dt.batch_id\n ,sum(insp_det.faulted_pcs)/24 faulted_dzn\n \n--,count(1)\n\n\nfrom \n sgd_toe_batch_inspect_mt     insp_mt\n,sgd_toe_batch_inspect_det    insp_det\n,sgd_batch_making_det         dt\n,sgd_toe_closing_det          tcd\n,sgd_stm_planning_det         stm\n\n\nwhere insp_mt.batch_inspect_mt  =   insp_det.batch_inspect_id\nand insp_det.batch_det_id       =   dt.batch_det_id\nand dt.stm_plan_det_id          =   stm.stm_plan_det_id\n--and insp_mt.batch_statu"
+}

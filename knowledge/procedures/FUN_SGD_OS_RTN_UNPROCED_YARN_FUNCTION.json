@@ -1,0 +1,10 @@
+{
+  "name": "FUN_SGD_OS_RTN_UNPROCED_YARN",
+  "type": "FUNCTION",
+  "line_count": 14,
+  "tables_referenced": [
+    "SGD_OS_PROCESS_RETURN_DET",
+    "LNM_UNPROCEED_YRN_RTN"
+  ],
+  "body_snippet": "function fun_sgd_os_rtn_unproced_yarn(parm_os_process_Det_id number)\n  return number is\n  lnm_unproceed_yrn_rtn number;\nbegin\n\n  select sum(d.material_return_qty)\n    Into lnm_unproceed_yrn_rtn\n    from SGD_OS_PROCESS_RETURN_det d, sgd_os_process_det pd\n   where d.os_process_det_id = pd.os_process_det_id\n     and d.os_process_det_id = nvl(parm_os_process_det_id, -1);\n\n  return(nvl(lnm_unproceed_yrn_rtn, 0));\n\nend fun_sgd_os_rtn_unproced_yarn;\n"
+}

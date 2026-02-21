@@ -1,0 +1,13 @@
+{
+  "name": "PRO_CLOSE_CMT_KNIT_BATCH",
+  "type": "PROCEDURE",
+  "line_count": 287,
+  "tables_referenced": [
+    "SGD_KNITTING_PROD_MT",
+    "SGD_BATCH_MAKING_DET",
+    "SGD_KNITTING_DET",
+    "LNM_STM_PLAN_DT_ID",
+    "SGD_KNITTING_MT"
+  ],
+  "body_snippet": "procedure pro_close_cmt_knit_batch(parm_batch_id number) is\n  lnm_knitting_id     number;\n  lnm_knitting_det_id number;\n  lnm_stm_plan_Dt_id  number;\n  lnm_knit_prod_id  number;\n  lnm_knit_prod_det_id number;\n  lnm_batch_qty number(16,2);\n  lnm_knit_cont_prd_dt_id number;\n -- lnm_stitched_yn number;\n  lnm_toe_close_id number;\n  lnm_toe_close_det_id number;\n  lnm_batch_det_id number;\n  lnm_imk_so_id number;\nbegin\n\n  SELECT d.stm_plan_det_id, d.batch_qty, d.knit_cont_prod_dt_id,/*p.bi_stitched_yn,*/ d.batch_det_id,b.imk_so_id\n    INTO lnm_stm_plan_Dt_id, lnm_batch_qty, lnm_knit_cont_prd_dt_id, /*lnm_stitched_yn,*/ lnm_batch_det_id,lnm_imk_so_id\n    from sgd_batch_making_det d,/*sgd_cmt_knit_cont_prod_dt p,*/sgd_batch_making_mt b\n   where --d.knit_cont_prod_dt_id = p.knit_cont_prod_dt_id\n    d.batch_id= b.batch_id\n   and  d.batch_id = parm_batch_id;\n/*\n  lnm_knitting_id := get_single_primary_key('sgd_knitting_mt',\n                                            'knitting_id');\n\n  insert into sgd_knitting_mt\n    (knitting_id,\n     kniting_date,\n     shift_id,\n     dept_id,\n     cost_id,\n     group_no,\n     line_no,\n     entered_by,\n     entered_datetime,\n     mc_loc_id,\n     shift,\n     plan_locked_yn,\n     revision_yn,\n     revision_by,\n     revision_date,\n     plan_locked_by,\n     plan_locked_date,\n     revision_no,\n     cmt_yn)\n  values\n    (lnm_knitting_id,\n     sysdate,\n     1,\n     null,\n    35884,-- 40310, -- cost_id,\n     1,\n     1,\n     pckg_utility.GET_APPLICATION_USER,\n   "
+}

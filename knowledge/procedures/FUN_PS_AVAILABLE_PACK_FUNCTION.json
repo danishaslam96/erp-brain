@@ -1,0 +1,11 @@
+{
+  "name": "FUN_PS_AVAILABLE_PACK",
+  "type": "FUNCTION",
+  "line_count": 119,
+  "tables_referenced": [
+    "RESULT",
+    "SGD_PS_PRODUCTION_MT",
+    "SGD_CARTON_MT"
+  ],
+  "body_snippet": "function FUN_PS_AVAILABLE_PACK(PARM_PS_ITEM_CODE VARCHAR2,\n                                                 PARM_SO_ID        NUMBER)\n  return number is\n  Result number;\nbegin\n\n  select\n  -- avl_pack.so_id\n  -- ,sum(avl_pack.total_produced_packs)    total_produced_packs\n  --,sum(avl_pack.total_filled_packs)      total_filled_packs\n   sum(avl_pack.available_pack) available_pack\n    into result\n  \n    from (select\n          \n           tt_prod.so_id,\n           tt_prod.join_id,\n           tt_prod.tt_prod_pack Total_Produced_Packs,\n           ps_det.qty_pack,\n           sum(fill_ctn.filled_ctn * ps_det.qty_pack) Total_Filled_Packs,\n           tt_prod.tt_prod_pack -\n           nvl(sum(fill_ctn.filled_ctn * ps_det.qty_pack), 0) available_pack\n          \n            from (select somt.so_id,\n                         ps_itm.item_code,\n                         sod.so_det_id,\n                         somt.so_id || '-' || ps_itm.item_code Join_id,\n                         sum(nvl(mt.PS_PROD_QTY, 0)) tt_prod_pack\n                    from sgd_ps_production_mt mt,\n                         imk_so_mt            somt,\n                         customer_mt          cmt,\n                         imk_so_det           sod,\n                         items_mt             ps_itm\n                  \n                   where mt.imk_so_id = somt.so_id\n                     and somt.customer_id = cmt.customer_id\n                     and somt.so_id = sod.so_id\n                     and sod.so_det_id = mt.imk_"
+}

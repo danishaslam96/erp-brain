@@ -1,0 +1,9 @@
+{
+  "name": "PCKG_SGD_OUTSOURCE",
+  "type": "PACKAGE BODY",
+  "line_count": 21,
+  "tables_referenced": [
+    "SGD_OS_PROCESS_DET"
+  ],
+  "body_snippet": "package body pckg_sgd_outsource is\n\nPROCEDURE pro_upd_iss_det_id( process_det_id   number,  prm_iss_det_id number) is\n   \n begin\n          update sgd_os_process_det d \n          set d.iss_det_id = prm_iss_det_id\n          where d.os_process_det_id = process_det_id;\n end;\n \n PROCEDURE pro_set_null_iss_det_id( parm_process_id   number) is\n begin\n          update sgd_os_process_det d \n          set d.iss_det_id = null\n          where d.os_process_id = parm_process_id;\n end;\n\nbegin\n  -- Initialization\nnull;\nend pckg_sgd_outsource;\n"
+}

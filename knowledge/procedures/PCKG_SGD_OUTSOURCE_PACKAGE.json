@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_SGD_OUTSOURCE",
+  "type": "PACKAGE",
+  "line_count": 10,
+  "tables_referenced": [],
+  "body_snippet": "package pckg_sgd_outsource is\n\n\n\n  \nPROCEDURE pro_upd_iss_det_id( process_det_id   number,  prm_iss_det_id number);\nPROCEDURE pro_set_null_iss_det_id( parm_process_id   number);\n\n\nend pckg_sgd_outsource;\n"
+}

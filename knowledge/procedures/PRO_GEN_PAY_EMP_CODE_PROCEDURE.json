@@ -1,0 +1,13 @@
+{
+  "name": "PRO_GEN_PAY_EMP_CODE",
+  "type": "PROCEDURE",
+  "line_count": 43,
+  "tables_referenced": [
+    "PAY_ORGANIZATION_MT",
+    "PAY_ORG_PFT_ACCTS_CONFIG_MT",
+    "PAY_EMPLOYEE_MT",
+    "LVT_CODES",
+    "LVN_STRUCT_ID"
+  ],
+  "body_snippet": "Procedure Pro_Gen_Pay_Emp_Code (lvn_pay_org_id NUMBER) is\n  \n  Cursor pay_emp is\n  Select pem.emp_Code , pem.emp_full_name\n  From   PAY_EMPLOYEE_MT pem ,\n         PAY_EMP_HIRING_INFO_MT pehim,\n         PAY_ORGANIZATION_MT pom\n  Where  pem.pay_emp_id = pehim.pay_emp_id\n  And    pom.pay_org_id = pehim.pay_org_id\n  And    pom.pay_org_id = lvn_pay_org_id; -- <<Pay Employees Of Specific Pay_Organization >>\n  \n  cc_res NUMBER;\n  lvc_emp_code VARCHAR2(200);\n  lvn_struct_id number;\n  TYPE codes Is Table Of VARCHAR2(250) Index By BINARY_INTEGER;\n  lvt_codes codes;\n  \nBegin\n\n Select  wgsbm.structure_id into lvn_struct_id\n From    pay_organization_mt pom ,wiz_gl_set_of_books wgsbm\n Where   pom.set_of_book_id=wgsbm.set_of_book_id\n And     pom.pay_org_id=lvn_pay_org_id;\n \n Exception\n         WHEN NO_DATA_FOUND THEN return;\n \n Select  t.employee_acc_code , t.employer_acc_code , t.surplus_acc_code , t.others_acc_code\n Into    lvt_codes(1) , lvt_codes(2) , lvt_codes(3) , lvt_codes(4)\n From    PAY_ORG_PFT_ACCTS_CONFIG_MT t\n Where   t.pay_org_id=lvn_pay_org_id;\n \n  For    ptr_pay_emp In pay_emp Loop\n         lvc_emp_code :=  SubStr( ptr_pay_emp.emp_code , instr(ptr_pay_emp.emp_code,'-')+1 , Length(ptr_pay_emp.emp_code) );--<<Get Employee number code after \"-\" Sign>>\n         For cnt_indx In 1 .. 4 Loop\n             if lvt_codes(cnt_indx) is not null then\n                cc_res := Dynamic_Create_Seg_Combination(lvn_struct_id , lvt_codes(cnt_indx),\n                                               "
+}

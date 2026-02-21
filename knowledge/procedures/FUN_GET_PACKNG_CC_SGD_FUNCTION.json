@@ -1,0 +1,9 @@
+{
+  "name": "FUN_GET_PACKNG_CC_SGD",
+  "type": "FUNCTION",
+  "line_count": 28,
+  "tables_referenced": [
+    "SGD_PACK_AUTH_PAIR_CODE_MT"
+  ],
+  "body_snippet": "function FUN_GET_PACKNG_CC_SGD(PARM_STM_PLAN_DET_ID NUMBER) return varchar2 is\n  Result varchar2(10000);\n   flag  number := 0;\nbegin\n  FOR cur IN (\n                 select\n                   pack_auth.stm_plan_det_id\n                  ,REPLACE(VCC.CODE_VALUE,'-','') PACKING_UNIT\n\n                  from\n                   sgd_pack_auth_pair_code_mt pack_auth\n                  ,view_code_combinations  vcc\n\n                  where pack_auth.cost_code_id   = VCC.CODE_COMBINATION_ID\n                  AND pack_auth.stm_plan_det_id = PARM_STM_PLAN_DET_ID\n               ) LOOP\n\n        IF flag = 1 THEN\n             RESULT := RESULT||',';\n             END IF;\n\n    RESULT := RESULT||cur.packing_unit;\n    flag := 1;\n\n    END LOOP;\n\n  return(Result);\nend FUN_GET_PACKNG_CC_SGD;\n"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "PCKG_ITEM_STOCK",
+  "type": "PACKAGE",
+  "line_count": 31,
+  "tables_referenced": [
+    "PCKG_INV"
+  ],
+  "body_snippet": "package pckg_item_stock is\n\n  -- Author  : TARIQ\n  -- Created : 12/21/2010 10:01:08 AM\n  -- Purpose : To manage the inventory stock related procedures\n  --           Before this package every stock related report must have its own query\n  --           or must be deriven from pckg_inv.get_item_balance.\n  --           After this package the stock related reports would not require complex queries and processes.\n\n    PROCEDURE initialize ;\n    PROCEDURE set_group_on(parm_sub_inv_yn NUMBER DEFAULT 1,parm_locator_yn number DEFAULT 1, parm_item_yn number DEFAULT 1, parm_populate_cat_yn NUMBER default 1) ;\n\n    PROCEDURE SET_INV_ORG_ID(PARM_INV_ORG_ID NUMBER DEFAULT NULL, PARM_SOB_ID NUMBER DEFAULT NULL);\n    PROCEDURE ADD_SUB_INV_CRITERIA(parm_sub_inv_id NUMBER) ;\n\n    PROCEDURE ADD_ITEM_CRITERIA(parm_from_item_CODE VARCHAR2,parm_to_item_CODE VARCHAR2);\n    PROCEDURE ADD_ITEM_CAT_CRITERIA( parm_ic_struc_id NUMBER DEFAULT NULL, parm_ic_code_ranges VARCHAR2 DEFAULT NULL);\n    PROCEDURE ADD_ITEM_TYPE_CRITERIA(parm_item_type_id number,parm_from_item VARCHAR2,parm_to_item VARCHAR2);\n    PROCEDURE ADD_ITEM_CRITERIA_COMBINE( parm_item_type_id number,parm_from_item VARCHAR2,parm_to_item VARCHAR2, parm_ic_struc_id NUMBER DEFAULT NULL, parm_ic_code_ranges VARCHAR2 DEFAULT NULL);\n\n    PROCEDURE ADD_LOC_CRITERIA(parm_loc_code_id NUMBER DEFAULT NULL, parm_loc_struc_id NUMBER DEFAULT NULL, parm_loc_code_ranges NUMBER DEFAULT NULL);\n\n    PROCEDURE populate_item_stock(parm_as_on_date DATE,parm_excl"
+}

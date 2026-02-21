@@ -1,0 +1,13 @@
+{
+  "name": "PRO_GET_RANGE",
+  "type": "PROCEDURE",
+  "line_count": 203,
+  "tables_referenced": [
+    "LNUM_CALENDAR_ID",
+    "LNUM_FIN_YR_ID",
+    "WIZ_GL_SET_OF_BOOKS",
+    "PERIOD_DETAILS",
+    "LDTE_FROM_DATE"
+  ],
+  "body_snippet": "PROCEDURE PRO_GET_RANGE(PARM_SET_OF_BOOK_ID    IN NUMBER,\n                                          PARM_GENERATION_DATE   IN DATE,\n                                          PARM_PERIOD_TYPE       IN VARCHAR2,\n                                          PARM_FROM_DATE         OUT DATE,\n                                          PARM_TO_DATE           OUT DATE,\n                                          PARM_ADJUSTMENT_PRD_ID OUT NUMBER) IS\n\n  LNUM_CALENDAR_ID    NUMBER(15);\n  LNUM_FIN_YR_ID      NUMBER(15);\n  LNUM_QRTR_NO        NUMBER(1);\n  LNUM_PERIOD_NO      NUMBER(3);\n  LNUM_MIN_PERIOD_NO  NUMBER(3);\n  LNUM_ADJ_PRD_ID     NUMBER(15);\n  LNUM_LAST_FIN_YR_ID NUMBER(15);\n  LDTE_FROM_DATE      DATE;\n  LDTE_TO_DATE        DATE;\n  LNUM_PERIOD_TYPE_ID NUMBER(15);\n  LNUM_FIN_YR_TYPE_ID NUMBER(15);\nBEGIN\n  -- selection of calendar_id\n  SELECT CALENDAR_ID, PERD_TYPE_ID\n    INTO LNUM_CALENDAR_ID, LNUM_PERIOD_TYPE_ID\n    FROM WIZ_GL_SET_OF_BOOKS\n   WHERE SET_OF_BOOK_ID = PARM_SET_OF_BOOK_ID;\n\n  -- selection from period_details\n  SELECT FY.FIN_YEAR_ID, FROM_DATE, TO_DATE, QUATER_NO, PERIOD_NO,FY.FIN_YR_TYPE_ID\n    INTO LNUM_FIN_YR_ID,\n         LDTE_FROM_DATE,\n         LDTE_TO_DATE,\n         LNUM_QRTR_NO,\n         LNUM_PERIOD_NO,\n         LNUM_FIN_YR_TYPE_ID\n    FROM PERIOD_DETAILS,FINANCIAL_YEAR_MT FY\n   WHERE CALENDAR_ID = LNUM_CALENDAR_ID\n     AND PERIOD_DETAILS.FIN_YEAR_ID = FY.FIN_YEAR_ID\n     AND PARM_GENERATION_DATE BETWEEN FROM_DATE AND TO_DATE\n     AND PERIOD_NO <> 999\n     AND PER"
+}

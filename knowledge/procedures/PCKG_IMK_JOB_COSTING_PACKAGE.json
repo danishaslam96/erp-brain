@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_IMK_JOB_COSTING",
+  "type": "PACKAGE",
+  "line_count": 25,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_IMK_JOB_COSTING is\n\n  -- Author  : MUHAMMAD AMIR SHAHZAD\n  -- Created : 21-Jul-09 5:53:39 PM\n  -- Purpose : This Package is used to compute Material Costing\n\nprocedure PRO_POP_JOB_MATERIAL_COST( PARM_FROM_DATE Date,\n                                     PARM_TO_DATE   Date);\nprocedure PRO_POP_JOB_PROD_VALUES(   PARM_FROM_DATE Date,\n                                     PARM_TO_DATE   Date);\n\nFunction FUN_LAST_PURCH_RATE_IMK(PARM_ITEM_ID NUMBER,\n                                 PARM_DATE    DATE)  return Number;\n\nfunction FUN_WO_DEPT_PROD_QTY(PARM_DEPT_ID    NUMBER,\n                              PARM_WO_ID      NUMBER,\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARM_FROM_DATE  DATE,\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARM_TO_DATE    Date)  Return Number;\nfunction FUN_KNIT_WEIGHT_AB(PARM_DEPT_ID    NUMBER,\n                              PARM_WO_ID      NUMBER,\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARM_FROM_DATE  DATE,\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARM_TO_DATE    Date)  Return Number;\nend PCKG_IMK_JOB_COSTING;\n\n\n"
+}

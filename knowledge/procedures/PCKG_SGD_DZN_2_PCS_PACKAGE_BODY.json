@@ -1,0 +1,17 @@
+{
+  "name": "PCKG_SGD_DZN_2_PCS",
+  "type": "PACKAGE BODY",
+  "line_count": 879,
+  "tables_referenced": [
+    "SGD_TOE_CLOSING_DET",
+    "SGD_PRODUCTION_CLOSE_HISTORY",
+    "SGD_PROD_CLOSE_DET",
+    "SGD_TOE_BATCH_INSPECT_DET",
+    "LNM_QAD_LAB_PCS",
+    "SGD_REWORK_DET",
+    "LNM_PRODUCTION_DZN",
+    "LNM_REWORK_WASTE_DZN_PCS",
+    "LNM_REWORK_WASTE_DZN"
+  ],
+  "body_snippet": "package body pckg_sgd_dzn_2_pcs is\n\n procedure Pro_toe_close_batch_balance(parm_batch_id number,parm_bal_dzn out number, parm_bal_pcs out number) is\nlnm_production_dzn number(14,2);\nlnm_production_pcs number(14,2);\n\nlnm_rework_waste_dzn number(14,2);\nlnm_rework_waste_dzn_pcs number(14,2);\n\nlnm_qad_lab_pcs number(14,2);\nlnm_tot_rem_pcs number(14,2);\n\nlnm_tot_prod_pcs number(14,2);\nlnm_tot_rework_pcs number(14,2);\n\nlnm_bal_dzn number(14,2);\n\nbegin\n\n\n /* Fetch batch dzn & pcs */\n  /*  select dd.production_dzn, dd.production_pcs\n  INto lnm_production_dzn, lnm_production_pcs\n  from sgd_prod_close_det dd\n where dd.prod_close_det_id =\n       (select MAX(d.prod_close_det_id)\n          from sgd_prod_close_det d, sgd_prod_close_mt m\n         where d.prod_close_id = m.prod_close_id\n           and m.cost_id = nvl(:TXT_FR_CC_COMB_ID, -1)\n          and d.batch_id = nvl(:TXT_BATCH_ID, -1));\n    */\n    \n      select sum(nvl(dt.stitch_qty_dzn, 0)) ,sum(nvl(dt.stitch_qty_pcs, 0)) \n  INTO lnm_production_dzn,  lnm_production_pcs\n  from Sgd_Toe_Closing_Det dt, sgd_batch_making_det d\n    where dt.batch_det_id = d.batch_det_id\n    and nvl(d.batch_qty,0) >0\n    and d.batch_id= nvl(parm_batch_id, -1);\n          \n                 --fetch all  rework dzn --\n/*   select sum(nvl(h.rework_waste_dzn,0))\n  INTO lnm_rework_waste_dzn\n  from sgd_production_close_history h where h.batch_id = nvl(parm_batch_id,-1)\n  and nvl(h.BATCH_CLOSE_TYPE,0)= 0;*/\n  \n  select sum(nvl(d.rework_dzn,0))\n  into lnm_rework_waste_"
+}

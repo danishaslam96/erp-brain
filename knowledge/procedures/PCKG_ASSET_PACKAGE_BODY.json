@@ -1,0 +1,14 @@
+{
+  "name": "PCKG_ASSET",
+  "type": "PACKAGE BODY",
+  "line_count": 2947,
+  "tables_referenced": [
+    "FS_AST_ADJUSTMENT_MT",
+    "LNUM_ADD_QTY",
+    "FS_AST_RTRMNT_MT",
+    "LNUM_ADJ_QTY",
+    "FS_AST_DETAILS_MT",
+    "LNUM_RTR_QTY"
+  ],
+  "body_snippet": "Package Body Pckg_Asset Is\n\n  Lgnum_Comile_In_Process Number(1) := 0;\n\n  Function Get_Asset_Balance(Parm_Asset_Id Number, Parm_Ason_Date Date)\n    Return Number Is\n    Lnum_Add_Qty Number(14);\n    Lnum_Rtr_Qty Number(14);\n    Lnum_Adj_Qty Number(14);\n  Begin\n\n    -- Added Units\n    Begin\n      Select Am.Ast_Quantity\n        Into Lnum_Add_Qty\n        From Fs_Ast_Details_Mt Am\n       Where Am.Ast_Detail_Id = Parm_Asset_Id\n         And Am.Ast_Addition_Date <= Parm_Ason_Date;\n    Exception\n      When No_Data_Found Then\n        Lnum_Add_Qty := 0;\n    End;\n    -- Retirement Units\n    Begin\n      Select Sum(Ru.Rtrd_Qty)\n        Into Lnum_Rtr_Qty\n        From Fs_Ast_Rtrmnt_Mt        Rm,\n             Fs_Ast_Rtrmnt_Det       Rd,\n             Fs_Ast_Rtrmnt_Unit_Info Ru\n       Where Rm.Ast_Rtrmnt_Id = Rd.Ast_Rtrmnt_Id\n         And Rd.Ast_Rtrmnt_Det_Id = Ru.Ast_Rtrmnt_Det_Id\n         And Rd.Ast_Detail_Id = Parm_Asset_Id\n         And Rm.Doc_Date <= Parm_Ason_Date;\n    Exception\n      When No_Data_Found Then\n        Lnum_Rtr_Qty := 0;\n    End;\n\n    -- Adjusted Units\n    Begin\n      Select Sum(Am.Adj_Qty)\n        Into Lnum_Adj_Qty\n        From Fs_Ast_Adjustment_Mt Am, Fs_Ast_Adjustment_Dt Ad\n       Where Am.Ast_Adj_Id = Ad.Ast_Adj_Id\n         And Am.Ast_Detail_Id = Parm_Asset_Id\n         And Am.Doc_Date <= Parm_Ason_Date;\n    Exception\n      When No_Data_Found Then\n        Lnum_Adj_Qty := 0;\n    End;\n    Return Nvl(Lnum_Add_Qty, 0) - Nvl(Lnum_Rtr_Qty, 0) + Nvl(Lnum_Adj_Qty,\n                 "
+}
