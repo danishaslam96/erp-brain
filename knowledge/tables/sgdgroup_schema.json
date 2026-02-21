@@ -1,0 +1,7879 @@
+{
+  "generated_at_utc": "2026-02-21T21:55:00Z",
+  "owner": "SGDGROUP",
+  "total_tables": 1968,
+  "tables": {
+    "ACCOUNT_BALANCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ACCOUNT_BALANCES_241225": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ACCOUNT_ENQUIRY_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ACCOUNT_ENQUIRY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ACCT_SEGMENT_MIRROR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ACCT_UOM_ATTACHMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ADDRESS_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ADMIN_ITEM_EDIT_LOG_SALES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ADVANCE_SALES_ORDER_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ADVANCE_SALES_ORDER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AGING_TEMPLATE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AGING_TEMP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AGING_TEMP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_BROKER_TARGETS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_BROKER_TARGETS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_CONTNRIZAXN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_CONTNRIZAXN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_CUST_N_CAT_ADXNL_INFO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_DC_COMPLAINT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_DEMAND_QUOTAS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_MARKET_RATES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_MARKET_RATES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_MISC_CONFIGURATION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_PAYMENTS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_PAYMENTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_RECEIPTS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_RECEIPTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_REQ_CANCELAXN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_REQ_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_REQ_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_REQ_REMARKS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_STAFF_CODES_4_RPRT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_TT_CREAXN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_PC_TT_CREAXN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_SP_PLAN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_SP_PLAN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_SP_PLAN_MXNG_RATIOS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_SP_TARGETS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_SP_TARGETS_HOLIDAYS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_SP_TARGETS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_STORE_SUB_INVS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_CONV_COST_LOSS_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_DEAD_STOCK_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_DEAD_STOCK_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_FG_DC_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_FG_PROD_EFF_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_FG_PROD_FSTP_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_FG_PROD_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_FG_STOCK_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_INWARD_DET_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_OUTWARD_DET_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_PC_PMNT_RET_BANK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_PC_PMNT_RET_CASH": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_PC_PMNT_RET_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_PC_PMNT_RET_RPRT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_PO_SUMMARY_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_RM_STOCK_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_SCHEDULE_WISE_SUMMARY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_SLOW_MOVING_STCK_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_STOCK_WISE_DET_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_TARG_ACT_POS_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TMP_WASTE_PROD_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TRANS_ISS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AJ_TRANS_ISS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ALLOWANCES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ALRTS_SEND_TO_USERS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ALRT_ATTEMPTS_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "APX_MV_DBI_RECEIPTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "APX_MV_DBI_SALES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AREA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ATTACHMENTS_JRN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ATTACHMENT_JRN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ATTACHMENT_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ATT_REGISTER_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ATT_REGISTER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ATT_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ATT_SUBSTITUTE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AT_DEPARTMENT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AT_DESIGNATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AUTHORIZATION_LOG_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AUTHORIZATION_LOG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AUTHORIZ_TEAM": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AUTH_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AUTH_DETAIL2": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AUTH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AUTH_TEAM_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "AUTH_TEAM_MEMBERS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BANK_ACCOUNT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BANK_ACC_NATURES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BANK_BRANCH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BANK_DOC_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BATCH_ISSUE_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BATCH_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BATCH_ISS_BOOK_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BI_UNIT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BOARD_OPER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BUDGET_GROUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BUDGET_GROUP_RANGES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BUDGET_JOURNAL_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BUDGET_JOURNAL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BUDGET_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BUSINESS_LOCATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "BUSINESS_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CALENDAR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CANCELLED_CHEQUES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CARPET_CUST_PAYMENT_TERMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CARPET_DETAIL_PRICE_LIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CARPET_GEN_PRICE_LIST_GRP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CARPET_GEN_PRICE_LIST_GRP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CASH_ACC_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CC_ACCT_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CD_SELECTION_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CD_SELECTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CHEAQUES_FEILDS_DEF": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CHEAQUES_TEMPLATE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CHEAQUE_PRINTING_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CHEQUE_BOOK_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CHEQUE_PRINT_DEF_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CITIES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$111914": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$111972": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$112497": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$112521": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$112923": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$113060": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$113218": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$113998": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$114845": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$114851": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$114863": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$115651": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$115668": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$115717": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$116161": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$116494": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$93527": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$95275": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$95279": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$95304": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$95466": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP3$95606": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$111914": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$111972": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$112497": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$112521": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$112923": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$113060": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$113218": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$113998": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$114845": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$114851": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$114863": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$115651": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$115668": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$115717": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$116161": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$116494": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$93527": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$95275": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$95279": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$95304": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$95466": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CMP4$95606": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COA_SCM": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CODE_COMBINATIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CODE_COMBINATIONS_19JUL2022": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CODE_COMBINATION_GROUPS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CODE_COMBINATION_GROUPS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CODE_COMBINATION_VALUES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COGS_VCHR_GEN_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COLORS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COLSET_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COL_CALCULATION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COL_SET_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMBINATION_ALLIAS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMPANY_INFO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMPOSITE_DC_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMPOSITE_DC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMPOSITE_GRN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMPOSITE_GRN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMPOSITE_RMA_IN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMPOSITE_RMA_IN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMPOSITE_RMA_OUT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMPOSITE_RMA_OUT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMP_DC_D": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COMP_DC_STAX_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CONVERSION_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CON_WIZMENU": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_AREA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_BROKER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_CONTRACT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXPORT_DISPATCH": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXPORT_DISPATCH_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXPORT_LC_OPENING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXPORT_LC_OPENING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXPORT_LC_SHIPMENT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXPORT_SALES_CONTRACT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXPORT_SALES_CONT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXPORT_SALES_CONT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXP_DISP_ACC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXP_DISP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_EXP_DISP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_LC_OPENING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_RECEIPT_EXP_REB_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_RECEIPT_NOTE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_RECEIPT_NOTE_MNO_CODES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COTTON_RECEIPT_NOTE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COT_EXP_CONT_CANCEL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COT_SPIN_FRAME_WRKD_CONFIG_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COT_SPIN_FRAME_WRKD_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COT_YARN_MXNG_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COT_YARN_MXNG_ITEM_TYP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "COT_YARN_MXNG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CO_INSTLD_FRAMS_UNT_WISE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CO_INSTLD_FRAMS_UNT_WISE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRIT_SALES_ORDER_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRIT_SALES_ORDER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CROSS_VALIDATION_RULES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CROSS_VALIDATION_RULES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRPT_DLR_DETAIL_PRICE_LST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRPT_DLR_PRICE_LIST_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRPT_DLR_PRICE_LIST_GRP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRT_GL_JRN_REP3_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRT_RC_GL_REP2_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRT_RC_GL_REP2_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRT_RC_GL_REP4_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CRT_RC_GL_REP4_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUSTOMER_ACCOUNTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUSTOMER_AMOUNTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUSTOMER_EDIT_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUSTOMER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_ADDRESSESS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_CATAGORY_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_CATAGORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_CATAGORY_TO_SITES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_CL_BALANCES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_CL_BALANCES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_CONTACT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_CONTACT_PHONE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_GRADE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_INQ_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_INQ_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_PHONES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_RELATIONSHIP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_SECTOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "CUST_WASTE_CATEGORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DAILY_ATT_REGISTER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DATA_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DC_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DC_DETAIL_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DC_FROM_HO_2_MILL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DC_FROM_HO_2_MILL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEAD_STOCK_DEFINITION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEDUCTIONS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DELETE_AREA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DELETE_ATT_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DELETE_TEMP_REP_ERROR_OUTPUT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEMAND_CANCELLATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEMAND_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEMAND_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEMAND_TEMP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEPARTMENT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEPENDENT_ON_KEY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEPT_DIST_METHOD_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEPT_DIST_METHOD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEPT_LABOUR_COST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEPT_MATERIAL_COST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEPT_OVERHEAD_COST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DEPT_PRODUCTION_VALUES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_COMB": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_ITEM_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_JRN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_JRN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_OPR_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_OPR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_PAY_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_PAY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_PIR_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_REC_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_FLEX_DATA_REC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_LOT_BATCH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_SEG_DEFINITION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_SEG_FORMULA_LINES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_SEG_FORMULA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_STRUCTURE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DESC_STRUC_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DETAIL_PRICE_LIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DISPATCH_ADVICE_CANCELATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DISPATCH_ADVICE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DISPATCH_ADVICE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DOC_AUTH_SETUP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DOC_AUTH_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DOC_SEQUENCE_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DOC_SEQUENCE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DRUM_CODING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DYEING_CARD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "DYEING_CARD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EMPLOYEE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EMPLOYEE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EMP_CATEGORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EMP_DEPT_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EMP_MACHINE_OPERATOR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ENCUMBRANCE_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EQUIPMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXPORT_SALES_INFO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_REBATE_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_CLEARING_AGENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_CLEARING_AGENT_CAT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_COMMERCIAL_INVOICE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_CONTAINER_LOAD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_CONTAINER_SIZE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_CONTRACT_CANCELLATION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_CONTRACT_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_CONTRACT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_CONTRACT_TERMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_DC_INV_BOOK_TYPES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_DESTINATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_DOC_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_EXPORT_EXPENSE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_EXPORT_EXPENSE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_EXPORT_HEAD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_GENERAL_INFO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_INV_BOOK_CONT_TYPE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_INV_BOOK_DO_TYPE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_INV_BOOK_INVCE_TYP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_INV_BOOK_MILL_SITE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_INV_BOOK_TNR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_LC_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_LC_ITEMS_COMM": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_LC_ITEMS_SP_CLS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_LC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_LC_SHIPMENTS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_LC_SHIPMENTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_LC_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_LOOSE_DATE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_MILL_SITE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_MKT_PERSON_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_PACKING_LIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_PACKING_SIZE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_PACKING_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_QUOTA_CAT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_RATE_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_REBATE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_SHIPING_LINE_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_SHIPING_PORTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_SHIPMENT_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_SHIPMENT_MODE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_SITE_PERSON_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "EXP_SLS_VESSEL_INFO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_ASSET_ADDITION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_ASSET_CATS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_ASSET_COST_DATA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_ASSET_PURCHASES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_ASSET_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_BOUGHT_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_CORPORATE_BOOKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_CORP_JRN_TYPES_N_CATS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_LESSOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_NATURAL_ACCNTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_PROPERTY_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_WIZ_DEP_METHOD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FA_WIZ_OWNERSHIP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FBR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FINANCIAL_YEAR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FINISHING_CARD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FINISHING_CARD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FIN_YEAR_CLOSING_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FLEX_REPORTS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FLEX_REPORTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FLEX_VALUE_SET_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_COURSES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_FEE_ENTRY_TMPLTE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_FEE_ENTRY_TMPLTE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_FEE_PERIOD_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_FEE_SETUP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_FEE_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_FEE_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_SESSIONS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_STDNT_EXCEP_FOR_DISCNT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_STDNT_EXCEP_FOR_DISCNT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_STUDENTS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FM_STUDENTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FRGHT_SETUP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FRGHT_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FSG_ACCOUNT_USAGE_HELP_ALL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FSG_ACCOUNT_USAGE_HELP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FSG_REPORT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FSG_REPORT_OUTPUT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FSG_REPORT_OUTPUT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FSG_REPORT_PREVIEWER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FSG_WORKING_STATUS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_ASSET_BOOKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_ADJUSTMENT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_ADJUSTMENT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_ADJ_RECLASS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_BKS_BINDING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_BOUGHT_CONDXN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_BRANDS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_CALLENDAR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_CALLENDAR_PERIOD_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_CAT_SETUP_CODES_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_CAT_SETUP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_CAT_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_CAT_SETUP_POST_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_DETAILS_ASGNMNT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_DETAILS_FIN_INFO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_DETAILS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_DETAILS_SRCE_LINES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_KEYS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_LESSORS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_MAKES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_MANUFAC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_OWNERSHIP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_PURCH_BKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_REVALUAXN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_REVALUAXN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_RTRMNT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_RTRMNT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_RTRMNT_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_RTRMNT_UNIT_INFO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_TRNSFR_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_TRNSFR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_TRNSFR_TO_INFO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_AST_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_BUYERS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_CAT_TYP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_EMPLOYEES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_PROP_CLASS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_PROP_TYP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_TEMP_AST_STATUS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_WIZ_ASSET_DEPRECIATION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_WIZ_ASSET_STATUS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_WIZ_AST_BK_TYPS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_WIZ_COST_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_WIZ_DEPR_DVXN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_WIZ_DEPR_METHODS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_WIZ_DEPR_PRD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_WIZ_PRORAT_CONVXNS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "FS_WIZ_SUB_COMPONENT_LIFE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GL_GEN_PREFERENCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GL_SEQUENCE_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GOODS_CARRIER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GOODS_INSPECTORS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GOODS_QUALITY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GOODS_SHIPING_LINE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GRN_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GRN_DETAIL_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GRN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GRN_UNION_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GROUP_PERMISSIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GROUP_PERMISSIONS_4_INV_BKS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GROUP_PERMISSIONS_4_STRUC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "GROUP_PERMIS_4_INV_ITEM_TYPES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_BARCODE_CONFIG_TMP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_BARCODE_SIN_TIN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_BARCODE_SIN_TIN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_BOM_FORMULA_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_BOM_FORMULA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_BOM_GNRTD_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_BOM_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_BOOK_CNFG_FOR_DMD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_COMPLEXITY_LEVEL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_DB_2_PRS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_DB_2_PRS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_DEFECT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_DYNG_BLCH_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_DYNG_BLCH_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_DYNG_BLCH_REPROCESS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_DYNG_BLCH_REPROCESS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_EMP_JOB_BNDNG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_2_LINK_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_2_LINK_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_MEASUREMENT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_PARAMETER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_RLX_MEASUREMENT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_SPEC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_SPEC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_SPEC_PIC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_STR_MEASUREMENT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_TECH_COURSE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_KNIT_TECH_COURSE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_LINK_2_WH_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_LINK_2_WH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_LINK_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_LINK_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_LINK_QLTY_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_LINK_QLTY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_LOGO_POSITION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_MACHINES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_MACHINE_PLAN_COMP_DATA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_MACHINE_PLAN_ERROR_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_MACHINE_STOPAGE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_MACHINE_TIME_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_MACHINE_TIME_XTENSION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_MACH_STOPAGE_REASONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PACK_PROD_ACTUALL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PACK_PROD_ACTUALL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PACK_PROD_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PACK_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PACK_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PACK_PROD_REPROCESS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PACK_PROD_REPROCESS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PROCESSES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PROD_BAG_NOS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PROD_DEPT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PROD_LOT_NOS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PRS_2_PACK_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PRS_2_PACK_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PRS_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PRS_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PRS_PROD_REPROCESS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_PRS_PROD_REPROCESS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_RESOURCES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_RESOURCE_CLASS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_RESOURCE_LOC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_RESOURCE_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_RESRCE_PLANNG_PARAMS_DEF": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_BRAND_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_CONST_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_DATA_COMPOSITION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_DATA_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_DATA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_GROUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_LINK_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_MACH_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_PROSS_DEF_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_SELECTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_SOCK_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SAMPLE_STRIPS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SHIFTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SO_CONTAINERS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SO_CONTAINERS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SO_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_SO_POSTING_HIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_TEMP_PROD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_TIME_UNITS_DEF_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_TIME_UNITS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_TIME_XTENSION_REASONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_UNITS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_UNIT_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_UNIT_SETUP_PROCESS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_UNIT_SETUP_RESRCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_UNIT_SETUP_RESRCE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_UNIT_SETUP_RESRC_XCP_CLNDR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WH_2_BLEACH_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WH_2_BLEACH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WH_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WH_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WIZ_KNIT_QUALIFIER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WORKING_CALENDAR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WORK_ORDER_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WORK_ORDER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WO_RESRCE_PLAN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WO_RESRCE_PLAN_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMK_WO_RESRCE_PLAN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMPORT_DOC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMPORT_JOURNAL_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMPORT_JOURNAL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_CONTRACT_BOOK_WISE_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_CONTRACT_CANCELLATION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_CONTRACT_COMMSION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_CONTRACT_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_CONTRACT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_CONTRACT_SHPMNT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_CONTRACT_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_CONTRACT_TERMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_CONTRACT_TERMS_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_DOC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_EXP_REBATE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_LC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_LC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_LC_SHPMNT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_LC_SHPMNT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_LC_SPE_CLAUSES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_LC_XTENSIONS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_SHPMNT_ADVCE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_SHPMNT_ADVCE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_SHPMT_ADV_BOOK_WISE_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_S_ADV_ARVL_AT_GATE_D": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_S_ADV_ARVL_AT_GATE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_S_ADV_ARVL_AT_PORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_S_ADV_ARVL_OF_DOCS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSES_BOOK_WISE_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSE_ALLOC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSE_ALLOC_LC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSE_ALLOC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSE_ALLOC_SHPMNT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSE_ALLOC_SHPMNT_LINES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSE_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMP_XPENSE_TYPE_QLFR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IMRAN_SPECIFIC_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INVENTORY_BALANCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INVENTORY_BALANCES_1": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INVENTORY_BALANCES_301225": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INVOICES_STAGING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INVOICE_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INVOICE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INVOICE_OTHER_LINE_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INVOICE_STAX_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BATCH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOKS_ACCOUNT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOKS_CONFIG_4NMB": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOKS_POS_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOKS_RELATIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOKS_TO_SITES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOKS_VALID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOKS_VALID_CUST_CATS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOKS_VALID_SUPP_CATS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BOOK_ITEM_TYPES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BUDGET_ISSUE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BUDGET_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BUDGET_ISS_DEF_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BUDGET_ISS_DEF_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_BUDG_ISS_GEN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_CATEGORY_SET_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_CAT_SET_DEFINITION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_COST_CENTER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_DOCS_PRIM_SEC_FLD_NAMES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_FORMULA_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_FORMULA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_FSG_PROCESSES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_FSG_REPORT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_GL_CONFIG_CATEGORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_GL_CONFIG_CC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_GL_CONFIG_COST_OF_SALES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_GL_CONFIG_NOTES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_GL_CONFIG_STCK_ADJSTMNT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_GL_CONFIG_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_GL_CONFIG_WIP_ADJSTMNT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_INSPECTION_CODES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_ITEM_MASKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_ITEM_PREFERENCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_ORGANIZATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_ORG_VAL_PRECED": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_PLANNER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_QNTV_FORMULA_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_QNTV_FORMULA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_SEQUENCE_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "INV_SHIPPED_TO_BILLED_TO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ISSUE_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ISSUE_DETAIL_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ISSUE_GENERATION_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ISSUE_NOTE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ISSUE_NOTE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ISSUE_UNION_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ISS_DATA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITAX_DEPOSIT_BOOKS_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITAX_DEPOSIT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITAX_DEPOSIT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITAX_DEPOSIT_OPAY_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITAX_RATES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEMS_CATEGORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEMS_INVENTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEMS_INVENTORY_26112020": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEMS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_ADJUSTMENT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_ADJUSTMENT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_BATCH_SERIAL_DEF": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_BATCH_SRNO_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_MANUFACTURER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_PHYSICAL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_PICTURES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_PICTURES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_PLANNING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_STOCK_ITEMTYP_CRIT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_STOCK_ITEM_CRIT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_STOCK_LOC_CRIT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_STOCK_RESULTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_STOCK_RESULTS_CONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_STOCK_RESULTS_DEAD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_STOCK_SINV_CRIT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_VALUATION_PENDENCY_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ITEM_VALUATI_PENDENCY_DETAIL_2": {
+      "columns": [],
+      "constraints": {}
+    },
+    "IT_REQ_M": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_ACC_ASGNMNT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_DEPT_DATA_POSTING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_DPTT_ACC_ASGNMNT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_DPTT_ACC_ASGNMNT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_DPTT_COSTING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_DPTT_COSTING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_DPTT_DIST_SET_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_DPTT_DIST_SET_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_DPTT_STATIC_AMNTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_EXPENSES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_JOB_COST_DATA_POSTING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_PROD_DATA_POSTING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_WIZ_AMNT_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_WIZ_COST_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_WIZ_DIST_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_WIZ_JOB_DIST_BASIS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_WO_COSTING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JC_WO_COSTING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JOB_DIST_METHOD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JOB_LABOUR_COST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JOB_MATERIAL_COST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JOB_ORDER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JOB_OVERHEAD_COST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JOB_PRODUCTION_VALUES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JOURNAL_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JOURNAL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JOURNAL_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JRN_BATCH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JRN_LINE_DESC_CODES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JRN_LINE_DESC_FIELDS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JRN_LINE_DESC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JRN_MT_DESC_FIELDS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JRN_MT_DESC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JRN_TYPES_CROSS_VALID_RULES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "JRN_VCHR_DOC_HEADING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "KHALIS_GROUP_SUP_CAT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "KHALIS_GROUP_SUP_CAT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "KINTTING_REMOVAL_MOB_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "LB_SS_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "LKC_DMR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "LOG_FILE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "LOT_BATCH_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "LOT_BATCH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "LOT_BATCH_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "LTG_WB_PSQFT_RATE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "LTG_WB_PSQFT_RATE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MACHINE_OPERATIONS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MACHINE_OPERATORS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MANUFACTURER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MASS_ALLOCATION_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MASS_ALLOCATION_FORMULA_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MASS_ALLOCATION_FORMULA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MASS_ALLOCATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MENU": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MENU2_TEST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_BDGT_GRP_CONFIG_ACC_RANGES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_BDGT_GRP_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_BDGT_PREFRENCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_BUDGET_CHEQUES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_BUDGET_CHEQUES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_BUDGET_HEADS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_BUDGET_MAIN_GROUPS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_COMM_DETAIL_RATE_LIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_COMM_RATE_LIST_AGENT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_COMM_RATE_LIST_GRP_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_COMM_RATE_LIST_GRP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_TARGET_PRODUCTION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MNO_TRGT_PROD_PREF": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MP_D": {
+      "columns": [],
+      "constraints": {}
+    },
+    "MP_M": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NAYYER_SPECIFIC_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_PUR_CONT_REV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_BRANDS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_REV_BUYR_CP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_REV_COMM": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_REV_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_REV_ITEMS_SD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_REV_ITEMS_SP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_REV_ITEM_CAN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_REV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_REV_SHIP_LN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_REV_TNR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_STATUS_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_CONT_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_DC_INTGRAT_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_DC_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_DC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_DO_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_DO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_GODOWNS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_GRADES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_INV_COMM": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_INV_EXP_REB": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_INV_INTGRAT_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_INV_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_INV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_PK_LST_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_PK_LST_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_PP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_RTN_COMM": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_RTN_INTGRAT_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_RTN_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_RTN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NCL_YARN_SLS_TRANS_UOM": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NEGATIVE_INV_ITEMS_RPRT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NODE_PARAMETER_CORRECTION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_BCF_PROD_NOTE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_BCF_WIP_MONTH_WISE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_BCF_WIP_MONTH_WISE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_CHRJET_JOB_CARD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_CHRJET_JOB_CARD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_CHRJET_PRODUCTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_CHRJET_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_CHRJOB_MATERIAL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_CHRJOB_MATERIAL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_DEPARTMENTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_PROD_TCH_2_YS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_SIN_YS_2_TCH": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_STENTER_JOB_CARD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_STNT_PRODUCTION_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_STNT_PRODUCTION_DET_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_STNT_PRODUCTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_STNT_PROD_WASTE_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_TCH_W_I_PROCESS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_TFTNG_JOB_CARD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_WIP_DEPT_MACHINES_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_WIP_ITEMS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_WIP_ITEM_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "NYR_YRN_ISSUE_2_TFTNG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OH_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OH_CONFIG_ACCOUNTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OH_CONFIG_RATES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OH_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OLD_CODES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OP_TRANSACTIONS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OP_TRANSACTIONS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ORGANIZATION_INFO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ORIGIN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OS_COLOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OS_PROCESS_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OTHER_PMNTS_RCPTS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OTHER_PMNTS_RCPTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OUTS_DOUBLE_D": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OUTS_DOUBLE_DD_TEST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OUTS_DOUBLE_D_TEST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OUTS_DOUBLE_M": {
+      "columns": [],
+      "constraints": {}
+    },
+    "OUTS_DOUBLE_M_TEST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PACK_OPER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PACK_OPER1": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PADDLE_CODING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PARTIES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAYMENTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAYMENT_COLLECTORS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAYMENT_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAYMENT_STOP_REASON": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAYMENT_TERMS_ADVANCES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAYMENT_TERMS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ATT_2_PRL_POSTING_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_BOOKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_CC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_DEPARTMENT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_DESIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_DSG_WISE_BADLI_DEF_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_DSG_WISE_BADLI_DEF_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMPLOYEE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_ADDR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_BANK_ACC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_DEPENDENTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_HIRING_INFO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_LICENSES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_PHONE_NOS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_PICTURES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_PROM_DEMO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_QUALIF_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_RESIGN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_SPEC_INFO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_TRANSFER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_WEEKLY_HOLIDAYS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EMP_WORK_CHOICES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_EOBI_RATES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_GRADE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_GRADE_INC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_GRADE_INC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_GRADE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_GRP_INS_COS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_GRP_INS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_GRP_INS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_GZTD_HOLIDAYS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ITEMS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ITEM_PROD_RATE_LIST_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ITEM_PROD_RATE_LIST_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ITM_PRD_RTE_LST_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_JOB_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LEAVE_SETUP_DESIGS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LEAVE_SETUP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LEAVE_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LEAVE_TRANS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LEAVE_TRANS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LEAVE_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LOANS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LOAN_RCVRY_SCH_RVSN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LOAN_RCVRY_SCH_RVSN_LINES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_LOAN_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_MANUAL_INPUT_DED_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_MANUAL_INPUT_DED_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_NYR_ATT_DATA_IMPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ON_TRIAL_PERSONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ORGANIZATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ORG_ALLOWANCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ORG_DEDUCTIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ORG_PFT_ACCTS_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_ORG_PROD_DESIGS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_OVERTIME_DEF_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_OVERTIME_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_OVERT_DEF_4_DESIGS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_OVERT_DEF_OF_ALL_4_SAL_BSD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_OVERT_DEF_OF_TYP_4_SAL_BSD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PAYROLL_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PFT_CLOSING_BAL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PFT_CLOSING_BAL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PFT_CLOSING_VCHR_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PFT_FINAL_STLMNT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PFT_RATES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PFT_VCHR_GEN_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PMNT_OF_UNPAID_SAL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PMNT_OF_UNPAID_SAL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_PRODUCTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SAL_GRP_ALLOWANCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SAL_GRP_DEDUCTIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SAL_GRP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SAL_SHEET_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SAL_SHT_TMPLT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SAL_SHT_TMPLT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SAL_UNPAID_REASONS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SAMIN_ATT_DATA_IMPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SAMIN_ATT_LOG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SEQ_ASGNMNT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SHIFTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SHIFT_CLOCKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SHIFT_CLOCK_BINDING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SHIFT_CLOCK_BINDING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SHIFT_CLOCK_BREAKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SNCTNL_STRNGTH_SETUP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SNCTNL_STRNGTH_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SNCTNL_STRNGTH_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_SS_RATES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_TEMP_CRIT_FOR_SAL_COMP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_TEMP_EMPS_WITH_ABSENTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_TEMP_PFT_VCHR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_TEMP_SAL_GRP_TMPLT_BADLI": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_TEMP_SAL_GRP_TMPLT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_TEMP_SAL_GRP_TMPLT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_TEMP_SAL_GRP_TMPLT_OVRTME": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_TEMP_SAL_SHEET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_TEMP_SAL_SHEET_BADLI": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_UNPAID_SAL_MRKNG_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_UNPAID_SAL_MRKNG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_UN_SCH_RECEIPTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_VALID_DESIGS_4_DPTT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_VALID_DPTTS_4_SHFTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_VALID_GRADES_4_DESIGS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_ALL_DED_QLFR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_CNSTNT_GRP_TYPES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_CNSTNT_GRP_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_DED_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_GRADE_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_LOAN_RCVRY_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_LVE_ENT_PROP_PRD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_LVE_TRANS_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_RESIGN_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PAY_WIZ_SAL_SHT_TMPLT_QLFR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PCS_CONFIGURATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PERIOD_ATT_REGISTER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PERIOD_ATT_REGISTER_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PERIOD_ATT_REG_SUBS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PERIOD_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PERIOD_FREEZING_AUTO_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PERIOD_FREEZING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PHYSICAL_INV_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PHYSICAL_INV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PIUD_OLD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PLAN_TABLE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PMNT_REC_CONFIG_FOR_BANK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PMNT_REC_CONFIG_FOR_CASH": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PMNT_STOP_REL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PMNT_STOP_REL_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PMNT_STOP_REL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "POS_CASHIER_DEFINITION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "POS_PAYMENT_SOURCE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "POS_POSTING_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "POS_RECEIPT_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "POS_SALE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "POS_SALE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "POS_SHIFT_DEFINITION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "POS_SHIFT_PROGRAM_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "POS_STATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PO_CANCELLATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PO_CONTROL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PO_EXP_REB_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PO_EXP_REB_PRORATE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PO_STAX_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PO_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PRICE_LIST_GRP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PRICE_LIST_GRP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PRMR_RAW_MILK_RCPT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PRMR_RAW_MILK_RCPT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PROCESS_CHEMICAL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PROCESS_FORMULA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PROC_FORMULA_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PRODUCTION_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PRODUCTION_DETAIL_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PRODUCTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PROD_SPNDLES_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PROD_TUFT_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PROSPECT_CSTMRS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PS_ITEM_SEGMENT_CORRECTION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCHASER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCHASE_EXP_REB_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCHASE_INVOICE_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCHASE_INVOICE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCHASE_INVOICE_STAX_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCHASE_INVOICE_UNION_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCHASE_ORDER_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCHASE_ORDER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCH_EXP_REB_PRORATE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCH_OFFICERS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PURCH_RET_ADJ_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "PYRN_MV": {
+      "columns": [],
+      "constraints": {}
+    },
+    "QA_TAB_USER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "QNTV_BATCH_ISSUE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "QNTV_BATCH_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "QNTV_QUICK_BATCH_ISS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "QNTV_QUICK_BATCH_ISS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RAW_MATERIAL_TYPE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RC_GL_REP1_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RC_GL_REP1_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RECEIPTS_ITAX_CHALLAN_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RECEIPTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RECEIPT_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RECR_GENERATION_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RECR_JOURNAL_LINES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RECR_JOURNAL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RECR_JRN_LINES_SEQS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "REPORT_IMP_JRN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RJA_AUTO_VAL_4_ACNT_STRUC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RJA_AUTO_VAL_4_COUNTER_STRUC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RJA_ITM_CNT_BAR_CODE_WISE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RJA_ITM_CNT_BAR_CODE_WISE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RMA_INWARD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RMA_INWARD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RMA_IN_DETAIL_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RMA_OUTWARD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RMA_OUTWARD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RMA_OUT_DETAIL_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ROLL_UP_GROUPS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ROLL_UP_GROUPS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ROWSET_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ROWSET_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ROW_ACCT_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "ROW_CALCULATION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RPTNG_PRD_TEMPL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "RPTNG_PRD_TEMPL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "R_TO_WB_PROCESS_CARD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "R_TO_WB_PROCESS_CARD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_EXP_REB_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_EXP_REB_PRORATE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_INVOICE_UNION_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_INVOICE_UNION_DETAIL_OLD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_ORDER_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_ORDER_DET_MNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_ORDER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_ORDER_MT_SMN_COMM_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_ORDER_SMN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_ORDER_SUB_CONT_BOOK_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_PERSON_ACCOUNTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_PERSON_CATEGORY_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_PERSON_CATEGORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_PERSON_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_PERSON_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SALES_TAX_COLLECTOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SAM_BO_D": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SAM_BS_D": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SAM_M": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SAM_PAC_D": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SCM_COA_TARIQ": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SCM_SUB_ACC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SCM_SUB_ACC_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SCM_SUB_LEDGER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SECURITY_SET_OF_BOOK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SELECTOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGDGROUP_STATS_BACKUP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_APEX_FTT_COMPARISON": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_APEX_QI_COMPARISON": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_ARTICLE_RATE_STICH_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_ARTICLE_RATE_STICH_MD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_AUTH_BOOK_UNID_BIND": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_AUTH_BOOK_UNIT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BANK_CUST_CATAG_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BATCH_GAIN_FINISH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BATCH_MAKING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BATCH_MAKING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BIND_SUPERVISOR_SHIFT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARDING_ENTRY_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARDING_ENTRY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_BATCH_CLOSE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_BATCH_CLOSE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_CATEGORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_CAT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_CAT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_MAT_ISSUE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_MAT_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_MAT_REC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_MAT_REC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_REWORK_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_REWORK_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BOARD_SOURCE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BS_ADJUSTMENT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BS_ADJUSTMENT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BS_PULL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BS_PULL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BS_TRANSFER_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BS_TRANSFER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BS_TRANSFER_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BS_WASTE_RECORD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_BS_WASTE_RECORD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CARTON_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CARTON_DETAIL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CARTON_DETAIL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CARTON_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CARTON_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CARTON_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CARTON_SR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CARTON_WEIGHT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CARTON_WEIGHT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CASH_HO_AUTH_USER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CLOSING_ORDER_SMRY_REMARKS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_CONT_CONDITION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_CONT_TERMS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_DA_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_DA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_KNIT_CONTRACT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_KNIT_CONTRACT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_KNIT_CONT_PRD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_KNIT_CONT_PROD_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_LINK_CONTRACT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_LINK_CONTRACT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CMT_PARTY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CONFIG_CC_MOVEMNT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CONFIG_CC_MOVEMNT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CONFIG_COST_CENTER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_FNL_RE_ISSUE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_FNL_RE_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_ISS_FNL_INSPT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_ISS_FNL_INSPT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_ISS_INLINE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_ISS_INLINE_DT_1243": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_ISS_INLINE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_ISS_INLINE_MT_1243": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_ISS_TO_QA_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_ISS_TO_QA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_RECEIVED_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_RECEIVED_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_RE_ISSUE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_RE_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_RTN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_RTN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_TRANSFER_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CTN_TRANSFER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CURR_CONV_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CURR_CONV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_CVT_STAX_GROUP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DAILY_TOE_CLOSE_WIP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DA_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DA_SUB_SO_BOOK_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DEMAND_ISSUE_BOOK_RELATION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DEPARTMENT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DEPT_INV_CC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DEPT_LABR_STORE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DEPT_OH": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DEP_JOB_DIST_METH": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DESIGNATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_DESTINATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_EXCL_BATCHES_REWORK_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_EXCL_SO_ID_FOR_PS_STOCK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_EXEC_SMRY_OFF_DAYS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_EXPORT_INV_PUR_CODE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_EXPORT_INV_PUR_CODE_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_EXP_INSURANCE_COMPANY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_FGS_CMT_MAT_REC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_FGS_CMT_MAT_REC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_FGS_RECEIVING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_FGS_RECEIVING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_FGS_STOCK_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_FINISHING_DAILY_WIP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_FINISHING_TARGET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_FTAX_UNIT_WS_CODE_CONFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GATE_PASS_GRNS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GBS_BATCH_LOC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GBS_MAT_ISSUE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GBS_MAT_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GBS_MAT_REC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GBS_MAT_REC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GENERAL_FAULTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GRADE_CLIP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GRN_INSP_YARN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_GRN_INSP_YARN_FAULTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_HOUR_CLOCK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INCLINE_REWORK_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INCLINE_REWORK_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INSTALLED_VS_RUNG_MACH_DB": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INSTALLED_VS_RUNG_MACH_NEW": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INTER_CC_TRANS_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INTER_CC_TRANS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INTER_ORDER_TRANS_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INTER_ORDER_TRANS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INWARD_GATE_PASS_LC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_INWARD_GP_BOOKS_RELATION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_ITM_WS_MISC_SO_NO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_JOB_STATUS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNITTING_AUTH_PAIR_CODE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNITTING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNITTING_MECHANIC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNITTING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNITTING_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNITTING_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNITTING_TARGET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNITT_PROD_REPEAT_HIST_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_CONT_RAW_MAT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_CONT_RAW_MAT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_DEFECT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_DEFECT_DET_NEW": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_DEFECT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_DEFECT_MT_NEW": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_INSPECTION_DEFECT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_INSPECTION_DEFECT_MD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_INSPECT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_INSPECT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_INSP_DEFECT_NEW_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_INSP_DEFECT_NEW_MD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_INSP_DML_ALLOWED_USER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_INSP_FAULTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_LINE_WS_FOREMAN_NAME": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_KNIT_PROD_DET_COPY_18MAR25": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LAB_BATCH_INSPT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LAB_BATCH_INSPT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LAB_INSPECTION_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LC_GATE_PASS_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LEFTOVER_BOOKING_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LEFTOVER_BOOKING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LEFTOVER_ORDR_TRANS_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LEFTOVER_ORDR_TRANS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LEFTOVER_SALE_OUT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LEFTOVER_SALE_OUT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LEFTOVER_STORE_ISS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LEFTOVER_STORE_ISS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LINK_CONT_RAW_MAT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_LINK_CONT_RAW_MAT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MACHINE_LOCATOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MACHINE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MACHINE_OPERATOR_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MACHINE_OPERATOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MAIN_YARN_FAULTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MARK_OS_FINAL_RECEIPT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MATERIAL_ISSUANCE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MATERIAL_ISSUANCE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MATERIAL_RECEIVING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MATERIAL_RECEIVING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MAT_COST_JOB": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_MKT_YARN_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_NEEDLE_WS_RUNG_MACH": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_OH_JOB_WISE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_ORDER_CLOSING_TARGETS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_OS_PROCESS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_OS_PROCESS_DET_EXLUDE_DATA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_OS_PROCESS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_OS_PROCESS_RETURN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_OS_PROCESS_RETURN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_OS_PROCESS_TERMS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_OS_PROCES_RETURN_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_OVERHEADS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PACK_AUTH_PAIR_CODE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PACK_DMND_BOOK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PACK_MAT_REC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PACK_MAT_REC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PAIR_COST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PAIR_COST_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PAIR_COST_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PATTERN_FLOW_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PBOARD_BATCH_CLOSE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PBOARD_BATCH_CLOSE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PBOARD_MAT_REC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PBOARD_MAT_REC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PER_LC_PER_PO_BOOK_CONF": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PKNG_CARTON_INSTR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PLAN_RAW_MATERIALS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PLAN_RAW_MATERIALS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PLATTING_YARN_FAULT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PREBOARD_ENTRY_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PREBOARD_ENTRY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PREBOARD_MAT_ISSUE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PREBOARD_MAT_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCESSING_REPORTS_HIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCESSING_TARGET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCESS_MC_ALLOCATION_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCESS_MC_ALLOCATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCESS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCESS_SMRY_REPORT_HIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCS_AUTH_PAIR_CODE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCS_BATCH_CLOSE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCS_BATCH_CLOSE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCS_MAT_ISSUE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCS_MAT_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCS_REWORK_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROCS_REWORK_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROC_INSP_FAULTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROC_MC_ALLOC_WASTE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PRODUCTION_CLOSE_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROD_CLOSE_BATCH_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROD_CLOSE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROD_CLOSE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROD_REV_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PROD_REV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_ADJUST_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_ADJUST_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_CODE_GENERATION_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_CODE_GENERATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_LEFT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_LEFT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_LO_RECEIVE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_LO_RECEIVE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_LO_STORE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_LO_STORE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_PRODUCTION_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_PRODUCTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_WASTE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_PS_WASTE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_QA_FINISHED_SPEC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_QA_INSPECT_INCLINE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_QA_INSPECT_INCLINE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_QUALITY_TARGET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_REBATCHING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_REBATCHING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_REBATCH_ROUTINE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_RECEIPT_COPY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_RESTRIC_ACCOUNTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_REWORK_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_REWORK_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_RPT_AGING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_RUNNING_ORDER_COMMENTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SAMPLE_PRESS_ENTRY_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SAMPLE_PRESS_ENTRY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SAMPLE_RAW_MATERIALS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SAMPLE_RAW_MATERIALS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SAMPLE_REJECT_REASONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SAMPLE_REQUEST_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SAMPLE_REQUEST_DET_COPY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SAMPLE_REQUEST_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_ADD_OPERATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_BATCH_PH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_BS_WASTE_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_CATEGORY_DESC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_CF_CROCKING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_CF_WASH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_CMT_CONT_TERMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_CTN_PLY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_CTN_QUALITY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_FAILURE_REASON_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_ITEM_TYPE_CAT_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_KNIT_OPERATOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_KNIT_SUPERVISOR_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_KNIT_SUPERVISOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_PLANT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_PRINTING_COLOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_PRODUCT_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_PROD_CATEGORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_SAMPLE_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_SOCKS_OPERATIONS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_SOCKS_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SETUP_TABLES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SHIFT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SHIPMENT_TERM_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SHORTFALL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SHORTFALL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SOCKS_DMND_BOOK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SOCKS_MKT_TEAM_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SOCKS_YARN_GRN_BOOKS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SOD_BS_CODE_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SO_CLOSING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SO_CLOSING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SO_CMT_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SO_PS_FILLING_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SO_PS_FILLING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SO_PS_FILL_XREF_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SO_PS_PROD_XREF_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SO_WS_AVAILABLE_BS_DZN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SPEC_FAULT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SREQ_SPECIAL_INSTRUCT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_SR_SPECIAL_INSTRUCTIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_STICHING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_STICHING_TYPE_SUB_CATEGORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_STM_PLANNING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_STM_PLANNING_DET_COPY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_STM_PLANNING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_STOCK_COSTING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_STOCK_COSTING_OLD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_STOCK_COSTING_UPDT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_STOCK_COSTING_V1": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_TABLEWAISE_PLAN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_TABLEWAISE_PLAN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_TC_FAULTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_TOE_AUTH_PAIR_CODE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_TOE_BATCH_INSPECT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_TOE_BATCH_INSPECT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_TOE_CLOSING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_TOE_CLOSING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_TOE_CLOSING_MT_COPY_180822": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_DISPATCH_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_DISPATCH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_ISSUE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_RECEIVE_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_RECEIVE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_REC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_REC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_SALE_OUT_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_SALE_OUT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_TARGET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WASTE_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WAST_ISS_ITM_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WMC_ROUNTINE_TYPE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WMC_ROUTINE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WMC_WASTE_REC_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_WMC_WASTE_REC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SGD_YRN_REQ_REF_WS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SHARE_HLDR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SHN_OS_PROCES_ISSUE_NOTE_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SHOW_QTY_IN_FROM_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SITE_PK_RANGES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SMN_DC_DISPATCH_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SMN_SUB_CUSTOMER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SO_CANCELLATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SO_SHIPPED_TO_BILLED_TO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SO_STAX_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SO_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_FG_ITEM_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_FG_SUB_INVS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_FRAMES_STOP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_FRAMES_STOP_REASON_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_FRAME_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_GEN_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_RM_ITEM_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_SPIN_PLAN_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_SPIN_PLAN_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_SPN_PLN_MTRL_SETUP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_TARGET_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_TARGET_PROD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_UNIT_PRPTN_EXPNS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_WIZ_RATE_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_YIELD_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SP_YRN_SETUP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_ARCH_SUPPORT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_AREA_RAW_MATERIALS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_AREA_SOCKS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_AREA_SOCKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_ARTICLE_NO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_BASE_COLOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_BOARDING_FORM_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_BOARDING_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_COLOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_CONFIG_RAW_MATERIAL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_CUSTOMER_SIZE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_CYLINDER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_FABRIC_TERRY_TYPE_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_FABRIC_TERRY_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_FABRIC_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_FINGER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_HEEL_POSITION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_HEEL_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_LINKING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_LINKING_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_MACHINE_SIZE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_MACHINE_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_MEASUREMENT_METHOD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_NEEDLE_COUNT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_PROCESSING_RECEIPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_PROCESSING_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_PROCESS_INFORMATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_PROCESS_SIDE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_REAL_HEEL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_REGION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_RIB_FOOT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_RIB_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_SETUP_CUSTOMER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_SETUP_DESIGN_NO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_SETUP_DESIGN_NO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_SETUP_PROCESS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_SETUP_RECEIPE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_SETUP_RECEIPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_SIZE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_SIZING_BOARD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_SR_SOCKS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_STYLE_NO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SSR_WELT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STAX_EXPORT_SALES_BOOKS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STAX_FG_INV_BOOKS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STAX_FG_INV_BOOKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STAX_GROUP_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STAX_GROUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STAX_LOCAL_SALES_BOOKS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STAX_RATES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STAX_RM_INV_BOOKS_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STAX_RM_INV_BOOKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STCK_ADJ_VCHR_GEN_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STK_MV": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STM_COST_POSTING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "STOCK_AGING_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUBSTITUTE_WAGES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUBSTITUTE_WAGES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INVENTORY_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INVENTORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_ACCT_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_COGS_VCHR_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_DOC_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_ISSUE_GL_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_PLANNING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_PLANNING_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_STCK_ADJSTMNT_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_VALID_CUST_CATS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_VALID_SUPP_CATS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_INV_WISE_SPECIAL_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_SALES_ORDER_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUB_SALES_ORDER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUMMARY_ACCOUNT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPPLIER_ACCOUNTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPPLIER_AMOUNTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPPLIER_BANKS_SGD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPPLIER_CATALOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPPLIER_LIST_MEMBERS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPPLIER_LIST_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPPLIER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_ADDRESSES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_CATAGORY_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_CATAGORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_CATAGORY_TO_SITES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_CL_BALANCES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_CL_BALANCES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_CONTACTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_CONTACT_PHONES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_GRADE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_ITAX_RATES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_PHONES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_RELATIONSHIP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_SECTOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "SUPP_TAX_CATEGORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TBL_HS_CODE_PUSHING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TBL_POST_TO_FBR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ADMIN_EDIT_POP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ADV": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ADV_SALES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ATT_REG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ATT_REGISTER_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_AUTH_DEMAND": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_AUTH_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_AUTH_LOG_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_BADLI_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_BANK_CARDS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_BANK_RECON_STAT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_BANK_RECON_STAT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_BANK_STATEMENT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_BANK_STATEMENT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_BDG_GROUP_BAL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_BS_WISE_PL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_CASH_FLOW": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_CC_CRITERIA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_CHEAQUE_PRINTING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_CLEINT_REP_ASGMNT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_CODE_COMBINATION_CRITERIA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_CODE_COMBINATION_VALUES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMPOSITE_DC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMPOSITE_GRN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMPOSITE_RMA_INWARD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMPOSITE_RMA_OUTWARD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMP_DC_MATCH_WITH_SO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMP_DC_SINV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMP_DC_STAX_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMP_GRN_DC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMP_GRN_PINV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMP_RMA_PINV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COMP_RMA_SINV_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COST_DEP_REP2": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COST_DET_REP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COST_DET_REP_1": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COTT_EXP_DISP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COT_EXP_LC_OPENING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_COT_YARN_MXNG_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_CRIT_TOT_PMNT_RECPT_SMRY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DATA_REPLICATE_TO_SITES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DATES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DATES_WITH_CODE_COMB": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DATE_TIME_UNITS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DC_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DC_FROM_HO_2_MILL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DEAD_STOCK_NEW": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DEMAND_NOS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DEMAND_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DEP_SEG_LISTING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DESC_FLEX_DATA_COMB": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DESC_FLEX_DATA_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DESC_FLEX_DATA_ITEM_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DESC_FLEX_DATA_JRN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DESC_FLEX_DATA_JRN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DESC_FLEX_DATA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DESC_FLEX_DATA_OPR_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DESC_FLEX_DATA_PIR_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DESC_LOT_BATCH_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DETAIL_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DETAIL_SRNO_BALANCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DISPATCH_ADVICE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DISPATCH_QTY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_DUAL_EXTENDED_CRIT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ESTIMATE_BDGT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_EXP_INV_DEL_DC_RECORD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_FRML": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_FSG_ACCOUNT_BALANCE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_GRN_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_GRN_DETAIL_SRNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_GRN_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_HIERARCHY_TRIAL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_IMK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_IMK_LINKING_MACH_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_IMK_LINK_PROD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_IMP_CONTRACT_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_IMP_DOC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_IMP_LC_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_IMP_LC_DET_FINILIZE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_IMP_SHPMNT_ADVCE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_INVENTORY_TRACKER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_INVOICE_STAX_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_INV_BOOKS_CRITERIA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_INV_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_INV_DOC_REF_CHECK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_INV_VALUATION_FOR_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_INV_VALUATION_FOR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ISS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ISSUE_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ISSUE_UNION_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ISSUE_UNION_TRANSFER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ISSUE_UNION_TRANS_RECEIPT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ITEM_BATCH_SERIAL_DEF": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ITEM_BTCH_SRNO_AUTO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ITEM_BTCH_SRNO_HIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ITEM_CRITERIA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ITEM_LEVEL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_ITEM_VALUATION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_JOB_COSTING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_JOURNAL_DETAIL_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_JOURNAL_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_KNITTING_MACHINE_SR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_LC_SHP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_LKC_DMR_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_MAIN_FUNCTION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_MNO_BDGT_COMB_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_NYR_SIN_YS_2_TCH_LOV": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_OTHER_RECEIPT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_OTHER_RECEIPT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PARTY_DUE_BAL_COMP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAYMENT_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_EMP_FNL_STLMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_GRADE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_LN_RCVRY_SCH_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_LOAN_RCVRY_RV_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_PROD_RATE_LIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_SAL_ALL_DED_FMLA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_SAL_GRP_ALLOWANCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_SAL_GRP_DEDUCTIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_SAL_RECOMP_ALL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_SAL_RECOMP_DED": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PAY_SAMIN_ATT_LOG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PLANNING_PAIR_CODE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_POP_ASSET_DEP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_POP_ASSET_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PO_CANCELLATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PRICE_LIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PRICE_LIST_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PRODUCETION_UNION_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PROD_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PROD_LOT_NOS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PROG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PROGRESS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PS_CODE_GENERATTION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PURCH_EXP_REB_PRORATE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PURCH_INVOICE_STAX_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PURCH_INV_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_PURCH_RET_ADJ_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_REARRANGE_SEQ": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_RECEIPT_DETAILS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_REPORT_ERRORS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_RMA_IN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_RMA_OUT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_RPT_AGING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SALES_EXP_REB_PRORATE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SAMPLE_REQUEST_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SEGMENT_VALUE_RELATIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_BS_PULL_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_DUP_RECORD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_GATE_PASS_GRNS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_GBS_DATE_WS_SMRY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_GBS_ISSUE_RCVD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_ITEM_DESC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_KNIT_REPEAT_ID": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_PROCESSING_REPORTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_PROCESS_SMRY_REPORT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_QA_FINISHED_SPEC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_REPEAT_PLAN_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_SO_ITEM_WS_ISSUE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_TOE_CLOSING_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_WIP_TOE_CLOSE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_YRN_PO_ITM_WS_BAL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SGD_YRN_REQ_SO_WISE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SO_ITEM_WS_ISSUE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SO_STAX_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SP_WS_TARGET_SALE_AJ": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SSR_AREA_RAW_MATERIALS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SSR_GEN_SERIAL_NO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_STCK_STANDARD_SAL_AMT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_STM_PLANNING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_STOCK_AGING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_STOCK_AGING1": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SUB_INV_BALANCE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SUB_INV_MARK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_SUB_SLS_MD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_TABLE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_TABLE_1": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_TABLE_FOR_ALL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_TABLE_REF_KEY_COL_NAME": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_TRANS_ISSUE_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_TRANS_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_TRIAL_BALANCE_UTILITY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_TRIAL_BALANCE_UTILITY_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_UBC_AUTO_DEMAND": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_UPDATE_WB_SEL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_VALID_CHEQUES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_WORKING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_YRN_PO_ITM_WS_BAL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_YRN_REQ_SHORTFALL_SO_WISE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEMP_YRN_REQ_SO_WISE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TESTD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TESTM": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TESTPK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEST_D": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TEST_M": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TMP_ABC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TMP_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TMP_RGN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TMP_SMPL_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TMP_SMPL_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TNA_D": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TNA_M": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TOTAL_PAY_RECIEPT_SMRY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TRANSACTION_REASON_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TRANS_ISSUE_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TRANS_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TRANS_RCT_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TRANS_RCT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "TRANS_REC_AUTO_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_CONSTRUCTION_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_CONSTRUCTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_CONST_FORMULA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_ITEM_FORMULA_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_ITEM_FORMULA_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_JOB_CARD_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_JOB_CARD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_JOB_ISSUE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_JOB_ISSUE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_JOB_PROD_DETAIL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_MACHINES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_PDS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_SO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UBC_WIZ_FORMULA_PARAMS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UDEF_ALRT_DEFINITIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UDEF_ALRT_NEXT_RUNS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UDEF_ERROR_MESSAGE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UNIT_MAPPING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UNIT_SUB_INV_MAPPING": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UN_CONFIRMED_RECEIPTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UN_CONFIRMED_RECEIPTS_MT_EJAZ": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UN_CONF_EXCL_DATE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UN_CONF_RECEIPTS_SMN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UN_CONF_RECEIPT_BOOK_CNFG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "UN_RECONCILED_TRANS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "USERS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "USERS_IN_GROUP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "USER_ADDITIONAL_PERMISSIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "USER_ADDITIONAL_PERM_4_INV_BKS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "USER_ADDITIONAL_PERM_4_STRUC": {
+      "columns": [],
+      "constraints": {}
+    },
+    "USER_CROSS_VALID_RULES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "USER_GROUPS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "USER_JRN_CAT_RULES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "USER_JRN_TYPE_RULES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WB_ISS_CC_CONFIG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WETBLUE_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WET_BLUE_SELECTION_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WET_BLUE_SELECTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIP_ADJ_VCHR_GEN_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIP_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_AP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_AR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_COMPOSITE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_DET_COPY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_DET_FAVORITE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_DET_STRUCTURES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_ERP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FAVOURIT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FAVOURIT_AP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FAVOURIT_AR": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FAVOURIT_ERP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FAVOURIT_INV": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FAVOURIT_PAYROLL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FAVOURIT_PRE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FAVOURIT_SO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_FA_OLD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_INV": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_PAYROLL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_PRE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMENU_SO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZMEN_TASKS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ACTIONS_LOG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ALL_CLEINTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ALL_REPORTS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ALL_SITES_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ALL_SITES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ALL_SITES_RPLCATED_TBLES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ALL_TABLES_PK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_APPLICATION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_APPL_LOC_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_APS_SITES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ATT_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUDIT_DOC_SETUP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUDIT_DOC_SETUP_MT_COL": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUDIT_LOG_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUDIT_LOG_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUDIT_TAB_COL_NAME_LOG_YN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUDIT_TAB_COL_NAME_PICK": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTH_DOC_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTH_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTO_CREATE_BANK_ACNTS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTO_CREATE_BOOKS_N_SEQS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTO_CREATE_COA": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTO_CREATE_CUSTOMERS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTO_CREATE_GL_CNFG_CAT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTO_CREATE_ITEMS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTO_CREATE_JRN_DOC_HDNG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTO_CREATE_SUPPLIERS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_AUTO_UPLOAD_JVS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_BANK_ACCT_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_BANK_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_CITY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_CLIENT_REP_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COMMUNICATION_METHODS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COMPOSITE_DOC_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COTTON_DC_INV_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COTTON_EXP_CONT_CUST_CAT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COTTON_EXP_DISP_CUST_CAT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COTTON_GRN_INV_CONFIG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COTTON_ITEM_TYPES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COTTON_PREFERENCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COTTON_PREFERENCES_MNO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COTTON_SUPP_CATEGORIES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COTT_EXP_SALE_PREF": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_COUNTRY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_CURRENCY_CONV_RATE_HISTORY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_CURRENCY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_DB_JOB_ERROR_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_DEF_UOM_TYPE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_DEMAND_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_DESC_STRUC_POPUP_HELP": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_DOC_TYPE_FOR_ITM_ANALYSIS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_EMP_ADDR_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_EMP_PH_NO_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_EMP_QUALIF_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_EMP_RELATIONSHIP_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_EMP_SPEC_INFO_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ERP_MAIN_MENU_ENDUSER": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_FCM_USER_TOKEN": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_FIN_YEAR_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_FREIGHT_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_GEN_PERD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_GL_SET_OF_BOOKS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_GL_SET_OF_BOOK_CODE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_IMPORT_TRANS_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_INVENTORY_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_INV_DOC_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_INV_DOC_TYPE_RELATIONS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_INV_POSSIBLE_TRANS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_INV_VAL_METHOD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ITEM_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_ITEM_TYPE_TO_SITES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_JOURNAL_CATEGORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_JOURNAL_SOURCE": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_LICENCED_TO": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_LICENSE_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_OBJECT_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_OBJECT_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_PAYMENT_TERM_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_PAYMENT_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_PERIOD_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_POS_PREFERENCES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_PO_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_PURCHASE_INVOICE_SOURCE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_RECEIPT_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPLICATION_DATA_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPLICATION_GEN_HISTORY_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPLICATION_GEN_HISTORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPLICATION_PREF": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPLICATION_REC_ERROR_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPLICATION_REC_HISTORY_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPLICATION_REC_HISTORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPLICATION_TABLES_DIS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPLICATION_TABLES_LIST": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPL_GEN_HISTORY_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPL_GEN_HISTORY_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPORT_DEFINITION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPORT_DEF_FOR_LAYOUT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPORT_LAYOUT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPORT_LAYOUT_TEMPLATE_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPORT_LAYOUT_TEMPLATE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REPORT_VERSIONS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REP_DATA_LOG_NEW": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REP_DATA_LOG_NEW_TO_SITES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REP_FORMAT_NAME_ASSIGNMENT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_REP_SCHEME": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_RFQ_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_RPT_MAIN_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_RPT_SUB_TYPES_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SALE_INVOICE_SOURCE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SECURITY_ACCOUNT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEG3_COPY": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT01": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT02": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT03": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT04": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT05": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT06": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT07": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT08": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT09": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT10": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT_DEFINITION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT_QUALIFIER_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT_VALUE_NATURE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT_VALUE_RELATIONS_DT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT_VALUE_RELATIONS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SEGMENT_VAL_RELATIONS_IDS": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SIMPLE_LOG": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SO_STATUS_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_STATE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_STRUCTURE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_STRUCTURE_TO_SITES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_STRUCTURE_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SYSTEM_MAIN_FUNCTION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SYSTEM_SUB_FUNCTION_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SYS_FIELD_SERV": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_SYS_FIELD_SERV_DET": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_TEMP_MENU": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_THIS_SITE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_UNIT_CONVERSION": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_UOM_CAT_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_UOM_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_UOM_TYPE_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "WIZ_USER_DEF_DB_ERROR_MESSAGES": {
+      "columns": [],
+      "constraints": {}
+    },
+    "YEAR_END_REQRD_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "Z_DELETE_PIUD_OLD": {
+      "columns": [],
+      "constraints": {}
+    },
+    "Z_LOG_GRN_MT": {
+      "columns": [],
+      "constraints": {}
+    },
+    "Z_OTHER_PMNTS_RCPTS_MT": {
+      "columns": [],
+      "constraints": {}
+    }
+  }
+}
