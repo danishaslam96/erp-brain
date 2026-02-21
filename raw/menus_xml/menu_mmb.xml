@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Module version="141020000" xmlns="http://xmlns.oracle.com/Forms">
+   <MenuModule Name="MENU_CHILD_MT" DirtyInfo="true" MainMenu="MAIN_MENU">
+      <Menu Name="MAIN_MENU" DirtyInfo="true">
+         <MenuItem Name="ACTION" VisibleInMenu="false" DirtyInfo="true" Enabled="true" Label="Action" SubMenuName="ACTION_MENU" CommandType="Menu"/>
+         <MenuItem Name="NAVIGATION" VisibleInMenu="false" DirtyInfo="true" Label="Navigation" SubMenuName="NAVIGATION_MENU" CommandType="Menu"/>
+         <MenuItem Name="SEARCH" VisibleInMenu="false" DirtyInfo="true" Label="Search" SubMenuName="SEARCH_MENU" CommandType="Menu"/>
+         <MenuItem Name="FORMS" DirtyInfo="true" Label="File" SubMenuName="FILE" CommandType="Menu"/>
+      </Menu>
+      <Menu Name="ACTION_MENU" DirtyInfo="true">
+         <MenuItem Name="ADD_MENU" DirtyInfo="true" IconInMenu="true" IconFilename="new" Label="Add New Record (F6)" MenuItemCode="EXECUTE_TRIGGER('KEY-CREREC');" VisibleInVerticalMenuToolbar="true" VisibleInHorizontalMenuToolbar="false"/>
+         <MenuItem Name="EDIT_MENU" DirtyInfo="true" IconInMenu="false" IconFilename="edit" Label="Edit This Record (F2)" MenuItemCode="EXECUTE_TRIGGER('KEY-F2');" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="SEPARATOR1" MenuItemType="Separator" DirtyInfo="true" Label="&lt;New_Item>" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="SAVE_MENU" DirtyInfo="true" IconFilename="save1" Label="Save (F10)" MenuItemCode="EXECUTE_TRIGGER('KEY-COMMIT');" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="CANCEL_MENU" DirtyInfo="true" IconInMenu="true" IconFilename="cancel" Label="Cancel Changes (F5)" MenuItemCode="EXECUTE_TRIGGER('KEY-F5');&amp;#10;&amp;#10;" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="SEPARATOR2" MenuItemType="Separator" DirtyInfo="true" Label="&lt;New_Item>" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="DELETE_MENU" DirtyInfo="true" IconFilename="delete" Label="Delete This Record (Shift+F6)" MenuItemCode="EXECUTE_TRIGGER('KEY-DELREC');" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="SEPARATOR3" MenuItemType="Separator" DirtyInfo="true" Label="&lt;New_Item>" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="FIND_HIDE" VisibleInMenu="false" DirtyInfo="true" IconFilename="find" Label="Find (F7)" MenuItemCode="EXECUTE_TRIGGER('KEY-ENTQRY');" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="APPLY_HIDE" VisibleInMenu="false" DirtyInfo="true" IconFilename="search" Label="Search (F8)" MenuItemCode="EXECUTE_TRIGGER('KEY-EXEQRY');" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="SEPARATOR4" MenuItemType="Separator" VisibleInMenu="false" DirtyInfo="true" Label="&lt;New_Item>" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="REFRESH_MENU" DirtyInfo="true" IconFilename="refresh" Label="Refresh" MenuItemCode="EXECUTE_TRIGGER('TRGR_REFRESH');&amp;#10;&#x9;&#x9;&amp;#10;" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="PRINT_MENU" VisibleInMenu="true" DirtyInfo="true" IconFilename="print1" Label="Print" MenuItemCode="PRINT;" VisibleInVerticalMenuToolbar="false" VisibleInHorizontalMenuToolbar="false"/>
+         <MenuItem Name="SEPARATOR5" MenuItemType="Separator" DirtyInfo="true" Label="&lt;New_Item>"/>
+         <MenuItem Name="EXIT_MENU" VisibleInMenu="true" KeyboardAccelerator="Q" DirtyInfo="true" IconFilename="exit1" Label="Exit" MagicItem="Quit" MenuItemCode="EXECUTE_TRIGGER('KEY-EXIT');" DisplayNoPriv="true" VisibleInVerticalMenuToolbar="false"/>
+      </Menu>
+      <Menu Name="NAVIGATION_MENU" DirtyInfo="true">
+         <MenuItem Name="FIRSTREC_MENU" DirtyInfo="true" IconFilename="prvblk1" Label="First Record (Page Up)" MenuItemCode="IF :SYSTEM.CURSOR_FORM='FORM_EMPLOYEE_MT' OR :SYSTEM.CURSOR_FORM='FORM_SALES_PERSON_MT' OR :SYSTEM.CURSOR_FORM='FORM_SECURITY_RULES' THEN&amp;#10;&#x9;&#x9;GO_BLOCK(GET_RELATION_PROPERTY(GET_BLOCK_PROPERTY(GET_FORM_PROPERTY(NAME_IN('SYSTEM.CURRENT_FORM'),FIRST_BLOCK),FIRST_MASTER_RELATION),MASTER_NAME));&amp;#10;&#x9;&#x9;EXECUTE_TRIGGER('KEY-SCRUP');&amp;#10;ELSE&#x9;&amp;#10;&#x9;&#x9;EXECUTE_TRIGGER('KEY-SCRUP');&amp;#10;END IF;&amp;#10;&#x9;&amp;#10;&amp;#10;&#x9;&#x9;" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="PREVREC_MENU" DirtyInfo="true" IconFilename="prvrec1" Label="Previous Record (Down Arrow)" MenuItemCode="/*go_block(NAME_IN('global.gvch_blkname'));&amp;#10;previous_record;*/&amp;#10;EXECUTE_TRIGGER('KEY-UP');&amp;#10;" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="SEPARATOR6" MenuItemType="Separator" DirtyInfo="true" Label="&lt;New_Item>"/>
+         <MenuItem Name="NEXTREC_MENU" DirtyInfo="true" IconFilename="nxtrec1" Label="Next Record (Up Arrow)" MenuItemCode="/*go_block(NAME_IN('global.gvch_blkname'));&amp;#10;next_record;*/&amp;#10;EXECUTE_TRIGGER('KEY-DOWN');" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="LASTREC_MENU" DirtyInfo="true" IconFilename="nxtblk1" Label="Last Record (Page Down)" MenuItemCode="IF :SYSTEM.CURSOR_FORM='FORM_EMPLOYEE_MT' OR :SYSTEM.CURSOR_FORM='FORM_SALES_PERSON_MT' OR :SYSTEM.CURSOR_FORM='FORM_SECURITY_RULES' THEN&amp;#10;&#x9;&#x9;GO_BLOCK(GET_RELATION_PROPERTY(GET_BLOCK_PROPERTY(GET_FORM_PROPERTY(NAME_IN('SYSTEM.CURRENT_FORM'),FIRST_BLOCK),FIRST_MASTER_RELATION),MASTER_NAME));&amp;#10;&#x9;&#x9;EXECUTE_TRIGGER('KEY-SCRDOWN');&amp;#10;ELSE&#x9;&amp;#10;&#x9;&#x9;EXECUTE_TRIGGER('KEY-SCRDOWN');&amp;#10;END IF;&amp;#10;&#x9;&#x9;&amp;#10;&#x9;&#x9;&amp;#10;&#x9;&#x9;" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="SEPERATOR7" MenuItemType="Separator" DirtyInfo="true" Label="" VisibleInVerticalMenuToolbar="true"/>
+         <MenuItem Name="PRINT_HIDE" VisibleInMenu="false" DirtyInfo="true" IconFilename="print1" Label="Print" MenuItemCode="PRINT;" VisibleInVerticalMenuToolbar="true" VisibleInHorizontalMenuToolbar="false"/>
+         <MenuItem Name="EXIT_HIDE" VisibleInMenu="false" DirtyInfo="true" IconFilename="exit1" Label="EXIT" MenuItemCode="EXECUTE_TRIGGER('KEY-EXIT');&amp;#10;" VisibleInVerticalMenuToolbar="true"/>
+      </Menu>
+      <Menu Name="SEARCH_MENU" DirtyInfo="true">
+         <MenuItem Name="FIND_MENU" DirtyInfo="true" Label="Enter Query" MenuItemCode="EXECUTE_TRIGGER('KEY-ENTQRY');&amp;#10;"/>
+         <MenuItem Name="SEPERATOR8" MenuItemType="Separator" DirtyInfo="true" Label="&lt;New_Item>"/>
+         <MenuItem Name="APPLY_MENU" DirtyInfo="true" Label="Apply Query" MenuItemCode="EXECUTE_TRIGGER('KEY-EXEQRY');"/>
+      </Menu>
+      <Menu Name="FILE" DirtyInfo="true">
+         <MenuItem Name="CHANGE_PASSWORD" DirtyInfo="true" Label="Change Password" MenuItemCode="DECLARE&amp;#10;&#x9;P_LIST&#x9;PARAMLIST;&amp;#10;BEGIN&amp;#10;&#x9;&amp;#10;&#x9;P_LIST := Get_Parameter_List('P_LIST');&amp;#10;&#x9;&amp;#10;&#x9;IF NOT ID_NULL(P_LIST) THEN DESTROY_PARAMETER_LIST(P_LIST); END IF;&amp;#10;&#x9;&amp;#10;&#x9;P_LIST := CREATE_PARAMETER_LIST('P_LIST');&amp;#10;&#x9;&amp;#10;&#x9;ADD_PARAMETER(P_LIST,'PARM_UTILITY_TYPE',TEXT_PARAMETER,'PW');&amp;#10;&#x9;&#x9;open_form('form_utility',ACTIVATE,NO_SESSION,SHARE_LIBRARY_DATA,P_LIST);&amp;#10;&amp;#10;&amp;#10;&amp;#10;END;&amp;#10;/*&amp;#10;DECLARE&amp;#10;&#x9;&amp;#10;&#x9;LVCH_STARTING_FORM VARCHAR2(300);&amp;#10;&#x9;LVCH_CURRENT_FORM&#x9; VARCHAR2(300);&amp;#10;&#x9;&#x9;&amp;#10;BEGIN&amp;#10;&#x9;&amp;#10;&#x9;&#x9;LVCH_STARTING_FORM := :SYSTEM.CURRENT_FORM;&amp;#10;&#x9;&#x9;&amp;#10;&#x9;&#x9;LOOP&amp;#10;&#x9;&#x9;&#x9;&#x9;&amp;#10;&#x9;&#x9;&#x9;&#x9;NEXT_FORM;&amp;#10;&#x9;&#x9;&#x9;&#x9;&amp;#10;&#x9;&#x9;&#x9;&#x9;LVCH_CURRENT_FORM := :SYSTEM.CURRENT_FORM;&amp;#10;&amp;#10;&#x9;&#x9;&#x9;&#x9;EXIT WHEN LVCH_STARTING_FORM = LVCH_CURRENT_FORM;&amp;#10;&#x9;&#x9;&#x9;&#x9;EXIT_FORM;&amp;#10;&#x9;&#x9;END LOOP;&amp;#10;&amp;#10;&amp;#10;&amp;#10;&amp;#10;END;&amp;#10;&amp;#10;SYNCHRONIZE;&amp;#10;&amp;#10;&amp;#10;DECLARE&amp;#10;&#x9;P_LIST&#x9;PARAMLIST;&amp;#10;  LNUM_ALERT_RETURN NUMBER;&amp;#10;  LVCH_ALERT_NAME VARCHAR2(50);&amp;#10;BEGIN&amp;#10;&amp;#10;&#x9;&amp;#10;&#x9;IF PCKG_GCNSTS.PNUM_LOGIN_PERIOD_ID IS NULL THEN &amp;#10;&#x9;&#x9;&#x9;LVCH_ALERT_NAME := 'ALRT_EXIT_APPL';&amp;#10;&#x9;ELSE&amp;#10;&#x9;&#x9;&#x9;LVCH_ALERT_NAME := 'ALRT_EXIT_APPL_PERIOD';&amp;#10;&#x9;END IF;&amp;#10;&#x9;&amp;#10;&#x9;LNUM_ALERT_RETURN := PRO_SHOW_ALERT(LVCH_ALERT_NAME ,'Exit Application','&amp;#10;Are you sure, you want to Exit the Main Menu ?&amp;#10;');&amp;#10;&amp;#10;&#x9;IF LNUM_ALERT_RETURN = ALERT_BUTTON1 THEN&amp;#10;&#x9;&#x9;&amp;#10;&#x9;&#x9;EXIT_FORM;&amp;#10;&#x9;&#x9;&amp;#10;&#x9;ELSIF LNUM_ALERT_RETURN = ALERT_BUTTON3 THEN&amp;#10;&#x9;&#x9;P_LIST := Get_Parameter_List('P_LIST');&amp;#10;&#x9;&#x9;&amp;#10;&#x9;&#x9;IF NOT ID_NULL(P_LIST) THEN DESTROY_PARAMETER_LIST(P_LIST); END IF;&amp;#10;&#x9;&#x9;&amp;#10;&#x9;&#x9;P_LIST := CREATE_PARAMETER_LIST('P_LIST');&amp;#10;&#x9;&#x9;&amp;#10;&#x9;&#x9;ADD_PARAMETER(P_LIST,'PARM_UTILITY_TYPE',TEXT_PARAMETER,'LP');&amp;#10;&#x9;&#x9;open_form('form_utility',ACTIVATE,SESSION,SHARE_LIBRARY_DATA,P_LIST);&amp;#10;&#x9;&#x9;PAUSE;&amp;#10;&#x9;&#x9;RAISE FORM_TRIGGER_FAILURE;&amp;#10;&#x9; END IF;&amp;#10;&amp;#10;END;&amp;#10;&amp;#10;*/"/>
+         <MenuItem Name="EXIT_APPLICATION" DirtyInfo="true" Label="Exit" MenuItemCode="--OPEN_FORM('E:\MENU\MT\FORMS_MT\form_employeemt');&amp;#10;--EXIT_FORM;&amp;#10;DO_KEY('EXIT_FORM');"/>
+      </Menu>
+   </MenuModule>
+</Module>
