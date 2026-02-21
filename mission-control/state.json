@@ -1,8 +1,8 @@
 {
-  "current_issue": 9,
+  "current_issue": null,
   "next_target": null,
   "active_branch": null,
-  "last_commit": "5875a15",
+  "last_commit": "fa14077",
   "in_progress": false,
   "last_nudge_at": null,
   "expires_at": null,
