@@ -1,0 +1,167 @@
+{
+  "name": "OLIB_FORM_STNDRDS",
+  "object_count": 21,
+  "source_file": "OLIB_FORM_STNDRDS_olb.xml",
+  "tabs": [
+    {
+      "name": "WIZMEN_STANDARD",
+      "label": "WIZMEN_STANDARD",
+      "object_count": 1,
+      "items": [],
+      "program_units": [],
+      "triggers": []
+    },
+    {
+      "name": "AUTHORIZATION",
+      "label": "AUTHORIZATION",
+      "object_count": 20,
+      "items": [
+        {
+          "name": "AUTH_ID",
+          "item_type": "",
+          "label": "",
+          "canvas": "",
+          "column_name": "pimt.auth_id",
+          "data_type": "Number",
+          "width": "68",
+          "height": "14",
+          "x": "",
+          "y": ""
+        },
+        {
+          "name": "AUTH_STATUS_ID",
+          "item_type": "",
+          "label": "",
+          "canvas": "",
+          "column_name": "PIMT.AUTH_STATUS_ID",
+          "data_type": "Number",
+          "width": "68",
+          "height": "14",
+          "x": "",
+          "y": ""
+        },
+        {
+          "name": "AUTH_STATUS_DESC",
+          "item_type": "Display Item",
+          "label": "",
+          "canvas": "CAN_MAIN",
+          "column_name": "asmt.description",
+          "data_type": "",
+          "width": "163",
+          "height": "15",
+          "x": "206",
+          "y": "166"
+        },
+        {
+          "name": "AUTHORIZED_YN",
+          "item_type": "",
+          "label": "",
+          "canvas": "",
+          "column_name": "pimt.authorized_yn ",
+          "data_type": "Number",
+          "width": "68",
+          "height": "14",
+          "x": "",
+          "y": ""
+        },
+        {
+          "name": "AUTH_STATUS_EDITABLE_YN",
+          "item_type": "",
+          "label": "",
+          "canvas": "",
+          "column_name": "NVL(asmt.editable_yn,1)",
+          "data_type": "Number",
+          "width": "68",
+          "height": "14",
+          "x": "",
+          "y": ""
+        },
+        {
+          "name": "PENDING_STATUS_YN",
+          "item_type": "",
+          "label": "",
+          "canvas": "",
+          "column_name": "ASMT.pending_status_yn ",
+          "data_type": "Number",
+          "width": "68",
+          "height": "14",
+          "x": "",
+          "y": ""
+        },
+        {
+          "name": "REJECTED_STATUS_YN",
+          "item_type": "",
+          "label": "",
+          "canvas": "",
+          "column_name": "ASMT.rejected_status_yn ",
+          "data_type": "Number",
+          "width": "68",
+          "height": "14",
+          "x": "",
+          "y": ""
+        },
+        {
+          "name": "APPROVED_STATUS_YN",
+          "item_type": "",
+          "label": "",
+          "canvas": "",
+          "column_name": "ASMT.approved_status_yn ",
+          "data_type": "Number",
+          "width": "68",
+          "height": "14",
+          "x": "",
+          "y": ""
+        },
+        {
+          "name": "PBTN_SEND_FOR_AUTH",
+          "item_type": "Push Button",
+          "label": "Send for &Auth",
+          "canvas": "CAN_DEMAND",
+          "column_name": "",
+          "data_type": "",
+          "width": "70",
+          "height": "16",
+          "x": "207",
+          "y": "348",
+          "triggers": [
+            {
+              "name": "WHEN-BUTTON-PRESSED",
+              "trigger_text": "PCKG_AUTHORIZATION.PBTN_SEND_FOR_AUTH(:PARAMETER.PARM_AUTH_DOC_TYPE_ID,:TEXT_PURCH_INVOICE_ID,:AUTHORIZED_YN,:AUTH_ID,:AUTH_STATUS_ID,:AUTH_STATUS_DESC,:AUTH_STATUS_EDITABLE_YN,:PENDING_STATUS_YN,:APPROVED_STATUS_YN,:REJECTED_STATUS_YN);&#10;"
+            }
+          ]
+        },
+        {
+          "name": "PBTN_AUTH_TRACK",
+          "item_type": "Push Button",
+          "label": "Auth &Track",
+          "canvas": "CAN_DEMAND",
+          "column_name": "",
+          "data_type": "",
+          "width": "70",
+          "height": "16",
+          "x": "303",
+          "y": "348",
+          "triggers": [
+            {
+              "name": "WHEN-BUTTON-PRESSED",
+              "trigger_text": "PCKG_AUTHORIZATION.PBTN_AUTH_TRACK(:AUTH_ID);&#10;"
+            }
+          ]
+        }
+      ],
+      "program_units": [
+        {
+          "name": "IS_VALID_FOR_EDIT",
+          "type": "Procedure",
+          "text": "PROCEDURE IS_VALID_FOR_EDIT IS&#10;BEGIN&#10;\t\tPCKG_AUTHORIZATION.IS_VALID_FOR_EDIT(:PARAMETER.PARM_AUTH_DOC_TYPE_ID,:TEXT_PURCH_INVOICE_ID,:AUTH_STATUS_ID);&#10;END;&#10;&#10;"
+        },
+        {
+          "name": "PRO_EN_DIS_AUTH_BUTTON",
+          "type": "Procedure",
+          "text": "PROCEDURE PRO_EN_DIS_AUTH_BUTTON IS&#10;BEGIN&#10;  PCKG_AUTHORIZATION.EN_DIS_AUTH_BUTTONS(:AUTHORIZED_YN, :AUTH_ID,:AUTH_STATUS_ID, :PENDING_STATUS_YN, :APPROVED_STATUS_YN, :REJECTED_STATUS_YN);&#10;END;"
+        }
+      ],
+      "triggers": []
+    }
+  ]
+}

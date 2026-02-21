@@ -1,0 +1,148 @@
+{
+  "name": "MY_OBJ_LIB",
+  "object_count": 12,
+  "source_file": "MY_OBJ_LIB_olb.xml",
+  "tabs": [
+    {
+      "name": "DEBUGING",
+      "label": "DEBUGING",
+      "object_count": 1,
+      "items": [
+        {
+          "name": "POST_ERROR_IN_TEMP_TABLE",
+          "item_type": "Push Button",
+          "label": "Post Error In Temp Table",
+          "canvas": "CANV_SALES_INVOICE",
+          "column_name": "",
+          "data_type": "",
+          "width": "122",
+          "height": "19",
+          "x": "25",
+          "y": "142",
+          "triggers": [
+            {
+              "name": "WHEN-BUTTON-PRESSED",
+              "trigger_text": "DECLARE&#10;\tA VARCHAR2(5000);&#10;\t&#10;BEGIN&#10;&#10;A := GET_BLOCK_PROPERTY('DBLK_SALES_INVOICE_DETAIL',QUERY_DATA_SOURCE_NAME)\t;&#10;INSERT INTO TEMP_REPORT_ERRORS(REPORT_NAME,ERROR_STRING)&#10;VALUES ('SAL INV FORM SOURCE NAME',A);&#10;A := GET_BLOCK_PROPERTY('DBLK_SALES_INVOICE_DETAIL',DEFAULT_WHERE)\t;&#10;INSERT INTO TEMP_REPORT_ERRORS(REPORT_NAME,ERROR_STRING)&#10;VALUES ('SAL INV FORM DEFAULT WHERE ',A);&#10;&#10;COMMIT;&#10;END;&#10;"
+            }
+          ]
+        }
+      ],
+      "program_units": [],
+      "triggers": []
+    },
+    {
+      "name": "TRIGGERS_OLD_CODE_CHECK",
+      "label": "TRIGGERS_OLD_CODE_CHECK",
+      "object_count": 2,
+      "items": [],
+      "program_units": [
+        {
+          "name": "WHEN_VALIDATE",
+          "type": "Procedure",
+          "text": "PROCEDURE WHEN_VALIDATE IS&#10;&#10;\tRET VARCHAR2(500);&#10;\tA NUMBER;&#10;\tEXP EXCEPTION;&#10;\tPLIST PARAMLIST;&#10;\t&#10;\tID1 NUMBER(5);&#10;\tID2 NUMBER(5);&#10;\tID3 NUMBER(5);&#10;\tID4 NUMBER(5);&#10;\tID5 NUMBER(5);&#10;\tID6 NUMBER(5);&#10;\tID7 NUMBER(5);&#10;\tID8 NUMBER(5);&#10;\tID9 NUMBER(5);&#10;\tID10 NUMBER(5);&#10;&#10;BEGIN&#10;&#10;IF :TEXT_CODE_COMBINATION_VAL IS NOT NULL THEN&#10;\t&#10;\t\t\t\tA:=HOW_MANY_CHARS(:TEXT_CODE_COMBINATION_VAL,'-',FALSE);&#10;\t\t\t\t&#10;\t\t\t\tIF A+1<>:PARAMETER.PARM_NO_OF_SEGMENTS THEN&#10;\t\t\t\t\tRAISE EXP;&#10;\t\t\t\tEND IF;&#10;\t\t\t\t&#10;\t\t\t\t\tRET := IS_VALID_CODE(1,:TEXT_CODE_combination_val);&#10;\t\t\t\t\tIF RET IN ('-1','-2','-3','-4') THEN &#10;\t\t\t\t\t\t&#10;\t\t\t\t\t\tIF RET = '-1' THEN &#10;\t\t\t\t\t\t\tMESSAGE('INVALID SEGMENT NUMBER');&#10;\t\t\t\t\t\tELSIF RET = '-2'\tTHEN&#10;\t\t\t\t\t\t\tMESSAGE('SEGMENT VALUE NOT FOUND');&#10;\t\t\t\t\t\tELSIF RET = '-3' THEN&#10;\t\t\t\t\t\t\tMESSAGE('SEGMENT IS PARENT');&#10;\t\t\t\t\t\tELSIF RET = '-4' THEN&#10;\t\t\t\t\t\t\tMESSAGE('INVALID SEGMENT DEPENDENCY ');&#10;\t\t\t\t\t\tEND IF;&#10;\t\t\t\t\t\tRAISE EXP;\t\t&#10;\t\t\t\t\t\tELSE&#10;\t\t\t\t\t\tSPLIT_ID_ALL(RET,ID1,ID2,ID3,ID4,ID5,ID6,ID7,ID8,ID9,ID10);&#10;\t\t\t\t\t\t:DISP_DESCRIPTION:=GET_CODE_VALUE_DESC(:PARAMETER.PARM_STRUCTURE_ID,ID1,ID2,ID3,ID4,ID5,ID6,ID7,ID8,ID9,ID10);\t&#10;\t\t\t\t\t\t:TEXT_CODE_COMBINATION_ID_ALL := RET;\t&#10;\t\t\t\t\tEND IF;&#10;\t\t\t\t&#10;END IF;&#10;\t&#10;EXCEPTION&#10;\tWHEN EXP THEN&#10;&#10;\t\t\tPLIST :=CREATE_PARAMETER_LIST('PLIST');&#10;\t\t\tADD_PARAMETER(PLIST,'STRUCTURE_ID',TEXT_PARAMETER,:PARAMETER.PARM_STRUCTURE_ID);&#10;\t\t\tCALL_FORM('CODE_ENTRY',NO_HIDE,NO_REPLACE,NO_QUERY_ONLY,SHARE_LIBRARY_DATA,PLIST);&#10;\t\t\tDESTROY_PARAMETER_LIST('PLIST');&#10;\t\t\t&#10;\t\t\tIF :GLOBAL.CODE_VALUE IS NOT NULL THEN&#10;\t\t\t\t:TEXT_CODE_COMBINATION_VAL := :GLOBAL.CODE_VALUE;&#10;\t\t\t\t:DISP_DESCRIPTION          := :GLOBAL.CODE_VALUE_DESC;&#10;\t\t\t\t:TEXT_CODE_COMBINATION_ID_ALL        \t := :GLOBAL.CODE_ID_ALL;&#10;\t\t\tELSE&#10;\t\t\t\tRAISE FORM_TRIGGER_FAILURE;&#10;\t\t\tEND IF;&#10;END;&#10;&#10;  &#10;  &#10;END;"
+        },
+        {
+          "name": "PRO_CODE_ID",
+          "type": "Procedure",
+          "text": "PROCEDURE PRO_CODE_ID IS&#10;&#10;\tC_ID NUMBER;&#10;\tCIDALL VARCHAR2(2000);&#10;\tID1 NUMBER DEFAULT NULL;&#10;\tID2 NUMBER;&#10;\tID3 NUMBER;&#10;\tID4 NUMBER;&#10;\tID5 NUMBER;&#10;\tID6 NUMBER;&#10;\tID7 NUMBER;&#10;\tID8 NUMBER;&#10;\tID9 NUMBER;&#10;\tID10 NUMBER;&#10;\t&#10;\tTMP NUMBER;&#10;\t&#10;BEGIN&#10;&#10;IF :TEXT_CODE_COMBINATION_ID_ALL IS NOT NULL THEN&#10;--IF \t:TEXT_CODE_COMBINATION_VAL IS NULL THEN&#10;--\tMESSAGE('IN');&#10;--\t:TEXT_CODE_COMBINATION_ID_ALL:=is_valid_code(:parameter.parm_structure_id,:TEXT_CODE_COMBINATION_VAL);&#10;--END IF;&#10;&#10;&#10;\t\t\tSELECT CODE_COMBINATION_ID INTO C_ID &#10;\t\t\tFROM CODE_COMBINATIONS&#10;\t\t\tWHERE SEGMENT_ID_ALL=:TEXT_CODE_COMBINATION_ID_ALL;&#10;\t&#10;\t\t\t:TEXT_CODE_COMBINATION_ID := C_ID;&#10;\tEND IF;&#10;&#10;EXCEPTION &#10;\t\tWHEN NO_DATA_FOUND THEN&#10;\t\tCIDALL := :TEXT_CODE_COMBINATION_ID_ALL;&#10;\t\t&#10;\t\tTMP := LENGTH(CIDALL)/5;&#10;\t\t&#10;\t\tFOR CNT IN 1..TMP LOOP&#10;\t\t\t\tIF \t\tCNT=1 THEN&#10;\t\t\t\t\tID1 := TO_NUMBER(SUBSTR(CIDALL,1,5));&#10;\t\t\t\tELSIF CNT=2 THEN           &#10;\t\t\t\t\tID2 := TO_NUMBER(SUBSTR(CIDALL,6,5));&#10;\t\t\t\tELSIF CNT=3 THEN&#10;\t\t\t\t\tID3 := TO_NUMBER(SUBSTR(CIDALL,11,5));&#10;\t\t\t\tELSIF CNT=4 THEN&#10;\t\t\t\t\tID4 := TO_NUMBER(SUBSTR(CIDALL,16,5));&#10;\t\t\t\tELSIF CNT=5 THEN&#10;\t\t\t\t\tID5 := TO_NUMBER(SUBSTR(CIDALL,21,5));&#10;\t\t\t\tELSIF CNT=6 THEN&#10;\t\t\t\t\tID6 := TO_NUMBER(SUBSTR(CIDALL,26,5));&#10;\t\t\t\tELSIF CNT=7 THEN&#10;\t\t\t\t\tID7 := TO_NUMBER(SUBSTR(CIDALL,31,5));&#10;\t\t\t\tELSIF CNT=8 THEN&#10;\t\t\t\t\tID8 := TO_NUMBER(SUBSTR(CIDALL,36,5));&#10;\t\t\t\tELSIF CNT=9 THEN&#10;\t\t\t\t\tID9 := TO_NUMBER(SUBSTR(CIDALL,41,5));&#10;\t\t\t\tELSIF CNT=10 THEN&#10;\t\t\t\t\tID10 := TO_NUMBER(SUBSTR(CIDALL,46,5));&#10;\t\t\t\tEND IF;&#10;\t\tEND LOOP;&#10;&#10;&#10;\t\t\tINSERT INTO CODE_COMBINATIONS(STRUCTURE_ID,SEGMENT_ID01,SEGMENT_ID02,SEGMENT_ID03,SEGMENT_ID04,SEGMENT_ID05,SEGMENT_ID06,SEGMENT_ID07,SEGMENT_ID08,SEGMENT_ID09,SEGMENT_ID10,EFFECTIVE_FROM_DATE,ALLOW_BUDGET_YN,ALLOW_POST_YN)&#10;\t\t\tVALUES(:PARAMETER.PARM_STRUCTURE_ID,ID1,ID2,ID3,ID4,ID5,ID6,ID7,ID8,ID9,ID10,SYSDATE,1,1);&#10;\t\t\t&#10;\t\t\tSELECT CODE_COMBINATION_ID INTO C_ID &#10;\t\t\tFROM CODE_COMBINATIONS&#10;\t\t\tWHERE SEGMENT_ID_ALL=:TEXT_CODE_COMBINATION_ID_ALL;&#10;\t&#10;\t\t\t:TEXT_CODE_COMBINATION_ID := C_ID;&#10;WHEN OTHERS THEN&#10;    MESSAGE(ERROR_TEXT);\t&#10;    MESSAGE(ERROR_CODE);\t\t&#10;END;&#10;"
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "name": "CODE_TEXT_ITEMS",
+      "label": "CODE TEXT_ITEMS",
+      "object_count": 3,
+      "items": [
+        {
+          "name": "TEXT_CODE_COMBINATION_VAL",
+          "item_type": "Text Item",
+          "label": "",
+          "canvas": "CANV_JOURNAL_MT",
+          "column_name": "get_code_value(STRUCTURE_ID,SEGMENT_ID01,SEGMENT_ID02,SEGMENT_ID03,SEGMENT_ID04,SEGMENT_ID05,SEGMENT_ID06,SEGMENT_ID07,SEGMENT_ID08,SEGMENT_ID09,SEGMENT_ID10)",
+          "data_type": "Char",
+          "width": "100",
+          "height": "14",
+          "x": "49",
+          "y": "156",
+          "triggers": [
+            {
+              "name": "WHEN-VALIDATE-ITEM",
+              "trigger_text": "DECLARE&#10;&#10;\tRET VARCHAR2(500);&#10;\tA NUMBER;&#10;\tEXP EXCEPTION;&#10;\tPLIST PARAMLIST;&#10;\t&#10;\tID1 NUMBER(5);&#10;\tID2 NUMBER(5);&#10;\tID3 NUMBER(5);&#10;\tID4 NUMBER(5);&#10;\tID5 NUMBER(5);&#10;\tID6 NUMBER(5);&#10;\tID7 NUMBER(5);&#10;\tID8 NUMBER(5);&#10;\tID9 NUMBER(5);&#10;\tID10 NUMBER(5);&#10;&#10;BEGIN&#10;&#10;IF :TEXT_CODE_COMBINATION_VAL IS NOT NULL THEN&#10;\t&#10;\t\t\t\tA:=HOW_MANY_CHARS(:TEXT_CODE_COMBINATION_VAL,'-',FALSE);&#10;\t\t\t\t&#10;\t\t\t\tIF A+1<>:PARAMETER.PARM_NO_OF_SEGMENTS THEN&#10;\t\t\t\t\tRAISE EXP;&#10;\t\t\t\tEND IF;&#10;\t\t\t\t&#10;\t\t\t\t\tRET := IS_VALID_CODE(1,:TEXT_CODE_combination_val);&#10;\t\t\t\t\tIF RET IN ('-1','-2','-3','-4') THEN &#10;\t\t\t\t\t\t&#10;\t\t\t\t\t\tIF RET = '-1' THEN &#10;\t\t\t\t\t\t\tMESSAGE('INVALID SEGMENT NUMBER');&#10;\t\t\t\t\t\tELSIF RET = '-2'\tTHEN&#10;\t\t\t\t\t\t\tMESSAGE('SEGMENT VALUE NOT FOUND');&#10;\t\t\t\t\t\tELSIF RET = '-3' THEN&#10;\t\t\t\t\t\t\tMESSAGE('SEGMENT IS PARENT');&#10;\t\t\t\t\t\tELSIF RET = '-4' THEN&#10;\t\t\t\t\t\t\tMESSAGE('INVALID SEGMENT DEPENDENCY ');&#10;\t\t\t\t\t\tEND IF;&#10;\t\t\t\t\t\tRAISE EXP;\t\t&#10;\t\t\t\t\t\tELSE&#10;\t\t\t\t\t\tSPLIT_ID_ALL(RET,ID1,ID2,ID3,ID4,ID5,ID6,ID7,ID8,ID9,ID10);&#10;\t\t\t\t\t\t:DISP_DESCRIPTION:=GET_CODE_VALUE_DESC(:PARAMETER.PARM_STRUCTURE_ID,ID1,ID2,ID3,ID4,ID5,ID6,ID7,ID8,ID9,ID10);\t&#10;\t\t\t\t\t\t:TEXT_CODE_COMBINATION_ID_ALL := RET;\t&#10;\t\t\t\t\tEND IF;&#10;\t\t\t\t&#10;END IF;&#10;\t&#10;EXCEPTION&#10;\tWHEN EXP THEN&#10;&#10;\t\t\tPLIST :=CREATE_PARAMETER_LIST('PLIST');&#10;\t\t\tADD_PARAMETER(PLIST,'STRUCTURE_ID',TEXT_PARAMETER,:PARAMETER.PARM_STRUCTURE_ID);&#10;\t\t\tCALL_FORM('CODE_ENTRY',NO_HIDE,NO_REPLACE,NO_QUERY_ONLY,SHARE_LIBRARY_DATA,PLIST);&#10;\t\t\tDESTROY_PARAMETER_LIST('PLIST');&#10;\t\t\t&#10;\t\t\tIF :GLOBAL.CODE_VALUE IS NOT NULL THEN&#10;\t\t\t\t:TEXT_CODE_COMBINATION_VAL := :GLOBAL.CODE_VALUE;&#10;\t\t\t\t:DISP_DESCRIPTION          := :GLOBAL.CODE_VALUE_DESC;&#10;\t\t\t\t:TEXT_CODE_COMBINATION_ID_ALL        \t := :GLOBAL.CODE_ID_ALL;&#10;\t\t\tELSE&#10;\t\t\t\tRAISE FORM_TRIGGER_FAILURE;&#10;\t\t\tEND IF;&#10;END;&#10;"
+            }
+          ]
+        },
+        {
+          "name": "TEXT_CODE_COMBINATION_ID_ALL",
+          "item_type": "",
+          "label": "",
+          "canvas": "",
+          "column_name": "",
+          "data_type": "",
+          "width": "68",
+          "height": "14",
+          "x": "0",
+          "y": "0"
+        },
+        {
+          "name": "TEXT_CODE_COMBINATION_ID",
+          "item_type": "Text Item",
+          "label": "",
+          "canvas": "",
+          "column_name": "JOURNAL_DETAIL.CODE_COMBINATION_ID",
+          "data_type": "Number",
+          "width": "100",
+          "height": "14",
+          "x": "492",
+          "y": "28"
+        }
+      ],
+      "program_units": [],
+      "triggers": []
+    },
+    {
+      "name": "PRIMARY_KEY_CHECK",
+      "label": "PRIMARY_KEY_CHECK",
+      "object_count": 2,
+      "items": [],
+      "program_units": [
+        {
+          "name": "PCKG_FORM",
+          "type": "Package Body",
+          "text": "PACKAGE BODY pckg_form IS&#10;&#10;PROCEDURE POPULATE_TABLE IS &#10;&#10;\t\tLOOP_COUNTER \tNUMBER:=1;&#10;\t\t&#10;\t\tlnum_curr_rec NUMBER:=:SYSTEM.CURSOR_RECORD;&#10;\t\tlnum_top_rec\tNUMBER:=GET_BLOCK_PROPERTY(:SYSTEM.CURSOR_BLOCK,TOP_RECORD);\t&#10;\t\t&#10;\t\tlvch_cur_itm \tVARCHAR2(500):=:SYSTEM.CURSOR_ITEM;&#10;\t\t&#10;BEGIN&#10;&#10;\t\tSET_FORM_PROPERTY(:SYSTEM.CURSOR_FORM,VALIDATION_UNIT,FORM_SCOPE);&#10;\t\tFIRST_RECORD;&#10;\t\t&#10;\t\tFOR CNT IN 1..TMP_TABLE.COUNT LOOP&#10;\t\t\tTMP_TABLE(CNT).CODE_COMB_VAL:='';&#10;\t\tEND LOOP;&#10;\t\tCLEAR_MESSAGE;&#10;\t\tLOOP&#10;\t\t\t\tIF LOOP_COUNTER<>lnum_curr_rec THEN&#10;\t\t\t\t\t\tTMP_TABLE(LOOP_COUNTER).CODE_COMB_VAL:=:TEXT_CODE_COMBINATION_VAL;\t&#10;\t\t\t\tEND IF;&#10;\t\t\t\tLOOP_COUNTER:=LOOP_COUNTER+1;\t\t\t&#10;\t&#10;\t\t\t\tEXIT WHEN :SYSTEM.LAST_RECORD='TRUE';&#10;&#10;\t\t\t\tNEXT_RECORD;&#10;&#10;\t\tEND LOOP;&#10;\t\tCLEAR_MESSAGE;&#10;\t\tGO_RECORD(lnum_curr_rec);&#10;\t\tGO_ITEM(lvch_cur_itm);&#10;\t\t&#10;\t\tIF GET_BLOCK_PROPERTY(:SYSTEM.CURSOR_BLOCK,TOP_RECORD) <> lnum_top_rec THEN&#10;\t\t\t\t\t\tGO_RECORD(lnum_top_rec);&#10;\t\t\t\t\t\t&#10;\t\t\t\t\t\tFOR CNT IN 1..(lnum_curr_rec\t- lnum_top_rec)\tLOOP&#10;\t\t\t\t\t\t\t\tNEXT_RECORD;&#10;\t\t\t\t\t\tEND LOOP;&#10;\t\tEND IF;\t\t\t\t&#10;&#10;\t\tSET_FORM_PROPERTY(:SYSTEM.CURSOR_FORM,VALIDATION_UNIT,DEFAULT_SCOPE);&#10;&#10;END POPULATE_TABLE;&#10;&#10;&#10;FUNCTION CHECK_PRIMARY_KEY(KEY_TO_CHECK VARCHAR2) RETURN BOOLEAN &#10;IS&#10;&#10;BEGIN&#10;\t\tFOR CNT IN 1..TMP_TABLE.COUNT LOOP&#10;\t\t\t&#10;\t\t\tIF TMP_TABLE(CNT).CODE_COMB_VAL=KEY_TO_CHECK THEN&#10;\t\t\t\t\tRETURN(FALSE);&#10;\t\t\tEND IF;&#10;\t\t\t&#10;\t\tEND LOOP;\t&#10;\t\t&#10;\t\tRETURN(TRUE);&#10;&#10;END CHECK_PRIMARY_KEY;&#10;END pckg_form;"
+        },
+        {
+          "name": "PCKG_FORM",
+          "type": "Package Spec",
+          "text": "PACKAGE pckg_form IS&#10;  &#10;  type rec is record(CODE_COMB_VAL VARCHAR2(500));&#10; \ttype tab is table of rec index by binary_integer;&#10; \t&#10; \tTMP_TABLE tab;&#10; \t&#10;\tPROCEDURE POPULATE_TABLE;&#10;  FUNCTION CHECK_PRIMARY_KEY(KEY_TO_CHECK VARCHAR2) RETURN BOOLEAN;&#10;END pckg_form;"
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "name": "TRIGGERS_NEW_CHECK",
+      "label": "TRIGGERS_NEW_CHECK",
+      "object_count": 4,
+      "items": [],
+      "program_units": [],
+      "triggers": [
+        {
+          "name": "WHEN-VALIDATE-ITEM",
+          "trigger_text": "&#10;PCKG_ACCOUNT_CODE_HELP.PRO_ACCOUNT_CODE_VALIDATE(:PARAMETER.PARM_STRUC_COST_CENTER,:CC_CODE_COMB_ID,:CC_CODE_ID_ALL,:DISP_CODE_VALUE,:CC_CODE_DESC,1,0,0,0,0);&#10;&#10;"
+        },
+        {
+          "name": "WHEN-MOUSE-DOUBLECLICK",
+          "trigger_text": "IF :PARAMETER.PARM_MODE = PCKG_GCNSTS.GCST_ADD_MODE &#10;\tOR &#10;\t:PARAMETER.PARM_MODE = PCKG_GCNSTS.GCST_EDIT_MODE&#10;\tOR &#10;\t:PARAMETER.PARM_MODE = PCKG_GCNSTS.GCST_FIND_MODE then &#10;\t&#10;\tPCKG_ACCOUNT_CODE_HELP.PRO_account_CODE_HELP(:PARAMETER.PARM_STRUC_COST_CENTER,:CC_CODE_COMB_ID,:CC_CODE_ID_ALL,:DISP_CODE_VALUE,:CC_CODE_DESC);&#10;\t&#10;&#10;end if ;"
+        },
+        {
+          "name": "PRE-INSERT",
+          "trigger_text": "PCKG_ACCOUNT_CODE_HELP.PRO_ACCOUNT_CODE_DYN_INS(:PARAMETER.PARM_STRUC_COST_CENTER,&#10;\t\t\t\t\t\t\t\t\t \t\t\t :CC_CODE_COMB_ID\t,&#10;\t\t\t\t\t\t\t\t\t       :CC_CODE_ID_ALL);&#10;&#10;"
+        },
+        {
+          "name": "PRE-UPDATE",
+          "trigger_text": "PCKG_ACCOUNT_CODE_HELP.PRO_ACCOUNT_CODE_DYN_INS(:PARAMETER.PARM_STRUC_COST_CENTER,&#10;\t\t\t\t\t\t\t\t\t \t\t\t :CC_CODE_COMB_ID\t,&#10;\t\t\t\t\t\t\t\t\t       :CC_CODE_ID_ALL);&#10;"
+        }
+      ]
+    }
+  ]
+}

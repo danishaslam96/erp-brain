@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Module version="141020000" xmlns="http://xmlns.oracle.com/Forms">
+   <ObjectLibrary Name="OLIB_FORM_STNDRDS" DirtyInfo="true" ObjectCount="21">
+      <ObjectLibraryTab Name="WIZMEN_STANDARD" DirtyInfo="true" Label="WIZMEN_STANDARD" ObjectCount="1">
+         <ObjectGroup Name="OGRP_FORMS" DirtyInfo="true" ObjectGroupType="22">
+            <ObjectGroupChild Name="ALRT_EXIT" DirtyInfo="true" Type="Alert"/>
+            <ObjectGroupChild Name="ALRT_CONFIRM" DirtyInfo="true" Type="Alert"/>
+            <ObjectGroupChild Name="ALRT_DELETE" DirtyInfo="true" Type="Alert"/>
+            <ObjectGroupChild Name="PARM_WIND_NAME" DirtyInfo="true" Type="ModuleParameter"/>
+            <ObjectGroupChild Name="PARM_LAST_ITM_VATT" DirtyInfo="true" Type="ModuleParameter"/>
+            <ObjectGroupChild Name="PARM_DFLT_WHERE" DirtyInfo="true" Type="ModuleParameter"/>
+            <ObjectGroupChild Name="PARM_FORM_NAME" DirtyInfo="true" Type="ModuleParameter"/>
+            <ObjectGroupChild Name="PARM_MODE" DirtyInfo="true" Type="ModuleParameter"/>
+            <ObjectGroupChild Name="PARM_CNCL_TO_FLTER" DirtyInfo="true" Type="ModuleParameter"/>
+            <ObjectGroupChild Name="PCLS_TEXTBOX" DirtyInfo="true" Type="PropertyClass"/>
+            <ObjectGroupChild Name="PCLS_DISPLAY_TXTBOX" DirtyInfo="true" Type="PropertyClass"/>
+            <ObjectGroupChild Name="PCLS_CONFIG_FRAM" DirtyInfo="true" Type="PropertyClass"/>
+            <ObjectGroupChild Name="PCLS_CONFIG_WIND" DirtyInfo="true" Type="PropertyClass"/>
+            <ObjectGroupChild Name="PCLS_NORMAL_WIND" DirtyInfo="true" Type="PropertyClass"/>
+            <ObjectGroupChild Name="PCLS_NORMAL_FRAM" DirtyInfo="true" Type="PropertyClass"/>
+            <ObjectGroupChild Name="DATE_BUTTON_CLASS" DirtyInfo="true" Type="PropertyClass"/>
+            <ObjectGroupChild Name="VATT_ROW_FOCUSED" DirtyInfo="true" Type="VisualAttribute"/>
+            <ObjectGroupChild Name="VATT_TEXTBOX_DISABLE" DirtyInfo="true" Type="VisualAttribute"/>
+            <ObjectGroupChild Name="VATT_TEXTBOX_FOCUSED" DirtyInfo="true" Type="VisualAttribute"/>
+            <ObjectGroupChild Name="VATT_CONFIG_TEXTBOX_FOCUSED" DirtyInfo="true" Type="VisualAttribute"/>
+            <ObjectGroupChild Name="VATT_TEXTBOX_NORMAL" DirtyInfo="true" Type="VisualAttribute"/>
+            <ObjectGroupChild Name="VATT_TEXTBOX" DirtyInfo="true" Type="VisualAttribute"/>
+         </ObjectGroup>
+      </ObjectLibraryTab>
+      <ObjectLibraryTab Name="AUTHORIZATION" DirtyInfo="true" Label="AUTHORIZATION" ObjectCount="20">
+         <Alert Name="ALRT_ERROR" DirtyInfo="true" Button2Label=""/>
+         <Alert Name="ALRT_NOTE" DirtyInfo="true" Button2Label="" AlertStyle="Note"/>
+         <Alert Name="ALRT_CAUTION" DirtyInfo="true" Button2Label="" AlertStyle="Caution"/>
+         <Item Name="AUTH_ID" DirtyInfo="true" Width="68" InsertAllowed="false" MaximumLength="15" ColumnName="pimt.auth_id" DataType="Number" QueryOnly="true" Height="14" UpdateAllowed="false"/>
+         <Item Name="AUTH_STATUS_ID" DirtyInfo="true" Width="68" InsertAllowed="false" MaximumLength="15" ColumnName="PIMT.AUTH_STATUS_ID" DataType="Number" QueryOnly="true" Height="14" UpdateAllowed="false"/>
+         <Item Name="AUTH_STATUS_DESC" ValidateFromList="false" Justification="Center" DistanceBetweenRecords="297" Width="163" MaximumLength="100" XPosition="206" Required="false" FontName="Arial" YPosition="166" DatabaseItem="true" Bevel="None" FontSize="1200" FontStyle="Plain" FontWeight="Bold" FontSpacing="Normal" CanvasName="CAN_MAIN" Formula="" CaseInsensitiveQuery="true" CaseRestriction="Mixed" ItemsDisplay="0" Height="15" TabPageName="" ItemType="Display Item" DirtyInfo="true" CalculateMode="None" ColumnName="asmt.description" QueryOnly="true" LovName=""/>
+         <Item Name="AUTHORIZED_YN" DirtyInfo="true" Width="68" InsertAllowed="false" MaximumLength="1" ColumnName="pimt.authorized_yn " DataType="Number" QueryOnly="true" Height="14" UpdateAllowed="false"/>
+         <Item Name="AUTH_STATUS_EDITABLE_YN" DirtyInfo="true" Width="68" InsertAllowed="false" MaximumLength="1" ColumnName="NVL(asmt.editable_yn,1)" DataType="Number" QueryOnly="true" InitializeValue="1" Height="14" UpdateAllowed="false"/>
+         <Item Name="PENDING_STATUS_YN" DirtyInfo="true" Width="68" MaximumLength="1" ColumnName="ASMT.pending_status_yn " DataType="Number" QueryOnly="true" Height="14"/>
+         <Item Name="REJECTED_STATUS_YN" DirtyInfo="true" Width="68" MaximumLength="1" ColumnName="ASMT.rejected_status_yn " DataType="Number" QueryOnly="true" Height="14"/>
+         <Item Name="APPROVED_STATUS_YN" DirtyInfo="true" Width="68" MaximumLength="1" ColumnName="ASMT.approved_status_yn " DataType="Number" QueryOnly="true" Height="14"/>
+         <Item Name="PBTN_SEND_FOR_AUTH" TabPageName="" Width="70" ItemType="Push Button" BackColor="white" XPosition="207" FontName="Arial" YPosition="348" FontSize="900" AccessKey="A" FontStyle="Plain" DirtyInfo="true" FontWeight="Medium" Label="Send for &amp;Auth" FontSpacing="Normal" ForegroundColor="black" CanvasName="CAN_DEMAND" KeyboardNavigable="false" Height="16">
+            <Trigger Name="WHEN-BUTTON-PRESSED" DirtyInfo="true" TriggerText="PCKG_AUTHORIZATION.PBTN_SEND_FOR_AUTH(:PARAMETER.PARM_AUTH_DOC_TYPE_ID,:TEXT_PURCH_INVOICE_ID,:AUTHORIZED_YN,:AUTH_ID,:AUTH_STATUS_ID,:AUTH_STATUS_DESC,:AUTH_STATUS_EDITABLE_YN,:PENDING_STATUS_YN,:APPROVED_STATUS_YN,:REJECTED_STATUS_YN);&amp;#10;"/>
+         </Item>
+         <Item Name="PBTN_AUTH_TRACK" TabPageName="" Width="70" ItemType="Push Button" BackColor="white" XPosition="303" FontName="Arial" YPosition="348" FontSize="900" FontStyle="Plain" DirtyInfo="true" FontWeight="Medium" Label="Auth &amp;Track" FontSpacing="Normal" ForegroundColor="black" CanvasName="CAN_DEMAND" Height="16">
+            <Trigger Name="WHEN-BUTTON-PRESSED" DirtyInfo="true" TriggerText="PCKG_AUTHORIZATION.PBTN_AUTH_TRACK(:AUTH_ID);&amp;#10;"/>
+         </Item>
+         <ProgramUnit Name="IS_VALID_FOR_EDIT" ProgramUnitText="PROCEDURE IS_VALID_FOR_EDIT IS&amp;#10;BEGIN&amp;#10;&#x9;&#x9;PCKG_AUTHORIZATION.IS_VALID_FOR_EDIT(:PARAMETER.PARM_AUTH_DOC_TYPE_ID,:TEXT_PURCH_INVOICE_ID,:AUTH_STATUS_ID);&amp;#10;END;&amp;#10;&amp;#10;" ProgramUnitType="Procedure"/>
+         <ProgramUnit Name="PRO_EN_DIS_AUTH_BUTTON" ProgramUnitText="PROCEDURE PRO_EN_DIS_AUTH_BUTTON IS&amp;#10;BEGIN&amp;#10;  PCKG_AUTHORIZATION.EN_DIS_AUTH_BUTTONS(:AUTHORIZED_YN, :AUTH_ID,:AUTH_STATUS_ID, :PENDING_STATUS_YN, :APPROVED_STATUS_YN, :REJECTED_STATUS_YN);&amp;#10;END;" ProgramUnitType="Procedure"/>
+         <ModuleParameter Name="PARM_AUTH_DOC_TYPE_ID" DirtyInfo="true" ParameterDataType="Number" Comment="FROM WIZ_AUTH_DOC_TYPES_MT&amp;#10;IT WILL BE SET ON NEW FORM INSTANCE"/>
+         <VisualAttribute Name="VATT_APPROVED" BackColor="r0g75b0" DirtyInfo="true"/>
+         <VisualAttribute Name="VATT_REJECTED" BackColor="red" DirtyInfo="true" ForegroundColor="white"/>
+         <VisualAttribute Name="VATT_PENDING" BackColor="r100g100b88" DirtyInfo="true"/>
+         <VisualAttribute Name="VATT_NA" BackColor="gray24" DirtyInfo="true" ForegroundColor="gray24"/>
+      </ObjectLibraryTab>
+      <Alert Name="ALRT_EXIT" DirtyInfo="true" Button1Label="Yes" Button2Label="No" Title="Save Confirmation" Button3Label="Cancel" AlertMessage="Are you sure you want to Save the Record" AlertStyle="Caution"/>
+      <Alert Name="ALRT_CONFIRM" DirtyInfo="true" Button1Label="Yes" Button2Label="No" Title="Confirmation Message" DefaultAlertButton="Button 2" AlertMessage="Are you sure you want to Cancel the Record" AlertStyle="Note"/>
+      <Alert Name="ALRT_DELETE" DirtyInfo="true" Button1Label="Yes" Button2Label="No" Title="Delete Confirmation" DefaultAlertButton="Button 2" AlertMessage="Are you sure, You want to Delete this Record ?" AlertStyle="Caution"/>
+      <ModuleParameter Name="PARM_WIND_NAME" DirtyInfo="true" ParameterInitializeValue="WIND_EMPLOYEEMT"/>
+      <ModuleParameter Name="PARM_LAST_ITM_VATT" DirtyInfo="true"/>
+      <ModuleParameter Name="PARM_DFLT_WHERE" DirtyInfo="true"/>
+      <ModuleParameter Name="PARM_FORM_NAME" DirtyInfo="true" ParameterInitializeValue="Employee Information"/>
+      <ModuleParameter Name="PARM_MODE" DirtyInfo="true" ParameterInitializeValue="Normal"/>
+      <ModuleParameter Name="PARM_CNCL_TO_FLTER" DirtyInfo="true" ParameterInitializeValue="FALSE"/>
+      <PropertyClass Name="PCLS_TEXTBOX" Bevel="Inset" FontSize="900" DirtyInfo="true" CaseInsensitiveQuery="true" CaseRestriction="Mixed" Height="16"/>
+      <PropertyClass Name="PCLS_DISPLAY_TXTBOX" DatabaseItem="false" Bevel="Plain" FontSize="900" DirtyInfo="true" InsertAllowed="false" QueryAllowed="false" CaseInsensitiveQuery="true" KeyboardNavigable="false" QueryOnly="true" Height="16" UpdateAllowed="false"/>
+      <PropertyClass Name="PCLS_CONFIG_FRAM" BackColor="r25g50b88" Bevel="Plain" DirtyInfo="true" FillPattern="transparent"/>
+      <PropertyClass Name="PCLS_CONFIG_WIND" BackColor="r88g75b88" MaximizeAllowed="false" DirtyInfo="true" ResizeAllowed="false"/>
+      <PropertyClass Name="PCLS_NORMAL_WIND" BackColor="gray20" MaximizeAllowed="false" DirtyInfo="true" ResizeAllowed="false"/>
+      <PropertyClass Name="PCLS_NORMAL_FRAM" BackColor="gray20" Bevel="Plain" DirtyInfo="true" FillPattern="transparent"/>
+      <PropertyClass Name="DATE_BUTTON_CLASS" Justification="Center" Width="22" FillPattern="transparent" ItemType="Display Item" BackColor="gray" DatabaseItem="false" FontName="MS Sans Serif" Bevel="Lowered" FontSize="800" DirtyInfo="true" FontStyle="Plain" FontWeight="Medium" VisualAttributeName="DATE_NORMAL_VA" FontSpacing="Normal" ForegroundColor="black" CanvasName="DATE_LOV_CANVAS" Height="18"/>
+      <VisualAttribute Name="VATT_ROW_FOCUSED" BackColor="gray12" DirtyInfo="true"/>
+      <VisualAttribute Name="VATT_TEXTBOX_DISABLE" BackColor="gray16" FontSize="900" DirtyInfo="true"/>
+      <VisualAttribute Name="VATT_TEXTBOX_FOCUSED" BackColor="r88g88b75" FontSize="900" DirtyInfo="true" FillPattern="&lt;Unspecified>"/>
+      <VisualAttribute Name="VATT_CONFIG_TEXTBOX_FOCUSED" BackColor="r75g75b88" FontSize="900" DirtyInfo="true"/>
+      <VisualAttribute Name="VATT_TEXTBOX_NORMAL" VisualAttributeType="Common" PromptFontSize="800" FillPattern="Unspecified>" Comment="" BackColor="WHITE" FontName="Arial" FontSize="900" FontStyle="Plain" DirtyInfo="true" FontWeight="Medium" PromptFontName="Arial" FontSpacing="Normal" ForegroundColor="black" PromptFontStyle="Plain" PromptFontWeight="Medium" PromptFontSpacing="Normal"/>
+      <VisualAttribute Name="VATT_TEXTBOX" VisualAttributeType="Common" PromptFontSize="800" FillPattern="Unspecified>" Comment="VISUAL ATTRIBUTES  FOR TEXT  BOXES" BackColor="WHITE" FontName="Arial" FontSize="900" FontStyle="Plain" DirtyInfo="true" FontWeight="Medium" PromptFontName="Arial" FontSpacing="Normal" ForegroundColor="black" PromptFontStyle="Plain" PromptFontWeight="Medium" PromptFontSpacing="Normal"/>
+   </ObjectLibrary>
+</Module>

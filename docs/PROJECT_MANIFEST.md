@@ -7,7 +7,6 @@ ERP Brain is an autonomous agent system designed to interface with the Shahzad T
 
 ## Current Status
 - **Paused (Waiting)**: Reports frontend server must be fixed to enable report parsing (tracked in GitHub Issue #1).
-- **Migration**: Migrated to the new hybrid PlanSuite/GitHub protocol; initial repo scaffold committed and pushed.
 
 ## Architecture
 - **Database**: Oracle ERP (Shahzad Textile Mills).
@@ -15,10 +14,8 @@ ERP Brain is an autonomous agent system designed to interface with the Shahzad T
 - **Monitor**: CLI-based monitor for state management.
 
 ## Goals
-1.  **Resume Operations**: Reactivate the project under the new protocol.
-2.  **Wait for Dependency**: Monitor the status of the reports frontend server (currently blocking).
-3.  **Autonomous Analysis**: Once unblocked, parse reports and analyze the ERP schema.
+1.  **Wait for Dependency**: Monitor the status of the reports frontend server (currently blocking).
+2.  **Autonomous Analysis**: Once unblocked, parse reports and analyze the ERP schema.
 
 ## Blockers
 - **Reports Frontend Server**: The system cannot parse reports until the server issues are resolved. (Status: Blocked/Waiting — see Issue #1)
-- **Backfill Artifacts**: We need the location of prior ERP Brain assets to import (Issue #2).
