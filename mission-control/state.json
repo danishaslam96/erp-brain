@@ -1,9 +1,9 @@
 {
-  "current_issue": 5,
+  "current_issue": null,
   "next_target": null,
-  "active_branch": "issue-5",
-  "last_commit": null,
-  "in_progress": true,
+  "active_branch": null,
+  "last_commit": "f9fafab",
+  "in_progress": false,
   "last_nudge_at": null,
   "expires_at": null,
   "running": false,
