@@ -1,8 +1,8 @@
 {
-  "current_issue": 13,
+  "current_issue": 14,
   "next_target": null,
   "active_branch": null,
-  "last_commit": "ed1a3d1",
+  "last_commit": "d9cdb25",
   "in_progress": true,
   "last_nudge_at": null,
   "expires_at": null,
@@ -20,7 +20,7 @@
     "idle_pause_after_no_delta": 2,
     "idle_pause_after_hours": 6
   },
-  "last_repo_diff": "2026-02-21T17:13:00.000000+00:00",
-  "last_check": 1771573980,
-  "last_hygiene_at": "2026-02-21T17:13:00Z"
+  "last_repo_diff": "2026-02-21T22:27:00.000000+00:00",
+  "last_check": 1771590420,
+  "last_hygiene_at": "2026-02-21T22:27:00Z"
 }
