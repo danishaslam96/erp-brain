@@ -1,0 +1,12 @@
+{
+  "name": "PRO_CMT_PRODUCTION_CLOSE",
+  "type": "PROCEDURE",
+  "line_count": 277,
+  "tables_referenced": [
+    "LNM_SR_NO",
+    "SGD_PROD_CLOSE_MT",
+    "LNM_RECORD_EXIST",
+    "SGD_PROD_CLOSE_DET"
+  ],
+  "body_snippet": "procedure pro_cmt_production_close(parm_locator_id          number,\n                                 parm_knit_Date           date,\n                                 parm_shift_id            number,\n                                 parm_SHIFT               varchar,\n                                 parm_OPERATION_ID        number,\n                                 parm_SALES_ORDER_ID      number,\n                                 parm_operation_struct_id number,\n                                 parm_operation_seg02_id  number,\n                                 parm_BAL_DZN             number,\n                                 parm_BAL_PCS             number,\n                                 parm_OPN_DZN             number,\n                                 parm_OPN_PCS             number,\n                                 parm_PROD_DZN            number,\n                                 parm_PROD_PCS            number,\n                                 parm_DCLRD_WASTE_DZN     number,\n                                 parm_DCLRD_WASTE_PCS     number,\n                                 parm_RE_WORK_DZN         number,\n                                 parm_RE_WORK_PCS         number,\n                                 parm_INVISIBLE_WASTE_DZN number,\n                                 parm_INVISIBLE_WASTE_PCS number,\n                                 parm_INVISIBLE_GAIN_DZN  number,\n                                 parm_INVISIBLE_GAIN_PCS  number,\n                                 parm_batch_id "
+}

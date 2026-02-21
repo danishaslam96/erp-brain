@@ -1,0 +1,16 @@
+{
+  "name": "PRO_GET_BALANCE_AMOUNT",
+  "type": "PROCEDURE",
+  "line_count": 619,
+  "tables_referenced": [
+    "SUPP_CL_BALANCES_MT",
+    "JOURNAL_MT",
+    "TEMP_RPT_AGING",
+    "LNUM_AGING_TEMP_ID",
+    "PAYMENTS_MT",
+    "AGING_TEMP_MT",
+    "OTHER_PMNTS_RCPTS_MT",
+    "PURCHASE_INVOICE_MT"
+  ],
+  "body_snippet": "PROCEDURE PRO_GET_BALANCE_AMOUNT(\n                                                   parm_for varchar2 Default 'S', \n                                                   parm_from_code varchar2,\n                                                   parm_to_code   varchar2\n                                                  ) is\n  LNUM_AMOUNT         NUMBER(15,2):=0;\n  LNUM_TEMP           NUMBER(15,2):=0;\n  LNUM_START_YEAR_ID  NUMBER(14):=0;\n  LNUM_START_DATE     DATE;\n  LNUM_END_DATE_OF_PREV_YEAR DATE;\n  LNUM_AGING_TEMP_ID\tNUMBER(14) := 1;\n  LNUM_VAL            NUMBER(15,2);\nBEGIN\nnull;\n-- shifted to package (pckg_aging)\n/*\n   BEGIN\n\t\t\tSELECT\n\t\t\t    ATMT.AG_TEMP_ID\n\t\t\tINTO\n\t\t\t\t\tLNUM_AGING_TEMP_ID\n\t\t\tFROM\n\t\t\t    AGING_TEMP_MT ATMT\n\t\t\tWHERE\n\t\t\t    ATMT.DEFAULT_YN = 1;\n   EXCEPTION\n   \t WHEN NO_DATA_FOUND THEN\n   \t \t\tRAISE_APPLICATION_ERROR(-349030,'Default Aging Template Not Found');\n   END;\n   -----------\n   LNUM_START_YEAR_ID:=2;\n   LNUM_START_DATE:=TO_DATE('01-JUL-03');\n   LNUM_END_DATE_OF_PREV_YEAR := TO_DATE('30-JUN-03');\n   ----------------   \n   \n   delete from temp_rpt_aging;\n   IF (UPPER(parm_for) = 'S') THEN   --- Supplier Aging \n       FOR CUR IN (SELECT SUPPLIER_ID, SUM(PAYMENT_AMOUNT) PAYMENT_AMOUNT\n                      FROM \n                      (\n                      -- OPENING BALANCE (IF DEBIT)\n                      SELECT IDT.SUPPLIER_ID, IDT.CL_BAL_AMOUNT PAYMENT_AMOUNT \n                      FROM SUPP_CL_BALANCES_MT IMT, SUPP_CL_BALANCES_DET IDT, SUPPLIER_MT SPM"
+}

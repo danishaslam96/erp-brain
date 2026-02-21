@@ -1,0 +1,16 @@
+{
+  "name": "PCKG_INV",
+  "type": "PACKAGE BODY",
+  "line_count": 5188,
+  "tables_referenced": [
+    "NEGATIVE_INV_ITEMS_RPRT",
+    "INV_QNTV_FORMULA_MT",
+    "TEMPORARY",
+    "LNUM_COUNT",
+    "LDAT_FROM_DATE",
+    "TEMP_ITEM_VALUATION",
+    "NEGATIVE",
+    "PERIOD_DETAILS"
+  ],
+  "body_snippet": "package body pckg_inv is\n\n  -- INITIALIZED IN PACKAGE INITIALIZER\n  LNUM_CLIENT_ID NUMBER(14);\n  -------------------------------------\n\n  --- GLOBAL VARIABLES FOR CACHE PROCEDURE\n  LGNUM_CACH_SINV_ID        NUMBER(14);\n  LGNUM_CACH_ORG_ID         NUMBER(14);\n  LGNUM_CACH_SET_OF_BOOK_ID NUMBER(14);\n  LGNUM_CACH_DATE           DATE;\n\n  LGNUM_PREV_YEARS_ID         NUMBER(14);\n  LGNUM_THIS_YEARS_FIRST_DATE DATE;\n  ----------------------------------------\n\n  PROCEDURE get_balance_qty_amount(parm_last_years_id      NUMBER,\n                                   parm_start_date         DATE,\n                                   parm_inv_org            NUMBER DEFAULT NULL,\n                                   parm_sub_inv_id         NUMBER,\n                                   parm_loc_code_id        NUMBER DEFAULT NULL,\n                                   parm_item_id            NUMBER,\n                                   parm_date               DATE,\n                                   parm_inv_transaction_no NUMBER DEFAULT NULL,\n                                   parm_det_srno           number default null,\n                                   parm_amount             OUT NUMBER,\n                                   parm_pri_qty            OUT NUMBER,\n                                   parm_sec_qty            OUT NUMBER);\n\n  procedure update_item_value(parm_change_date        DATE,\n                              parm_inv_transaction_no NUMBER,\n                              parm_item_id            NU"
+}

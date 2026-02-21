@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_SGD_COSTING",
+  "type": "PACKAGE",
+  "line_count": 12,
+  "tables_referenced": [],
+  "body_snippet": "package pckg_sgd_costing is\n\n  -- Author  : DEV-T520\n  -- Created : 26/03/2021 11:16:43 am\n  -- Purpose : \n  \n  -- Public type declarations\n   function fun_get_period_id(parm_As_on_date date,parm_inv_sob_id number) return number;\n  \n\n\nend pckg_sgd_costing;\n"
+}

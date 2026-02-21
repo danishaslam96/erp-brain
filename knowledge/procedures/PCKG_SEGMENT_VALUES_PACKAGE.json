@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_SEGMENT_VALUES",
+  "type": "PACKAGE",
+  "line_count": 13,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_SEGMENT_VALUES is\n\n  -- Author  : ADMINISTRATOR\n  -- Created : 9/8/2006 10:46:37 AM\n  -- Purpose : To Group Segment Values Related Program Units\\\n\n  gnum_seg_val_rel_in_process NUMBER(1):=0;\n\n  PROCEDURE apply_segment_value_relations;\n\n\n\nend PCKG_SEGMENT_VALUES;\n"
+}

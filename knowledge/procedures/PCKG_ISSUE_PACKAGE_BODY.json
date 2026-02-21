@@ -1,0 +1,11 @@
+{
+  "name": "PCKG_ISSUE",
+  "type": "PACKAGE BODY",
+  "line_count": 889,
+  "tables_referenced": [
+    "LNUM_PERIOD_FREEZE_YN",
+    "WIZ_GL_SET_OF_BOOKS",
+    "PERIOD_FREEZING_MT"
+  ],
+  "body_snippet": "package body PCKG_ISSUE is\n\nFUNCTION FUN_GET_PERIOD_ID(parm_sob_id NUMBER,\n                           parm_from_date DATE,\n                           parm_to_date DATE) RETURN NUMBER IS\n      \n      lnum_period_id NUMBER;\n      lnum_period_freeze_yn NUMBER;\n      \nBEGIN\n      FOR PERIOD_CUR IN(SELECT PD.PERIOD_ID\n                        FROM   WIZ_GL_SET_OF_BOOKS WGSOB,\n                               PERIOD_DETAILS PD\n                        WHERE  WGSOB.PERD_TYPE_ID = PD.PERIOD_TYPE_ID\n                        AND    WGSOB.SET_OF_BOOK_ID = parm_sob_id\n                        AND    ((PARM_FROM_DATE BETWEEN PD.FROM_DATE AND PD.TO_DATE)\n                        OR     (PARM_TO_DATE BETWEEN PD.FROM_DATE AND PD.TO_DATE)))LOOP\n                        \n          BEGIN\n              SELECT FREEZE_YN INTO lnum_period_freeze_yn\n              FROM period_freezing_mt mt\n              WHERE   (mt.period_id ) = PERIOD_CUR.PERIOD_ID;\n              \n              RETURN(lnum_period_freeze_yn);\n          EXCEPTION\n              WHEN NO_DATA_FOUND THEN\n                  RETURN(0);\n          END;\n          \n      END LOOP;\n\nEND;\n\n------------------------------------------------------------------------------\n\nPROCEDURE PRO_ISSUE_POSTING(parm_issue_id      NUMBER,\n                            parm_book_id       NUMBER,\n                            parm_from_date     DATE,\n                            parm_to_date       DATE,\n                            parm_period_id     NUMBER,\n                    "
+}

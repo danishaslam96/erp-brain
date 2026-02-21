@@ -1,0 +1,11 @@
+{
+  "name": "FUN_GET_ITEM_SEG_PREFIX",
+  "type": "FUNCTION",
+  "line_count": 78,
+  "tables_referenced": [
+    "WIZ_SEGMENT_DEFINITION",
+    "WHICH",
+    "LNUM_SEG_WIDTH"
+  ],
+  "body_snippet": "function FUN_GET_ITEM_SEG_PREFIX(\n                                                    parm_seg_prefix_comb          varchar2, \n                                                    parm_codes_combs              varchar2,\n                                                    parm_seg_sep_by               varchar2,\n                                                    parm_code_sep_by              varchar2,\n                                                    parm_add_sep                  varchar2 default null,\n                                                    parm_struc_id                 number default null,\n                                                    parm_rtn_code_seg_width       varchar2 default 'C'\n                                                  ) return varchar2 is\n  /****************************************************************\n  ------   This function is created on 06-mar-2k4 \n                      By SHAHZAD IMTIAZ\n           Parameters specification:\n        1. parm_seq_prefix_comb    => This parameter is for \n                                      segment combination, like\n                                      1,2,3 means that Ist segment\n                                      IInd segment & IIIrd segment\n                                      will make the prefix code.\n       2.parm_code_combs           => This parameter is for \n                                      segment code combinations, \n                                      from which code prefix will \n "
+}

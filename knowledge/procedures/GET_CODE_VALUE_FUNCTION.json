@@ -1,0 +1,19 @@
+{
+  "name": "GET_CODE_VALUE",
+  "type": "FUNCTION",
+  "line_count": 119,
+  "tables_referenced": [
+    "WIZ_SEGMENT10",
+    "WIZ_SEGMENT05",
+    "WIZ_SEGMENT03",
+    "WIZ_SEGMENT06",
+    "WIZ_SEGMENT08",
+    "WIZ_SEGMENT01",
+    "WIZ_SEGMENT07",
+    "WIZ_SEGMENT09",
+    "WIZ_SEGMENT02",
+    "WIZ_SEGMENT04",
+    "VAL"
+  ],
+  "body_snippet": "FUNCTION GET_CODE_VALUE(STRCT NUMBER,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti1 NUMBER,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti2 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti3 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti4 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti5 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti6 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti7 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti8 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti9 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti10 NUMBER DEFAULT NULL ) RETURN VARCHAR2 IS\n\n\n\n--------------------------------------------------\n-------- THIS FUNCTION RETURNS THE CODE VALUES\n\n-------- PARAMETER DETAIL IS GIVEN BELLOW\n\n-------- STRCT -> THE STRUCTURE FOR WHICH CODE VALUE IS REQUIRED\n-------- I1..I10 -> IN PARAMETERS WHICH WILL ACCEPT THE IDs OF SEGMENTS VALUES\n---------------------------\n--- MINIMUM , THE SEGMENT 1's ID IS REQUIRED ALL OTHER SEGMENT IDs are OPTIONAL\n---------------------------\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\nCNT NUMBER:=0;\t\t\t\t\t\t\t\t\t\t\t\t \nI NUMBER;\n\nRET VARCHAR2(2048);\n\nVAL VARCHAR2(200);\n\nBEGIN\n  IF I1 IS NULL THEN RETURN(NULL); END IF;\n  \nFOR CNT IN 1..10 LOOP\n  \tIF    CNT=1 THEN I:=I1;\n  \tELSIF CNT=2 THEN I:=I2;\n  \tELSIF CNT=3 THEN I:=I3;\n  \tELSIF CNT=4 THEN I:=I4;\n  \tELSIF CNT=5 THEN I:=I5;\n  \tELSIF CNT=6 THEN I:=I6;\n  \tELSIF CNT=7 THEN I:=I7;\n  \tELSIF CNT=8 THEN I:=I8;\n  \tELSIF CNT=9 THEN I:=I9;\n  \tELSIF CNT=10 THEN I:=I10;\n  \tEND IF;\n\n  \tEXIT WHEN I is NULL;\n\n  \tIF CNT = 1 THEN\n  \t\tSELECT SEGMENT_VALUE INTO VAL\n  \t\tFROM WIZ_SEGMENT01\n  \t\tWHERE SEGMENT_ID = I1\n  \t\tAND STRUCTURE_ID = STRCT;\n \t\tELSIF CNT = 2 THEN\n  \t\tSELECT SEGMENT_VALUE IN"
+}

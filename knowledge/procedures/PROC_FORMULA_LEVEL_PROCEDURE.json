@@ -1,0 +1,9 @@
+{
+  "name": "PROC_FORMULA_LEVEL",
+  "type": "PROCEDURE",
+  "line_count": 17,
+  "tables_referenced": [
+    "INV_QNTV_FORMULA_MT"
+  ],
+  "body_snippet": "procedure proc_formula_level(vItem_id in number, vPrevLevel in out number, vFinalLevel in out number) is\n  Result number;\n  vBuffer number;\nbegin\n  vPrevLevel:=vPrevLevel+1;\n  if vPrevlevel>nvl(vFinalLevel,0) then\n     vFinalLevel:=vPrevLevel;\n  end if;\n  for c1 in (select iqd.item_id from inv_qntv_formula_mt iqm, inv_qntv_formula_det iqd \n                   where iqm.inv_qntv_formula_id=iqd.inv_qntv_formula_id\n                   and iqm.item_id=vItem_id)\n  loop\n     proc_formula_level(c1.item_id,vPrevLevel,vFinalLevel);     \n     vPrevLevel:=0;\n  end loop;     \n  return;\nend proc_formula_level;\n"
+}

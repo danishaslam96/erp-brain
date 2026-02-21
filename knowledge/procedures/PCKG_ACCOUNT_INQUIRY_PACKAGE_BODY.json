@@ -1,0 +1,15 @@
+{
+  "name": "PCKG_ACCOUNT_INQUIRY",
+  "type": "PACKAGE BODY",
+  "line_count": 2319,
+  "tables_referenced": [
+    "LDTE_FIRST_DATE",
+    "LNUM_LAST_FIN_ID",
+    "FINANCIAL_YEAR_MT",
+    "LDTE_LAST_DATE",
+    "GVNUM_MONITORY_CURRENCY_ID",
+    "WIZ_GL_SET_OF_BOOKS",
+    "PERIOD_DETAILS"
+  ],
+  "body_snippet": "package body PCKG_ACCOUNT_INQUIRY IS\n    procedure refresh(SOB NUMBER)     is\n    BEGIN\n\n         IF GVNUM_SET_OF_BOOK IS NULL OR SOB <> GVNUM_SET_OF_BOOK THEN\n\n              GVNUM_SET_OF_BOOK := SOB;\n\n              SELECT S.CURRENCY_ID,CALENDAR_ID,PERD_TYPE_ID,S.STRUCTURE_ID\n                     INTO\n                     GVNUM_MONITORY_CURRENCY_ID,GNUM_CAL_ID,GNUM_PERD_TYP_ID,GVNUM_STRUCTURE_ID\n              FROM WIZ_GL_SET_OF_BOOKS S\n              WHERE S.SET_OF_BOOK_ID = SOB;\n\n         END IF;\n\n    END refresh;\n--------------------------------------------------------------------------------\n\n    FUNCTION get_this_years_first_date(parm_sob_id NUMBER,parm_date DATE) RETURN DATE IS\n\n    \tldte_first_date\t\tDATE;\n\n    BEGIN\n\n        refresh(parm_sob_id);\n\n        SELECT MIN(from_date) INTO ldte_first_date\n        FROM period_details pd\n        WHERE pd.fin_year_id =\n            ( SELECT min(FIN_YEAR_ID)\n              FROM PERIOD_DETAILS pd\n              WHERE (parm_date BETWEEN FROM_DATE AND TO_DATE) AND\n                  CALENDAR_ID       = GNUM_CAL_ID\n                 AND PERIOD_TYPE_ID = GNUM_PERD_TYP_ID\n                 )    \n        ;\n                  \n                  \n        RETURN(ldte_first_date);\n    END;\n------------------------------------------\n    FUNCTION get_this_years_last_date(parm_sob_id NUMBER,parm_date DATE) RETURN DATE IS\n\n    \tldte_last_date\t\tDATE;\n\n    BEGIN\n        refresh(parm_sob_id);\n\n        SELECT MAX(to_date) INTO ldte_last_date\n        FROM per"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_RM",
+  "type": "PACKAGE",
+  "line_count": 14,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_RM is\n\n  -- Author  : TARIQ SARWAR\n  -- Created : 8/11/2005 3:32:01 PM\n  -- Purpose : PCKG_RM\n  \n  FUNCTION GET_LOT_PROPERTY(\n                             PARM_MILL_LOT_NO_ID NUMBER,\n                             PARM_PROPERTY_TYPE VARCHAR2 -- IN  ('GW','MW','SW','MW','TW','AW','NW')\n                             \n  ) \n  RETURN NUMBER ;\n\nend PCKG_RM;\n"
+}

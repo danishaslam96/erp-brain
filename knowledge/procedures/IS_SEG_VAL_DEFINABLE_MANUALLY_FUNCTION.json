@@ -1,0 +1,16 @@
+{
+  "name": "IS_SEG_VAL_DEFINABLE_MANUALLY",
+  "type": "FUNCTION",
+  "line_count": 107,
+  "tables_referenced": [
+    "LNUM_SOB_STRUC_ID",
+    "LNUM_MANUAL_YN",
+    "SUPP_CATAGORY_DET",
+    "LNUM_COUNT",
+    "CUST_CATAGORY_DET",
+    "LNUM_TOTAL_WIDTH",
+    "WIZ_SEGMENT_DEFINITION",
+    "WIZ_GL_SET_OF_BOOKS"
+  ],
+  "body_snippet": "function is_seg_val_definable_manually(parm_sob_id NUMBER,parm_structure_id NUMBER, parm_segment_no NUMBER ,parm_dep_on_key_VAL VARCHAR2 , parm_segment_val VARCHAR2) return number IS\n  \n  -- by traiq\n  -- currently, only the supplier/customer config is checked for auto posting\n  \n  -- purpose  : to control the editing / adding of segment values that are deined as AUTO\n  -- parameter details     \n  -- parm_sob_id          NUMBER        Set of book ID\n  -- parm_structure_id    NUMBER        Instance Strcutre id  \n  -- parm_segment_no      NUMBER        Instance Segment No, \n  -- parm_dep_on_key_val  NUMBER        Parent Segment_values's  id i.e., Dep_on_key_id\n  -- parm_segment_val     VARCHAR2      Segment Value to check      \n  --                                    This parameter can be null , in case of null it will be checked for its parent key only \n  Result number;\n  lnum_total_width number(3);\n  lnum_sob_struc_id NUMBER(14);\n  lnum_accounting_segment_no NUMBER(2);\n  lnum_count NUMBER(14);\n  lnum_manual_yn NUMBER(1);\n  \nbegin\n  \n  SELECT d.seg_val_definable_manually_yn\n         INTO\n         lnum_manual_yn\n  FROM wiz_segment_definition d\n  WHERE d.structure_id = parm_structure_id AND\n        d.segment_no = parm_segment_no;\n  \n  IF lnum_manual_yn = 0 THEN\n     RETURN(0);\n  END IF;\n        \n\n  SELECT SUM(d.segment_width) + (COUNT(1) - 1)\n         INTO\n         lnum_total_width\n  FROM wiz_segment_definition d\n  WHERE d.structure_id = parm_structure_id ;\n  \n  SELECT structure"
+}

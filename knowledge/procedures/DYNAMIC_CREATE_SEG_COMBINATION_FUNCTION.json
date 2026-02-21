@@ -1,0 +1,16 @@
+{
+  "name": "DYNAMIC_CREATE_SEG_COMBINATION",
+  "type": "FUNCTION",
+  "line_count": 121,
+  "tables_referenced": [
+    "DEPENDENT_ON_KEY_MT",
+    "LVCH_BALANCING_SEGMENT_VALUE",
+    "LNUM_DEP_ON_KEY_ID",
+    "GL_GEN_PREFERENCES",
+    "WIZ_SEGMENT_DEFINITION",
+    "WIZ_SEGMENT",
+    "LNUM_SEGMENT_WIDTH",
+    "LNUM_NO_OF_SEGS"
+  ],
+  "body_snippet": "function DYNAMIC_CREATE_SEG_COMBINATION(parm_structure_id number, parm_control_code varchar2,parm_segment_value varchar2,parm_segment_value_desc varchar2,parm_nature_id NUMBER) return number is\n  Result number;\n\n  lnum_main_code_full_yn number(1) := 0;\n  lvch_code            varchar2(1000);  \n  lnum_no_of_segs      number(10);  \n--  lnum_structure_id    number(10);\n  lnum_max_segno       number(2);\n  \n  lnum_segment_width NUMBER(3);\n  lvch_segment_value VARCHAR2(100);\n  \n  lnum_temp number(15);\n  \n  lvch_control_code varchar2(500):= parm_control_code;\n  lvch_balancing_segment_value varchar2(100);            \nbegin\n\n    SELECT P.BALANCING_SEGMENT_VALUE\n           INTO\n           lvch_balancing_segment_value \n    FROM GL_GEN_PREFERENCES P;\n    \n    if lvch_balancing_segment_value is not null then\n       lvch_control_code := SET_VALUE_AT(lvch_control_code,GET_BALANCING_SEGMENT(parm_structure_id),lvch_balancing_segment_value,'-',0);\n    end if;\n        \n    SELECT SUM(1),MAX(DEF.SEGMENT_NO) INTO \n           lnum_no_of_segs,lnum_max_segno\n    FROM WIZ_SEGMENT_DEFINITION DEF\n    WHERE def.structure_id = parm_structure_id;\n\n    SELECT def.segment_width INTO lnum_segment_width\n    FROM wiz_segment_definition def\n    WHERE def.structure_id = parm_structure_id AND\n          def.segment_no   = lnum_max_segno;\n          \n    lvch_segment_value := lpad(parm_segment_value,lnum_segment_width,'0');\n    \n    if how_many_chars(lvch_control_code,'-',0)+1 = lnum_no_of_segs then\n       lnum_main_"
+}

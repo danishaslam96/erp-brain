@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_MATHS",
+  "type": "PACKAGE BODY",
+  "line_count": 23,
+  "tables_referenced": [],
+  "body_snippet": "package body PCKG_MATHS is\n\n    function TO_BARCODE128(parm_type varchar2,parm_string VARCHAR2) RETURN VARCHAR2 IS\n      Result VARCHAR2(100);\n      lnum_total_no NUMBER(10):=0;\n      LNUM_DIV      NUMBER;\n      lch_substr char(1);\n    begin\n      \n      FOR CUR IN 1..LENGTH(parm_string) LOOP\n         lch_substr := substr(parm_string,cur,1);\n         lnum_total_no := lnum_total_no + ( ascii(lch_substr)*cur );\n      END loop;\n      \n      lnum_total_no := lnum_total_no + 103;\n      \n      LNUM_DIV := MOD(lnum_total_no ,103);\n       \n      RESULT := parm_string||ASCII(LNUM_DIV);\n      return(Result);\n    end ;\n\nend PCKG_MATHS;\n"
+}

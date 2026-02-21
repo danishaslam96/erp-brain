@@ -1,0 +1,9 @@
+{
+  "name": "FUN_GET_SO_NEEDLE",
+  "type": "FUNCTION",
+  "line_count": 59,
+  "tables_referenced": [
+    "SGD_STM_PLANNING_MT"
+  ],
+  "body_snippet": "function FUN_GET_SO_NEEDLE(PARM_ORDER_ID NUMBER) return varchar2 is\n Result varchar2(10000);\n   flag  number := 0;\nbegin\n\n  for cur in (select     distinct  needle.segment_value_desc    Needle\n  from\n        sgd_stm_planning_mt          pm\n       ,sgd_stm_planning_det         pd\n       ,imk_so_mt                    so\n       ,customer_mt                  cmt\n       ,sgd_so_closing_mt            so_close\n       ,wiz_segment03                b_col\n       ,ssr_machine_size_mt          ms\n       ,wiz_segment04                cust_size\n       ,wiz_segment05                needle\n       ,wiz_segment06                prog_no\n       ,wiz_segment01                art\n       ,ssr_fabric_terry_type_mt     fab\n\n  ------------\n     ,ssr_setup_receipe_mt rc\n     ,ssr_process_side_mt  psm\n     ,ssr_linking_type_mt  lt\n\n   where pm.imk_so_id            = so.so_id\n   and so.so_id                  = so_close.imk_so_id(+)\n   and so_close.imk_so_id is null\n   and so.customer_id            = cmt.customer_id\n   and pd.stm_planning_id        = pm.stm_planning_id\n   and pd.machine_size_id        = ms.machine_size_id(+)\n   and pd.wiz_segment03_id       = b_col.segment_id(+)\n   and pd.structure_id_bs        = b_col.structure_id(+)\n   and pd.wiz_segment04_id       = cust_size.segment_id(+)\n   and pd.structure_id_bs        = cust_size.structure_id(+)\n   and pd.PROCESS_RECIPE_ID      = rc.receipe_id(+)\n   and pd.process_side_id        = psm.process_side_id(+)\n   and pd.bi_link_type_id        = lt.linking"
+}

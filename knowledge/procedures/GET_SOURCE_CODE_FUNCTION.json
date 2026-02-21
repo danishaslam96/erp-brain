@@ -1,0 +1,9 @@
+{
+  "name": "GET_SOURCE_CODE",
+  "type": "FUNCTION",
+  "line_count": 24,
+  "tables_referenced": [
+    "USER_SOURCE"
+  ],
+  "body_snippet": "FUNCTION GET_SOURCE_CODE(PARM_NAME VARCHAR2,PARM_TYPE VARCHAR2) RETURN LONG IS\n   LVCH_SOURCE LONG;\n   LNUM_CNT NUMBER:= 0;\nBEGIN\n     \n     FOR CUR IN  (\n         SELECT * \n         FROM USER_SOURCE S\n         WHERE S.NAME = UPPER(PARM_NAME) AND\n               S.TYPE = UPPER(PARM_TYPE) \n     )    \n     LOOP\n         LNUM_CNT := LNUM_CNT +1;\n         IF LNUM_CNT = 1 AND \n            INSTR(UPPER(CUR.TEXT),'WRAPPED') <> 0 THEN\n            LVCH_SOURCE := 'N/A';\n            EXIT;\n         END IF;\n         LVCH_SOURCE := LVCH_SOURCE||CUR.TEXT;\n     END LOOP;\n     \nRETURN(LVCH_SOURCE);\n\nEND;\n"
+}

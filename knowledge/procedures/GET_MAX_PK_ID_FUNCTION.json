@@ -1,0 +1,11 @@
+{
+  "name": "GET_MAX_PK_ID",
+  "type": "FUNCTION",
+  "line_count": 20,
+  "tables_referenced": [
+    "LNUM_FROM_PK_NO",
+    "SITE_PK_RANGES_MT",
+    "MAX_PK_ID"
+  ],
+  "body_snippet": "function GET_MAX_PK_ID(parm_table_name in VARCHAR2, parm_col_name in VARCHAR2)\nreturn number is\n\n  max_pk_id          Number;\n  lnum_from_pk_no    SITE_PK_RANGES_MT.FROM_PK_NO%TYPE;\n  lnum_to_pk_no      SITE_PK_RANGES_MT.TO_PK_NO%TYPE;\nbegin\n\n    SELECT FROM_PK_NO, TO_PK_NO \n    INTO   lnum_from_pk_no, lnum_to_pk_no \n    FROM   SITE_PK_RANGES_MT, WIZ_THIS_SITE_MT\n    WHERE  SITE_PK_RANGES_MT.WIZ_ALL_SITES_ID = WIZ_THIS_SITE_MT.WIZ_ALL_SITES_ID;\n\n    EXECUTE IMMEDIATE 'SELECT NVL(MAX('||parm_col_name||'),'||lnum_from_pk_no||' - 1)+1' ||\n                      ' FROM '||parm_table_name ||\n                      ' WHERE '||parm_col_name ||' BETWEEN '|| lnum_from_pk_no ||' AND '|| lnum_to_pk_no\n                      INTO max_pk_id;\n\n  return(max_pk_id);\nend GET_MAX_PK_ID;\n"
+}

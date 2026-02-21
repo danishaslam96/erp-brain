@@ -1,0 +1,19 @@
+{
+  "name": "FUN_SGD_BS_PULL_BATCH_STATUS",
+  "type": "FUNCTION",
+  "line_count": 269,
+  "tables_referenced": [
+    "SGD_PACK_MAT_REC_DET",
+    "SGD_BOARD_REWORK_DET",
+    "SGD_PROCESS_MC_ALLOCATION_DT",
+    "SGD_TOE_BATCH_INSPECT_MT",
+    "SGD_BOARD_MAT_REC_DET",
+    "SGD_BOARDING_ENTRY_MT",
+    "SGD_PROCS_MAT_ISSUE_DET",
+    "LNM_COL_1",
+    "SGD_BOARD_MAT_ISSUE_DET",
+    "SGD_BATCH_MAKING_MT",
+    "SGD_BOARD_BATCH_CLOSE_DT"
+  ],
+  "body_snippet": "function FUN_SGD_BS_PULL_BATCH_STATUS(PARM_BATCH_ID NUMBER ,PARM_FLAG OUT NUMBER,PARM_BATCH_DZN OUT NUMBER,PARM_BATCH_PCS OUT NUMBER) return varchar2 is\n  lnm_col_1 number(14);\nlnm_col_2 varchar2(2000);\nlnm_trns_type number(3);\nlnm_dzn number(15,2);\nlnum_pcs  number(15,2);\n\nBEGIN\n\n select q2.r_no_q1,q2.b_pack ,q2.tras_type\n into   lnm_col_1, lnm_col_2, lnm_trns_type from (select (q1.r_no) r_no_q1, q1.b_pack,q1.tras_type\n\n from\n(select distinct to_number(50) r_no, 'Packing Receiving' b_pack, to_number(1) tras_type\n  from sgd_pack_mat_rec_det p\n where nvl(p.received_yn, 0) = 1\n   and nvl(p.rejected_yn, 0) = 0\n   and p.batch_id = nvl(PARM_BATCH_ID, -1)\n\nUNION ALL\nselect distinct to_number(49) r_no, 'Boarding Issuance', to_number(2) tras_type\n  from sgd_board_mat_issue_det bi\n where nvl(bi.issued_yn, 0) = 1\n   and bi.batch_id = nvl(PARM_BATCH_ID, -1)\nUNION ALL\n\n  select distinct to_number(48) r_no, 'Board batch closing ', to_number(2) tras_type\n    /*from dual\n   where 0 =\n         (SELECT count(1)*/\n            FROM sgd_batch_making_mt b,\n                 imk_so_mt s,\n                 (select pd.batch_id\n                    from sgd_board_batch_close_dt pd,\n                         sgd_board_batch_close_mt pm\n                   where pd.board_batch_close_id = pm.board_batch_close_id\n                     and nvl(pd.chk_batch_closed, 0) = 1\n                  /*and pm.cost_id = nvl(:TXT_MC_LOC_ID_FK, -1)*/\n                  ) Q_clsd_batch\n           where b.batch_id = Q_clsd_batch."
+}

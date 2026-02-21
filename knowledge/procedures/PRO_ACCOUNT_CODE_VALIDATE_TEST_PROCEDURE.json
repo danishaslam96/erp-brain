@@ -1,0 +1,12 @@
+{
+  "name": "PRO_ACCOUNT_CODE_VALIDATE_TEST",
+  "type": "PROCEDURE",
+  "line_count": 204,
+  "tables_referenced": [
+    "CROSS_VALIDATION_RULES_MT",
+    "WIZ_SEGMENT_DEFINITION",
+    "LNUM_NUMBER_OF_SEGMENTS",
+    "CROSS_VALIDATE_ERROR"
+  ],
+  "body_snippet": "PROCEDURE PRO_ACCOUNT_CODE_VALIDATE_TEST(parm_structure_id         NUMBER,\n                                   parm_code_id_field        IN OUT NUMBER,\n                                   parm_id_all_field        IN OUT VARCHAR2,\n                                   parm_code_val_field      IN OUT VARCHAR2,\n                                   parm_code_desc_field     IN OUT VARCHAR2,\n                                   parm_no_of_segment_check         NUMBER DEFAULT 1,\n                                   parm_global_cross_validate_chk NUMBER DEFAULT 0,\n                                   parm_user_security_rule_check   NUMBER DEFAULT 0,\n                                   parm_JType_cross_validate_chk   NUMBER DEFAULT 0,\n                                   parm_jrn_type_id                NUMBER DEFAULT NULL) IS\n\n        LVCH_RESULT      VARCHAR2(500);\n        stop_it         EXCEPTION;\n        EXP             EXCEPTION;\n      --  PLIST           PARAMLIST;\n        lnum_temp        NUMBER;\n\nLNUM_NUMBER_OF_SEGMENTS NUMBER;\n\n        CROSS_VALIDATE_ERROR  VARCHAR2(500);\n        CROSS_VALIDATE        NUMBER;\n        ALRT                  NUMBER;\n\n        ID1             NUMBER(15);\n        ID2             NUMBER(15);\n        ID3             NUMBER(15);\n        ID4             NUMBER(15);\n        ID5             NUMBER(15);\n        ID6             NUMBER(15);\n        ID7             NUMBER(15);\n        ID8             NUMBER(15);\n        ID9             NUMBER(15);\n        ID10             N"
+}

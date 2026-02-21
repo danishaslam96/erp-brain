@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_NCL",
+  "type": "PACKAGE",
+  "line_count": 25,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_NCL is\n\n  -- Author  : ADMINISTRATOR\n  -- Created : 17-01-2006 5:02:34 PM\n  -- Purpose : NCL Customisations must be done in this package\n  \n  -- Public type declarations\n  -- type <TypeName> is <Datatype>;\n  \n  -- Public constant declarations\n  -- <ConstantName> constant <Datatype> := <Value>;\n\n  -- Public variable declarations\n  -- <VariableName> <Datatype>;\n\n  -- Public function and procedure declarations\n  -- function <FunctionName>(<Parameter> <Datatype>) return <Datatype>;\n\n    PROCEDURE POP_SUPP_SEG_OF_LOC_STRUC(parm_supp_cat_id        NUMBER,\n                                        parm_supp_code          VARCHAR2,\n                                        parm_supp_co_name       VARCHAR2,\n                                        parm_supp_co_short_name VARCHAR2,\n                                        parm_entry_type         VARCHAR2);\n  \nend PCKG_NCL;\n"
+}

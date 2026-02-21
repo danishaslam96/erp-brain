@@ -1,0 +1,16 @@
+{
+  "name": "POPLT_REPL_GEN_HISTR_1ST_TIME",
+  "type": "PROCEDURE",
+  "line_count": 59,
+  "tables_referenced": [
+    "SITE_PK_RANGES_MT",
+    "WIZ_ALL_SITES_RPLCATED_TBLES",
+    "WIZ_REPL_GEN_HISTORY_DET",
+    "WIZ_THIS_SITE_MT",
+    "LNUM_MAX_ID",
+    "LNUM_FROM_SITE_PK_ID",
+    "LNUM_THIS_SITE_ID",
+    "LNUM_REP_HSTRY_DET_ID"
+  ],
+  "body_snippet": "procedure POPLT_REPL_GEN_HISTR_1ST_TIME is\n   lnum_this_site_id        NUMBER(14);\n   lvch_qry                 VARCHAR2(3000);\n   lnum_max_id              NUMBER(14);\n   lnum_rep_hstry_det_id    NUMBER(14);\n   lnum_from_site_pk_id     NUMBER(14);\n   lnum_to_site_pk_id       NUMBER(14);\nbegin\n   SELECT wt.wiz_all_sites_id \n   INTO   lnum_this_site_id \n   FROM   WIZ_THIS_SITE_MT wt;\n\n   SELECT sp.from_pk_no, sp.to_pk_no\n   INTO   lnum_from_site_pk_id, lnum_to_site_pk_id\n   FROM   SITE_PK_RANGES_MT sp\n   WHERE  sp.wiz_all_sites_id = lnum_this_site_id;\n   \n   FOR cur IN(SELECT wa.replicated_table_id, \n                     wa.replicated_table_name,\n                     wa.tble_pk1_col_name,\n                     wa.additional_where_clause\n              FROM WIZ_ALL_SITES_RPLCATED_TBLES wa\n              WHERE wa.wiz_all_sites_id = lnum_this_site_id\n              AND   wa.send_from_this_site_yn = 1\n              ORDER BY wa.ORDER_BY)LOOP\n\n     lvch_qry := 'SELECT NVL(MAX('|| cur.tble_pk1_col_name ||'),0) ' ||\n                 ' FROM '|| cur.replicated_table_name ||\n                 ' WHERE ' || cur.tble_pk1_col_name ||\n                 ' BETWEEN '|| lnum_from_site_pk_id ||' AND '|| lnum_to_site_pk_id;\n     IF cur.additional_where_clause IS NOT NULL THEN\n          lvch_qry := lvch_qry ||' AND ' || cur.additional_where_clause;\n     END IF;          \n--DBMS_OUTPUT.PUT_LINE(lvch_qry);\n     EXECUTE IMMEDIATE lvch_qry INTO lnum_max_id;\n--DBMS_OUTPUT.PUT_LINE( cur.replicated_table_name||' -"
+}

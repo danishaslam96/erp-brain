@@ -1,0 +1,10 @@
+{
+  "name": "FUN_GET_ACCOUNT_DESC_SGD",
+  "type": "FUNCTION",
+  "line_count": 8,
+  "tables_referenced": [
+    "RESULT",
+    "VIEW_CODE_COMBINATIONS"
+  ],
+  "body_snippet": "function FUN_GET_ACCOUNT_DESC_SGD(PARM_CODE_COMB_ID NUMBER) return varchar2 is\n  Result VARchar2(500);\nbegin\n  select vcc.accounting_desc into result\n  from view_code_combinations vcc\n  where vcc.code_combination_id = PARM_CODE_COMB_ID;\n  return(Result);\nend FUN_GET_ACCOUNT_DESC_SGD;\n"
+}

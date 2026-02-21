@@ -1,0 +1,12 @@
+{
+  "name": "GET_PHYSICAL_PK",
+  "type": "FUNCTION",
+  "line_count": 57,
+  "tables_referenced": [
+    "MAX_PK_ID",
+    "LNUM_FROM_PK_NO",
+    "SITE_PK_RANGES_MT",
+    "LNUM_TEMP"
+  ],
+  "body_snippet": "function get_physical_pk(parm_table_name varchar2,parm_column_name varchar2 default null,parm_primary_key number default null  , parm_parent_keys varchar2 default null) return number is\n  Result number ;\n\n  max_pk_id          Number;\n  lnum_from_pk_no    SITE_PK_RANGES_MT.FROM_PK_NO%TYPE;\n  lnum_to_pk_no      SITE_PK_RANGES_MT.TO_PK_NO%TYPE;\n\n  lvch_sql_query varchar2(2000);\n  lnum_temp NUMBER(1);\nbegin\n    --returning if the pk is already generated\n    if parm_primary_key is not null  and parm_primary_key > 0 then\n       return(parm_primary_key);\n    end if;\n    ----------------\n\n    SELECT FROM_PK_NO, TO_PK_NO\n    INTO   lnum_from_pk_no, lnum_to_pk_no\n    FROM   SITE_PK_RANGES_MT, WIZ_THIS_SITE_MT\n    WHERE  SITE_PK_RANGES_MT.WIZ_ALL_SITES_ID = WIZ_THIS_SITE_MT.WIZ_ALL_SITES_ID;\n\n    lvch_sql_query := 'SELECT 1 FROM '||PARM_TABLE_NAME||' WHERE '||parm_column_name||'=\n                       ( SELECT NVL(MAX('||parm_column_name||'),'||lnum_from_pk_no||' - 1)' ||\n                      ' FROM '||parm_table_name ||\n                      ' WHERE '||parm_column_name ||' BETWEEN '|| LNUM_FROM_PK_NO ||' AND '|| LNUM_TO_PK_NO;\n\n    if parm_parent_keys is not null then\n       lvch_sql_query := lvch_sql_query ||' and '||parm_parent_keys ;\n       lvch_sql_query := lvch_sql_query ||') and '||parm_parent_keys ;\n    ELSE\n       lvch_sql_query := lvch_sql_query ||') ' ;\n    end if;\n\n    lvch_sql_query := lvch_sql_query||' FOR UPDATE ';\n\n    begin\n    --raise_application_error(-20000,lvch_sq"
+}

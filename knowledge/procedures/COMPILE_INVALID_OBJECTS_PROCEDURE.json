@@ -1,0 +1,9 @@
+{
+  "name": "COMPILE_INVALID_OBJECTS",
+  "type": "PROCEDURE",
+  "line_count": 23,
+  "tables_referenced": [
+    "USER_OBJECTS"
+  ],
+  "body_snippet": "procedure COMPILE_INVALID_OBJECTS is\nBEGIN\n\n     FOR CUR IN (\n                SELECT O.OBJECT_NAME,O.OBJECT_TYPE\n                FROM USER_OBJECTS O\n                WHERE O.STATUS = 'INVALID'\n     ) LOOP\n     BEGIN\n         IF cur.object_type = 'PACKAGE BODY' THEN\n             EXECUTE IMMEDIATE 'ALTER PACKAGE '||CUR.OBJECT_NAME||' COMPILE ';\n         ELSE\n             EXECUTE IMMEDIATE 'ALTER '||CUR.OBJECT_TYPE||' '||CUR.OBJECT_NAME||' COMPILE ';\n         END IF;\n             \n         DBMS_OUTPUT.PUT_LINE(CUR.OBJECT_TYPE||' '||CUR.OBJECT_NAME||' COMPILED ');\n     EXCEPTION \n         WHEN OTHERS THEN\n            DBMS_OUTPUT.PUT_LINE(CUR.OBJECT_TYPE||' '||CUR.OBJECT_NAME ||' COMPILED WITH ERRORS ');\n     END;  \n     END LOOP;\n                \nend COMPILE_INVALID_OBJECTS;\n"
+}

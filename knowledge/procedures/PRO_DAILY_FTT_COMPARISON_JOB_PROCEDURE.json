@@ -1,0 +1,15 @@
+{
+  "name": "PRO_DAILY_FTT_COMPARISON_JOB",
+  "type": "PROCEDURE",
+  "line_count": 170,
+  "tables_referenced": [
+    "SGD_TOE_BATCH_INSPECT_DET",
+    "LNUM_FINISH_INLINE_FTT",
+    "LNUM_PROCESS_FTT",
+    "SGD_QA_INSPECT_INCLINE_MT",
+    "TEMP_DATES",
+    "SGD_LAB_BATCH_INSPT_MT",
+    "LNUM_TC_FTT"
+  ],
+  "body_snippet": "procedure PRO_DAILY_FTT_COMPARISON_JOB is\n\n\nlast_doc_date date;\nlast_doc_date_smry date;\nlnum_job_id            Number;\nlvch_machine_name      Varchar2(100);\nldate_start_date_time        Date;\nldate_End_date_time          Date;\nldate_job_date               date;\n\n\n LNUM_PROCESS_FTT       NUMBER;\n  LNUM_TC_FTT            NUMBER;\n  LNUM_FINISH_INLINE_FTT NUMBER;\n  LNUM_FINISH_FINAL_FTT  NUMBER;\n  \n\nbegin\n  ldate_start_date_time := to_date(to_char(Sysdate,'DD-MON-YY HH24 MI SS'),'DD-MON-YY HH24 MI SS');\nlvch_machine_name := Pckg_Utility.get_application_machine;\nldate_job_date := to_date(sysdate)-1;\n\n\n\nExecute immediate('truncate table temp_dates');\npro_pop_dates(TO_DATE(SYSDATE)-1,TO_DATE(SYSDATE)-1);\n\nFOR CUR IN (SELECT DAILY_DATE FROM TEMP_DATES) LOOP\n  \n    ---------------------TC FTT\n  begin\n    \n  select ROUND(count(distinct(DECODE(mt.batch_status,'P',mt.batch_inspect_mt)))/count(distinct mt.batch_inspect_mt)*100,2) \n INTO  LNUM_TC_FTT\n \n  from SGD_TOE_BATCH_INSPECT_DET t,\n   sgd_toe_batch_inspect_mt      mt,\n   sgd_shift_mt                  shift,\n       sgd_batch_making_mt       bmt,\n       sgd_batch_making_det      bmd,\n       sgd_stm_planning_det      plan_det,\n       imk_so_mt                 somt\n where t.batch_inspect_id        = mt.batch_inspect_mt\n and mt.shift_id                 = shift.shift_id\n  and t.batch_det_id             = bmd.batch_det_id\n   and bmd.batch_id              = bmt.batch_id\n   and bmd.stm_plan_det_id       = plan_det.stm_plan_det_id\n   and bmt."
+}

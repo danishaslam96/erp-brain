@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_TEMPORARY",
+  "type": "PACKAGE BODY",
+  "line_count": 7,
+  "tables_referenced": [],
+  "body_snippet": "package body pckg_temporary is\n\n\n\nbegin\n  NULL;\nend pckg_temporary;\n"
+}

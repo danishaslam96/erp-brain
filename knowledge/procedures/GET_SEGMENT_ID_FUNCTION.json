@@ -1,0 +1,19 @@
+{
+  "name": "GET_SEGMENT_ID",
+  "type": "FUNCTION",
+  "line_count": 98,
+  "tables_referenced": [
+    "WIZ_SEGMENT10",
+    "WIZ_SEGMENT05",
+    "WIZ_SEGMENT03",
+    "WIZ_SEGMENT06",
+    "WIZ_SEGMENT08",
+    "WIZ_SEGMENT01",
+    "WIZ_SEGMENT07",
+    "WIZ_SEGMENT09",
+    "WIZ_SEGMENT02",
+    "WIZ_SEGMENT04",
+    "RET"
+  ],
+  "body_snippet": "FUNCTION GET_SEGMENT_ID(STRCT NUMBER,SEG NUMBER,SEGVAL VARCHAR2,DEPON NUMBER DEFAULT NULL ) RETURN NUMBER IS\n\n---------------------------------------------------------------------------------------------------------\n------------------------------------------------------------------------------------------------\n------- THIS FUNCTION RETURNS THE ID OF GIVEN SEGMENT VALUE IT WILL RETURN 0 IF THE ID IS NOT FOUND\n------- ITs PARAMETER DETAIL IS GIVEN BELLOW\n------- \n------- STRCT \t-> STRUCTURE \n------- SEG     -> SEGMENT NUMBER\n------- SEGVAL\t-> SEGMENT VALUE \n------- DEPON   -> DEPENDENT ON KEY ID (IN CASE IF THE SEGMENT IS DEPENDENT)\n-----------------  DEFAULT IS NULL\n\t\n--------------------------------------------------------------------------------------------------\n\nRET NUMBER;\nBEGIN\n\n\t\tIF SEG=1 THEN\n\t\t\t\tSELECT SEGMENT_ID INTO RET\n\t\t\t\tFROM WIZ_SEGMENT01\n\t\t\t\tWHERE STRUCTURE_ID = STRCT AND\n\t\t\t\t\t\t\tSEGMENT_VALUE = SEGVAL AND\n\t\t\t\t\t\t\tNVL(DEP_ON_KEY_ID,0) = NVL(DEPON,0);\n\t\tELSIF SEG=2 THEN\n\t\t\t\tSELECT SEGMENT_ID INTO RET\n\t\t\t\tFROM WIZ_SEGMENT02\n\t\t\t\tWHERE STRUCTURE_ID = STRCT AND\n\t\t\t\t\t\t\tSEGMENT_VALUE = SEGVAL AND\n\t\t\t\t\t\t\tNVL(DEP_ON_KEY_ID,0) = NVL(DEPON,0);\n\t\t\t\n\t\tELSIF SEG=3 THEN\n\t\t\t\tSELECT SEGMENT_ID INTO RET\n\t\t\t\tFROM WIZ_SEGMENT03\n\t\t\t\tWHERE STRUCTURE_ID = STRCT AND\n\t\t\t\t\t\t\tSEGMENT_VALUE = SEGVAL AND\n\t\t\t\t\t\t\tNVL(DEP_ON_KEY_ID,0) = NVL(DEPON,0);\n\t\t\t\n\t\tELSIF SEG=4 THEN\n\t\t\t\tSELECT SEGMENT_ID INTO RET\n\t\t\t\tFROM WIZ_SEGMENT04\n\t\t\t\tWHERE STRUCTURE_ID = STRCT AND\n\t\t\t\t\t\t\tSEGMENT_VALUE = SEGVAL AND"
+}

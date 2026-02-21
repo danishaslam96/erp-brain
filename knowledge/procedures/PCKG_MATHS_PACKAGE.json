@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_MATHS",
+  "type": "PACKAGE",
+  "line_count": 9,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_MATHS is\n\n  -- Author  : TARIQ SARWAR\n  -- Created : 1/5/2005 9:43:18 AM\n  -- Purpose : EASILY COMPUTATION OF COMPLEX CONVERSIONS AND COMPUTATIONS\n\n  function TO_BARCODE128(parm_type VARCHAR2,parm_string VARCHAR2) RETURN VARCHAR2 ;\n\nend PCKG_MATHS;\n"
+}

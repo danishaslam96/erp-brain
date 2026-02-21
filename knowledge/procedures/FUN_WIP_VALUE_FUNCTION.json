@@ -1,0 +1,12 @@
+{
+  "name": "FUN_WIP_VALUE",
+  "type": "FUNCTION",
+  "line_count": 56,
+  "tables_referenced": [
+    "PRODUCTION_DETAIL",
+    "ISSUE_DETAIL",
+    "UBC_JOB_CARD_MT",
+    "LNUM_WIP_QTY"
+  ],
+  "body_snippet": "FUNCTION FUN_WIP_VALUE(parm_date   DATE, parm_start_date DATE) RETURN NUMBER\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t         \nIS\n\t\t  lnum_wip_qty\t\t\t\tNUMBER(15);\n\t\t\nBEGIN\n    \n    SELECT SUM((amount /(wip_qty.qty+wip_qty.qty_prod))* wip_qty.qty) wip_cvalue\n    INTO lnum_wip_qty\n    FROM \n       ubc_job_card_mt outer_jcmt,\n       (SELECT \n           IDET.CC_CODE_COMB_ID CC,\n    \n           SUM(decode (mt.trans_type,'R',-IDET.ISSUE_AMOUNT,IDET.ISSUE_AMOUNT)) AMOUNT\n       FROM  \n           ISSUE_DETAIL IDET,\n           UBC_JOB_CARD_MT JMT,\n           ISSUE_MT MT\n     WHERE \n\n           JMT.CC_COMB_ID  = IDET.CC_CODE_COMB_ID and\n           MT.ISSUE_ID=  IDET.ISSUE_ID AND\n           MT.ISSUE_DATE <=parm_date\n           \n       GROUP BY \n    \n            IDET.CC_CODE_COMB_ID)  ITEM_UNION,\n            \n       (SELECT  nvl(jcmt.job_qty,0)-nvl(QTY,0) QTY, \n                jcmt.job_card_id,NVL(prod_qty.qty,0) qty_prod\n                \n        FROM    ubc_job_card_mt jcmt,( SELECT pdet.prod_center_code_comb_id ,\n                                              SUM( nvl(pdet.qty_produced,0)) QTY\n                                       FROM   production_detail pdet,\n                                             production_mt pmt\n                                       WHERE  pmt.prod_id=pdet.prod_id and\n                                             pmt.prod_date <= parm_date\n                                       GROUP BY pdet.prod_center_code_comb_id) prod_qty\n                                       \n        WHERE jcmt"
+}

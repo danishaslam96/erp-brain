@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_SCK_COSTING",
+  "type": "PACKAGE",
+  "line_count": 43,
+  "tables_referenced": [],
+  "body_snippet": "package pckg_sck_costing is\n\n  -- Author  : MUHAMMAD NADEEM\n  -- Created : 28/06/2021 5:08:43 PM\n  -- Purpose : Socks Costing Package for Shahzad Textile\n\n  -- Public function and procedure declarations\n  --  function <FunctionName>(<Parameter> <Datatype>) return <Datatype>;\n\n  procedure oh_cost_dept(parm_period_id number);\n\n  procedure ss_cost_dept(parm_period_id number);\n\n  procedure oh_costing(parm_period_id number);\n\n  procedure oh_cost_jobs(parm_period_id number, parm_process_id number);\n\n  procedure oh_knit_jobs(parm_period_id number);\n\n  procedure oh_process_jobs(parm_period_id number);\n\n  procedure oh_board_jobs(parm_period_id number);\n\n  procedure oh_pack_jobs(parm_period_id number);\n\n  procedure oh_toe_jobs(parm_period_id number);\n\n  procedure oh_costing_mat;\n  procedure rp_cost_det_rep(parm_so_id     number,\n                            parm_fr_ord_dt date,\n                            parm_to_ord_dt date,\n                            parm_fr_inv_dt date,\n                            parm_to_inv_dt date,\n                            parm_cust_id   number);\n\n  procedure pro_sgd_cost_all_mon(parm_fr_date date, parm_to_date date);\n\n  procedure rp_cost_det_rep_v1(parm_so_id     number,\n                               parm_fr_ord_dt date,\n                               parm_to_ord_dt date,\n                               parm_cust_id   number);\n\nend pckg_sck_costing;\n"
+}

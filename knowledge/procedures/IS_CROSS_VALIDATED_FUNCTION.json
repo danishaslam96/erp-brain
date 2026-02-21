@@ -1,0 +1,16 @@
+{
+  "name": "IS_CROSS_VALIDATED",
+  "type": "FUNCTION",
+  "line_count": 120,
+  "tables_referenced": [
+    "CROSS_VALIDATION_RULES_MT",
+    "STRUC_ID",
+    "NO_OF_SEGMENTS",
+    "USER_CROSS_VALID_RULES",
+    "WIZ_SEGMENT_DEFINITION",
+    "JRN_TYPES_CROSS_VALID_RULES",
+    "WIZ_GL_SET_OF_BOOKS",
+    "CROSS_VALIDATION_RULES_DET"
+  ],
+  "body_snippet": "function IS_CROSS_VALIDATED(P_STRUC_SOB_ID NUMBER,CODE_VALUE VARCHAR2,VALIDATION_FOR VARCHAR2 DEFAULT NULL,EMPID_JRNTYPID NUMBER DEFAULT NULL) return number is\n\n-- P_STRUC_SOB_ID ->  THIS PARAMETER WILL CONTAIN \n--                          1- SET OF BOOK ID (IN CASE OF 'J' OR 'U' IN VALIDATION_FOR PARAMETER)\n--                          2- STRUCTURE IN CASE OF NULL IN VALIDATION_FOR PARAMETER\n                            \n-- VALIDATION_FOR ->  NULL     ->  General Cross Validation\n--                    'J'     ->  Journal Types Cross validation\n--                            IN CASE OF 'J' THERE MUST BE PROVIDED A JOURNAL_TYPE_ID\n--                            IN EMPID_JRNTYPID PARAMETER\n                              \n--                    'U'     ->  User    Cross Validation\n--                            IN CASE OF 'U' THERE MUST BE PROVIDED A EMPLOYEEID                   \n--                            IN EMPID_EMPID_JRNTYPID PARAMETER\n--\n  Result NUMBER;\n  \n  SELEC VARCHAR2(5000):=NULL;\n  SELEC_INNER VARCHAR2(5000):=NULL;\n  \n  NO_OF_SEGMENTS NUMBER;\n  \n  DBMS_SELEC NUMBER;\n  DBMS_SELEC_INNER NUMBER;\n  \n  NO_OF_ROWS NUMBER;\n  \n  CODE_INVALIDATED EXCEPTION;\n  STRUC_ID NUMBER;\n  \nBEGIN\n--RETURN(0);\n/*\n  IF P_STRUC_SOB_ID IS NULL THEN\n     RETURN(1);\n  END IF;\n*/\n     IF VALIDATION_FOR IS NOT NULL THEN\n         SELECT STRUCTURE_ID INTO STRUC_ID\n         FROM WIZ_GL_SET_OF_BOOKS\n         WHERE SET_OF_BOOK_ID = P_STRUC_SOB_ID;\n     ELSE\n         STRUC_ID := P_STRUC_SOB_ID;\n     END I"
+}

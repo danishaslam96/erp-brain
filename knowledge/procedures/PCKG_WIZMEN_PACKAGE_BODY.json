@@ -1,0 +1,17 @@
+{
+  "name": "PCKG_WIZMEN",
+  "type": "PACKAGE BODY",
+  "line_count": 2132,
+  "tables_referenced": [
+    "LNUM_SUB_INV_ID",
+    "LNUM_DEF_CAT_STRUC_ID",
+    "SUB_INVENTORY_MT",
+    "INV_BOOKS_MT",
+    "INN_BOOKS",
+    "LNUM_COUNT_UNIQUE",
+    "LNUM_INV_DOC_TYPE_ID",
+    "WIZ_STRUCTURE_MT",
+    "WIZ_INV_DOC_TYPE_MT"
+  ],
+  "body_snippet": "package body PCKG_WIZMEN is\n\n-- CREATE ANOTHER PROCEDURE WHICH WOULD CALL THE FOLLOWING PROCEDURE\n-- A NEW TABLE NAMED \"WIZ_AUTO_CREATE_BOOKS_N_SEQS\" IS CREATED TO LOOP THROUGH\n-- AND CALL THE FOLLOWING PROCEDURE FOR EACH LINE\n\n\n\n  PROCEDURE create_books_n_seq(parm_book_desc                 VARCHAR2,\n                               parm_book_shrt_desc            VARCHAR2,\n                               parm_sub_inv_desc              VARCHAR2,\n                               parm_inv_doc_type_desc         VARCHAR2,\n                               parm_def_cat_struc_desc        VARCHAR2,\n                               parm_doc_seq_desc              VARCHAR2,\n                               parm_gen_prd_type_desc         VARCHAR2,\n                               parm_jrn_type_desc             VARCHAR2,\n                               parm_jrn_source_desc           VARCHAR2,\n                               parm_jrn_cat_desc              VARCHAR2,\n                               parm_config_type_desc          VARCHAR2\n                               )IS\n\n\n      lnum_inv_book_id         NUMBER(14);\n      lnum_doc_seq_id          NUMBER(14);\n      lnum_count_unique        NUMBER(2);\n      lvch_doc_seq_desc        VARCHAR2(50);\n      lnum_jrn_type_id         NUMBER(14);\n      lnum_jrn_source_id       NUMBER(14);\n      lnum_jrn_cat_id          NUMBER(14);\n      lnum_open_batch_id       NUMBER(14);\n      lnum_sub_inv_id          NUMBER(14);\n      lnum_inv_doc_type_id     NUMBER(14);\n      lnum_"
+}

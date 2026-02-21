@@ -1,0 +1,11 @@
+{
+  "name": "FUN_SGD_GET_SHIFT_ID",
+  "type": "FUNCTION",
+  "line_count": 22,
+  "tables_referenced": [
+    "SGD_SHIFT_MT",
+    "SGD_HOUR_CLOCK",
+    "LNM_SHIFT_ID"
+  ],
+  "body_snippet": "function FUN_SGD_GET_SHIFT_ID return number is\n  LNM_SHIFT_ID number;\nbegin\n\n /* SELECT S.SHIFT_ID\n    INTO LNM_SHIFT_ID\n    FROM sgd_shift_mt s\n   WHERE TO_CHAR(SYSDATE, 'DD/MM/YYYY HH:MM:SS AM') BETWEEN\n         TO_CHAR((SYSDATE), 'DD/MM/YYYY') || ' ' || (S.START_TIME_CH) AND\n         TO_CHAR((SYSDATE), 'DD/MM/YYYY') || ' ' || (S.END_TIME_CH);*/\n\n   select C.SHIFT_ID\n   into LNM_SHIFT_ID\n        from SGD_HOUR_CLOCK C\n WHERE TO_NUMBER(get_value_at(rEPLACE(TO_CHAR(SYSDATE, 'hh24:MI:ss'),':','-'),1,'-'))\n BETWEEN C.HOUR AND C.HOUR;\n\n  return(LNM_SHIFT_ID);\nEXCEPTION\n  WHEN OTHERS THEN\n    Raise_application_error(-20001, SQLERRM);\nend FUN_SGD_GET_SHIFT_ID;\n"
+}

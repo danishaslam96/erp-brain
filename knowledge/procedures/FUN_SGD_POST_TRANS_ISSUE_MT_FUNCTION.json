@@ -1,0 +1,12 @@
+{
+  "name": "FUN_SGD_POST_TRANS_ISSUE_MT",
+  "type": "FUNCTION",
+  "line_count": 92,
+  "tables_referenced": [
+    "TRANS_ISSUE_MT",
+    "TEMP_TRANS_ISSUE_MT",
+    "TRANS_ISSUE_DETAIL",
+    "TEMP_TRANS_ISSUE_DETAIL"
+  ],
+  "body_snippet": "function Fun_sgd_post_trans_issue_mt return number is\n   lnm_Iss_Trans_Id number;\n  lnm_ISS_TRANS_DET_ID number;\nbegin\n\nfor c in (select m.inv_book_id,\n       m.remarks,\n       m.trans_date,\n       m.to_sub_inv,\n       m.ref_no,m.Trans_No from temp_TRANS_ISSUE_mt m)loop\n\n  lnm_Iss_Trans_Id := get_single_primary_key('TRANS_ISSUE_mt','Iss_Trans_Id');\n\n       insert into TRANS_ISSUE_mt(Iss_Trans_Id,\n                                  Inv_Book_Id,\n                                  Trans_No,\n                                  Remarks,\n                                  Trans_Date,\n                                  Auto_Receipt_Yn,\n                                  To_Sub_Inv,\n                                  Inv_Transaction_No,\n                                  Ref_No,\n                                  Authorized_Yn,\n                                  Send_For_Auth,\n                                  Auth_Id,\n                                  Auth_Status_Id,\n                                  Journal_Id,\n                                  Post_To_Gl)Values\n                                  (\n                                  lnm_Iss_Trans_Id,--Iss_Trans_Id,\n                                  c.Inv_Book_Id,\n                               c.Trans_No,\n                                  c.Remarks,\n                                  c.Trans_Date,\n                                 0,-- Auto_Receipt_Yn,\n                                  c.To_Sub_Inv,\n                                  null,--Inv_Tr"
+}

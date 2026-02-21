@@ -1,0 +1,9 @@
+{
+  "name": "IS_VALID_CODE_RANGE_FOR_USER",
+  "type": "FUNCTION",
+  "line_count": 98,
+  "tables_referenced": [
+    "USER_CROSS_VALID_RULES"
+  ],
+  "body_snippet": "function IS_VALID_CODE_RANGE_FOR_USER(PARM_USER_ID NUMBER,PARM_STRCUTURE_ID NUMBER,PARM_FROM_CODE VARCHAR2,PARM_TO_CODE VARCHAR2) return number is\n-------------------------------------------------------------------------------------------\n-------------------------------------------------------------------------------------------\n--=====================\n-- parameter details\n--=====================\n-- PARM_STRCUTURE_ID    --> Structure for which the check is required\n\n-- PARM_FROM_CODE     --> Instance code\n-- PARM_TO_CODE\n\n-- PARM_USER_ID   --> The employee_id for which user wise cross validation rules to be checked\n\n-- It will RETURN \n\n-- ON SUCCESS -> 1 , IF THIS CODE RANGE IS VALIDATED;\n-- ON FAILURE -> IT WILL RAISE A USER DEFINED ERROR MESSAGE\n-------                 \n------------------------------------------------------------------------------------------\n  Result NUMBER(1):=1;\n  \n  lexp_invalid_code     EXCEPTION;\n  lnum_loop_cnt         NUMBER(10);  \n  lnum_total_exceptions NUMBER(10):=0;\n  \n  \n  lvch_from_value     VARCHAR2(100);     \n  lvch_to_value       VARCHAR2(100);     \n  lvch_from_range     VARCHAR2(100);\n  lvch_to_range       VARCHAR2(100);\n\n  lnum_from_lie       NUMBER(1);  \nbegin\n  \n\n  FOR cur IN \n  (   SELECT uc.from_code_combination from_code,uc.To_Code_Combination to_code\n      FROM User_Cross_Valid_Rules uc,wiz_gl_set_of_books sob\n      WHERE sob.set_of_book_id = uc.set_of_book_id AND\n            uc.employee_id     = parm_user_id          AND\n          "
+}

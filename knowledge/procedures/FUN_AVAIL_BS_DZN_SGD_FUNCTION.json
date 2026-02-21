@@ -1,0 +1,11 @@
+{
+  "name": "FUN_AVAIL_BS_DZN_SGD",
+  "type": "FUNCTION",
+  "line_count": 330,
+  "tables_referenced": [
+    "SGD_BOARDING_ENTRY_MT",
+    "LNM_TXT_BRD_DZN",
+    "LNM_TXT_AVAL_BS_DZN"
+  ],
+  "body_snippet": "FUNCTION Fun_Avail_Bs_Dzn_SGD\n(PARM_SO_ID NUMBER,\n PARM_BS_ITEM_ID NUMBER,\n PARM_PAIR_RATIO_PACK NUMBER,\n PARM_SO_DET_ID NUMBER\n\n)\n\nRETURN NUMBER IS\n\n\nlnm_TXT_brd_DZN            number(16,2);\nLnm_Txt_Aval_Bs_Dzn        Number(16, 2);\n  Lnm_Tot_Prod_Dzn         Number(16, 2);\n  Lnum_Adj_Qty             Number(16, 2);\n  Lnum_Wst_Qty             Number(16, 2);\n  Lnum_Left_Qty            Number(16, 2);\n  Lnum_From_Transfer_Dzn   Number(16, 2);\n  Lnum_Too_Transfer_Dzn    Number(16, 2);\n  lnum_leftover_to_order_trans number(16,2);\n  \n  lnum_bs_item_id  number;\n\nBegin\n  lnum_bs_item_id := PARM_BS_ITEM_ID;\n  \n---------------------------Total boarding Dzn\nselect sum(nvl(mt.PRESSED_QTY_DZN, 0) + ((nvl(mt.PRESSED_QTY_PCS, 0) / 24)))\nINTO lnm_TXT_brd_DZN\n  from sgd_boarding_entry_mt    mt,\n       sgd_shift_mt             s,\n       wiz_segment02            s2,\n       code_combination_values  ccv,\n       SGD_MACHINE_OPERATOR_DET sic,\n       sgd_batch_making_det     bd,\n       sgd_batch_making_mt      bm,\n       sgd_stm_planning_det     pd,\n       employee_mt              e,\n       imk_so_mt                so,\n       SGD_MACHINE_OPERATOR_DET incrg,\n       sgd_setup_plant_mt       pl,\n       sgd_sample_request_det   srd,\n       items_category           ic,\n       code_combination_values  ccvbs\n\n where mt.shift_id = s.shift_id(+)\n   and mt.operation_strct_id = s2.structure_id\n   and mt.operation_seg2_id = s2.segment_id\n   and mt.cc_comb_id = ccv.code_combination_id\n   and mt.CC_STRUCT_ID = cc"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "GET_NUMERIC_PART",
+  "type": "FUNCTION",
+  "line_count": 17,
+  "tables_referenced": [],
+  "body_snippet": "function GET_NUMERIC_PART(parm_string VARCHAR) return number is\n  Result VARCHAR2(100);\n  lvch_char varchar2(1);\n\nBEGIN\n\n  FOR cnt IN 1..nvl(length(parm_string),0) LOOP\n      \n      lvch_char  := substr(parm_string,cnt,1);\n      \n      IF lvch_char IN ('0','1','2','3','4','5','6','7','8','9') THEN\n         result := result||lvch_char;\n      END IF;\n      \n  END LOOP;\n  return(Result);\nend GET_NUMERIC_PART;\n"
+}

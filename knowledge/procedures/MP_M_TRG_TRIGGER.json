@@ -1,0 +1,7 @@
+{
+  "name": "MP_M_TRG",
+  "type": "TRIGGER",
+  "line_count": 15,
+  "tables_referenced": [],
+  "body_snippet": "TRIGGER \"SGDGROUP\".mp_m_trg\n before insert or update on mp_m\n  for each row\nbegin\n  if inserting then\n    :new.eby := SYS_CONTEXT('USERENV','HOST');\n      :new.eip := SYS_CONTEXT('USERENV','IP_ADDRESS');\n      :new.edat := sysdate;\n  end if;\n  if updating then\n      :new.mby := SYS_CONTEXT('USERENV','HOST');\n      :new.mip := SYS_CONTEXT('USERENV','IP_ADDRESS');\n      :new.mdat := sysdate;\nend if;\nend;\n"
+}

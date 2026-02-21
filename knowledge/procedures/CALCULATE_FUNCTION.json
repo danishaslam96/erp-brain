@@ -1,0 +1,9 @@
+{
+  "name": "CALCULATE",
+  "type": "FUNCTION",
+  "line_count": 9,
+  "tables_referenced": [
+    "RESULT"
+  ],
+  "body_snippet": "function CALCULATE(EXP VARCHAR2) return VARCHAR is\n  Result VARCHAR2(1000);\nbegin\n  \n  SELECT REPLACE(EXP,'%','/100')  INTO RESULT\n  FROM DUAL;\n  RETURN PCKG_DYNAMIC.GET_SQL_RESULT('SELECT '||Result|| ' FROM DUAL');\n\nend CALCULATE;\n"
+}

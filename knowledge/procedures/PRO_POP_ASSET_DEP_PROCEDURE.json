@@ -1,0 +1,9 @@
+{
+  "name": "PRO_POP_ASSET_DEP",
+  "type": "PROCEDURE",
+  "line_count": 230,
+  "tables_referenced": [
+    "TEMP_POP_ASSET_DEP"
+  ],
+  "body_snippet": "Procedure Pro_Pop_Asset_Dep(Parm_From_Date Date,\n                                              Parm_To_Date   Date) Is\nlvch_query_execute    varchar2(20000);\nlvch_query_template   varchar2(20000);\n\nBegin\n  Delete From Temp_Pop_Asset_Dep;\n\n  lvch_query_template := '\n  Insert Into Temp_Pop_Asset_Dep\n    (\n     Select\n             Q1.NEW_BOOK_VAL1,\n             Q1.AST_TYPE_ID,\n             Q1.AST_BOOK_ID,\n             Q1.DISPOSAL,\n             Q1.DEPRECIATION,\n             Q1.DEP_OPN,\n             Q1.LINE_DESC,\n             Q1.ASSET_ID,\n             Q1.AST_PERIOD_ID,\n             Q1.OPEN_PERIOD_ID,\n             Q1.AST_ADDITION_DATE,\n             Q1.ACMLTD_DEPR,\n             Q1.RVLXN_RSRV,\n             Q1.NET_BOOK_VALUE,\n             Q1.ADJ_COST_ADD,\n             Q1.ADJ_COST_MIN,\n             Q1.RETIRED_COST,\n             Q1.FROM_DATE,\n             Q1.TO_DATE,\n             Q1.STRUCTURE_ID,\n             Q1.SEGMENT_VALUE_DESC,\n             \n             Q1.REVAL_AMNT,\n             Q1.FLAG,\n             Q1.AST_NUMBER,\n             Q1.AST_DESC\n\n             ,Case\n               When Flag = 1 Then\n                Case\n               When Q1.Rvlxn_Rsrv <> 0 Or Q1.Acmltd_Depr <> 0 Then\n               -- Q1.Net_Book_Value\n               Q1.current_cost + Q1.RVLXN_RSRV\n               Else\n                0\n             End Else 0 End Opn_Cost,\n\n             Case\n               When Flag = 1 Then\n                Case\n               When Q1.Rvlxn_Rsrv <> 0 Or Q1.Acmltd_Depr <> 0 Then\n      "
+}

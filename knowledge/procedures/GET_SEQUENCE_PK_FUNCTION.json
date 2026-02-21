@@ -1,0 +1,16 @@
+{
+  "name": "GET_SEQUENCE_PK",
+  "type": "FUNCTION",
+  "line_count": 104,
+  "tables_referenced": [
+    "SITE_PK_RANGES_MT",
+    "THIS",
+    "MAX_PK_ID",
+    "WIZ_THIS_SITE_MT",
+    "WIZ_ALL_TABLES_PK",
+    "LNUM_FROM_PK_NO",
+    "LNUM_THIS_SITE_ID",
+    "LNUM_TEMP"
+  ],
+  "body_snippet": "function get_sequence_pk(parm_table_name varchar2,parm_column_name varchar2 default null,parm_primary_key number default null  , parm_parent_keys varchar2 default null) return number is\n  PRAGMA AUTONOMOUS_TRANSACTION; \n  \n  max_pk_id          Number;\n  lnum_from_pk_no    SITE_PK_RANGES_MT.FROM_PK_NO%TYPE;\n  lnum_to_pk_no      SITE_PK_RANGES_MT.TO_PK_NO%TYPE;\n\n  lvch_sql_query varchar2(2000);\n  lnum_temp NUMBER(1);\n  \n  lnum_this_site_id NUMBER(14);\n\n  LDAT_U_T_DATE  DATE;\n  \n  lvch_table_name VARCHAR2(100);\n  \nbegin\n    ---------------\n    --returning if the pk is already generated\n    if parm_primary_key is not null  and parm_primary_key > 0 then  \n       return(parm_primary_key); \n    end if;\n    ---------------- \n    \n\n    BEGIN\n        SELECT t.wiz_all_sites_id\n               INTO\n               lnum_this_site_id \n        FROM wiz_this_site_mt t;\n        \n        lvch_table_name := parm_table_name;\n        \n        --------------------------------------------------------------------------------------------\n\n        SELECT P.LAST_PK\n               INTO\n               max_pk_id\n        FROM wiz_all_tables_pk P\n        WHERE p.wiz_all_sites_id = lnum_this_site_id AND\n              UPPER(TRIM(P.TABLE_NAME)) = UPPER(TRIM(lvch_table_name)) AND\n              UPPER(TRIM(P.COLUMN_NAME)) = UPPER(TRIM(PARM_COLUMN_NAME)) AND\n              NVL(UPPER(TRIM(P.PARENT_KEYS)),'A') = NVL(TRIM(UPPER(PARM_PARENT_KEYS)),'A')\n        FOR UPDATE;\n         \n        UPDATE wiz_all_tables_pk P\n    "
+}

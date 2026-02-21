@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_COLLECTIONS",
+  "type": "PACKAGE",
+  "line_count": 28,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_COLLECTIONS is\n\n  -- Author  : ADMINISTRATOR\n  -- Created : 6/15/2005 12:09:50 PM\n  -- Purpose : FOR MANAGE STACK ,QUEUES\n  \n  -- Public type declarations\n  \n\n  ---------------------------<STACK>--------------------------\n  Type TYP_STACK is Table Of Varchar2(2000) Index By BINARY_INTEGER;\n  REF_TYP_STACK TYP_STACK;\n  LNUM_STK_POINTER Number:=0;\n  Procedure PUSH_STACK (PARM_VALUE Varchar2 );\n  Function POP_STACK Return Varchar2 ;\n  Function GET_STACK_SIZE Return Number;\n   ---------------------------<STACK>--------------------------\n   \n  ---------------------------<QEUES>--------------------------\n  Type TYP_QUEUE is Table Of Varchar2(2000) Index By BINARY_INTEGER;\n  REF_TYP_QUEUE TYP_QUEUE;\n  LNUM_QUEUE_POINTER Number:=0;\n  Procedure PUSH_QUEUE (PARM_VALUE Varchar2);\n  Function POP_QUEUE Return Varchar2 ;\n  Function GET_QUEUE_SIZE Return Number;\n   ---------------------------<QUEUES>--------------------------\n\nend PCKG_COLLECTIONS;\n"
+}

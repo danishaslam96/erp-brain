@@ -1,0 +1,14 @@
+{
+  "name": "PCKG_SGD_POST_GRN_LC",
+  "type": "PACKAGE BODY",
+  "line_count": 244,
+  "tables_referenced": [
+    "SGD_INWARD_GATE_PASS_LC",
+    "GRN_MT",
+    "LNM_GRN_LOCATOR_ID",
+    "SGD_LC_GATE_PASS_CONFIG",
+    "DC_FROM_HO_2_MILL_DET",
+    "LNM_GRN_BOOK_ID"
+  ],
+  "body_snippet": "package body PCKG_SGD_POST_GRN_LC is\n\n  Procedure pro_post_auto_grn(parm_lc_id number, parm_inward_gp_id number) is\n    lnm_grn_book_id        number(14);\n    lnm_grn_doc_no         number(6);\n    lnm_grn_doc_date       date;\n    lnm_loading_challan_id number(14);\n    LNUM_GRN_MT_ID         number(14);\n    LNUM_GRN_DET_ID        number(14);\n    lnm_sr_no              number(14) := 0;\n    lnm_GRN_LOCATOR_ID     number(14);\n    LNUM_DOC_SEQ           number(14);\n  begin\n  \n    select l.inv_book_id, l.doc_no, l.doc_date, l.dc_ho_2_mill_id\n      INTO lnm_grn_book_id,\n           lnm_grn_doc_no,\n           lnm_grn_doc_date,\n           lnm_loading_challan_id\n    \n      from sgd_inward_gate_pass_lc l\n     where l.inward_gp_id = parm_inward_gp_id;\n  \n      IF  lnm_grn_book_id = 101096 THEN  --GRN CMT FOC book\n      lnm_GRN_LOCATOR_ID :=  47604;   \n      else\n    \n    begin\n    \n  \n        \n     \n     select GRN_LOCATOR_ID\n        into lnm_GRN_LOCATOR_ID\n        from SGD_LC_GATE_PASS_CONFIG;\n    exception\n      when no_data_found then\n        Raise_application_error(-20001,\n                                'Grn loacator is not defined at configuation.');\n      when others then\n        Raise_application_error(-20001, sqlerrm);\n \n    end;\n end if;\n  ----------------\n    for cur_mt in (select distinct det.supplier_id /*det.item_id,det.primary_qty */\n                     from DC_FROM_HO_2_MILL_DET det\n                    where det.dc_ho_2_mill_id = lnm_loading_challan_id) loop\n    \n      BE"
+}

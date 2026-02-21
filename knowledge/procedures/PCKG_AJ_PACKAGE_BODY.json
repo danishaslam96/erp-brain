@@ -1,0 +1,16 @@
+{
+  "name": "PCKG_AJ",
+  "type": "PACKAGE BODY",
+  "line_count": 4092,
+  "tables_referenced": [
+    "LDAT_PO_DATE",
+    "PURCHASE_ORDER_MT",
+    "RATES",
+    "LNUM_LPR_REC_CNT",
+    "LNUM_PPL_REC_CNT",
+    "PURCHASE_ORDER_DET",
+    "LNUM_MAN_REC_CNT",
+    "LNUM_TOT_REC_CNT"
+  ],
+  "body_snippet": "package body PCKG_AJ is\n\n\n  FUNCTION GET_YNS_CONT_TEAM_ID(P_REV_ID NUMBER) RETURN NUMBER IS\n    lnum_tot_rec_cnt NUMBER(14);\n    lnum_ppl_rec_cnt NUMBER(14);\n    lnum_lpr_rec_cnt NUMBER(14);\n    lnum_man_rec_cnt NUMBER(14);\n    lvch_rate_type   VARCHAR2(5);\n    lnum_rate        NUMBER(14);\n    ldat_po_date     DATE;\n    lnum_team_id     NUMBER(14);\n  BEGIN\n\n\n    lnum_team_id := 1;\n\n    RETURN(lnum_team_id);\n\n  END;\n\n\n  FUNCTION GET_PO_TEAM_ID(P_PO_ID NUMBER) RETURN NUMBER IS\n    lnum_tot_rec_cnt NUMBER(14);\n    lnum_ppl_rec_cnt NUMBER(14);\n    lnum_lpr_rec_cnt NUMBER(14);\n    lnum_man_rec_cnt NUMBER(14);\n    lvch_rate_type   VARCHAR2(5);\n    lnum_rate        NUMBER(14);\n    ldat_po_date     DATE;\n    lnum_team_id     NUMBER(14);\n  BEGIN\n\n    SELECT COUNT(1)\n           INTO\n           lnum_tot_rec_cnt\n    FROM purchase_order_det pod\n    WHERE pod.order_id = P_PO_ID;\n\n    SELECT COUNT(1)\n           INTO\n           lnum_ppl_rec_cnt\n    FROM purchase_order_det pod\n    WHERE pod.order_id = P_PO_ID AND\n          pod.rate_type = 'PPL';\n\n    SELECT COUNT(1)\n           INTO\n           lnum_lpr_rec_cnt\n    FROM purchase_order_det pod\n    WHERE pod.order_id = P_PO_ID AND\n          pod.rate_type = 'LPR';\n\n    SELECT COUNT(1)\n           INTO\n           lnum_man_rec_cnt\n    FROM purchase_order_det pod\n    WHERE pod.order_id = P_PO_ID AND\n          pod.rate_type = 'MAN';\n\n    SELECT m.order_date\n           INTO\n           ldat_po_date\n    FROM Purchase_Order_Mt m\n    WHERE m.order_id = P_PO"
+}

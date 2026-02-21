@@ -1,0 +1,17 @@
+{
+  "name": "PCKG_SCK_COSTING",
+  "type": "PACKAGE BODY",
+  "line_count": 3051,
+  "tables_referenced": [
+    "LNUM_OPEN_AMT",
+    "SGD_OH_JOB_WISE",
+    "LDAT_FR_DATE",
+    "IMK_SO_MT",
+    "TEMP_PROG",
+    "SGD_STOCK_COSTING_V1",
+    "ITEM_ADJUSTMENT_MT",
+    "SGD_MAT_COST_JOB",
+    "PERIOD_DETAILS"
+  ],
+  "body_snippet": "package body pckg_sck_costing is\n\n  procedure oh_costing_mat is\n  \n  begin\n  \n    -- Calling Tahir's function for Knitting Costing separately\n    -- 08-Jul-25\n  \n    for cur in (select i.so_ref_no\n                  from imk_so_mt i\n                 where i.doc_date >= '01-Jul-24'\n                   and i.so_ref_no not in\n                       (select distinct t.so_ref_no\n                          from SGD_STOCK_COSTING_V1 t))\n    \n     loop\n      pro_sgd_stock_costing_v1(cur.so_ref_no);\n      insert into temp_prog values (cur.so_ref_no, sysdate);\n    end loop;\n  \n  end;\n\n  procedure oh_costing(parm_period_id number) is\n  \n  begin\n  \n    -- Calling Tahir's function for Knitting Costing \n    -- 15-Feb-25\n    /* Temporaray Stopped \n        for cur in (select i.so_ref_no from imk_so_mt i where i.doc_date >= '01-Jul-24' )\n          loop\n            pro_sgd_stock_costing_v1(cur.so_ref_no);            \n          end loop;\n     \n    */\n    oh_cost_dept(parm_period_id);\n  \n    ss_cost_dept(parm_period_id);\n  \n    oh_knit_jobs(parm_period_id);\n  \n    oh_toe_jobs(parm_period_id);\n  \n    oh_process_jobs(parm_period_id);\n  \n    oh_board_jobs(parm_period_id);\n  \n    oh_pack_jobs(parm_period_id);\n  \n  end;\n\n  procedure oh_process_jobs(parm_period_id number) is\n  \n    ldat_fr_date          date;\n    ldat_to_date          date;\n    lnum_tot_weight       number(13, 2);\n    lnum_tot_prd_dzn      number(13, 2);\n    lnum_per_kg_cost      number(13, 5);\n    lnum_proc_iss_amt     number(13, 2);\n  "
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_SGD_DZN_2_PCS",
+  "type": "PACKAGE",
+  "line_count": 20,
+  "tables_referenced": [],
+  "body_snippet": "package pckg_sgd_dzn_2_pcs is\n\n  -- Author  : DEV-T520\n  -- Created : 29/10/2021 6:14:23 pm\n\n  procedure Pro_toe_close_batch_balance(parm_batch_id number,parm_bal_dzn out number, parm_bal_pcs out number);\nfunction fun_get_tc_batch_bal_dzn(parm_batch_id number) return number;\nfunction fun_get_tc_batch_bal_pcs(parm_batch_id number) return number;\n\n/* Toe CLosing new formula to remove decimal difference*/\nfunction fun_get_tc_batch_dzn_bal(parm_batch_id number) return number;\nfunction fun_get_tc_batch_PCS_bal(parm_batch_id number) return number;\n/* Processing new formula to remove decimal difference*/\nfunction fun_get_Proc_batch_dzn_bal(parm_batch_id number) return number;\nfunction fun_get_Proc_batch_PCS_bal(parm_batch_id number) return number;\n/* Boarding new formula to remove decimal difference*/\nfunction fun_get_board_batch_dzn_bal(parm_batch_id number) return number;\nfunction fun_get_board_batch_PCS_bal(parm_batch_id number) return number;\n\nend pckg_sgd_dzn_2_pcs;\n"
+}

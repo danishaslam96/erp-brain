@@ -1,0 +1,12 @@
+{
+  "name": "PCKG_ITEM_STOCK",
+  "type": "PACKAGE BODY",
+  "line_count": 1418,
+  "tables_referenced": [
+    "LGNUM_SOB_ID",
+    "ITEM_STOCK_SINV_CRIT",
+    "INV_ORGANIZATION_MT",
+    "SUB_INVENTORY_MT"
+  ],
+  "body_snippet": "package body pckg_item_stock IS\n\n    LGNUM_INV_ORG_ID NUMBER(14);\n    lGnum_sob_id     NUMBER(14);\n\n    lgnum_itemtyp_crit_yn NUMBER(1);\n    lgnum_item_crit_yn    NUMBER(1);\n    lgnum_loc_crit_yn     NUMBER(1);\n    lgnum_sinv_crit_yn    NUMBER(1);\n\n    lgnum_populate_cat_code_yn NUMBER(1);\n\n    lgnum_group_sub_inv_yn NUMBER(1);\n    lgnum_group_locator_yn NUMBER(1);\n    lgnum_group_item_yn    NUMBER(1);\n    --\n    PROCEDURE initialize IS\n    BEGIN\n\n       pckg_dynamic.exec('truncate TABLE item_stock_results');\n       pckg_dynamic.exec('truncate TABLE item_stock_results_cons');\n       pckg_dynamic.exec('truncate TABLE item_stock_results_dead');\n       pckg_dynamic.exec('truncate TABLE ITEM_STOCK_SINV_CRIT');\n       pckg_dynamic.exec('truncate TABLE ITEM_STOCK_ITEM_CRIT');\n       pckg_dynamic.exec('truncate TABLE ITEM_STOCK_ITEMTYP_CRIT');\n       pckg_dynamic.exec('truncate TABLE ITEM_STOCK_LOC_CRIT');\n\n\n\n       LGNUM_INV_ORG_ID := NULL;\n       lGnum_sob_id     := NULL;\n\n       lgnum_itemtyp_crit_yn := 0;\n       lgnum_item_crit_yn    := 0;\n       lgnum_loc_crit_yn     := 0;\n       lgnum_sinv_crit_yn    := 0;\n\n       lgnum_group_sub_inv_yn := 1;\n       lgnum_group_locator_yn := 1;\n       lgnum_group_item_yn    := 1;\n       lgnum_populate_cat_code_yn := 1;\n\n    END;\n\n    PROCEDURE set_group_on(parm_sub_inv_yn NUMBER DEFAULT 1,parm_locator_yn number DEFAULT 1, parm_item_yn number DEFAULT 1, parm_populate_cat_yn NUMBER default 1) IS\n    BEGIN\n       lgnum_group_sub_inv_yn := parm_su"
+}

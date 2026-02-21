@@ -1,0 +1,16 @@
+{
+  "name": "PCKG_REP_RIZ",
+  "type": "PACKAGE BODY",
+  "line_count": 321,
+  "tables_referenced": [
+    "USER_CONSTRAINTS",
+    "OUT_PARM_START_SEQ_NO",
+    "LNUM_COUNT",
+    "LVCH_FK_MSTR_TABLE_NAME",
+    "TEMP_TABLE_1",
+    "USER_CONS_COLUMNS",
+    "LNUM_FK_ID",
+    "TEMP_TABLE_REF_KEY_COL_NAME"
+  ],
+  "body_snippet": "package body PCKG_REP_RIZ is\n\n  -- Private type declarations\n--  type <TypeName> is <Datatype>;\n  \n  -- Private constant declarations\n--  <ConstantName> constant <Datatype> := <Value>;\n\n  -- Private variable declarations\n--  <VariableName> <Datatype>;\n\n  -- Function and procedure implementations\n/*\n  function <FunctionName>(<Parameter> <Datatype>) return <Datatype> is\n    <LocalVariable> <Datatype>;\n  begin\n    <Statement>;\n    return(<Result>);\n  end;\n*/\n\nPROCEDURE INSERT_REPLICATE_VALUES(parm_tbl_name VARCHAR2, parm_id NUMBER) IS\n\n    lnum_count               NUMBER(14);\n    lvch_sql_insert          VARCHAR2(10000);\n    lnum_start_seq_no        NUMBER;\n    lnum_end_seq_no          NUMBER;\nBEGIN\n\n    EXECUTE IMMEDIATE 'SELECT COUNT(1) FROM '||parm_tbl_name ||'@'|| pvch_trgt_schma_name||\n            ' WHERE '|| GET_TABLE_PK_COL_NAME(parm_tbl_name) ||' = '|| parm_id\n    INTO lnum_count;\n\n    IF lnum_count = 0 THEN\n       lvch_sql_insert := CREATE_INSRT_STATEMENT(parm_tbl_name, parm_id);\n       INSERT INTO TEMP_TABLE_1 VALUES(SEQ_REP_ID.NEXTVAL,lvch_sql_insert);\n\n    END IF;\n    \n    POPULATE_TMP_REF_KEY_COL_TBL(parm_tbl_name, parm_id, lnum_start_seq_no, lnum_end_seq_no);\n\n/*\nDBMS_OUTPUT.PUT_LINE('OUTER FROM '||lnum_start_seq_no);\nDBMS_OUTPUT.PUT_LINE('OUTER TO   '||lnum_end_seq_no); \n\n    FOR cur IN (SELECT fk_id, fk_mstr_table_name, fk_name_in_mstr_table\n                        FROM temp_table_ref_key_col_name\n                        WHERE LINE_ID BETWEEN lnum_start_seq_no AN"
+}

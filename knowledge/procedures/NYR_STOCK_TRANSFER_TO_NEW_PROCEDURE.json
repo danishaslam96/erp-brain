@@ -1,0 +1,13 @@
+{
+  "name": "NYR_STOCK_TRANSFER_TO_NEW",
+  "type": "PROCEDURE",
+  "line_count": 141,
+  "tables_referenced": [
+    "PARENT",
+    "FSG_REPORT_OUTPUT_DET",
+    "GRN_DETAIL",
+    "ISSUE_DETAIL",
+    "FSG_REPORT_OUTPUT_MT"
+  ],
+  "body_snippet": "procedure NYR_STOCK_TRANSFER_TO_NEW IS\n\n    GRN_ID_FOR_TFT NUMBER := 4003700;\n    SRNO_FOR_TFT   NUMBER := 0;\n    GRN_ID_FOR_BCF NUMBER := 4003701;\n    SRNO_FOR_BCF   NUMBER := 0;   \n    GRN_ID_FOR_VND NUMBER := 4003702;\n    SRNO_FOR_VND   NUMBER := 0;  \n    GRN_ID_FOR_WVG NUMBER := 4003703;\n    SRNO_FOR_WVG   NUMBER := 0;    \n\n    GRN_DET_ID_FOR_ALL_DET NUMBER;\n\n    \n    ISSUE_ID_FOR_MAIN NUMBER := 4005100;\n    SRNO_FOR_MAIN     NUMBER := 0;\n    \n    ISSUE_DET_ID_FOR_MAIN NUMBER;\n    \n    LOC_ID_FOR_ALL    NUMBER := 1;\n    CC_ID_FOR_MAIN    NUMBER := 4013052;\n\nbegin\n\n    DELETE FROM GRN_DETAIL D\n    WHERE D.GRN_ID = GRN_ID_FOR_TFT;\n    DELETE FROM GRN_DETAIL D\n    WHERE D.GRN_ID = GRN_ID_FOR_BCF;\n    DELETE FROM GRN_DETAIL D\n    WHERE D.GRN_ID = GRN_ID_FOR_VND;\n    DELETE FROM GRN_DETAIL D\n    WHERE D.GRN_ID = GRN_ID_FOR_WVG;\n  \n    DELETE FROM ISSUE_DETAIL D\n    WHERE D.ISSUE_ID = ISSUE_ID_FOR_MAIN;\n    \n    DELETE FROM FSG_REPORT_OUTPUT_DET;\n    DELETE FROM FSG_REPORT_OUTPUT_MT;\n    \n    pckg_fsg.populate_fsg_with_inventory(parm_org_id => 1,\n                                         parm_sub_inv_id => 3,\n                                         parm_group_on => 'I' ,\n                                         parm_level => 2,\n                                         parm_exclude_zero_balance => 0,\n                                         parm_colset_id => 4000003,\n                                         parm_from_date => '31-DEC-2004',\n                                       "
+}

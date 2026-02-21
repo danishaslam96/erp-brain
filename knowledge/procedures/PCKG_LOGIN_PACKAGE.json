@@ -1,0 +1,9 @@
+{
+  "name": "PCKG_LOGIN",
+  "type": "PACKAGE",
+  "line_count": 25,
+  "tables_referenced": [
+    "TRIGGER"
+  ],
+  "body_snippet": "PACKAGE PCKG_LOGIN IS\n  -- Author  : MUHAMMAD RIZWAN\n  -- Created : 28/09/2002 5:15:03 PM\n  -- Purpose : \n  \n  -- Public type declarations\n  --type <TypeName> is <Datatype>;\n  \n  -- Public constant declarations\n  --<ConstantName> constant <Datatype> := <Value>;\n\n  -- Public variable declarations\n  --<VariableName> <Datatype>;\n  pdat_attendance_date             DATE;\n  \n  FIRE_AIU_TRGR_ON_TIME_SHEET      NUMBER(1) := 1;  --This variable fires after insert update trigger on TIME_SHET\n  \n  -- Public function and procedure declarations\n  FUNCTION FUN_LOGIN_TYPE(parm_emp_id NUMBER) RETURN VARCHAR2;\n  \n  FUNCTION GET_USER_NAME_PSWRD(pnum_check           VARCHAR2, -- used to check that the caller of this function is Authentic OR not \n                               parm_client          VARCHAR2 -- client whose User Name and Password is Requested\n--                               parm_schema_type     VARCHAR2  -- \n                               ) return VARCHAR2;\nEND PCKG_LOGIN;\n"
+}

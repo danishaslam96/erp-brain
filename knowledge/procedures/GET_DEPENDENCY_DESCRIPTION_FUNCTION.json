@@ -1,0 +1,10 @@
+{
+  "name": "GET_DEPENDENCY_DESCRIPTION",
+  "type": "FUNCTION",
+  "line_count": 60,
+  "tables_referenced": [
+    "DEPENDENT_ON_KEY_MT",
+    "DEP_ON_ID"
+  ],
+  "body_snippet": "FUNCTION GET_DEPENDENCY_DESCRIPTION(STRCT NUMBER,C_STRING VARCHAR2,D_STRING VARCHAR2) RETURN VARCHAR2 IS\n\n-------------------------------------------------------------------------------------------\n-------------------------------------------------------------------------------------------\n------- THIS FUNCTION WILL RETURN DESCRIPTION OF GIVEN CODE STRING ACCORDING TO GIVEN SEGMENT NUMBERS\n------- THIS WILL RETURN A STRING OF ALL SEGMENT DESCRIPTIONS USED IN GIVEN CODE SEPARATED BY \"-\"\n------- IT WILL RETURN \t\n--VARCHAR2 TYPE DESC STRING\t->\tON SUCCESS\n------------------------------------------------------------------------------------------\n-------------------------------------------------------------------------------------------\n \n      CH VARCHAR2(1500);\n      TOT_SEG NUMBER:=0;\n      DEP_ON_ID NUMBER;\n      SEGMENT_ID NUMBER;\n      SEGMENT_DESC_STRING VARCHAR2(1000) := '';\n      LVNUM_TMP NUMBER;\n      SEG_NO    NUMBER;\n      LVCH_TEMP VARCHAR2(1000);\n       \nBEGIN\n\n \tTOT_SEG:=HOW_MANY_CHARS(C_STRING,'-',0)+1;\n  \n  FOR  CNT IN 1..TOT_SEG LOOP\n      \n       SEG_NO:=GET_VALUE_AT(D_STRING,CNT,',',0);\n       CH := GET_VALUE_AT(C_STRING,CNT,'-',0);\n\n\t\t\tSEGMENT_ID := GET_SEGMENT_ID(STRCT,SEG_NO,CH,DEP_ON_ID);\n     \n      IF SEGMENT_ID=0 THEN RETURN(NULL); END IF;\n\n      LVCH_TEMP:=SUBSTR(C_STRING,1,(INSTRING(C_STRING,'-',CNT,0))-1);\n\n        BEGIN\n             SELECT DEP_ON_KEY_ID INTO DEP_ON_ID\n             FROM DEPENDENT_ON_KEY_MT T\n             WHERE STRUCTURE_ID  = STRCT AND"
+}

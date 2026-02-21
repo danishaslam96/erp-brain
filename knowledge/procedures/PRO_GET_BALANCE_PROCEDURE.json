@@ -1,0 +1,14 @@
+{
+  "name": "PRO_GET_BALANCE",
+  "type": "PROCEDURE",
+  "line_count": 150,
+  "tables_referenced": [
+    "JOURNAL_MT",
+    "JOURNAL_DETAIL",
+    "LNUM_JRN_ID",
+    "LNUM_STAT_CURR_ID",
+    "GL_GEN_PREFERENCES",
+    "LNUM_BALANCE"
+  ],
+  "body_snippet": "procedure pro_get_balance(\n                                            parm_code_comb_id   in number,\n                                            parm_from_date      in date,\n                                            parm_to_date        in date,\n                                            parm_opbal_yn       in number,\n                                            parm_adj_prd_id     in number default 0,\n                                            parm_monetary_stat  in varchar2,\n                                            parm_bal_type       in varchar2,\n                                            parm_dr_cr_net      in varchar2,\n                                            parm_balance        out number) is\n   -- if parameter is for monetary currency then this cursor is used                                                                                        \n   cursor cur_jrn_mt_monetary(parm_cur_from_date  date,\n                              parm_cur_to_date    date,\n                              parm_curr_id        number,\n                              parm_bal_type       varchar2) is\n          select journal_id\n          from   journal_mt\n          where  (jrn_date between parm_cur_from_date and parm_cur_to_date)\n          and    currency_id <> parm_curr_id\n          and    balance_type = parm_bal_type\n          and    deleted_yn = 0 \n          and    posted_yn  = 1          \n          order by journal_id;\n   -- if parameter is for statistical currency then this cursor"
+}

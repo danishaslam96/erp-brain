@@ -1,0 +1,10 @@
+{
+  "name": "FUN_CALC_BS_QTY_DZN",
+  "type": "FUNCTION",
+  "line_count": 37,
+  "tables_referenced": [
+    "SGD_SOD_BS_CODE_DETAIL",
+    "LNM_QTY_DZN"
+  ],
+  "body_snippet": "function FUN_CALC_BS_QTY_DZN(PARM_PLANNING_ID NUMBER,PARM_BS_ITEM_ID NUMBER,\nPARM_SO_ID NUMBER) return NUMBER is\nlnm_qty_dzn number(14,2);\n\nBEGIN\n\n  select sum(b.qty_in_dozen)\n\n  into lnm_qty_dzn\n\n  from SGD_SOD_BS_CODE_DETAIL     b,\n       SGD_PS_CODE_GENERATION_DET pd,\n       sgd_sample_request_det     rd,\n       items_mt                   i,\n       items_category             icc,\n       code_combination_values    ccv,\n       sgd_stm_planning_det pair_code,\n         imk_so_det sod\n\n where b.ps_code_gen_det_id = pd.ps_code_gen_det_id\n   and pd.sample_request_det_id = rd.sample_request_det_id\n   and rd.generated_item_id = i.item_id\n   and i.item_id = icc.item_id\n   and icc.structure_id = ccv.structure_id\n   and icc.code_combination_id = ccv.code_combination_id\n   and rd.sample_request_det_id = pair_code.sample_request_det_id\n   and pair_code.stm_planning_id = nvl(PARM_PLANNING_ID,-1)\n   and i.item_id = nvl(PARM_BS_ITEM_ID,-1)\n   and b.so_det_id = sod.so_det_id\n    and sod.so_id = PARM_SO_ID\n   group by i.item_id;\n\n   return (lnm_qty_dzn);\n\nexception when others then\n  return  0;\nend FUN_CALC_BS_QTY_DZN;\n"
+}

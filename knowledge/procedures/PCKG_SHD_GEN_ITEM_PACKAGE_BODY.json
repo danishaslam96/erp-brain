@@ -1,0 +1,13 @@
+{
+  "name": "PCKG_SHD_GEN_ITEM",
+  "type": "PACKAGE BODY",
+  "line_count": 2526,
+  "tables_referenced": [
+    "RESULT",
+    "WIZ_SEGMENT03",
+    "WIZ_SEGMENT01",
+    "WIZ_SEGMENT02",
+    "WIZ_SEGMENT04"
+  ],
+  "body_snippet": "package body PCKG_SHD_gen_item is\n\n  function INSERT_INTO_ACCT_CC_Strucure(parm_structure_id       number,\n                                        parm_segment_no         number,\n                                        parm_segment_value      varchar2,\n                                        parm_segment_value_desc varchar2,\n                                        parm_seg_val_nature_id  number,\n                                        parm_parent_yn          number,\n                                        have_dep_val_yn         number,\n                                        parm_dep_on_key_id      number default null)\n    return number is\n    Result         number;\n    lnum_seg_id_pk number(15) := 0;\n  begin\n  \n    if parm_segment_no = 1 then\n    \n\n      insert into wiz_segment01\n        (structure_id,\n         segment_id,\n         dep_on_struc_id,\n         dep_on_key_id,\n         segment_value,\n         segment_value_desc,\n         segment_nature_id,\n         parent_yn,\n         have_dep_val_yn)\n      values\n        (parm_structure_id,\n         lnum_seg_id_pk,\n         decode(parm_dep_on_key_id, null, null, parm_structure_id),\n         parm_dep_on_key_id,\n         parm_segment_value,\n         parm_segment_value_desc,\n         parm_seg_val_nature_id,\n         parm_parent_yn,\n         have_dep_val_yn)\n      returning segment_id into result;\n    \n    elsif parm_segment_no = 2 then\n    \n      insert into wiz_segment02\n        (structure_id,\n         segment_id,\n         dep_on"
+}

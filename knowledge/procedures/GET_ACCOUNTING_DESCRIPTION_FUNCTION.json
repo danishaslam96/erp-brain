@@ -1,0 +1,15 @@
+{
+  "name": "GET_ACCOUNTING_DESCRIPTION",
+  "type": "FUNCTION",
+  "line_count": 146,
+  "tables_referenced": [
+    "WIZ_SEGMENT03",
+    "LNUM_ACCOUNT_SEG_CHILD",
+    "WIZ_SEGMENT01",
+    "WIZ_SEGMENT_DEFINITION",
+    "WIZ_SEGMENT02",
+    "WIZ_SEGMENT04",
+    "VAL"
+  ],
+  "body_snippet": "FUNCTION GET_ACCOUNTING_DESCRIPTION(STRCT NUMBER,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti1 NUMBER,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti2 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti3 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti4 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti5 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti6 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti7 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti8 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti9 NUMBER DEFAULT NULL,\n\t\t\t\t\t\t\t\t\t\t\t\t\ti10 NUMBER DEFAULT NULL ) RETURN VARCHAR2 IS\n\n\n---------------------------------------------------------------------------------------------\n------------ THIS FUNCTION RETURNS THE DESCRIPTION OF ACCOUNTING CODE\n\n-------- PARAMETER DETAIL IS GIVEN BELLOW\n\n-------- STRCT -> THE STRUCTURE FOR WHICH ACCOUNTING CODE DESCRIPTION IS REQUIRED\n-------- I1..I10 -> IN PARAMETERS WHICH WILL ACCEPT THE IDs OF SEGMENTS VALUES\n---------------------------\n--- MINIMUM , THE SEGMENT 1's ID IS REQUIRED ALL OTHER SEGMENT IDs are OPTIONAL\n---------------------------\n\n\n    \n    \t\t\t\t\t\t\t\t\t\t\t\t\t\n    CNT NUMBER:=0;\t\t\t\t\t\t\t\t\t\t\t\t \n    I NUMBER;\n    \n    RET VARCHAR2(2048);\n    VAL VARCHAR2(200);\n\n    lvch_dep_string VARCHAR2(100);\n    \n    lnum_account_seg NUMBER;\n    lnum_account_seg_child NUMBER;\n        \nBEGIN\n\n     IF I1 IS NULL THEN RETURN(NULL); END IF;\n  \n     lnum_account_seg := GET_ACCOUNTING_SEGMENT(STRCT);\n     \n     SELECT max(SEGMENT_NO) INTO lnum_account_seg_child\n     FROM WIZ_SEGMENT_DEFINITION\n     WHERE STRUCTURE_ID = STRCT\n     CONNECT BY DEPENDENT_ON_SEGMENT_NO   = PRIOR SEGMENT_NO AND\n\t               DEPENDEN"
+}

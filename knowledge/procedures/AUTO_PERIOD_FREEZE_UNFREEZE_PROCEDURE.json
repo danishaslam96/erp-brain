@@ -1,0 +1,13 @@
+{
+  "name": "AUTO_PERIOD_FREEZE_UNFREEZE",
+  "type": "PROCEDURE",
+  "line_count": 61,
+  "tables_referenced": [
+    "PERIOD_FREEZING_AUTO_CONFIG_MT",
+    "WIZ_THIS_SITE_MT",
+    "PERIOD_FREEZING_MT",
+    "LNUM_THIS_SITE_ID",
+    "PERIOD_DETAILS"
+  ],
+  "body_snippet": "procedure AUTO_PERIOD_FREEZE_UNFREEZE is\n\n  lnum_this_site_id NUMBER(14);\n  ldat_tim          date:= sysdate;\n\nbegin\n     \n  SELECT T.WIZ_ALL_SITES_ID\n         INTO\n         lnum_this_site_id\n  FROM WIZ_THIS_SITE_MT T;\n\n  PCKG_REPLICATION.SET_LOG_OFF;\n  \n   INSERT INTO PERIOD_FREEZING_MT(SET_OF_BOOK_ID,PERIOD_ID,FREEZE_YN)\n  (SELECT 1,PERIOD_ID,0\n   FROM (\n         SELECT PERIOD_ID FROM PERIOD_DETAILS\n         MINUS\n         SELECT PERIOD_ID FROM PERIOD_FREEZING_MT\n         )\n   );\n  \n  FOR CUR IN (\n      SELECT F.AUTO_CONFIG_ID ACID,f.period_id PID,f.freeze_unfreeze FU,f.from_date_time FD,f.to_date_time TD\n      FROM period_freezing_auto_config_mt F\n      WHERE F.APPLIED_YN = 0                                                 AND\n            (F.FOR_SITE_ID = lnum_this_site_id or F.FOR_SITE_ID is null) \n\n--            (f.from_date_time is null or ldat_tim >= f.from_date_time)       AND\n--            (f.to_date_time   is null or ldat_tim <= f.to_date_time)             \n  )\n  LOOP\n     \n     IF (LDAT_TIM >= CUR.FD OR CUR.FD IS NULL) THEN\n        IF (LDAT_TIM <= CUR.TD OR CUR.TD IS NULL) THEN\n           UPDATE PERIOD_FREEZING_MT T\n           SET T.FREEZE_YN = DECODE(CUR.FU,'F',1,0)\n           WHERE (CUR.PID IS NULL OR T.PERIOD_ID = CUR.PID);\n        END IF;   \n     END IF;              \n     \n     IF ( CUR.TD IS NOT NULL AND LDAT_TIM >= CUR.TD ) THEN\n        UPDATE PERIOD_FREEZING_AUTO_CONFIG_MT C\n        SET C.APPLIED_YN = 1,\n            C.LAST_APPLIED_DATE_TIME = LDAT_TIM\n     "
+}

@@ -1,0 +1,7 @@
+{
+  "name": "BU_PAY_PFT_VCHR_GEN_HISTORY",
+  "type": "TRIGGER",
+  "line_count": 19,
+  "tables_referenced": [],
+  "body_snippet": "TRIGGER \"SGDGROUP\".BU_PAY_PFT_VCHR_GEN_HISTORY\n  Before UPDATE  on pay_pft_vchr_gen_history\n  for each row\n\n\n\n\n\n\n\ndeclare\n  tmp_var number;\n\nbegin\nNULL;\n\nend BU_PAY_PFT_VCHR_GEN_HISTORY;\n\n\n"
+}

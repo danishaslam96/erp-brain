@@ -1,0 +1,15 @@
+{
+  "name": "FUN_GET_YRN_CMT_STOCK",
+  "type": "FUNCTION",
+  "line_count": 870,
+  "tables_referenced": [
+    "SUB_INVENTORY_MT",
+    "CODE_COMBINATIONS",
+    "ITEMS_MT",
+    "INV_BOOKS_MT",
+    "TEMP_CODE_COMBINATION_CRITERIA",
+    "TEMP_INV_BOOKS_CRITERIA",
+    "FRM_CMT_OPENING_BALANCE"
+  ],
+  "body_snippet": "function FUN_GET_YRN_CMT_STOCK(PARM_FROM_DATE DATE,PARM_TO_DATE DATE) return number is\n  Result NUmber;\n  FRM_CMT_OPENING_BALANCE  number(14,2);\n  FRM_CMT_YARN_PURCHASE    NUMBER;\n  FRM_YARN_ISS_FROM_IH_TO_CMT NUMBER;\n  FRM_CMT_YARN_ISSUED NUMBER;\n  FRM_CMT_YARN_ISSUE_RETURN NUMBER;\n  FRM_CMT_YARN_RMA_OUTWARD NUMBER;\n  \n  THIS_YR_START_DATE       DATE          :=  pckg_account_inquiry.get_this_years_first_date(1,PARM_FROM_DATE);\n\tPREV_YR_ID\t\t\t\t\t     NUMBER        :=\tpckg_account_inquiry.get_last_years_id (1,PARM_FROM_DATE);\n  PARM_SUB_INV_ID          NUMBER        := 100014;\n  PARM_ON_DATE             DATE          := PARM_FROM_DATE-1;\n  PARM_INV_ORG_ID          NUMBER        := 1;\n  LOCATOR_CODE_ID          NUMBER;        \nbegin\n\n------------FRM_CMT_OPENING_BALANCE\nPCKG_UTILITY.SET_APPLICATION_USER(1);\n\nDELETE TEMP_ITEM_CRITERIA;\n  --  pckg_inv.populate_item_criteria_ORG (&PARM_INV_ORG_ID,&PARM_SUB_INV_ID,&parm_item_type_id,&parm_from_CODE,&parm_to_CODE,&PARM_STRUCTURE_ID,&PARM_SEGMENT_CRITERIA  ,1);\n  pckg_inv.populate_item_criteria(PARM_SUB_INV_ID,NULL,NULL,NULL,NULL,NULL,1);\n\nDELETE TEMP_CODE_COMBINATION_CRITERIA;\n\n    IF LOCATOR_CODE_ID IS NOT NULL THEN\n        INSERT INTO TEMP_CODE_COMBINATION_CRITERIA\n        VALUES (LOCATOR_CODE_ID);\n    ELSE  \n        INSERT INTO TEMP_CODE_COMBINATION_CRITERIA\n        SELECT C.CODE_COMBINATION_ID\n        FROM CODE_COMBINATIONS C\n        WHERE C.STRUCTURE_ID IN  \n              (SELECT locator_structure  \n               FROM SUB_INVENT"
+}

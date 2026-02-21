@@ -1,0 +1,10 @@
+{
+  "name": "GET_DEPENDENCY",
+  "type": "FUNCTION",
+  "line_count": 33,
+  "tables_referenced": [
+    "DEP",
+    "WIZ_SEGMENT_DEFINITION"
+  ],
+  "body_snippet": "FUNCTION GET_DEPENDENCY(STRCT NUMBER,SEG NUMBER) RETURN VARCHAR2 IS\n\n-----------------------------------------------------------------------------------------\n------------ THIS FUNCTION RETURNS A COMMA SEPARATED DEPENDENCY STRING FOR A SPECIFIC \n------------ SEGMENT NUMBER\n--------- BELLOW IS THE DETAIL OF PARAMETERS\n----- STRCT  ->  THE STRUCTURE NUMBER\n----- SEG    ->  THE SEGMENT NUMBER\n-------------------------------------------------------------------------------------------\n\n\nDEP NUMBER;\nTMP VARCHAR2(2000);\n\nBEGIN\n  \n  SELECT DEPENDENT_ON_SEGMENT_NO INTO DEP\n  FROM WIZ_SEGMENT_DEFINITION\n  WHERE STRUCTURE_ID = STRCT AND\n  \t\t\tSEGMENT_NO   = SEG;\n\n  IF DEP IS NULL THEN\n  \tRETURN(NULL);\n  ELSE\n  \tTMP := GET_DEPENDENCY(STRCT ,DEP);\n  \tIF TMP IS NOT NULL THEN\t\n  \t\t\tRETURN(TMP||','||DEP); \n  \tELSE\n  \t\t  RETURN(DEP);\n  \tEND IF;\n  END IF;\n  \nEND;\n"
+}

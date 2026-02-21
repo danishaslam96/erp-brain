@@ -1,0 +1,10 @@
+{
+  "name": "GET_CODE_TEMPLATE_DESC",
+  "type": "FUNCTION",
+  "line_count": 111,
+  "tables_referenced": [
+    "WIZ_SEGMENT",
+    "DEPENDENT_ON_KEY_MT"
+  ],
+  "body_snippet": "function get_code_template_desc(parm_structure_id NUMBER,parm_code_template VARCHAR2) return VARCHAR2 is\n-- THIS FUNCTION WILL ACCEPT STRUCTURE_ID AND A CODE TEMPLATE, IT WILL RETURN A FULL DESCRIPTION \n-- OF THE GIVEN CODE TEMPLATE\n---\n-- PARAMETER DETAIL:\n--      parm_structure_id    NUMBER;   // Structure for which the description is required\n\n--      parm_code_template   VARCHAR2; // Code Template String (It may include \"T\" \n--                                     // which will be return as it is on its own segment location )\n--\n--\n      lvch_result VARCHAR2(2000);\n      lnum_no_of_segments NUMBER(5); \n\n      lvch_dependency VARCHAR2(100);\n      \n      lvch_dyn_select VARCHAR2(1000);\n      lvch_dyn_from   VARCHAR2(1000);\n      lvch_dyn_where      VARCHAR2(1500);\n      \n      lvch_current_segment VARCHAR2(1000); -- The Segment Under Observation\n      \n      lvch_current_segment_desc VARCHAR2(2000); -- The Description of Segment After Observation\n      \n      lcur_dynamic NUMBER;   -- Dynamic Cursor\n      \n      lnum_dyn_query_result  NUMBER;  -- Dynamic Query Execution Result\n      \n      lnum_dep_on_key_id NUMBER;\n      lvch_dep_on_key_string VARCHAR2(1000);\n      lnum_cur_dep_segment   VARCHAR2(1000);\n      \n      TYPE segment_rec IS RECORD (segment_value VARCHAR2(50));\n      \n      TYPE segment_tab IS TABLE OF segment_rec INDEX BY BINARY_INTEGER;\n      \n      larr_segment_array segment_tab;\n      \nbegin\n\n      lcur_dynamic := DBMS_SQL.OPEN_CURSOR;  \n\n      lnum_no_of_seg"
+}

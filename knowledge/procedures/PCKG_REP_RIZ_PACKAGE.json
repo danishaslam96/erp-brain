@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_REP_RIZ",
+  "type": "PACKAGE",
+  "line_count": 34,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_REP_RIZ is\n\n  -- Author  : ADMINISTRATOR\n  -- Created : 2/21/2004 12:32:18 PM\n  -- Purpose : REPLICATION INSERT TEST \n  \n  -- Public type declarations\n  --type <TypeName> is <Datatype>;\n  \n  -- Public constant declarations\n--  <ConstantName> constant <Datatype> := <Value>;\n\n  -- Public variable declarations\n--  <VariableName> <Datatype>;\n    pvch_trgt_schma_name      VARCHAR2(50) := 'tariq';\n\n  -- Public function and procedure declarations\n--  function <FunctionName>(<Parameter> <Datatype>) return <Datatype>;\n\n    PROCEDURE INSERT_REPLICATE_VALUES(parm_tbl_name VARCHAR2, parm_id NUMBER);\n    PROCEDURE POPULATE_TMP_REF_KEY_COL_TBL(parm_tbl_name VARCHAR2, parm_id NUMBER, out_parm_start_seq_no OUT NUMBER, out_parm_end_seq_no OUT NUMBER);\n    PROCEDURE CHECK_REF_IN_MSTR_TBL;\n\n    FUNCTION CREATE_INSRT_STATEMENT(parm_table_name VARCHAR2, parm_id NUMBER) RETURN VARCHAR2;\n    FUNCTION GET_TABLE_ALL_COLS(parm_tbl_name VARCHAR2) RETURN VARCHAR2 ;\n    FUNCTION GET_TABLE_REF_COLS(parm_tbl_name VARCHAR2) RETURN VARCHAR2 ;    \n    FUNCTION GET_TABLE_PK_COL_NAME(parm_tbl_name VARCHAR2) RETURN VARCHAR2 ;\n/*\n\t\tTYPE arry IS TABLE OF VARCHAR2(5000)\n\t\tINDEX BY BINARY_INTEGER;\n\t\tarry1 arry;\n*/\t\t\n\nend PCKG_REP_RIZ;\n"
+}

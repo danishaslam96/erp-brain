@@ -1,0 +1,15 @@
+{
+  "name": "PCKG_SALES",
+  "type": "PACKAGE BODY",
+  "line_count": 1109,
+  "tables_referenced": [
+    "INVOICE_MT",
+    "END",
+    "SALES_EXP_REB_PRORATE_MT",
+    "INVOICE_STAX_DETAIL",
+    "INVOICE_DETAIL",
+    "SALES_EXP_REB_MT",
+    "LNUM_CURR_CONV_RATE"
+  ],
+  "body_snippet": "package body pckg_sales IS\n\n    -- private var ----\n    lpnum_invoice_mt_mutating_yn  NUMBER(1):=0; -- IF THIS IS 0 THEN THE FOLLOWING VAR SHOULD MUST BE SET\n    lpnum_fire_inv_mt_stat_trgr NUMBER(1)  :=0;\n\n    lpnum_invoice_id                NUMBER(15);\n    lpnum_curr_conv_rate            NUMBER(15,6);\n    lpnum_invoice_type              NUMBER(1);\n    lpvch_match_with                VARCHAR2(15);\n    lpnum_old_refund_stax_yn        NUMBER(1);\n    lpnum_new_refund_stax_yn        NUMBER(1);\n\n    gnum_fire_inv_det_trg  NUMBER(1)       :=1;\n    gnum_fire_sales_inv_pro_trg NUMBER(1)  :=1;\n\n    -- cache for get_customer_balance --\n    lgdat_date_for_cache   DATE;\n    lgnum_sob_id_for_cache NUMBER(15);\n    lgdat_yr_opening_date  DATE;\n    lgnum_prev_yr_id       NUMBER;\n    -------------------------------------    \n\n    -------------------\n    -- forward declaration   ----------------\n    PROCEDURE update_mt_doc_frm_inv(parm_match_with VARCHAR2,parm_old_match_with_id NUMBER,parm_new_match_with_id NUMBER,parm_invoice_type NUMBER,parm_updating BOOLEAN,parm_inserting BOOLEAN,parm_deleting BOOLEAN,parm_old_amount NUMBER,parm_new_amount NUMBER,parm_old_pro_exp_amount NUMBER,parm_new_pro_exp_amount NUMBER,parm_old_pro_reb_amount NUMBER,parm_new_pro_reb_amount NUMBER,parm_old_refund_stax_yn number,parm_new_refund_stax_yn number,parm_old_stax_amount number,parm_new_stax_amount number) ;\n\n    -----------------------------------------\n    FUNCTION get_curr_conv_rate(parm_invoice_id NUMBER) R"
+}

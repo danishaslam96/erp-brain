@@ -1,0 +1,9 @@
+{
+  "name": "FUN_GET_SRD_SPECIAL_INSTRUCT",
+  "type": "FUNCTION",
+  "line_count": 20,
+  "tables_referenced": [
+    "SGD_SREQ_SPECIAL_INSTRUCT_DET"
+  ],
+  "body_snippet": "function FUN_GET_SRD_SPECIAL_INSTRUCT(PARM_SAMPLE_REQ_DET_ID NUMBER) return varchar2 is\n\n  Result Varchar2(5000);\n    flag  number := 0;\nbegin\n\nFOR CUR IN(\n                select distinct sp.special_instruction from sgd_sreq_special_instruct_det d , SGD_SR_SPECIAL_INSTRUCTIONS SP\n                WHERE D.INSTRUCT_ID = SP.INSTRUCT_ID\n                AND D.SAMPLE_REQUEST_DET_ID = PARM_SAMPLE_REQ_DET_ID\n                  ) LOOP\n           IF flag = 1 THEN\n             RESULT := RESULT||',';\n             END IF;\n\n                  RESULT := RESULT||CUR.SPECIAL_INSTRUCTION;\n                 flag := 1;\n                 END LOOP;\n  return(Result);\nend FUN_GET_SRD_SPECIAL_INSTRUCT;\n"
+}

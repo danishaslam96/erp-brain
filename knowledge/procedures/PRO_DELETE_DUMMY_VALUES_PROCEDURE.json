@@ -1,0 +1,14 @@
+{
+  "name": "PRO_DELETE_DUMMY_VALUES",
+  "type": "PROCEDURE",
+  "line_count": 234,
+  "tables_referenced": [
+    "SEGIDS",
+    "WIZ_SEGMENT03",
+    "FORM_WIZ_SEGMENTS_MD",
+    "WIZ_SEGMENT01",
+    "ITS",
+    "WIZ_SEGMENT02"
+  ],
+  "body_snippet": "procedure PRO_DELETE_DUMMY_VALUES(strct number,segno number,SVAL VARCHAR,D_O_ID NUMBER) is\n-- THIS PROCEDURE IS TYPICALLY CALLED FROM FORM_WIZ_SEGMENTS_MD \n-- working\n-- Basic purpose of this procedure is to delete all segment valyes of dependent segments with No Detail\n-- it starts from \"segno\" segment and delete all subsequent values from its child segments\n\n-- FOLLOWING IS THE PARAMETER DETIAL \n\n-- struct   -> Structure ID \n-- seg_no   -> the Required Segment No whose Value is to be Deleted\n-- s_val    -> the Required Segment Value to be Deleted\n-- d_o_id   -> dep_on_key_id (Only required if the current seg_no is dependent on another previous segment)\n\n-- ** This procedure commits the database transaction \n\n        DELETE_ROWS EXCEPTION ;\n        \n        deponID NUMBER :=D_O_ID;\n        \n        DEPONSTRING VARCHAR2(500);\n        \n        strctid number:= strct;\n        segidS   number;\n        SEGVAL VARCHAR2(200);\n        \n        delete_array VARCHAR2(200);\n        \n        CURR_SEGNO NUMBER;\n        \n        DEPENDENCY VARCHAR2(1000);\n        \n        LOOP_COUNTER NUMBER;\n        TMP VARCHAR2(1000);\n        \n        LAST_SEGMENT_NO NUMBER;\nbegin\n      \n     DEPENDENCY:='';\n          \n     FOR CNT IN 1..10 LOOP\n\n         BEGIN\n           TMP:= GET_DEPENDENCY(STRCTID,CNT)||','||CNT;\n         EXCEPTION\n           WHEN NO_DATA_FOUND THEN\n             EXIT;\n         END;\n         \n         FOR c IN 1..how_many_chars(TMP,',')+1 LOOP\n             IF get_value_at(tmp,c,',') ="
+}

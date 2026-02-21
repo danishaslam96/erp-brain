@@ -1,0 +1,15 @@
+{
+  "name": "FUN_BANK_SUPPLIER_NAME_SGD",
+  "type": "FUNCTION",
+  "line_count": 87,
+  "tables_referenced": [
+    "INVOICE_MT",
+    "JOURNAL_MT",
+    "RESULT",
+    "RECEIPTS_MT",
+    "PAYMENTS_MT",
+    "OTHER_PMNTS_RCPTS_MT",
+    "PURCHASE_INVOICE_MT"
+  ],
+  "body_snippet": "function FUN_BANK_SUPPLIER_NAME_SGD(PARM_JOURNAL_ID NUMBER) return varchar2 is\n  RESULT Varchar2(32000);\n  flag number := 0;\nbegin\n  SELECT BANK_NAME INTO RESULT\n  FROM\n  (Select bbm.Bank_Name\n    From Payments_Mt PMT,Bank_Account_Mt BAM,Bank_Branch_Mt BBM\n    Where pmt.Bank_Account_Id = bam.Bank_Account_Id\n    And bam.Branch_Id         = bbm.Branch_Id\n    And PMT.Journal_Id = PARM_JOURNAL_ID\n\n    Union All\n\n    Select bbm.Bank_Name\n    From Receipts_Mt RCP,Bank_Account_Mt bam,Bank_Branch_Mt bbm\n    Where rcp.Bank_Account_Id = bam.Bank_Account_Id\n    And bam.Branch_Id         = bbm.Branch_Id\n    And RCP.Journal_Id = PARM_JOURNAL_ID\n\n    Union All\n\n    Select bbm.Bank_Name\n    From Other_Pmnts_Rcpts_Mt OPMT,Bank_Account_Mt bam,Bank_Branch_Mt bbm\n    Where opmt.Bank_Account_Id = bam.Bank_Account_Id\n    And bam.Branch_Id          = bbm.Branch_Id\n    And OPMT.Journal_Id        = PARM_JOURNAL_ID\n    \n    \n    \n\n   )Q;\n\n RETURN(RESULT);\n\nEXCEPTION WHEN NO_DATA_FOUND THEN\n  BEGIN\n  for cur in (SELECT DISTINCT COMPANY_NAME\n  FROM\n  (Select sup.company_name\n    From purchase_invoice_mt PMT,supplier_mt sup\n    Where pmt.suppplier_id   = sup.supplier_id\n    And PMT.Journal_Id = PARM_JOURNAL_ID\n\n    UNION ALL\n\n   select DISTINCT sup.company_name\n   from journal_mt jmt,journal_detail jd,SUPPLIER_ACCOUNTS SA,supplier_mt sup\nwhere jmt.journal_id = jd.journal_id\nAND JD.CODE_COMBINATION_ID = SA.CODE_COMBINATION_ID\nand sa.supplier_id = sup.supplier_id\nand jmt.jrn_source_id <> 2\nand jmt.journal"
+}

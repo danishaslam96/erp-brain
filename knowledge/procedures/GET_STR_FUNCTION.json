@@ -1,0 +1,7 @@
+{
+  "name": "GET_STR",
+  "type": "FUNCTION",
+  "line_count": 15,
+  "tables_referenced": [],
+  "body_snippet": "function get_str(CODE VARCHAR2 , search_crit VARCHAR2, sep varchar2 ,las NUMBER default 0) return VARCHAR2 is\n  Result VARCHAR2(50);\n  lvch_str VARCHAR2(50);\nbegin\n  FOR cnt IN  1.. how_many_chars(search_crit,'-')+1 LOOP\n     Result :=   get_value_at(CODE,cnt,'-');\n     IF lvch_str IS NOT NULL THEN\n       lvch_str := lvch_str||sep||Result;\n     ELSE\n       lvch_str := lvch_str||Result;\n     END IF;\n  END LOOP;\n  Result :=lvch_str;\n  return(Result);\nend get_str;\n"
+}

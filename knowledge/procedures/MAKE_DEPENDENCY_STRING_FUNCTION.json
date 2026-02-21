@@ -1,0 +1,10 @@
+{
+  "name": "MAKE_DEPENDENCY_STRING",
+  "type": "FUNCTION",
+  "line_count": 48,
+  "tables_referenced": [
+    "DEP_ON_KEY_MT",
+    "IS_VALID_CODE_VALUE"
+  ],
+  "body_snippet": "FUNCTION MAKE_DEPENDENCY_STRING(COD VARCHAR2,DEP VARCHAR2) RETURN VARCHAR2 IS\n\n--- This function makes a dependency string which will be usefull to validate a dependent\n--- segment value from DEP_ON_KEY_MT TABLE\n\n--- *** IT IS TYPICALLY CALLED FROM IS_VALID_CODE_VALUE ***\n\nST NUMBER;\nEN NUMBER;\n\nCNT NUMBER;\nSEGNO NUMBER;\n\nRET VARCHAR2(500):='';\nTMP VARCHAR2(500):='';\n\nBEGIN\n\t\t\n\tCNT := HOW_MANY_CHARS(DEP,',',0)+1;\n\t\n\tFOR A IN 1..CNT LOOP\n\n\t\tST :=(FUN_INSTR(DEP,',',A-1,0)+1);\n \t  EN := FUN_INSTR(DEP,',',A,0);\n \t  \n\t  IF EN=0 THEN EN:=LENGTH(DEP)+1; END IF;\n\n\t\tSEGNO := SUBSTR(DEP,ST,EN-ST);\n\t\n\t\tST:=0;\n\t\tEN:=0;\n \t\n \t  ST := (FUN_INSTR(COD,'-',SEGNO-1,0)+1);\n \t  EN := FUN_INSTR(COD,'-',SEGNO,0);\n\t\n\t\tIF EN = 0 THEN EN := LENGTH(COD)+1; END IF;\n\t\t\t\n\t \t  \tTMP := SUBSTR(COD,ST,EN-ST);\n\t \t  \t\n\t \t  IF RET IS NULL THEN\n\t \t  \tRET := TMP;\n\t \t  ELSE\n\t \t  \tRET := RET||'-'||TMP;\n\t \t  END IF;\n\tEND LOOP;\n\n\tRETURN(RET);\nEND;\n"
+}

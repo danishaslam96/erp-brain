@@ -1,0 +1,11 @@
+{
+  "name": "FUN_THIS_JV_CONTRA_CODE",
+  "type": "FUNCTION",
+  "line_count": 221,
+  "tables_referenced": [
+    "RECEIPTS_MT",
+    "LVCH_CODE_VAL",
+    "PAYMENTS_MT"
+  ],
+  "body_snippet": "function FUN_THIS_JV_CONTRA_CODE(PARM_JOURNAL_ID NUMBER,PARM_CODE_DESC VARCHAR2) return varchar2 is\n  Result number;\nlvch_code_val varchar2(500);\nlvch_code_desc varchar2(500);\nbegin\nselect\n\nget_value_at(code_value,3,'-')||'-'||get_value_at(code_value,4,'-') code_value,accounting_desc\n\ninto lvch_code_val,lvch_code_desc\n\nfrom\n  (select\n vcc.code_value\n,vcc.accounting_desc\n,'Receipt'              Process\nfrom\n receipts_mt              mt\n,cash_acc_config_mt       cac\n,view_code_combinations   vcc\nwhere mt.cash_acc_id        = cac.cash_acc_config_id\nand cac.cash_code_comb_id   = vcc.code_combination_id\nand mt.payment_mode         = 'C'\nand mt.journal_id is not null\nand mt.journal_id =  parm_journal_id\n----------\nUNION ALL\n----------\nselect\n vcc.code_value\n,vcc.accounting_desc\n,'Receipt'              Process\nfrom\n receipts_mt              mt\n,bank_account_mt          bac\n,view_code_combinations   vcc\nwhere mt.bank_account_id        = bac.bank_account_id\nand bac.code_combination_id     = vcc.code_combination_id\nand mt.payment_mode             = 'B'\nand mt.journal_id is not null\nand mt.journal_id =  parm_journal_id\n----------\nUNION ALL\n----------\nselect\n vcc.code_value\n,vcc.accounting_desc\n,'Receipt'              Process\nfrom\n receipts_mt              mt\n,view_code_combinations   vcc\nwhere MT.ACC_CODE_COMB_ID       = VCC.CODE_COMBINATION_ID\nand mt.payment_mode             = 'O'\nand mt.journal_id is not null\nand mt.journal_id =  parm_journal_id\n-----------\nUNION ALL\n-----------\nselec"
+}

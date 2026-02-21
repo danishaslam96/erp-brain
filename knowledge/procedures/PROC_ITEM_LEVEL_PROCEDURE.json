@@ -1,0 +1,11 @@
+{
+  "name": "PROC_ITEM_LEVEL",
+  "type": "PROCEDURE",
+  "line_count": 15,
+  "tables_referenced": [
+    "TEMP_ITEM_LEVEL",
+    "ITEMS_MT",
+    "INV_QNTV_FORMULA_MT"
+  ],
+  "body_snippet": "procedure proc_item_level is\n  vLevel number:=1;\n  vTempLevel number:=0;\nbegin \n  delete from temp_item_level;\n  commit;\n  for c in (select item_id from inv_qntv_formula_mt)\n  loop\n     proc_formula_level(c.item_id,vTempLevel,vlevel);\n     insert into temp_item_level values (c.item_id,vlevel-1);      \n     commit;\n  end loop;  \n  insert into temp_item_level (select i.item_id, 0 from items_mt i where i.item_id not in (select item_id from temp_item_level));\n  commit;\nend proc_item_level;\n"
+}

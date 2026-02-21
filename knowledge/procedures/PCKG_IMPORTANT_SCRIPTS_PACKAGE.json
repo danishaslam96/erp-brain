@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_IMPORTANT_SCRIPTS",
+  "type": "PACKAGE",
+  "line_count": 9,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_IMPORTANT_SCRIPTS is\n\n  -- Author  : Tariq Sarwar\n  -- Created : 09-12-2003 5:12:03 PM\n  -- Purpose : STORE IMPORTANT SQL SCRIPTS\n\nPROCEDURE A;\n\nend PCKG_IMPORTANT_SCRIPTS;\n"
+}

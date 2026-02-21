@@ -1,0 +1,11 @@
+{
+  "name": "FUN_EXP_SINV_SOCKS_JV_NARR",
+  "type": "FUNCTION",
+  "line_count": 39,
+  "tables_referenced": [
+    "LNUM_DC_NO",
+    "LNUM_TT_INV_QTY",
+    "INVOICE_DETAIL"
+  ],
+  "body_snippet": "function FUN_EXP_SINV_SOCKS_JV_NARR(PARM_INVOICE_ID NUMBER) return varchar2 is\n  lnum_conv_rate number;\n  lnum_tt_inv_qty number;\n  lnum_tt_excl_amt number;\n  lnum_dc_no number;\n  lvch_dc_date varchar2(20);\n\n  result varchar2(500);\nbegin\n -----------------------------\n-----------------------------\n\nselect sum(primary_qty),sum(tc_amount) into lnum_tt_inv_qty,lnum_tt_excl_amt\nfrom invoice_detail\nwhere invoice_id = PARM_INVOICE_ID;\n------------------------------\nbegin\nselect\n\ndistinct max(dcmt.dc_no), max(to_char(dcmt.dc_date,'dd-mm-rrrr'))\ninto lnum_dc_no,lvch_dc_date\n\n\n  from invoice_detail dd, dc_detail dcd, dc_mt dcmt\n where dd.match_with_id = dcd.dc_det_id\n   and dcd.dc_id = dcmt.dc_id\n   and dd.INVOICE_ID = PARM_INVOICE_ID;\n\nEXCEPTION when no_data_found then\n  lnum_dc_no := null;\n  lvch_dc_date := null;\n\nend;\n\n\nresult  := ' DC # '||lnum_dc_no||'  '||'DC date '||lvch_dc_date||'  '||'Total Qty: '||lnum_tt_inv_qty||'  '||'Total Exclusinve Amount: '||lnum_tt_excl_amt ;\n\n  return(Result);\nend FUN_EXP_SINV_SOCKS_JV_NARR;\n"
+}

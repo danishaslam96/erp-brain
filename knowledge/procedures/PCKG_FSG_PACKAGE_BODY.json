@@ -1,0 +1,13 @@
+{
+  "name": "PCKG_FSG",
+  "type": "PACKAGE BODY",
+  "line_count": 3395,
+  "tables_referenced": [
+    "COL_SET_MT",
+    "GVNUM_COL_OVERRIDE_SEGMENT_NO",
+    "COL_DEFINITION",
+    "COLSET_DETAIL",
+    "COL_CALCULATION"
+  ],
+  "body_snippet": "package body pckg_fsg is\n\n    SQL_QUERY_FOR_REPORT VARCHAR2(10000);\n\n  ------- FOR FSG ACCOUNT HELP --------\n    LNUM_NUMBER_OF_SEGMENTS NUMBER(2):=3;\n    LNUM_ROWSET_ID NUMBER;\n  -------------------------------------\n    ------ col override\n    GVNUM_COL_OVERRIDE_SEGMENT_NO NUMBER;\n    ------\n\n    -- FORWARD DECLARATION\n    PROCEDURE APPLY_PERCENTAGE(ROW_SET NUMBER,COL_SET NUMBER) ;\n    -----------------------\n\n    PROCEDURE REFRESH_COLSET (parm_colset_id NUMBER) IS\n\n       CURSOR COLSET IS SELECT COLDET_LINE_ID,\n                               COLSET_DESC,\n                               AMOUNT_TYPE,\n                               PERIOD_TYPE,\n                               CURRENCY_TYPE,\n                               OFFSET_NO,\n                               COL_SEQ_NO,\n                               OVER_ROW_CALC_YN,\n                               INVENTORY_DOC_TYPE,\n                               INVENTORY_COL_TYPE,\n                               OPEN_PERIOD_YN,\n                               ACTIVITY_TYPE,\n                               OVERRIDE_ROW,\n                               OVERRIDE_VALUE\n                         FROM COLSET_DETAIL\n                         WHERE COLSET_ID = parm_colset_id\n                         ORDER BY COL_SEQ_NO;\n\n       LNUM_SEQ NUMBER;\n       LNUM_COL_COUNTER NUMBER :=0;\n\n       lnum_counter NUMBER(15):=0;\n\n       LDAT_FROM_DATE DATE;\n\n       lvch_override_template VARCHAR2(1000);\n\n       lvch_from_to_range     VARCHAR2(250);\n\n       lvch_fr"
+}

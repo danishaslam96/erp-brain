@@ -1,0 +1,12 @@
+{
+  "name": "JOB_TEST",
+  "type": "PROCEDURE",
+  "line_count": 89,
+  "tables_referenced": [
+    "NEGATIVE_INV_ITEMS_RPRT",
+    "ITEM_VALUATION_PENDENCY_DETAIL",
+    "CODE_COMBINATIONS",
+    "TEMP_REPORT_ERRORS"
+  ],
+  "body_snippet": "PROCEDURE JOB_TEST IS\n\n  LNUM_FIRED_FOR_ITEM    NUMBER(15);\n  LNUM_FIRED_FOR_SUB_INV NUMBER(15);\n\n  LNUM_ITEM_COUNTER NUMBER(10) := 0;\n\n  LNUM_MAX_ITEM_PER_JOB NUMBER(10) := 200;\n\nBEGIN\n\n  FOR CUR IN (SELECT I.SUB_INV_ID,\n                     I.ITEM_ID,\n                     MIN(I.STARTING_DATE) START_DATE\n                FROM ITEM_VALUATION_PENDENCY_DETAIL I\n               WHERE I.DELETED_YN = 0\n                 AND (I.ERROR_YN IS NULL OR I.ERROR_YN <> 1)\n               GROUP BY I.SUB_INV_ID, I.ITEM_ID\n               ORDER BY MIN(I.STARTING_DATE)) LOOP\n    BEGIN\n      LNUM_ITEM_COUNTER := LNUM_ITEM_COUNTER + 1;\n      -- marking this item\n      -- as it is being valuating\n      UPDATE ITEM_VALUATION_PENDENCY_DETAIL I\n         SET I.START_DATE_TIME = SYSDATE\n       WHERE I.ITEM_ID = CUR.ITEM_ID\n         AND I.SUB_INV_ID = CUR.SUB_INV_ID\n         AND I.DELETED_YN = 0;\n    \n      COMMIT;\n      FOR CUR_IN IN (SELECT CC.CODE_COMBINATION_ID CCID\n                       FROM CODE_COMBINATIONS CC, WIZ_STRUCTURE_MT S\n                      WHERE CC.STRUCTURE_ID = S.STRUCTURE_ID\n                        AND S.STRUCTURE_TYPE_ID = 3) LOOP\n      \n        DELETE FROM NEGATIVE_INV_ITEMS_RPRT N\n         WHERE N.SUB_INV_ID = CUR.SUB_INV_ID\n           AND N.LOCATOR_COMB_ID = CUR_IN.CCID\n           AND N.ITEM_ID = CUR.ITEM_ID;\n      \n        PCKG_INV.UPDATE_ITEM_VALUE(PARM_CHANGE_DATE        => CUR.START_DATE,\n                                   PARM_INV_TRANSACTION_NO => NULL,\n                     "
+}

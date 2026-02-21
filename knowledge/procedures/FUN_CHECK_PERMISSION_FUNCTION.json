@@ -1,0 +1,20 @@
+{
+  "name": "FUN_CHECK_PERMISSION",
+  "type": "FUNCTION",
+  "line_count": 224,
+  "tables_referenced": [
+    "WIZ_ACTIONS_LOG_MT",
+    "LNUM_SUCC_LOG_YN",
+    "THIS",
+    "USER_ADDITIONAL_PERMISSIONS",
+    "WIZ_SYSTEM_SUB_FUNCTION_MT",
+    "MAIN",
+    "SUB",
+    "LNUM_USER_COUNT_PERMISSION",
+    "SET_OF_BOOKS",
+    "WIZ_SYSTEM_MAIN_FUNCTION",
+    "LNUM_SUB_FUNC_ID",
+    "WIZ_GL_SET_OF_BOOKS"
+  ],
+  "body_snippet": "FUNCTION \n                  FUN_CHECK_PERMISSION(parm_form_name \t\t  VARCHAR2, -- FORM FILE NAME\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t         parm_sub_function \t  VARCHAR2, -- PASS NULL WHEN CHECKING FROM MAIN MENU\n          \t\t\t\t\t\t\t\t\t\t\t\t\t\t parm_action\t\t\t\t  VARCHAR2, -- PASS NULL WHEN CHECKING FROM MAIN MENU AND WHEN CHECKING OPENING OF FORM FROM SUB FUNCTION\n                                       parm_emp_id          NUMBER,\n                                       parm_set_of_book_id  NUMBER) RETURN NUMBER \nIS\n\t\tlnum_main_func_id\t\t\t\t\tNUMBER(15);\n\t\tlnum_sub_func_id\t\t\t\t\tNUMBER(15);\n\t\tlnum_permission_all_yn\t\tNUMBER(1);\n\t\tlnum_user_grp_id\t\t\t\t\tNUMBER(15);\n\t\tlnum_count_permission\t\t\tNUMBER(15);\n    lnum_succ_log_yn          NUMBER(1);\n    lnum_unsucc_log_yn        NUMBER(1);\n    lvch_form_name            VARCHAR2(2000);\n    lnum_user_count_permission NUMBER;\nBEGIN\n--return 1;\n    IF (INSTR(parm_form_name,'.')<>0) THEN\n       lvch_form_name := SUBSTR(parm_form_name,1,INSTR(parm_form_name,'.')-1);\n    ELSE\n       lvch_form_name := parm_form_name;\n    END IF;\n    \n    -- EMP_ID IS ALWAYS 1 FOR SUPERUSER AND SUPERUSER IS ALLOWED ALL THINGS\n    -- SO NO CHECKS FOR SUPERUSER.\n    IF parm_set_of_book_id IS NOT NULL THEN\n        -- CHECK FROM SET_OF_BOOKS FOR THE LOG OPTIONS, WHAT TYPE OF LOG \n        -- USER WANT TO MAINTAIN\n        SELECT S_ATTEMPTS_LOG_YN, U_ATTEMPTS_LOG_YN\n        INTO   lnum_succ_log_yn, lnum_unsucc_log_yn\n        FROM   WIZ_GL_SET_OF_BOOKS\n        WHERE  SET_OF_BOOK_ID = parm_set_of_book_id"
+}

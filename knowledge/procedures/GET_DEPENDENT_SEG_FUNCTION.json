@@ -1,0 +1,10 @@
+{
+  "name": "GET_DEPENDENT_SEG",
+  "type": "FUNCTION",
+  "line_count": 24,
+  "tables_referenced": [
+    "WIZ_SEGMENT_DEFINITION",
+    "LVCH_Q_STR"
+  ],
+  "body_snippet": "FUNCTION GET_DEPENDENT_SEG(SEG_NO IN VARCHAR2, STRUC_ID IN NUMBER) return varchar2 is\n  Result            VARCHAR2(200);\n  lvch_q_str        VARCHAR2(200);\nBEGIN\n  \n     lvch_q_str := SUBSTR(SEG_NO,13,1);\n     Result     := SUBSTR(SEG_NO,13,1);\n     LOOP\n        BEGIN\n          SELECT  wsd.dependent_on_segment_no\n          INTO    lvch_q_str\n          FROM    wiz_segment_definition wsd\n          WHERE   wsd.structure_id= STRUC_ID AND\n                   wsd.segment_no= lvch_q_str;\n          IF lvch_q_str IS NOT NULL THEN\n            Result :=Result ||','||lvch_q_str;\n          END IF;\n        EXCEPTION \n          WHEN NO_DATA_FOUND THEN\n          EXIT ;\n        END ;\n     END LOOP;\n  RETURN (Result);\nEND GET_DEPENDENT_SEG;\n"
+}

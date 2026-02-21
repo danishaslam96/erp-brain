@@ -1,0 +1,11 @@
+{
+  "name": "FUN_SGD_PROD_INV_TRANS_NO",
+  "type": "FUNCTION",
+  "line_count": 39,
+  "tables_referenced": [
+    "LV_PRECED",
+    "INV_ORG_VAL_PRECED",
+    "LN_TRANSNO"
+  ],
+  "body_snippet": "function fun_sgd_prod_inv_trans_no\n  return varchar2 is\n\n  Result varchar2(15);\n  ln_TransNo Number(15); -- local variables here\n  lv_Preced VARCHAR2(2);\nbegin\n\n  SELECT seq_sgd_prod_inv_transaction.NEXTVAL\n         INTO\n         ln_TransNo\n  FROM DUAL;\n\n  BEGIN\n      select org_val.val_precedence\n             into\n             lv_preced\n      from inv_org_val_preced org_val,\n           inv_books_mt ibmt,\n           inv_organization_mt iomt,\n           sub_inventory_mt simt\n      where org_val.inv_org_id = iomt.inv_org_id AND\n            iomt.inv_org_id    = simt.inv_org_id AND\n            simt.sub_inv_id = ibmt.sub_inv_id    AND\n            ibmt.inv_doc_type_id = org_val.inv_doc_type_id;\n\n   EXCEPTION\n      WHEN no_data_found THEN\n           lv_preced := '00';\n      WHEN too_many_rows THEN\n           lv_preced := '00';\n   END;\n\n  result:=lpad(lv_preced,2,'0') || lpad(ln_TransNO,10,'0');\n  return(Result);\nEXCEPTION\n   WHEN OTHERS THEN\n        RAISE_APPLICATION_ERROR(-20010,'The Sequence number exceedes its limit');\nend fun_sgd_prod_inv_trans_no;\n"
+}

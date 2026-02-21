@@ -1,0 +1,9 @@
+{
+  "name": "FUN_GET_KNITING_CC_SGD",
+  "type": "FUNCTION",
+  "line_count": 50,
+  "tables_referenced": [
+    "SGD_KNITTING_AUTH_PAIR_CODE_MT"
+  ],
+  "body_snippet": "function FUN_GET_KNITING_CC_SGD(PARM_STM_PLAN_ID NUMBER) return varchar2 is\n  Result varchar2(10000);\n   flag  number := 0;\nbegin\n  FOR cur IN (\n                 select\n\ndistinct q1.knit_unit\n\nfrom\n(select\n distinct REPLACE(CCV.CODE_VALUE,'-',NULL) KNIT_UNIT\nfrom\n sgd_knitting_auth_pair_code_mt  k\n,sgd_stm_planning_det            pd\n,code_combination_values         ccv\n,sgd_machine_locator_mt          l\n\nwhere k.stm_plan_det_id          =  pd.stm_plan_det_id\nand pd.stm_planning_id           =  PARM_STM_PLAN_ID\nand k.mc_loc_id                  =  l.mc_loc_id\nand l.code_combination_id        =  ccv.code_combination_id\nunion all\nselect\n distinct REPLACE(CCV.CODE_VALUE,'-',NULL) KNIT_UNIT\nfrom\n sgd_knitting_auth_pair_code_mt  k\n,sgd_stm_planning_det            pd\n,code_combination_values         ccv\n,sgd_machine_locator_mt          l\n\nwhere k.stm_plan_det_id          =  pd.stm_plan_det_id\nand pd.stm_planning_id           =  PARM_STM_PLAN_ID\nand k.ext_mc_loc_id              =  l.mc_loc_id\nand l.code_combination_id        =  ccv.code_combination_id\n)q1\norder by 1\n               ) LOOP\n\n        IF flag = 1 THEN\n             RESULT := RESULT||',';\n             END IF;\n\n    RESULT := RESULT||cur.knit_unit;\n    flag := 1;\n\n    END LOOP;\n\n  return(Result);\nend FUN_GET_KNITING_CC_SGD;\n"
+}

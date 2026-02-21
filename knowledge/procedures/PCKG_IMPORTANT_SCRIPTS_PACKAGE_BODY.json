@@ -1,0 +1,10 @@
+{
+  "name": "PCKG_IMPORTANT_SCRIPTS",
+  "type": "PACKAGE BODY",
+  "line_count": 1157,
+  "tables_referenced": [
+    "USER_CONS_COLUMNS",
+    "USER_TABLES"
+  ],
+  "body_snippet": "package body PCKG_IMPORTANT_SCRIPTS is\n  PROCEDURE A IS\n  BEGIN\n       NULL;\n  END;\n\nBEGIN\n\n raise_application_error(-20000,'thses scripts must be executed separately as needed');\n\n-- PROCEDURE GENERATE AUDIT LOG TRIGGERS ON ALL USER TABLES (ALOG,WIZ_AUDIT_LOG_MT.)\nDECLARE\n   filehandle UTL_FILE.FILE_TYPE;    \nBEGIN\n\n    BEGIN\n      filehandle := UTL_FILE.FOPEN(LOCATION => '',FILENAME => 'D:\\a' ,OPEN_MODE => 'w');\n    EXCEPTION\n      -- Create Exception to simply display error code and message\n      -- WHEN utl_file.INVALID_PATH THEN\n      --    RAISE file_not_found;\n      --    NULL;\n      WHEN OTHERS THEN\n      NULL;\n--          raise_application_error(-20000,'Invalid Path or Filename !');\n    --\n    END;\n\nFOR OCUR IN (SELECT TABLE_NAME FROM USER_TABLES )\nLOOP\n-- BLOCK FOR EXCEPTION\nBEGIN\n----------------------\n\nDBMS_OUTPUT.PUT_LINE('TABLE ->'||ocur.table_name);\nDECLARE\n  lvch_trg_code         VARCHAR2(32767);\n  \n  lvch_trg_name         VARCHAR2(30);\n  lvch_table_name        VARCHAR2(100  ):= UPPER(TRIM(OCUR.TABLE_NAME));\n  lvch_transaction_name  VARCHAR2(100  ):= lvch_table_name;\n  lvch_transaction_Table VARCHAR2(100  ):= lvch_table_name;\n  \n  lvch_declare_part      VARCHAR2(32000) := '';\n  lvch_begin_end_part    VARCHAR2(32000);\n  LF                     VARCHAR2(1):='\n';\n  \n   LVCH_INSERT                      VARCHAR2(10000);\n   LNUM_TMP                         NUMBER(10);\n\n   LNUM_DOCUMENT_ID                 NUMBER(14);\n   LNUM_PARENT_DOCUMENT_ID          NUMBER(14);\n   "
+}

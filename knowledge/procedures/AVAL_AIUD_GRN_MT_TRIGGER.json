@@ -1,0 +1,9 @@
+{
+  "name": "AVAL_AIUD_GRN_MT",
+  "type": "TRIGGER",
+  "line_count": 21,
+  "tables_referenced": [
+    "ANOTHER"
+  ],
+  "body_snippet": "TRIGGER \"SGDGROUP\".AVAL_AIUD_GRN_MT\n  after insert OR UPDATE OR DELETE on GRN_MT\n\n\n\n\ndeclare\n  -- local variables here\nbegin\n\n  -- this code is added by tariq\n  -- the trigger must not fire when the data\n  -- is replicated from another site\n  if pckg_replication.get_trigger_status = 0 then\n     return;\n  end if;\n  ------------------------------------------\n\n  PCKG_INV.VALUATE_PENDING_ITEMS();\n\nend AVAL_AIUD_GRN_MT;\n"
+}

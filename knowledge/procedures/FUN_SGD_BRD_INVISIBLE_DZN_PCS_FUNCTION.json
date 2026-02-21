@@ -1,0 +1,15 @@
+{
+  "name": "FUN_SGD_BRD_INVISIBLE_DZN_PCS",
+  "type": "FUNCTION",
+  "line_count": 108,
+  "tables_referenced": [
+    "SGD_WASTE_REC_MT",
+    "SGD_TOE_BATCH_INSPECT_MT",
+    "SGD_BOARD_REWORK_MT",
+    "SGD_BOARD_MAT_REC_DET",
+    "SGD_BOARDING_ENTRY_MT",
+    "LNUM_BRD_TT_RCVD_PCS",
+    "LNUM_BRD_TT_PROD_N_WASTE_PCS"
+  ],
+  "body_snippet": "function FUN_SGD_BRD_INVISIBLE_DZN_PCS\n (PARM_BATCH_ID NUMBER\n ,PARM_INVISIBLE_DZN OUT NUMBER\n ,PARM_INVISIBLE_PCS OUT NUMBER)   return number is\n\n\n  Result NUMber;\n  lnum_brd_tt_rcvd_pcs number;\n  lnum_brd_tt_prod_n_waste_pcs number;\n\n\nbegin\n\n-------------------Total Boarding production + Total waste pcs\nselect\n sum(q1.faulted_pcs) into lnum_brd_tt_prod_n_waste_pcs\n\nfrom\n(select\n  --insp_mt.inspect_date\n  sum(insp_det.faulted_pcs) faulted_pcs\n\n--,count(1)\n\n\nfrom\n sgd_toe_batch_inspect_mt     insp_mt\n,sgd_toe_batch_inspect_det    insp_det\n,sgd_batch_making_det         dt\n,sgd_toe_closing_det          tcd\n,sgd_stm_planning_det         stm\n\n\nwhere insp_mt.batch_inspect_mt  =   insp_det.batch_inspect_id\nand insp_det.batch_det_id       =   dt.batch_det_id\nand dt.stm_plan_det_id          =   stm.stm_plan_det_id\n--and insp_mt.batch_status = 'P'\nAND insp_det.batch_det_id       =   tcd.batch_det_id\nand nvl(insp_det.faulted_pcs,0) > 0\nand nvl(insp_mt.inspection_type,0) = 2\nand insp_mt.batch_id = parm_batch_id\n---------\nunion all\n---------\nselect\n nvl(det.rework_dzn,0)*24 + nvl(det.rework_pcs,0)\nfrom\n sgd_board_rework_mt      mt\n,sgd_board_rework_det     det\n,sgd_batch_making_det     bm_det\nwhere mt.board_rework_id = det.board_rework_id\nand det.batch_det_id     = bm_det.batch_det_id\nand mt.batch_id          = parm_batch_id\n--------\nunion all\n--------\nselect\n nvl(det.iss_qty_dzn,0)*24 + nvl(det.iss_qty_pcs,0)\nfrom\n  sgd_waste_rec_mt      mt\n ,sgd_waste_rec_det     det\n\n where mt.waste_r"
+}

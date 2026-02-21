@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_DOC_SEQUENCE",
+  "type": "PACKAGE",
+  "line_count": 17,
+  "tables_referenced": [],
+  "body_snippet": "package pckg_doc_sequence is\n\n  -- Author  : Tariq Sarwar\n  -- Created : 30-08-2003 12:18:54 PM\n  -- Purpose : Manage document sequence generation in all transactions\n  \n  -- warnings ----\n     warn_sequence_is_already_used NUMBER(1); -- 1 Yes, 2 No\n     \n     -- if this var is set to Yes then then form should display a warning dialog box \n     -- that previous number is already accuired by another user\n     --  \n  -----------\n   PROCEDURE get_max_doc_no(parm_inv_book_id NUMBER,parm_date DATE,parm_doc_no IN OUT NUMBER,parm_seq_det_id IN OUT NUMBER)    ;\n   PROCEDURE update_max_doc_no(parm_inv_book_id NUMBER,parm_date DATE,parm_doc_no IN OUT NUMBER,parm_seq_det_id IN OUT NUMBER) ;\n\nend pckg_doc_sequence;\n"
+}

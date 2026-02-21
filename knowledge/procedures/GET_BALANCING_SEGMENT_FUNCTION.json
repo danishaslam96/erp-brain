@@ -1,0 +1,9 @@
+{
+  "name": "GET_BALANCING_SEGMENT",
+  "type": "FUNCTION",
+  "line_count": 30,
+  "tables_referenced": [
+    "WIZ_SEGMENT_DEFINITION"
+  ],
+  "body_snippet": "FUNCTION GET_BALANCING_SEGMENT(STRCT NUMBER)\n  RETURN VARCHAR2 IS\n\n  --- THIS FUNCTION WILL RETURN THE BALANCING SEGMENT NUMBER OF GIVEN STRUCTURE_ID\n\n  --- PARAMETERS:-\n  ---\n  --- STRCT  -> THE STRUCTURE ID OF REQUIRED STRUCTURE'S ACCOUNTING SEGMENT\n  ---\n\n  RET VARCHAR2(50);\nBEGIN\n\n  FOR CUR IN (SELECT SEGMENT_NO\n                FROM WIZ_SEGMENT_DEFINITION\n               WHERE QUALIFIER_ID = 1\n                 AND STRUCTURE_ID = STRCT\n               ORDER BY SEGMENT_NO) LOOP\n    RET := RET || ',' || CUR.SEGMENT_NO;\n  END LOOP;\n\n  IF RET IS NOT NULL THEN\n    RET := SUBSTR(RET, 2);\n    RETURN(RET);\n  ELSE\n    --Balancing Segment is Not Defined for this Accounting structure  \n    RAISE_USER_DEFINED_ERROR(-20227);\n  END IF;\n\nEND;\n"
+}

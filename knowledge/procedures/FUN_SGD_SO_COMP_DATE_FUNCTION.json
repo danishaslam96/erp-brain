@@ -1,0 +1,14 @@
+{
+  "name": "FUN_SGD_SO_COMP_DATE",
+  "type": "FUNCTION",
+  "line_count": 384,
+  "tables_referenced": [
+    "SGD_FGS_RECEIVING_MT",
+    "RESULT",
+    "IMK_SO_MT",
+    "SO_LOADING_DATE",
+    "SGD_CTN_RECEIVED_MT",
+    "LNUM_BALANCE"
+  ],
+  "body_snippet": "function FUN_SGD_SO_COMP_DATE(PARM_SO_REG_CMT NUMBER,PARM_SO_ID NUMBER) return VARCHAR2 is\n  lnum_balance number;\nresult date;\nresult1 varchar2(100);\nSO_LOADING_DATE DATE;\nbegin\n-----------\nSELECT\n MAX(MT.LOADING_DATE) into SO_LOADING_DATE\nFROM IMK_SO_MT MT\nWHERE MT.SO_ID = PARM_SO_ID;\n--------------------\n\n  IF PARM_SO_REG_CMT = 1  then  --regular order\n  select\n--sum(mtt.CARTON_TOTAL),\n--sum(nvl(fgs.fgs_rcvd_qty,0)-nvl(fgs_ret_rcvd.fgs_rcvd_ret_ctn,0)),\n sum(mtt.CARTON_TOTAL)- sum(nvl(fgs.fgs_rcvd_qty,0)-nvl(fgs_ret_rcvd.fgs_rcvd_ret_ctn,0)) into lnum_balance\nfrom\n\n  imk_so_mt                   mt\n ,customer_mt                 cust\n ,sgd_carton_sr_mt            sr\n ,sgd_carton_mt               mtt\n\n -------------------------FGS received\n,(select\n m.sale_order_id imk_so_id\n ,d.carton_mt_id\n ,sum(nvl(d.received_ctn, 0))       fgs_rcvd_qty\n\n  from\n  SGD_FGS_RECEIVING_MT         M\n ,SGD_FGS_RECEIVING_DET        D\n ,imk_so_mt                    SOMT\n\n where M.FGS_REC_ID                =  D.FGS_REC_ID\n and m.sale_order_id               =  somt.so_id\n and d.received_yn                 =  'Y'\n-- and somt.so_ref_no                =  PARM_SO_REF_NO\n and somt.SO_ID                      =  PARM_SO_ID\n\n group by\n  m.sale_order_id\n ,d.carton_mt_id\n )fgs\n\n ----------------\n,(select\n m.sale_order_id imk_so_id\n ,d.carton_mt_id\n ,sum(nvl(d.ISSUE_QTY, 0))       fgs_rcvd_ret_ctn\n\n  from\n  sgd_ctn_received_mt         M\n ,sgd_ctn_received_det        D\n ,imk_so_mt                   SOMT\n ,custome"
+}

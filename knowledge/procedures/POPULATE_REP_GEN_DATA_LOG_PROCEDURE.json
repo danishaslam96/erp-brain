@@ -1,0 +1,17 @@
+{
+  "name": "POPULATE_REP_GEN_DATA_LOG",
+  "type": "PROCEDURE",
+  "line_count": 160,
+  "tables_referenced": [
+    "SITE_PK_RANGES_MT",
+    "WIZ_ALL_SITES_RPLCATED_TBLES",
+    "WIZ_REPL_GEN_HISTORY_DET",
+    "LNUM_SITE_PK_FROM_ID",
+    "WIZ_REPLICATION_DATA_LOG",
+    "WIZ_THIS_SITE_MT",
+    "LNUM_REPL_GEN_HIST_ID",
+    "LNUM_THIS_SITE_ID",
+    "WIZ_REPL_GEN_HISTORY_MT"
+  ],
+  "body_snippet": "PROCEDURE POPULATE_REP_GEN_DATA_LOG(parm_to_site_id   NUMBER) IS\n\n  lnum_sent_from_pk1_id              NUMBER(15);\n--  lnum_sent_from_pk2_id              NUMBER(15);\n--  lnum_sent_from_pk3_id              NUMBER(15);\n\n  lnum_sent_to_pk1_id                NUMBER(15);\n--  lnum_sent_to_pk2_id                NUMBER(15);  \n--  lnum_sent_to_pk3_id                NUMBER(15);\n  \n  lnum_site_pk_range_id              NUMBER(15);\n  lnum_site_pk_from_id               NUMBER(15);\n  \n  lvch_qry                           VARCHAR2(5000);\n\n  lnum_pk_col_id                     NUMBER(15);\n  lnum_cur_result                    NUMBER(15);\n  lnum_dynamic_cur_id                NUMBER;\n  lnum_last_gen_pk_id                NUMBER(15);\n  lnum_repl_gen_hist_id              NUMBER(15);\n  lnum_this_site_id                  NUMBER(15);\n  lnum_repl_gen_hist_det_id          NUMBER(15);\n  lnum_count                         NUMBER(15) :=0;\n    \nBEGIN\n  -- DELETING FROM WIZ_REPLICATION_DATA_LOG\n  DELETE FROM WIZ_REPLICATION_DATA_LOG;\n\n  SELECT WIZ_ALL_SITES_ID INTO lnum_this_site_id FROM WIZ_THIS_SITE_MT;\n\n  SELECT sp.from_pk_no, sp.to_pk_no \n  INTO   lnum_site_pk_from_id, lnum_site_pk_range_id \n  FROM   site_pk_ranges_mt sp\n  WHERE  sp.wiz_all_sites_id = lnum_this_site_id;\n\n  /*************** START WIZ_REPL_GEN_HISTORY_MT ********************/\n  -- INSERT INTO WIZ_REPL_GEN_HISTORY_MT, THIS WOULD BE USED IN FUTURE TO\n  -- DETERMINE THE FROM TO IDS GENERATED ON SOME SPECIFIC DATE\n  SELECT NVL(MAX(REPL_HSTRY_ID"
+}

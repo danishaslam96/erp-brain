@@ -1,0 +1,11 @@
+{
+  "name": "PCKG_AGING",
+  "type": "PACKAGE BODY",
+  "line_count": 3406,
+  "tables_referenced": [
+    "TEMP_RPT_AGING",
+    "AGING_TEMP_MT",
+    "LNUM_AGING_TEMP_ID"
+  ],
+  "body_snippet": "package body pckg_aging is\n\nPROCEDURE populate_summary_Rcv_aging_NMB(\n                           parm_for varchar2 Default 'S',\n                           parm_set_of_book_id   number,\n                           parm_starting_year_id number,\n                           parm_aging_template_id number,\n                           parm_from_code varchar2,\n                           parm_to_code   varchar2,\n                           parm_ason_date date,\n                           parm_include_unposted_yn number\n                          ) is\n  LNUM_AMOUNT         NUMBER(15,2):=0;\n  LNUM_TEMP           NUMBER(15,2):=0;\n  LNUM_START_YEAR_ID  NUMBER(14)  :=0;\n  LNUM_START_DATE     DATE;\n  LNUM_END_DATE_OF_PREV_YEAR   DATE;\n  LNUM_AGING_TEMP_ID           NUMBER(14) ;\n  LNUM_LST_PRD_OF_PREV_YEAR    NUMBER(14);\n  LNUM_VAL            NUMBER(15,2);\n\n  lnum_receipt_amount number(15,2);\n  lnum_payment_amount number(15,2);\nBEGIN\nnull;\nEND ;\n\n\n\n\n\n\n\n\nPROCEDURE populate_summary_aging(\n                           parm_for varchar2 Default 'S',\n                           parm_set_of_book_id   number,\n                           parm_starting_year_id number,\n                           parm_aging_template_id number,\n                           parm_from_code varchar2,\n                           parm_to_code   varchar2,\n                           parm_ason_date date,\n                           parm_include_unposted_yn number\n                          ) is\n  LNUM_AMOUNT         NUMBER(15,2):=0;\n  LNUM_TE"
+}

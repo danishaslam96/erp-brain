@@ -1,0 +1,10 @@
+{
+  "name": "FUN_SGD_GET_CTN_WISE_WT_KG",
+  "type": "FUNCTION",
+  "line_count": 24,
+  "tables_referenced": [
+    "LNM_WEIGHT_KG",
+    "SGD_CARTON_DET"
+  ],
+  "body_snippet": "function fun_sgd_get_CTN_wise_wt_kg(parm_so_id number, parm_stm_plan_id number,parm_ctn_id number) return number is\nlnm_weight_kg number(18,4);\nlnm_QTY_IN_DOZEN number(18,2);\nbegin\n\n    select\n        sum(round(fun_sgd_get_CTN_ps_weight_kg(m.sale_order_id,\n                                               m.stm_plan_id,\n                                               d.so_det_id) * nvl(d.QTY_DZN,0),\n                  4))\n    INTO      lnm_weight_kg\n   from sgd_carton_det d, sgd_carton_mt m, sgd_carton_sr_mt s\n  where d.sgd_carton_mt_id = m.sgd_carton_mt_id\n    and m.sr_id = s.carton_sr_id\n    and m.sale_order_id = nvl(parm_so_id,-1)\n    and m.stm_plan_id = nvl(parm_stm_plan_id,-1)\n    and m.sr_id = nvl(parm_ctn_id,-1);\n\n\n   return (lnm_weight_kg);\n\nexception when others then\n  return -1;\nend fun_sgd_get_CTN_wise_wt_kg;\n"
+}

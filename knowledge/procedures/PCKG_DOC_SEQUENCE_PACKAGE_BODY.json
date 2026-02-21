@@ -1,0 +1,13 @@
+{
+  "name": "PCKG_DOC_SEQUENCE",
+  "type": "PACKAGE BODY",
+  "line_count": 116,
+  "tables_referenced": [
+    "PARM_DOC_NO",
+    "INV_SEQUENCE_ASSIGNMENT",
+    "LNUM_DOC_SEQ_ID",
+    "DOC_SEQUENCE_DETAIL",
+    "LNUM_SEQ_DET_ID"
+  ],
+  "body_snippet": "package body pckg_doc_sequence is\n   \n   -- forword DECLARATION -----\n   FUNCTION is_valid_seq_no(parm_inv_book_id NUMBER,parm_date DATE,parm_doc_no IN OUT NUMBER,parm_seq_det_id IN OUT NUMBER) RETURN NUMBER ;\n   --------------------------    \n   \n   PROCEDURE get_max_doc_no(parm_inv_book_id NUMBER,parm_date DATE,parm_doc_no IN OUT NUMBER,parm_seq_det_id IN OUT NUMBER) IS \n       lnum_last_no         NUMBER(14);\n       lnum_manual_seq_yn   NUMBER(14);\n       lnum_seq_det_id     NUMBER(14); \n   BEGIN \n       \n       SELECT dd.doc_det_seq_id,lnum_manual_seq_yn,dd.last_no\n              INTO\n              lnum_seq_det_id,lnum_manual_seq_yn,lnum_last_no\n       FROM doc_sequence_detail dd,doc_sequence_mt dm,inv_sequence_assignment sa\n       WHERE dm.doc_seq_id = dd.doc_seq_id AND\n             dm.doc_seq_id = sa.doc_seq_id AND\n             sa.inv_book_id = parm_inv_book_id AND\n             parm_date BETWEEN dd.from_date AND dd.to_date;\n       \n       parm_doc_no     := lnum_last_no + 1;\n       parm_seq_det_id := lnum_seq_det_id ;\n                  \n   EXCEPTION\n       WHEN no_data_found THEN\n            Raise_User_Defined_Error(-20002) ;           \n   END;\n\n   PROCEDURE update_max_doc_no(parm_inv_book_id NUMBER,parm_date DATE,parm_doc_no IN OUT NUMBER,parm_seq_det_id IN OUT NUMBER) IS \n       lnum_last_no         NUMBER(14);\n       lnum_manual_seq_yn   NUMBER(1);\n       lnum_seq_det_id     NUMBER(14); \n   BEGIN \n       \n       SELECT dd.doc_det_seq_id,lnum_manual_seq_yn,dd.last_no\n "
+}

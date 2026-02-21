@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_ISSUE",
+  "type": "PACKAGE",
+  "line_count": 26,
+  "tables_referenced": [],
+  "body_snippet": "package PCKG_ISSUE is\n\n  -- Author  : GULISTAN\n  -- Created : 11/18/2003 8:39:55 AM\n  -- Purpose : \n  \n  -- Public type declarations\n  PROCEDURE PRO_ISSUE_POSTING(parm_issue_id         NUMBER,\n                              parm_book_id          NUMBER,\n                              parm_from_date        DATE,\n                              parm_to_date          DATE,\n                              parm_period_id        NUMBER,\n                              parm_issue_no         NUMBER,\n                              parm_journal_id       NUMBER,\n                              parm_entered_by       NUMBER,\n                              parm_trans_type       VARCHAR2,\n                              parm_post_to_gl       NUMBER,\n                              parm_inserted_jrn_id  OUT NUMBER,\n                              parm_send_for_auth    NUMBER DEFAULT NULL,          ----these three parameters are added\n                              parm_auth_id          NUMBER DEFAULT NULL,          ----by shahid ,to ensuring authorization \n                              parm_auth_status_id   NUMBER DEFAULT NULL);         ----processes\n  FUNCTION FUN_GET_PERIOD_ID(parm_sob_id NUMBER,\n                             parm_from_date DATE,\n                             parm_to_date DATE) RETURN NUMBER;\n\nend PCKG_ISSUE;\n"
+}

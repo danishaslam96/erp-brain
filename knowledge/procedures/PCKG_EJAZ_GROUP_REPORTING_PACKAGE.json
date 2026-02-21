@@ -1,0 +1,7 @@
+{
+  "name": "PCKG_EJAZ_GROUP_REPORTING",
+  "type": "PACKAGE",
+  "line_count": 9,
+  "tables_referenced": [],
+  "body_snippet": "package pckg_ejaz_group_reporting is\n\n  -- Author  : Tariq Sarwar\n  -- Created : 3/10/2005 10:28:52 AM\n  -- Purpose : TO HANDLE GROUP RELATED CONSOLIDATED REPORTS for EJAZ GROUP\n\n  procedure cotton_payment_mill_wise (parm_supp_cat_id NUMBER, parm_from_supp VARCHAR2,parm_to_supp VARCHAR2,parm_broker_id NUMBER,parm_from_date DATE,parm_to_date DATE)  ;\n\nend;\n"
+}

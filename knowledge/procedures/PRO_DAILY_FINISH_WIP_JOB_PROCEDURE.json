@@ -1,0 +1,12 @@
+{
+  "name": "PRO_DAILY_FINISH_WIP_JOB",
+  "type": "PROCEDURE",
+  "line_count": 617,
+  "tables_referenced": [
+    "LNUM_WIP",
+    "TEMP_DATES",
+    "IMK_SO_MT",
+    "SGD_SO_WS_AVAILABLE_BS_DZN"
+  ],
+  "body_snippet": "procedure PRO_DAILY_FINISH_WIP_JOB is\n\nlast_doc_date date;\nlast_doc_date_smry date;\nlnum_job_id            Number;\nlvch_machine_name      Varchar2(100);\nldate_start_date_time        Date;\nldate_End_date_time          Date;\nldate_job_date               date;\nlnum_wip number;\n\nbegin\n  \n\n ldate_start_date_time := to_date(to_char(Sysdate,'DD-MON-YY HH24 MI SS'),'DD-MON-YY HH24 MI SS');\nlvch_machine_name := Pckg_Utility.get_application_machine;\nldate_job_date := to_date(sysdate)-1;\n\n\n\nExecute immediate('truncate table temp_dates');\npro_pop_dates(TO_DATE(SYSDATE)-1,TO_DATE(SYSDATE)-1);\n\n\nfor cur in (select daily_date from temp_dates order by daily_date)loop\n \nlnum_wip := 0; \nSELECT round(sum(nvl(q1.batch_stock_dzn,0)) +\n       sum(nvl(q1.available_bs_dzn,0)) +\n       sum(nvl(q1.available_fill_dzn,0)) +\n       sum(nvl(q1.carton_stock_dzn,0)),2)    Total_Finishing_Stock\n       into lnum_wip\nfrom \n\n(\nselect\n cmt.customer_code \n,cmt.company_name\n,somt.so_id\n,somt.so_ref_no\n,somt.doc_no     so_doc_no\n,somt.loading_date\n,batch_stk.Batch_stock_Dzn\n,avl_bs_dzn.available_bs_dzn\n,ctn_bal.ctn_balance\n,case when ctn_bal.ctn_balance > 0 then\n  avl_pck.Available_pack\n  else  0 end as  Available_Fill_pack\n    \n,case when ctn_bal.ctn_balance > 0 then\n avl_pack_dzn.available_pack_dzn\n else 0 end as  Available_fill_dzn\n\n,ctn_stock.carton_stock\n,ctn_stock.carton_stock_dzn\n\nfrom  \n  IMK_SO_MT                   somt\n ,customer_mt                 cmt \n ,sgd_so_closing_mt           closed_so\n \n ---------"
+}

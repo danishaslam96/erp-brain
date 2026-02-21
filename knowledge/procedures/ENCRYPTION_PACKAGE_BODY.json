@@ -1,0 +1,10 @@
+{
+  "name": "ENCRYPTION",
+  "type": "PACKAGE BODY",
+  "line_count": 33,
+  "tables_referenced": [
+    "EMPLOYEE_MT",
+    "HASHED_PASSWORD"
+  ],
+  "body_snippet": "package body Encryption is\n\n      PROCEDURE encryptPassword(username VARCHAR2,password VARCHAR2,ReturnVal OUT VARCHAR2) is\n      BEGIN\n          ReturnVal := ltrim(to_char(dbms_utility.get_hash_value(upper(username)||'/'||password,1000000000,power(2,30)),rpad('X',29,'X')||'X'));\n      END encryptPassword;\n      \n      PROCEDURE validatePassword(username VARCHAR2,password VARCHAR2,result OUT NUMBER) IS\n\n          RETURNVal VARCHAR2(100);\n          hashed_password VARCHAR2(100);\n\n      BEGIN\n           encryptPassword(username,password,returnval);\n           SELECT t.pass_word INTO hashed_password \n           FROM employee_mt t\n           WHERE t.employee_id = username;\n           IF(hashed_password = returnVal)THEN\n               result := 1;\n           ELSE\n               result := 0;\n           END IF;\n\n        EXCEPTION\n\n            WHEN no_data_found THEN\n                result := 0;\n            WHEN OTHERS THEN\n                result := 0; \n         \n      END validatePassword;   \n\nend Encryption;\n"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "FUN_GET_SO_NO",
+  "type": "FUNCTION",
+  "line_count": 11,
+  "tables_referenced": [
+    "LNM_RESULT"
+  ],
+  "body_snippet": "function fun_get_so_no(parm_seg2_desc varchar ) return number is\n  lnm_Result number;\nbegin\n   select to_number(get_value_at(parm_seg2_desc, 2, '-'))\n   Into lnm_Result\n   from dual;\n\n\n  return(lnm_Result);\n\nend fun_get_so_no;\n"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "PCKG_SGD_COSTING",
+  "type": "PACKAGE BODY",
+  "line_count": 27,
+  "tables_referenced": [
+    "WIZ_GL_SET_OF_BOOKS",
+    "LNUM_PERIOD_ID",
+    "PERIOD_DETAILS"
+  ],
+  "body_snippet": "package body pckg_sgd_costing is\n\n  function fun_get_period_id(parm_As_on_date date,parm_inv_sob_id number) return number is \n    lnum_period_id number(14);\n     \n    \n    begin\n        SELECT period_id  INTO lnum_period_id\n              FROM   period_details pd\n              WHERE PERIOD_NO <> 999 AND\n                    ( parm_As_on_date BETWEEN pd.from_date and pd.to_date) and\n                    (pd.period_type_id,pd.calendar_id )= \n                                                   (SELECT book.perd_type_id,book.calendar_id\n                                                    FROM wiz_gl_set_of_books book\n                                                    where book.set_of_book_id = parm_inv_sob_id);\n\n                      return      lnum_period_id;                         \n    EXCEPTION \n              WHEN NO_DATA_FOUND THEN\n                   RAISE_USER_DEFINED_ERROR(-20021); \n              WHEN TOO_MANY_ROWS THEN\n                   RAISE_APPLICATION_ERROR(-20000,'TOO MANY ROWS IN GET_PERIOD_STATUS');\n    end;\nbegin\n  -- Initialization\nnull;\nend pckg_sgd_costing;\n"
+}

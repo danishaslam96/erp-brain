@@ -1,0 +1,9 @@
+{
+  "name": "MY_TEMP_FUN",
+  "type": "FUNCTION",
+  "line_count": 11,
+  "tables_referenced": [
+    "RESULT"
+  ],
+  "body_snippet": "function My_Temp_fun(Tble VARCHAR2, col VARCHAR2) return number is\n  Result number;\n  lvchr_qry VARCHAR2(100);\nbegin\n  lvchr_qry := 'SELECT MAX('||COL||')+1 FROM '||TBLE;\n  \n  EXECUTE IMMEDIATE lvchr_qry INTO Result;\n  \n  \n  return(Result);\nend My_Temp_fun;\n"
+}

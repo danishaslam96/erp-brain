@@ -1,0 +1,19 @@
+{
+  "name": "INSERT_INTO_SEGMENT",
+  "type": "FUNCTION",
+  "line_count": 69,
+  "tables_referenced": [
+    "WIZ_SEGMENT10",
+    "RESULT",
+    "WIZ_SEGMENT05",
+    "WIZ_SEGMENT03",
+    "WIZ_SEGMENT06",
+    "WIZ_SEGMENT08",
+    "WIZ_SEGMENT01",
+    "WIZ_SEGMENT07",
+    "WIZ_SEGMENT02",
+    "WIZ_SEGMENT04",
+    "WIZ_SEGMENT09"
+  ],
+  "body_snippet": "function INSERT_INTO_SEGMENT(parm_structure_id number,parm_segment_no number,parm_segment_value varchar2,parm_segment_value_desc varchar2,parm_seg_val_nature_id number,parm_parent_yn number,have_dep_val_yn number,parm_dep_on_key_id number default null) return number is\n  Result number;\n  lnum_seg_id_pk number(15):=0;\nbegin\n\n    if parm_segment_no    = 1  then\n     \n        insert into wiz_segment01(structure_id,segment_id,dep_on_struc_id,dep_on_key_id,segment_value,segment_value_desc,segment_nature_id,parent_yn,have_dep_val_yn)\n        values                   (parm_structure_id,lnum_seg_id_pk,decode(parm_dep_on_key_id,null,null,parm_structure_id),parm_dep_on_key_id,parm_segment_value,parm_segment_value_desc,parm_seg_val_nature_id,parm_parent_yn,have_dep_val_yn)\n        returning segment_id into result;\n\n     elsif parm_segment_no = 2  then\n    \n        insert into wiz_segment02(structure_id,segment_id,dep_on_struc_id,dep_on_key_id,segment_value,segment_value_desc,segment_nature_id,parent_yn,have_dep_val_yn)\n        values                   (parm_structure_id,lnum_seg_id_pk,decode(parm_dep_on_key_id,null,null,parm_structure_id),parm_dep_on_key_id,parm_segment_value,parm_segment_value_desc,parm_seg_val_nature_id,parm_parent_yn,have_dep_val_yn)\n        returning segment_id into result;\n    \n     elsif parm_segment_no = 3  then\n    \n        insert into wiz_segment03(structure_id,segment_id,dep_on_struc_id,dep_on_key_id,segment_value,segment_value_desc,segment_nature_id,parent_yn"
+}
