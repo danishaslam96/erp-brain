@@ -1,0 +1,291 @@
+{
+  "module": "FORM_EMPLOYEE_LOGIN_fmb",
+  "attached_libraries": [],
+  "blocks": [
+    {
+      "name": "WIZ_LICENCED_TO",
+      "datasource": "WIZ_LICENCED_TO",
+      "items": [
+        {
+          "name": "COMPANY_NAME",
+          "datatype": null
+        },
+        {
+          "name": "LOGO",
+          "datatype": null
+        },
+        {
+          "name": "ITEM159",
+          "datatype": null
+        },
+        {
+          "name": "ITEM160",
+          "datatype": null
+        },
+        {
+          "name": "ITEM161",
+          "datatype": null
+        },
+        {
+          "name": "ITEM163",
+          "datatype": null
+        },
+        {
+          "name": "DUMY",
+          "datatype": null
+        }
+      ]
+    },
+    {
+      "name": "DBLK_EMPLOYEE_LOGIN",
+      "datasource": null,
+      "items": [
+        {
+          "name": "TEXT_USER",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_PASSWORD",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_SET_OF_BOOK",
+          "datatype": null
+        },
+        {
+          "name": "SOB_STRUCTURE_ID",
+          "datatype": null
+        },
+        {
+          "name": "INV_ORG_DESC",
+          "datatype": null
+        },
+        {
+          "name": "INV_ORG_ID",
+          "datatype": null
+        },
+        {
+          "name": "PAY_ORG_DESC",
+          "datatype": null
+        },
+        {
+          "name": "PAY_ORG_ID",
+          "datatype": null
+        },
+        {
+          "name": "BALANCING_SEGMENT_VAL",
+          "datatype": null
+        },
+        {
+          "name": "BALANCING_SEGMENT_DESC",
+          "datatype": null
+        },
+        {
+          "name": "BALANCING_SEGMENT_ID",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_PERIOD_DESC",
+          "datatype": null
+        },
+        {
+          "name": "PERIOD_FROM_DATE",
+          "datatype": null
+        },
+        {
+          "name": "PERIOD_TO_DATE",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_PERIOD_ID",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_USER_ID",
+          "datatype": null
+        },
+        {
+          "name": "LOGIN_ATTEMPTS",
+          "datatype": null
+        },
+        {
+          "name": "PBTN_OK",
+          "datatype": null
+        },
+        {
+          "name": "PBTN_CANCEL",
+          "datatype": null
+        },
+        {
+          "name": "LOGIN_PREF_PERIOD_YN",
+          "datatype": null
+        },
+        {
+          "name": "LOGIN_PREF_COMPANY_YN",
+          "datatype": null
+        }
+      ]
+    },
+    {
+      "name": "CBLK_CONTROL",
+      "datasource": null,
+      "items": [
+        {
+          "name": "TEXT_USER_HID",
+          "datatype": null
+        },
+        {
+          "name": "IMAG_0",
+          "datatype": null
+        },
+        {
+          "name": "IMAG_4",
+          "datatype": null
+        },
+        {
+          "name": "LABL_INV_ORG",
+          "datatype": null
+        },
+        {
+          "name": "LABL_PAY_ORG",
+          "datatype": null
+        },
+        {
+          "name": "IMAG_1",
+          "datatype": null
+        },
+        {
+          "name": "IMAG_2",
+          "datatype": null
+        },
+        {
+          "name": "IMAG_3",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_SAVE",
+          "datatype": null
+        },
+        {
+          "name": "LABL_COMPANY",
+          "datatype": null
+        },
+        {
+          "name": "LABL_PERIOD",
+          "datatype": null
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "name": "WHEN-VALIDATE-ITEM",
+      "event": null
+    },
+    {
+      "name": "WHEN-VALIDATE-ITEM",
+      "event": null
+    },
+    {
+      "name": "WHEN-MOUSE-DOUBLECLICK",
+      "event": null
+    },
+    {
+      "name": "WHEN-VALIDATE-ITEM",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-ITEM-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-ITEM-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-ITEM-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-ITEM-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-ITEM-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "WHEN-VALIDATE-ITEM",
+      "event": null
+    },
+    {
+      "name": "WHEN-BUTTON-PRESSED",
+      "event": null
+    },
+    {
+      "name": "WHEN-BUTTON-PRESSED",
+      "event": null
+    },
+    {
+      "name": "KEY-CREREC",
+      "event": null
+    },
+    {
+      "name": "TRGR_EDIT",
+      "event": null
+    },
+    {
+      "name": "KEY-F5",
+      "event": null
+    },
+    {
+      "name": "KEY-DELREC",
+      "event": null
+    },
+    {
+      "name": "KEY-ENTQRY",
+      "event": null
+    },
+    {
+      "name": "KEY-COMMIT",
+      "event": null
+    },
+    {
+      "name": "KEY-EXEQRY",
+      "event": null
+    },
+    {
+      "name": "TRGR_REFRESH",
+      "event": null
+    },
+    {
+      "name": "KEY-UP",
+      "event": null
+    },
+    {
+      "name": "KEY-DOWN",
+      "event": null
+    },
+    {
+      "name": "KEY-EXIT",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-FORM-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "PRE-TEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "POST-TEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "WHEN-WINDOW-CLOSED",
+      "event": null
+    }
+  ],
+  "source_xml": "FORM_EMPLOYEE_LOGIN_fmb.xml"
+}

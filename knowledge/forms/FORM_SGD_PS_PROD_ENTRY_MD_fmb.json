@@ -1,0 +1,311 @@
+{
+  "module": "FORM_SGD_PS_PROD_ENTRY_MD_fmb",
+  "attached_libraries": [],
+  "blocks": [
+    {
+      "name": "DBLK_SGD_CARTON_MT",
+      "datasource": "sgd_ps_production_mt mt,imk_so_mt so, imk_so_det sod,items_mt ps, sgd_shift_mt s",
+      "items": [
+        {
+          "name": "TEXT_CARTON_ID_PK",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_SALE_ORDER_ID_FK",
+          "datatype": null
+        },
+        {
+          "name": "TXT_SHIFT_ID",
+          "datatype": null
+        },
+        {
+          "name": "TXT_SHIFT_DESC",
+          "datatype": null
+        },
+        {
+          "name": "TXT_PROD_DATETIME",
+          "datatype": null
+        },
+        {
+          "name": "TXT_SO_DET_ID_FK",
+          "datatype": null
+        },
+        {
+          "name": "TXT_PS_CODE",
+          "datatype": null
+        },
+        {
+          "name": "TXT_PS_CODE_DT_VW",
+          "datatype": null
+        },
+        {
+          "name": "TXT_PS_CODE_DESC",
+          "datatype": null
+        },
+        {
+          "name": "TXT_TOTAL_PACKS",
+          "datatype": null
+        },
+        {
+          "name": "TXT_PROD_PACKS",
+          "datatype": null
+        },
+        {
+          "name": "TXT_BAL_PACKS",
+          "datatype": null
+        },
+        {
+          "name": "TXT_PS_PROD",
+          "datatype": null
+        },
+        {
+          "name": "TXT_TOTAL_PROD",
+          "datatype": null
+        },
+        {
+          "name": "TXT_SO_PS_XREF_ID",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_ENTERED_BY",
+          "datatype": null
+        }
+      ]
+    },
+    {
+      "name": "DBLK_SGD_CARTON_DET",
+      "datasource": "sgd_ps_production_dt det,SGD_SOD_BS_CODE_DETAIL bsd ,imk_so_det sod ,sgd_ps_code_generation_det psd , sgd_sample_request_det srd ,items_mt itm,sgd_sample_request_mt r, items_category icc, code_combination_values ccv",
+      "items": [
+        {
+          "name": "TEXT_CARTAON_DET_ID_PK",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_CARTON_MT_ID_FK",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_SO_DET_ID",
+          "datatype": null
+        },
+        {
+          "name": "TXT_SO_ID_DT",
+          "datatype": null
+        },
+        {
+          "name": "TXT_BS_ITEM_ID",
+          "datatype": null
+        },
+        {
+          "name": "TXT_BS_CODE",
+          "datatype": null
+        },
+        {
+          "name": "TXT_BS_CODE_DESC",
+          "datatype": null
+        },
+        {
+          "name": "TXT_PAIR_RATIO_PACK",
+          "datatype": null
+        },
+        {
+          "name": "TXT_AVAL_BS_DZN",
+          "datatype": null
+        },
+        {
+          "name": "TXT_POSSIBLE_PACK",
+          "datatype": null
+        },
+        {
+          "name": "TXT_TOTAL_BS_DZN",
+          "datatype": null
+        },
+        {
+          "name": "TXT_PRODUCE_DZN",
+          "datatype": null
+        },
+        {
+          "name": "TXT_BAL_DZN",
+          "datatype": null
+        },
+        {
+          "name": "TXT_SOD_DET_ID",
+          "datatype": null
+        },
+        {
+          "name": "DSP_MIN_POSSIBLE_PACKS",
+          "datatype": null
+        }
+      ]
+    },
+    {
+      "name": "CBLK_CONTROL",
+      "datasource": null,
+      "items": [
+        {
+          "name": "IMG_ITEM",
+          "datatype": null
+        },
+        {
+          "name": "ITEM128",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_SO_CUSTOMER",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_SO_ID_SEARCH",
+          "datatype": null
+        },
+        {
+          "name": "TEXT_SALE_ORDER_NO",
+          "datatype": null
+        },
+        {
+          "name": "DISP_CUST_PO_NO",
+          "datatype": null
+        },
+        {
+          "name": "BTN_POPULATE",
+          "datatype": null
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "name": "WHEN-VALIDATE-ITEM",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-RECORD-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "PRE-INSERT",
+      "event": null
+    },
+    {
+      "name": "ON-POPULATE-DETAILS",
+      "event": null
+    },
+    {
+      "name": "PRE-DELETE",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-RECORD-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "PRE-INSERT",
+      "event": null
+    },
+    {
+      "name": "WHEN-MOUSE-DOUBLECLICK",
+      "event": null
+    },
+    {
+      "name": "KEY-F9",
+      "event": null
+    },
+    {
+      "name": "WHEN-VALIDATE-ITEM",
+      "event": null
+    },
+    {
+      "name": "WHEN-BUTTON-PRESSED",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-FORM-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "ON-ERROR",
+      "event": null
+    },
+    {
+      "name": "ON-MESSAGE",
+      "event": null
+    },
+    {
+      "name": "KEY-SCRDOWN",
+      "event": null
+    },
+    {
+      "name": "KEY-CREREC",
+      "event": null
+    },
+    {
+      "name": "KEY-SCRUP",
+      "event": null
+    },
+    {
+      "name": "KEY-F2",
+      "event": null
+    },
+    {
+      "name": "KEY-DELREC",
+      "event": null
+    },
+    {
+      "name": "KEY-ENTQRY",
+      "event": null
+    },
+    {
+      "name": "PRE-TEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "POST-TEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "KEY-UP",
+      "event": null
+    },
+    {
+      "name": "KEY-DOWN",
+      "event": null
+    },
+    {
+      "name": "KEY-F5",
+      "event": null
+    },
+    {
+      "name": "KEY-COMMIT",
+      "event": null
+    },
+    {
+      "name": "KEY-EXEQRY",
+      "event": null
+    },
+    {
+      "name": "KEY-EXIT",
+      "event": null
+    },
+    {
+      "name": "TRGR_REFRESH",
+      "event": null
+    },
+    {
+      "name": "WHEN-WINDOW-CLOSED",
+      "event": null
+    },
+    {
+      "name": "WHEN-MOUSE-DOUBLECLICK",
+      "event": null
+    },
+    {
+      "name": "KEY-LISTVAL",
+      "event": null
+    },
+    {
+      "name": "ON-CLEAR-DETAILS",
+      "event": null
+    }
+  ],
+  "source_xml": "FORM_SGD_PS_PROD_ENTRY_MD_fmb.xml"
+}

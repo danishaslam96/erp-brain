@@ -1,0 +1,273 @@
+{
+  "module": "ISSUE_NOTE_MD_fmb",
+  "attached_libraries": [],
+  "blocks": [
+    {
+      "name": "ISSUE_NOTE_MT",
+      "datasource": "ISSUE_NOTE_MT",
+      "items": [
+        {
+          "name": "EBY",
+          "datatype": null
+        },
+        {
+          "name": "STATDS",
+          "datatype": null
+        },
+        {
+          "name": "EDAT",
+          "datatype": null
+        },
+        {
+          "name": "MBY",
+          "datatype": null
+        },
+        {
+          "name": "MDAT",
+          "datatype": null
+        },
+        {
+          "name": "TRNO",
+          "datatype": null
+        },
+        {
+          "name": "INV_BOOK_ID",
+          "datatype": null
+        },
+        {
+          "name": "DAT",
+          "datatype": null
+        },
+        {
+          "name": "ALLOC_REF_NO",
+          "datatype": null
+        },
+        {
+          "name": "SO_ID",
+          "datatype": null
+        },
+        {
+          "name": "ALLOC",
+          "datatype": null
+        },
+        {
+          "name": "REMK",
+          "datatype": null
+        },
+        {
+          "name": "SONO",
+          "datatype": null
+        }
+      ]
+    },
+    {
+      "name": "ISSUE_NOTE_DET",
+      "datasource": "ISSUE_NOTE_DET",
+      "items": [
+        {
+          "name": "EBY",
+          "datatype": null
+        },
+        {
+          "name": "EDAT",
+          "datatype": null
+        },
+        {
+          "name": "MBY",
+          "datatype": null
+        },
+        {
+          "name": "MDAT",
+          "datatype": null
+        },
+        {
+          "name": "TRNO",
+          "datatype": null
+        },
+        {
+          "name": "RNO",
+          "datatype": null
+        },
+        {
+          "name": "ITEM_ID",
+          "datatype": null
+        },
+        {
+          "name": "SEL_ITEM_ID",
+          "datatype": null
+        },
+        {
+          "name": "SEL",
+          "datatype": null
+        },
+        {
+          "name": "SR",
+          "datatype": null
+        },
+        {
+          "name": "ALTER_YN",
+          "datatype": null
+        },
+        {
+          "name": "ALLOC_QTY",
+          "datatype": null
+        },
+        {
+          "name": "ISS_QTY",
+          "datatype": null
+        },
+        {
+          "name": "QTY",
+          "datatype": null
+        },
+        {
+          "name": "ITEM10",
+          "datatype": null
+        },
+        {
+          "name": "ITEM11",
+          "datatype": null
+        },
+        {
+          "name": "ITEM12",
+          "datatype": null
+        },
+        {
+          "name": "ITEM13",
+          "datatype": null
+        }
+      ]
+    },
+    {
+      "name": "BUTTON",
+      "datasource": null,
+      "items": [
+        {
+          "name": "SAVE",
+          "datatype": null
+        },
+        {
+          "name": "PRINT",
+          "datatype": null
+        },
+        {
+          "name": "CLEAR",
+          "datatype": null
+        },
+        {
+          "name": "EXIT",
+          "datatype": null
+        }
+      ]
+    },
+    {
+      "name": "CTL",
+      "datasource": null,
+      "items": [
+        {
+          "name": "P_TRNO",
+          "datatype": null
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "name": "KEY-NEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "KEY-NEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "KEY-NEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "KEY-NEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "KEY-NEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "PRE-INSERT",
+      "event": null
+    },
+    {
+      "name": "ON-POPULATE-DETAILS",
+      "event": null
+    },
+    {
+      "name": "ON-CHECK-DELETE-MASTER",
+      "event": null
+    },
+    {
+      "name": "POST-QUERY",
+      "event": null
+    },
+    {
+      "name": "KEY-NEXT-ITEM",
+      "event": null
+    },
+    {
+      "name": "WHEN-MOUSE-DOUBLECLICK",
+      "event": null
+    },
+    {
+      "name": "PRE-INSERT",
+      "event": null
+    },
+    {
+      "name": "WHEN-BUTTON-PRESSED",
+      "event": null
+    },
+    {
+      "name": "WHEN-BUTTON-PRESSED",
+      "event": null
+    },
+    {
+      "name": "WHEN-BUTTON-PRESSED",
+      "event": null
+    },
+    {
+      "name": "WHEN-BUTTON-PRESSED",
+      "event": null
+    },
+    {
+      "name": "PRE-INSERT",
+      "event": null
+    },
+    {
+      "name": "ON-MESSAGE",
+      "event": null
+    },
+    {
+      "name": "WHEN-NEW-FORM-INSTANCE",
+      "event": null
+    },
+    {
+      "name": "KEY-CQUERY",
+      "event": null
+    },
+    {
+      "name": "KEY-COMMIT",
+      "event": null
+    },
+    {
+      "name": "KEY-ENTQRY",
+      "event": null
+    },
+    {
+      "name": "KEY-EXEQRY",
+      "event": null
+    },
+    {
+      "name": "ON-CLEAR-DETAILS",
+      "event": null
+    }
+  ],
+  "source_xml": "ISSUE_NOTE_MD_fmb.xml"
+}
