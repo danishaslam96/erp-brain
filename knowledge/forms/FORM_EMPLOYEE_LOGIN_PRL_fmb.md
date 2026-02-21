@@ -1,0 +1,79 @@
+# Form: FORM_EMPLOYEE_LOGIN_PRL_fmb
+
+## Attached Libraries
+(none)
+
+## Blocks & Items
+- Block: WIZ_LICENCED_TO
+  - COMPANY_NAME (None)
+  - LOGO (None)
+  - ITEM159 (None)
+  - ITEM160 (None)
+  - ITEM161 (None)
+  - ITEM163 (None)
+  - DUMY (None)
+- Block: DBLK_EMPLOYEE_LOGIN
+  - TEXT_USER (None)
+  - TEXT_PASSWORD (None)
+  - TEXT_SET_OF_BOOK (None)
+  - SOB_STRUCTURE_ID (None)
+  - INV_ORG_DESC (None)
+  - INV_ORG_ID (None)
+  - PAY_ORG_DESC (None)
+  - PAY_ORG_ID (None)
+  - BALANCING_SEGMENT_VAL (None)
+  - BALANCING_SEGMENT_DESC (None)
+  - BALANCING_SEGMENT_ID (None)
+  - TEXT_PERIOD_DESC (None)
+  - PERIOD_FROM_DATE (None)
+  - PERIOD_TO_DATE (None)
+  - TEXT_PERIOD_ID (None)
+  - TEXT_USER_ID (None)
+  - LOGIN_ATTEMPTS (None)
+  - PBTN_OK (None)
+  - PBTN_CANCEL (None)
+  - LOGIN_PREF_PERIOD_YN (None)
+  - LOGIN_PREF_COMPANY_YN (None)
+- Block: CBLK_CONTROL
+  - TEXT_USER_HID (None)
+  - IMAG_0 (None)
+  - IMAG_4 (None)
+  - LABL_INV_ORG (None)
+  - LABL_PAY_ORG (None)
+  - IMAG_1 (None)
+  - IMAG_2 (None)
+  - IMAG_3 (None)
+  - TEXT_SAVE (None)
+  - LABL_COMPANY (None)
+  - LABL_PERIOD (None)
+
+## Triggers
+- WHEN-VALIDATE-ITEM — None
+- WHEN-VALIDATE-ITEM — None
+- WHEN-MOUSE-DOUBLECLICK — None
+- WHEN-VALIDATE-ITEM — None
+- WHEN-NEW-ITEM-INSTANCE — None
+- WHEN-NEW-ITEM-INSTANCE — None
+- WHEN-NEW-ITEM-INSTANCE — None
+- WHEN-NEW-ITEM-INSTANCE — None
+- WHEN-NEW-ITEM-INSTANCE — None
+- WHEN-VALIDATE-ITEM — None
+- WHEN-BUTTON-PRESSED — None
+- WHEN-BUTTON-PRESSED — None
+- WHEN-NEW-FORM-INSTANCE — None
+- KEY-CREREC — None
+- TRGR_EDIT — None
+- KEY-F5 — None
+- KEY-DELREC — None
+- KEY-ENTQRY — None
+- KEY-COMMIT — None
+- KEY-EXEQRY — None
+- TRGR_REFRESH — None
+- KEY-UP — None
+- KEY-DOWN — None
+- KEY-EXIT — None
+- PRE-TEXT-ITEM — None
+- POST-TEXT-ITEM — None
+- WHEN-WINDOW-CLOSED — None
+
+Source XML: FORM_EMPLOYEE_LOGIN_PRL_fmb.xml

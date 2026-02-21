@@ -1,0 +1,84 @@
+# Form: FORM_SGD_PS_PROD_ENTRY_MD_fmb
+
+## Attached Libraries
+(none)
+
+## Blocks & Items
+- Block: DBLK_SGD_CARTON_MT
+  - TEXT_CARTON_ID_PK (None)
+  - TEXT_SALE_ORDER_ID_FK (None)
+  - TXT_SHIFT_ID (None)
+  - TXT_SHIFT_DESC (None)
+  - TXT_PROD_DATETIME (None)
+  - TXT_SO_DET_ID_FK (None)
+  - TXT_PS_CODE (None)
+  - TXT_PS_CODE_DT_VW (None)
+  - TXT_PS_CODE_DESC (None)
+  - TXT_TOTAL_PACKS (None)
+  - TXT_PROD_PACKS (None)
+  - TXT_BAL_PACKS (None)
+  - TXT_PS_PROD (None)
+  - TXT_TOTAL_PROD (None)
+  - TXT_SO_PS_XREF_ID (None)
+  - TEXT_ENTERED_BY (None)
+- Block: DBLK_SGD_CARTON_DET
+  - TEXT_CARTAON_DET_ID_PK (None)
+  - TEXT_CARTON_MT_ID_FK (None)
+  - TEXT_SO_DET_ID (None)
+  - TXT_SO_ID_DT (None)
+  - TXT_BS_ITEM_ID (None)
+  - TXT_BS_CODE (None)
+  - TXT_BS_CODE_DESC (None)
+  - TXT_PAIR_RATIO_PACK (None)
+  - TXT_AVAL_BS_DZN (None)
+  - TXT_POSSIBLE_PACK (None)
+  - TXT_TOTAL_BS_DZN (None)
+  - TXT_PRODUCE_DZN (None)
+  - TXT_BAL_DZN (None)
+  - TXT_SOD_DET_ID (None)
+  - DSP_MIN_POSSIBLE_PACKS (None)
+- Block: CBLK_CONTROL
+  - IMG_ITEM (None)
+  - ITEM128 (None)
+  - TEXT_SO_CUSTOMER (None)
+  - TEXT_SO_ID_SEARCH (None)
+  - TEXT_SALE_ORDER_NO (None)
+  - DISP_CUST_PO_NO (None)
+  - BTN_POPULATE (None)
+
+## Triggers
+- WHEN-VALIDATE-ITEM — None
+- WHEN-NEW-RECORD-INSTANCE — None
+- PRE-INSERT — None
+- ON-POPULATE-DETAILS — None
+- PRE-DELETE — None
+- WHEN-NEW-RECORD-INSTANCE — None
+- PRE-INSERT — None
+- WHEN-MOUSE-DOUBLECLICK — None
+- KEY-F9 — None
+- WHEN-VALIDATE-ITEM — None
+- WHEN-BUTTON-PRESSED — None
+- WHEN-NEW-FORM-INSTANCE — None
+- ON-ERROR — None
+- ON-MESSAGE — None
+- KEY-SCRDOWN — None
+- KEY-CREREC — None
+- KEY-SCRUP — None
+- KEY-F2 — None
+- KEY-DELREC — None
+- KEY-ENTQRY — None
+- PRE-TEXT-ITEM — None
+- POST-TEXT-ITEM — None
+- KEY-UP — None
+- KEY-DOWN — None
+- KEY-F5 — None
+- KEY-COMMIT — None
+- KEY-EXEQRY — None
+- KEY-EXIT — None
+- TRGR_REFRESH — None
+- WHEN-WINDOW-CLOSED — None
+- WHEN-MOUSE-DOUBLECLICK — None
+- KEY-LISTVAL — None
+- ON-CLEAR-DETAILS — None
+
+Source XML: FORM_SGD_PS_PROD_ENTRY_MD_fmb.xml
