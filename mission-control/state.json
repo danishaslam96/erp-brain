@@ -1,9 +1,9 @@
 {
-  "current_issue": null,
+  "current_issue": 5,
   "next_target": null,
-  "active_branch": null,
+  "active_branch": "issue-5",
   "last_commit": null,
-  "in_progress": false,
+  "in_progress": true,
   "last_nudge_at": null,
   "expires_at": null,
   "running": false,
@@ -11,6 +11,7 @@
   "maintenance_mode": false,
   "maintenance_expires_at": null,
   "notify_milestones": true,
+  "no_delta_count": 0,
   "blocked_policy": {
     "auto_pause": true,
     "labels": ["blocked", "needs-info", "on-hold", "waiting"],
@@ -18,5 +19,8 @@
     "resume_on_unblocked": true,
     "idle_pause_after_no_delta": 2,
     "idle_pause_after_hours": 6
-  }
+  },
+  "last_repo_diff": "2026-02-21T12:41:00.000000+00:00",
+  "last_check": 1771557120,
+  "last_hygiene_at": "2026-02-21T12:41:00Z"
 }
